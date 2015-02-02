@@ -1,0 +1,34 @@
+html { 
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background-color: #fff;
+	font-family: "Courier New", Courier, monospace;
+	font-size: medium;
+}
+
+h1 {
+	text-align: center;
+	font-size: 200%;
+}
+
+canvas {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: thin solid #000;
+}
+
+#header {
+	text-align: center;
+}
+
+#mainContent {
+	text-align: center;
+}
+
+#footer {
+	text-align: center;
+}
