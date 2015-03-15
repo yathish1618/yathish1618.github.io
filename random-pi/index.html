@@ -1,83 +1,77 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+	<link href='http://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 	<title>Randomness</title>
 	<meta charset="utf-8">
 	<script type="text/javascript"></script>
 	<!--<script language="javascript" type="text/javascript" src="jquery.js" ></script>-->
-	
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-  <script language="javascript" type="text/javascript" src="core.js" ></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+	<script language="javascript" type="text/javascript" src="core.js" ></script>
 	<link href="jquery.highlighttextarea.css" rel="stylesheet">
-  <script src="jquery.highlighttextarea.js"></script>
-	
-	<style>
-	fieldset {
-		border: none;
-	}
-	textarea {
-		background-color: #000;
-		border: 1px solid #000;
-		color: #000000;
-		padding: 8px;
-		font-family: courier new;
-	}
-	.highlightTextarea {
-		margin: 0 auto;
-	}
-	body {
-		background-image:url(http://s5.postimg.org/knnsa632b/noisy_texture_100x100_o60_d52_c_43cff2_t0.png);
-		background-repeat:repeat;
-	}
-	.stats {
-		background-color: white;
-	  margin: 0 auto;
-	  width: 50%;
-	}
-	.header {
-		background: white;
-			  margin: 0 auto;
-	  width: 50%;
-	}
-	.gameOver {
-		background: #00ff00;
-		margin: 0 auto;
-	  width: 50%;
-	}
-	h2, h3 {
-		background: aqua;
-	}
-</style>
+    <script src="jquery.highlighttextarea.js"></script>
+	<link href="style.css" rel="stylesheet">
+
 </head>
 
-<body>
-		<fieldset align="center" >
+<body align="center" >
+			<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+
 			<div class="header">
 			<h2>Guess the digits of Pi</h2>
 			<a> Each correct guess will gain you 5 guesses! Get to as many digits as you can. </a>
 			<br/><br/>
+			<textarea value ="pi" id="pi" name="pi" cols="50" rows="10" >3.14</textarea>
+			<br/>
 			</div>
+			
+			<div id="gameOver" class="gameOver" hidden><h3>Oops! You've run out of guesses. Game Over! <a href="."> Try Again</a></h3><div id="bestScore"></div>
 			<br/>
-			<textarea value ="pi" id="pi" name="pi" rows="10" cols="58" >3.14</textarea>
-			<br/>
-			<div id="gameOver" class="gameOver" hidden>Oops! You've run out of guesses. Game Over! <a href="."> Try Again</a></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" id="twitter-share-button" data-url="http://yathish1618.github.io/random-pi/" data-text="Guess the random digits of Pi" data-via="YathishDhavala" data-related="YathishDhavala">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<div class="fb-share-button" data-href="http://yathish1618.github.io/random-pi/" data-layout="button_count"></div>
+			</div>
 			<div class="stats" >
-			<h3>Guess Stats</h3>
-			Guesses left: <a id="guessBank" a>5</a>
+			<h2>Guess Stats</h2>
+			Guesses left: <strong><a id="guessBank" a>5</a></strong>
 			<br/><br/>
-			Total guesses: <a id="guessCount" a>0</a>
+			Total guesses: <strong><a id="guessCount" a>0</a></strong>
 			<br/><br/>
-			Number of correct guesses: <a id="hitRate">0</a>
+			Number of correct guesses: <strong><a id="hitRate">0</a></strong>
 			<br/><br/>
-			Average deviation in your guess: <a id="showDeviation" >0%</a>
+			Average deviation in your guess: <strong><a id="showDeviation" >0%</a></strong>
 			<br/><br/>
 			</div>
 			
-			<!--<input type="submit" value="Visualise my guess with Huge Data!">
-			<input type="button" value="Show correct ones" id="showcolors">-->
-		</fieldset>
+			<div id="info" class="info" onclick="showInfo(1);">
+			<h2>Food for thought</h2>
+			<div class="infoContent" onclick="showInfo(2)" hidden>
+			<p>π is an irrational number. That means it's never ending, and ever more unpredictable.</p>
+			<p>The digits of π appear to be randomly distributed; <br>however, to date, no proof of this has been discovered.
+			<br>So, if you've got some spare time, <br>do us mathematicians a favour and bang your head for this proof!</p>
+			<p>Most mathematicians think the digits of π contain every conceivable finite sequence of numbers. Even your DNA sequence could be found down the line! No kidding.
+			<br><strong>An even more crazier idea is to ask whether π contains itself? </strong></p>
+			<p>Most recently, after 207 days of sleepless nights, a machine calculated the value of π upto 13,300,000,000,000 decimal places. It took another 182 days to check that the computed value is correct!</p>
+			<p>Well, if we have formulas to generate digits of π, how is it truly random? </p><br/>
+			</div>
+			</div>
+			
+			<div id="social" style="  margin-top: 22px;" class="social">
+			<div class="youtube" onclick="window.open('http://www.youtube.com/yathish1618','_blank');">Youtube</div>
+			<div class="tumblr" onclick="window.open('http://khaostokosmos.tumblr.com','_blank');">Tumblr</div>
+			</div>
+			
+			
 </body>
 
 </html>

@@ -1,0 +1,101 @@
+fieldset {
+	border: none;
+	}
+textarea {
+	background-color: #000;
+	border: 1px solid #000;
+	color: #000000;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	font-family: courier new;
+	box-shadow: 0px 0px 2px black;
+	width: 100%;
+}
+.highlightTextarea {
+	margin-left: auto;
+    margin-right: auto;
+	width: 80%;
+}
+body {
+	background-image:url(http://s5.postimg.org/knnsa632b/noisy_texture_100x100_o60_d52_c_43cff2_t0.png);
+	background-repeat:repeat;
+	text-align: center;
+	font-family: 'Cuprum', sans-serif;
+}
+.stats {
+	background-color: white;
+	margin: 0 auto;
+	width: 40%;
+	font-family: 'Cuprum', sans-serif;
+}
+.header {
+	background: white;
+	margin: 0 auto;
+	width: 40%;
+	box-shadow: 0px 0px 2px black;
+	font-family: 'Cuprum', sans-serif;
+}
+.gameOver {
+	background: #FFFF00;
+	margin: 0 auto;
+	width: 40%;
+	box-shadow: 0px 0px 2px black;
+}
+
+h2 {
+	font-family: 'Cuprum', sans-serif;
+	background: black;
+	color: white;
+	box-shadow: 0px 2px 2px black;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.social {
+	background: black;
+	display: block;
+	margin: 0 auto;
+	width: 40%;
+	box-shadow: 0px 0px 2px black;
+}
+.info {
+	background: #FFFF00;
+	margin: 0 auto;
+	width: 40%;
+	box-shadow: 0px 0px 2px black;
+	cursor:pointer;
+}
+
+h3 {
+	font-family: 'Cuprum', sans-serif;
+	background: #FFFF00;
+	box-shadow: 0px 0px 2px black;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.infoContent {
+	cursor: auto;
+}
+.youtube {
+	width:50%;
+	float:left;
+	color: #FFFF00;
+	cursor:pointer;
+	font-size:large;
+}
+.tumblr{
+	width:50%; 
+	margin-left:50%;
+	color: #FFFF00;
+	cursor: pointer;
+	font-size:large;
+}
+.tumblr:hover{
+	background: #FFFF00;
+	color: black;
+}
+.youtube:hover{
+	background: #FFFF00;
+	color: black;
+}
