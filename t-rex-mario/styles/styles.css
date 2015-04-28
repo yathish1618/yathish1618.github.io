@@ -60,5 +60,9 @@ a:link    {color:#ffffff; background-color:transparent; text-decoration:none}
 }
 #original {
   color: white;
+  opacity: 0.75;
+}
+#chrome {
+  color: white;
   opacity: 0.5;
 }
