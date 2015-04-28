@@ -241,7 +241,8 @@
          * Load and cache the image assets from the page.
          */
         loadImages: function() {
-            var imageSources = IS_HIDPI ? Runner.imageSources.HDPI :
+            //var imageSources = IS_HIDPI ? Runner.imageSources.HDPI :
+            var imageSources = IS_HIDPI ? Runner.imageSources.LDPI :
                 Runner.imageSources.LDPI;
             var numImages = imageSources.length;
             for (var i = numImages - 1; i >= 0; i--) {
