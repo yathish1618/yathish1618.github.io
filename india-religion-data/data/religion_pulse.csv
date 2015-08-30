@@ -1,0 +1,281 @@
+name,x,y,weight,group
+Not stated,AN,Not stated,669,Not stated
+Not stated,AP,Not stated,404100,Not stated
+Not stated,AR,Not stated,6648,Not stated
+Not stated,AS,Not stated,50873,Not stated
+Not stated,BR,Not stated,252127,Not stated
+Not stated,CH,Not stated,1014,Not stated
+Not stated,CT,Not stated,23262,Not stated
+Not stated,DD,Not stated,245,Not stated
+Not stated,DL,Not stated,13606,Not stated
+Not stated,DN,Not stated,487,Not stated
+Not stated,GA,Not stated,3039,Not stated
+Not stated,GJ,Not stated,57902,Not stated
+Not stated,HP,Not stated,8094,Not stated
+Not stated,HR,Not stated,42212,Not stated
+Not stated,JK,Not stated,20082,Not stated
+Not stated,JH,Not stated,68343,Not stated
+Not stated,KA,Not stated,166087,Not stated
+Not stated,KL,Not stated,88155,Not stated
+Not stated,LD,Not stated,64,Not stated
+Not stated,MH,Not stated,286290,Not stated
+Not stated,ML,Not stated,9578,Not stated
+Not stated,MN,Not stated,10969,Not stated
+Not stated,MP,Not stated,97625,Not stated
+Not stated,MZ,Not stated,1026,Not stated
+Not stated,NL,Not stated,2316,Not stated
+Not stated,OR,Not stated,76919,Not stated
+Not stated,PB,Not stated,87564,Not stated
+Not stated,PY,Not stated,2122,Not stated
+Not stated,RJ,Not stated,67713,Not stated
+Not stated,SK,Not stated,1828,Not stated
+Not stated,TN,Not stated,188586,Not stated
+Not stated,TR,Not stated,5261,Not stated
+Not stated,UP,Not stated,582622,Not stated
+Not stated,UT,Not stated,11608,Not stated
+Not stated,WB,Not stated,228267,Not stated
+Muslim,JK,Muslim,8567485,Muslim
+Muslim,HP,Muslim,149881,Muslim
+Muslim,PB,Muslim,535489,Muslim
+Muslim,CH,Muslim,51447,Muslim
+Muslim,UT,Muslim,1406825,Muslim
+Muslim,HR,Muslim,1781342,Muslim
+Muslim,DL,Muslim,2158684,Muslim
+Muslim,RJ,Muslim,6215377,Muslim
+Muslim,UP,Muslim,38483967,Muslim
+Muslim,BR,Muslim,17557809,Muslim
+Muslim,SK,Muslim,9867,Muslim
+Muslim,AR,Muslim,27045,Muslim
+Muslim,NL,Muslim,48963,Muslim
+Muslim,MN,Muslim,239836,Muslim
+Muslim,MZ,Muslim,14832,Muslim
+Muslim,TR,Muslim,316042,Muslim
+Muslim,ML,Muslim,130399,Muslim
+Muslim,AS,Muslim,10679345,Muslim
+Muslim,WB,Muslim,24654825,Muslim
+Muslim,JH,Muslim,4793994,Muslim
+Muslim,OR,Muslim,911670,Muslim
+Muslim,CT,Muslim,514998,Muslim
+Muslim,MP,Muslim,4774695,Muslim
+Muslim,GJ,Muslim,5846761,Muslim
+Muslim,DD,Muslim,19277,Muslim
+Muslim,DN,Muslim,12922,Muslim
+Muslim,MH,Muslim,12971152,Muslim
+Muslim,AP,Muslim,8082412,Muslim
+Muslim,KA,Muslim,7893065,Muslim
+Muslim,GA,Muslim,121564,Muslim
+Muslim,LD,Muslim,62268,Muslim
+Muslim,KL,Muslim,8873472,Muslim
+Muslim,TN,Muslim,4229479,Muslim
+Muslim,PY,Muslim,75556,Muslim
+Muslim,AN,Muslim,32413,Muslim
+Christian,JK,Christian,35631,Christian
+Christian,HP,Christian,12646,Christian
+Christian,PB,Christian,348230,Christian
+Christian,CH,Christian,8720,Christian
+Christian,UT,Christian,37781,Christian
+Christian,HR,Christian,50353,Christian
+Christian,DL,Christian,146093,Christian
+Christian,RJ,Christian,96430,Christian
+Christian,UP,Christian,356448,Christian
+Christian,BR,Christian,129247,Christian
+Christian,SK,Christian,60522,Christian
+Christian,AR,Christian,418732,Christian
+Christian,NL,Christian,1739651,Christian
+Christian,MN,Christian,1179043,Christian
+Christian,MZ,Christian,956331,Christian
+Christian,TR,Christian,159882,Christian
+Christian,ML,Christian,2213027,Christian
+Christian,AS,Christian,1165867,Christian
+Christian,WB,Christian,658618,Christian
+Christian,JH,Christian,1418608,Christian
+Christian,OR,Christian,1161708,Christian
+Christian,CT,Christian,490542,Christian
+Christian,MP,Christian,213282,Christian
+Christian,GJ,Christian,316178,Christian
+Christian,DD,Christian,2820,Christian
+Christian,DN,Christian,5113,Christian
+Christian,MH,Christian,1080073,Christian
+Christian,AP,Christian,1129784,Christian
+Christian,KA,Christian,1142647,Christian
+Christian,GA,Christian,366130,Christian
+Christian,LD,Christian,317,Christian
+Christian,KL,Christian,6141269,Christian
+Christian,TN,Christian,4418331,Christian
+Christian,PY,Christian,78550,Christian
+Christian,AN,Christian,80984,Christian
+Sikh,JK,Sikh,234848,Sikh
+Sikh,HP,Sikh,79896,Sikh
+Sikh,PB,Sikh,16004754,Sikh
+Sikh,CH,Sikh,138329,Sikh
+Sikh,UT,Sikh,236340,Sikh
+Sikh,HR,Sikh,1243752,Sikh
+Sikh,DL,Sikh,570581,Sikh
+Sikh,RJ,Sikh,872930,Sikh
+Sikh,UP,Sikh,643500,Sikh
+Sikh,BR,Sikh,23779,Sikh
+Sikh,SK,Sikh,1868,Sikh
+Sikh,AR,Sikh,3287,Sikh
+Sikh,NL,Sikh,1890,Sikh
+Sikh,MN,Sikh,1527,Sikh
+Sikh,MZ,Sikh,286,Sikh
+Sikh,TR,Sikh,1070,Sikh
+Sikh,ML,Sikh,3045,Sikh
+Sikh,AS,Sikh,20672,Sikh
+Sikh,WB,Sikh,63523,Sikh
+Sikh,JH,Sikh,71422,Sikh
+Sikh,OR,Sikh,21991,Sikh
+Sikh,CT,Sikh,70036,Sikh
+Sikh,MP,Sikh,151412,Sikh
+Sikh,GJ,Sikh,58246,Sikh
+Sikh,DD,Sikh,172,Sikh
+Sikh,DN,Sikh,217,Sikh
+Sikh,MH,Sikh,223247,Sikh
+Sikh,AP,Sikh,40244,Sikh
+Sikh,KA,Sikh,28773,Sikh
+Sikh,GA,Sikh,1473,Sikh
+Sikh,LD,Sikh,8,Sikh
+Sikh,KL,Sikh,3814,Sikh
+Sikh,TN,Sikh,14601,Sikh
+Sikh,PY,Sikh,297,Sikh
+Sikh,AN,Sikh,1286,Sikh
+Hindu,JK,Hindu,3566674,Hindu
+Hindu,HP,Hindu,6532765,Hindu
+Hindu,PB,Hindu,10678138,Hindu
+Hindu,CH,Hindu,852574,Hindu
+Hindu,UT,Hindu,8368636,Hindu
+Hindu,HR,Hindu,22171128,Hindu
+Hindu,DL,Hindu,13712100,Hindu
+Hindu,RJ,Hindu,60657103,Hindu
+Hindu,UP,Hindu,159312654,Hindu
+Hindu,BR,Hindu,86078686,Hindu
+Hindu,SK,Hindu,352662,Hindu
+Hindu,AR,Hindu,401876,Hindu
+Hindu,NL,Hindu,173054,Hindu
+Hindu,MN,Hindu,1181876,Hindu
+Hindu,MZ,Hindu,30136,Hindu
+Hindu,TR,Hindu,3063903,Hindu
+Hindu,ML,Hindu,342078,Hindu
+Hindu,AS,Hindu,19180759,Hindu
+Hindu,WB,Hindu,64385546,Hindu
+Hindu,JH,Hindu,22376051,Hindu
+Hindu,OR,Hindu,39300341,Hindu
+Hindu,CT,Hindu,23819789,Hindu
+Hindu,MP,Hindu,66007121,Hindu
+Hindu,GJ,Hindu,53533988,Hindu
+Hindu,DD,Hindu,220150,Hindu
+Hindu,DN,Hindu,322857,Hindu
+Hindu,MH,Hindu,89703057,Hindu
+Hindu,AP,Hindu,74824149,Hindu
+Hindu,KA,Hindu,51317472,Hindu
+Hindu,GA,Hindu,963877,Hindu
+Hindu,LD,Hindu,1788,Hindu
+Hindu,KL,Hindu,18282492,Hindu
+Hindu,TN,Hindu,63188168,Hindu
+Hindu,PY,Hindu,1089409,Hindu
+Hindu,AN,Hindu,264296,Hindu
+Buddhist,JK,Buddhist,112584,Buddhist
+Buddhist,HP,Buddhist,78659,Buddhist
+Buddhist,PB,Buddhist,33237,Buddhist
+Buddhist,CH,Buddhist,1160,Buddhist
+Buddhist,UT,Buddhist,14926,Buddhist
+Buddhist,HR,Buddhist,7514,Buddhist
+Buddhist,DL,Buddhist,18449,Buddhist
+Buddhist,RJ,Buddhist,12185,Buddhist
+Buddhist,UP,Buddhist,206285,Buddhist
+Buddhist,BR,Buddhist,25453,Buddhist
+Buddhist,SK,Buddhist,167216,Buddhist
+Buddhist,AR,Buddhist,162815,Buddhist
+Buddhist,NL,Buddhist,6759,Buddhist
+Buddhist,MN,Buddhist,7084,Buddhist
+Buddhist,MZ,Buddhist,93411,Buddhist
+Buddhist,TR,Buddhist,125385,Buddhist
+Buddhist,ML,Buddhist,9864,Buddhist
+Buddhist,AS,Buddhist,54993,Buddhist
+Buddhist,WB,Buddhist,282898,Buddhist
+Buddhist,JH,Buddhist,8956,Buddhist
+Buddhist,OR,Buddhist,13852,Buddhist
+Buddhist,CT,Buddhist,70467,Buddhist
+Buddhist,MP,Buddhist,216052,Buddhist
+Buddhist,GJ,Buddhist,30483,Buddhist
+Buddhist,DD,Buddhist,217,Buddhist
+Buddhist,DN,Buddhist,634,Buddhist
+Buddhist,MH,Buddhist,6531200,Buddhist
+Buddhist,AP,Buddhist,36692,Buddhist
+Buddhist,KA,Buddhist,95710,Buddhist
+Buddhist,GA,Buddhist,1095,Buddhist
+Buddhist,LD,Buddhist,10,Buddhist
+Buddhist,KL,Buddhist,4752,Buddhist
+Buddhist,TN,Buddhist,11186,Buddhist
+Buddhist,PY,Buddhist,451,Buddhist
+Buddhist,AN,Buddhist,338,Buddhist
+Jain,JK,Jain,2490,Jain
+Jain,HP,Jain,1805,Jain
+Jain,PB,Jain,45040,Jain
+Jain,CH,Jain,1960,Jain
+Jain,UT,Jain,9183,Jain
+Jain,HR,Jain,52613,Jain
+Jain,DL,Jain,166231,Jain
+Jain,RJ,Jain,622023,Jain
+Jain,UP,Jain,213267,Jain
+Jain,BR,Jain,18914,Jain
+Jain,SK,Jain,314,Jain
+Jain,AR,Jain,771,Jain
+Jain,NL,Jain,2655,Jain
+Jain,MN,Jain,1692,Jain
+Jain,MZ,Jain,376,Jain
+Jain,TR,Jain,860,Jain
+Jain,ML,Jain,627,Jain
+Jain,AS,Jain,25949,Jain
+Jain,WB,Jain,60141,Jain
+Jain,JH,Jain,14974,Jain
+Jain,OR,Jain,9420,Jain
+Jain,CT,Jain,61510,Jain
+Jain,MP,Jain,567028,Jain
+Jain,GJ,Jain,579654,Jain
+Jain,DD,Jain,287,Jain
+Jain,DN,Jain,1186,Jain
+Jain,MH,Jain,1400349,Jain
+Jain,AP,Jain,53849,Jain
+Jain,KA,Jain,440280,Jain
+Jain,GA,Jain,1109,Jain
+Jain,LD,Jain,11,Jain
+Jain,KL,Jain,4489,Jain
+Jain,TN,Jain,89265,Jain
+Jain,PY,Jain,1400,Jain
+Jain,AN,Jain,31,Jain
+Others,JK,Others,1508,Others
+Others,HP,Others,856,Others
+Others,PB,Others,10886,Others
+Others,CH,Others,246,Others
+Others,UT,Others,993,Others
+Others,HR,Others,2548,Others
+Others,DL,Others,2197,Others
+Others,RJ,Others,4676,Others
+Others,UP,Others,13598,Others
+Others,BR,Others,13437,Others
+Others,SK,Others,16300,Others
+Others,AR,Others,362553,Others
+Others,NL,Others,3214,Others
+Others,MN,Others,233767,Others
+Others,MZ,Others,808,Others
+Others,TR,Others,1514,Others
+Others,ML,Others,258271,Others
+Others,AS,Others,27118,Others
+Others,WB,Others,942297,Others
+Others,JH,Others,4235786,Others
+Others,OR,Others,478317,Others
+Others,CT,Others,494594,Others
+Others,MP,Others,599594,Others
+Others,GJ,Others,16480,Others
+Others,DD,Others,79,Others
+Others,DN,Others,293,Others
+Others,MH,Others,178965,Others
+Others,AP,Others,9547,Others
+Others,KA,Others,11263,Others
+Others,GA,Others,258,Others
+Others,LD,Others,7,Others
+Others,KL,Others,7618,Others
+Others,TN,Others,7414,Others
+Others,PY,Others,168,Others
+Others,AN,Others,564,Others
