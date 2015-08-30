@@ -31,7 +31,7 @@ window.PykChartsInit = function (e) {
 
             // optional
             donut_show_total_at_center: "no",
-            chart_width: 300,
+            chart_width: 250,
             donut_radius_percent: 100,
             donut_inner_radius_percent: 60
       });
@@ -42,7 +42,7 @@ window.PykChartsInit = function (e) {
 
             // optional
             donut_show_total_at_center: "no",
-            chart_width: 300,
+            chart_width: 250,
             donut_radius_percent: 100,
             donut_inner_radius_percent: 60
       });
@@ -129,7 +129,7 @@ window.PykChartsInit = function (e) {
 
             // optional
             donut_show_total_at_center: "no",
-            chart_width: 250,
+            chart_width: 220,
             pointer_color: "white",
             title_text: "Males",
             title_size: 1,
@@ -141,7 +141,7 @@ window.PykChartsInit = function (e) {
 
             // optional
             donut_show_total_at_center: "no",
-            chart_width: 250,
+            chart_width: 220,
             pointer_color: "white",
             title_text: "Females",
             title_size: 1,
@@ -153,7 +153,7 @@ window.PykChartsInit = function (e) {
 
             // optional
             donut_show_total_at_center: "no",
-            chart_width: 250,
+            chart_width: 220,
             pointer_color: "white"
       });
       k.execute();
@@ -163,7 +163,7 @@ window.PykChartsInit = function (e) {
 
             // optional
             donut_show_total_at_center: "no",
-            chart_width: 250,
+            chart_width: 220,
             pointer_color: "white",
             title_text: "Urban",
             title_size: 1,
@@ -175,7 +175,7 @@ window.PykChartsInit = function (e) {
 
             // optional
             donut_show_total_at_center: "no",
-            chart_width: 250,
+            chart_width: 220,
             pointer_color: "white",
             title_text: "Rural",
             title_size: 1,

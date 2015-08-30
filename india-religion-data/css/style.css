@@ -582,3 +582,12 @@ table#footer {
 .col-md-3{
 	margin: 20px 0px 20px 0px;
 }
+ #tf-about table#footer{
+    display: table;
+}
+#rural_india{
+	top: 63px;
+}
+#gender_india{
+	top: 63px;
+}
