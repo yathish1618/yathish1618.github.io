@@ -17,7 +17,8 @@ window.PykChartsInit = function (e) {
             title_size: 2,
             title_weight: "normal",
             title_family: "Garamond",
-            color_mode: "saturation"
+            color_mode: "saturation",
+            palette_color : "Orange-1",
             // subtitle_text: "Comparison of growing economies in Asia",
             // subtitle_color: "gray",
             // subtitle_size: 2,
@@ -27,9 +28,11 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#gender_india",
-            data: "data/population_gender.csv",
+            data: 'name,weight\nMale,623270258\nFemale,587584719',
 
-            // optional
+            // optional,
+            color_mode: "shade",
+            shade_color: "aqua",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -38,7 +41,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rural_india",
-            data: "data/population_rural.csv",
+            data: 'name,weight\nRural,833748852\nUrban,377106125',
 
             // optional
             donut_show_total_at_center: "no",
@@ -49,7 +52,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.pie({
             selector: "#hindu_population",
-            data: "data/hindu_population.csv",
+            data: 'name,weight\nHindu,966257353\nOthers,244597624',
 
             // optional
             chart_width: 250,
@@ -58,17 +61,20 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.donut({
             selector: "#muslim_population",
-            data: "data/muslim_population.csv",
+            data: 'name,weight\nMuslim,172245158\nOthers,1038609819',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
             donut_show_total_at_center: "no",
             chart_width: 250,
-            pointer_color: "white"
+            pointer_color: "white",
+            label_color:"black"
       });
       k.execute();
     var k = new PykCharts.oneD.donut({
             selector: "#christian_population",
-            data: "data/christian_population.csv",
+            data: 'name,weight\nChristian,27819588\nOthers,1183035389',
 
             // optional
             donut_show_total_at_center: "no",
@@ -78,16 +84,19 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.pie({
             selector: "#sikh_population",
-            data: "data/sikh_population.csv",
+            data: 'name,weight\nSikh,20833116\nOthers,1190021861',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             chart_width: 250,
             pointer_color: "white"
       });
       k.execute();
     var k = new PykCharts.oneD.pie({
             selector: "#buddhist_population",
-            data: "data/buddhist_population.csv",
+            data: 'name,weight\nBuddhist,8442972\nOthers,1202412005',
 
             // optional
             chart_width: 250,
@@ -96,17 +105,20 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.donut({
             selector: "#jain_population",
-            data: "data/jain_population.csv",
+            data: 'name,weight\nJain,4451753\nOthers,1206403224',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
             donut_show_total_at_center: "no",
             chart_width: 250,
-            pointer_color: "white"
+            pointer_color: "white",
+            label_color:"black"
       });
       k.execute();
     var k = new PykCharts.oneD.donut({
             selector: "#otherReligion_population",
-            data: "data/otherReligion_population.csv",
+            data: 'name,weight\nOther religions,7937734\nOthers,1202917243',
 
             // optional
             donut_show_total_at_center: "no",
@@ -116,9 +128,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.pie({
             selector: "#noReligion_population",
-            data: "data/noReligion_population.csv",
+            data: 'name,weight\nReligion not stated,2867303\nOthers,1207987674',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             chart_width: 250,
             pointer_color: "white"
       });
@@ -152,6 +167,8 @@ window.PykChartsInit = function (e) {
             data: "data/total_religion.csv",
 
             // optional
+            color_mode: "shade",
+            shade_color: "#FF9933",
             donut_show_total_at_center: "no",
             chart_width: 220,
             pointer_color: "white"
@@ -194,13 +211,13 @@ window.PykChartsInit = function (e) {
             axis_y_pointer_color: "white",
             legends_enable: "no",
             variable_circle_size_enable : "yes",
-            chart_color: ["#990000","#d7301f","#ef6548","#fc8d59","#fdbb84","#fdd49e","#fee8c8","#fff7ec"],
+            chart_color: ["#990000","#d7301f","#ef6548","#fc8d59","yellow","#fdd49e","#fee8c8","#fff7ec"],
             background_color: "rgba(0, 0, 0, 0.8)"
       });
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#gender_hindu",
-            data: "data/gender_hindu.csv",
+            data: 'name,weight\nMales,498306968\nFemales,467950385',
 
             // optional
             donut_show_total_at_center: "no",
@@ -212,9 +229,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#gender_muslim",
-            data: "data/gender_muslim.csv",
+            data: 'name,weight\nMales,88273945\nFemales,83971213',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             pointer_color: "white",
@@ -224,7 +244,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#gender_christian",
-            data: "data/gender_christian.csv",
+            data: 'name,weight\nMales,13751031\nFemales,14068557',
 
             // optional
             donut_show_total_at_center: "no",
@@ -236,9 +256,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#gender_sikh",
-            data: "data/gender_sikh.csv",
+            data: 'name,weight\nMales,10948431\nFemales,9884685',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             pointer_color: "white",
@@ -248,7 +271,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#gender_buddhist",
-            data: "data/gender_buddhist.csv",
+            data: 'name,weight\nMales,4296010\nFemales,4146962',
 
             // optional
             donut_show_total_at_center: "no",
@@ -260,9 +283,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#gender_jain",
-            data: "data/gender_jain.csv",
+            data: 'name,weight\nMales,2278097\nFemales,2173656',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             pointer_color: "white",
@@ -272,9 +298,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#gender_noReligion",
-            data: "data/gender_noReligion.csv",
+            data: 'name,weight\nMales,1463712\nFemales,1403591',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             pointer_color: "white",
@@ -284,7 +313,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#gender_otherReligion",
-            data: "data/gender_otherReligion.csv",
+            data: 'name,weight\nMales,3952064\nFemales,3985670',
 
             // optional
             donut_show_total_at_center: "no",
@@ -296,9 +325,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rururb_hindu",
-            data: "data/rururb_hindu.csv",
+            data: 'name,weight\nRural,684093951\nUrban,282163402',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -309,7 +341,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#rural_hindu",
-            data: "data/rural_hindu.csv",
+            data: 'name,weight\nMales,351423647\nFemales,332670304',
 
             // optional
             donut_show_total_at_center: "no",
@@ -321,9 +353,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#urban_hindu",
-            data: "data/urban_hindu.csv",
+            data: 'name,weight\nMales,146883321\nFemales,135280081',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -334,7 +369,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rururb_muslim",
-            data: "data/rururb_muslim.csv",
+            data: 'name,weight\nRural,103504739\nUrban,68740419',
 
             // optional
             donut_show_total_at_center: "no",
@@ -347,9 +382,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#rural_muslim",
-            data: "data/rural_muslim.csv",
+            data: 'name,weight\nMales,52870001\nFemales,50634738',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             pointer_color: "white",
@@ -359,7 +397,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#urban_muslim",
-            data: "data/urban_muslim.csv",
+            data: 'name,weight\nMales,35403944\nFemales,33336475',
 
             // optional
             donut_show_total_at_center: "no",
@@ -372,9 +410,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rururb_christian",
-            data: "data/rururb_christian.csv",
+            data: 'name,weight\nRural,16657065\nUrban,11162523',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -385,7 +426,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#rural_christian",
-            data: "data/rural_christian.csv",
+            data: 'name,weight\nMales,8295745\nFemales,8361320',
 
             // optional
             donut_show_total_at_center: "no",
@@ -397,9 +438,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#urban_christian",
-            data: "data/urban_christian.csv",
+            data: 'name,weight\nMales,5455286\nFemales,5707237',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -410,7 +454,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rururb_sikh",
-            data: "data/rururb_sikh.csv",
+            data: 'name,weight\nRural,14930792\nUrban,5902324',
 
             // optional
             donut_show_total_at_center: "no",
@@ -423,9 +467,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#rural_sikh",
-            data: "data/rural_sikh.csv",
+            data: 'name,weight\nMales,8295745\nFemales,8361320',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             pointer_color: "white",
@@ -435,7 +482,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#urban_sikh",
-            data: "data/urban_sikh.csv",
+            data: 'name,weight\nMales,3109383\nFemales,2792941',
 
             // optional
             donut_show_total_at_center: "no",
@@ -448,9 +495,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rururb_buddhist",
-            data: "data/rururb_buddhist.csv",
+            data: 'name,weight\nRural,4814849\nUrban,3628123',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -461,7 +511,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#rural_buddhist",
-            data: "data/rural_buddhist.csv",
+            data: 'name,weight\nMales,2457022\nFemales,2357827',
 
             // optional
             donut_show_total_at_center: "no",
@@ -473,9 +523,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#urban_buddhist",
-            data: "data/urban_buddhist.csv",
+            data: 'name,weight\nMales,1838988\nFemales,1789135',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -486,7 +539,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rururb_jain",
-            data: "data/rururb_jain.csv",
+            data: 'name,weight\nRural,904809\nUrban,3546944',
 
             // optional
             donut_show_total_at_center: "no",
@@ -499,9 +552,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#rural_jain",
-            data: "data/rural_jain.csv",
+            data: 'name,weight\nMales,467577\nFemales,437232',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             pointer_color: "white",
@@ -511,7 +567,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#urban_jain",
-            data: "data/urban_jain.csv",
+            data: 'name,weight\nMales,1810520\nFemales,1736424',
 
             // optional
             donut_show_total_at_center: "no",
@@ -524,9 +580,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rururb_otherReligion",
-            data: "data/rururb_otherReligion.csv",
+            data: 'name,weight\nRural,1643640\nUrban,738727',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -537,7 +596,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#rural_otherReligion",
-            data: "data/rural_otherReligion.csv",
+            data: 'name,weight\nMales,844124\nFemales,799516',
 
             // optional
             donut_show_total_at_center: "no",
@@ -549,9 +608,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#urban_otherReligion",
-            data: "data/urban_otherReligion.csv",
+            data: 'name,weight\nMales,368170\nFemales,370557',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             donut_radius_percent: 100,
@@ -562,7 +624,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#rururb_noReligion",
-            data: "data/rururb_noReligion.csv",
+            data: 'name,weight\nRural,1643640\nUrban,1223663',
 
             // optional
             donut_show_total_at_center: "no",
@@ -575,9 +637,12 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionDonut({
             selector: "#rural_noReligion",
-            data: "data/rural_noReligion.csv",
+            data: 'name,weight\nMales,844124\nFemales,799516',
 
             // optional
+            color_mode: "shade",
+            shade_color: "#7FFF00",
+            label_color:"black",
             donut_show_total_at_center: "no",
             chart_width: 250,
             pointer_color: "white",
@@ -587,7 +652,7 @@ window.PykChartsInit = function (e) {
       k.execute();
     var k = new PykCharts.oneD.electionPie({
             selector: "#urban_noReligion",
-            data: "data/urban_noReligion.csv",
+            data: 'name,weight\nMales,619588\nFemales,604075',
 
             // optional
             donut_show_total_at_center: "no",

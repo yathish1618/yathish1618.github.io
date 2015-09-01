@@ -142,7 +142,7 @@ font-weight: 900;
 
 .content{
 	position: relative;
-	padding: 20% 0 0;
+	padding: 10% 0 0;
 }
 
 .color{
@@ -155,7 +155,7 @@ a.fa.fa-angle-down {
 	border: 2px solid #b4b4b4;
 	border-radius: 50%;
 	font-size: 24px;
-	margin-top: 200px;
+	margin-top: 45px;
 	transition: all 0.5s;
 }
 a.fa.fa-angle-down:hover{
@@ -444,7 +444,7 @@ ol.type li a.active { font-weight: 700; }
 }
 /* Testimonials Section */
 #tf-testimonials{
-	background: url(../img/05.jpg);
+	background: url(../img/chandpal-ghat-in-calcutta.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -544,7 +544,7 @@ button.btn.tf-btn.btn-default {
 nav#footer{
 	background: #222222;
 	color: #ffffff;
-	padding: 20px 0 15px 0;
+	padding: 9px 0 1px 0;
 }
 nav#footer .fnav{ vertical-align: middle;}
 ul.footer-social li{
@@ -580,7 +580,7 @@ table#footer {
     display: none;
 }
 .col-md-3{
-	margin: 20px 0px 20px 0px;
+	padding-top: 30px;
 }
  #tf-about table#footer{
     display: table;
@@ -590,4 +590,8 @@ table#footer {
 }
 #gender_india{
 	top: 63px;
+}
+.lead{
+	margin-bottom: 0px;
+	margin-top: 150px;
 }
