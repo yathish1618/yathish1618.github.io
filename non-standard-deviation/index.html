@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+	<link href='http://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<title>Non-Standard Deviation</title>
+	<meta charset="utf-8">
+	<script type="text/javascript"></script>
+	<!--<script language="javascript" type="text/javascript" src="jquery.js" ></script>-->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+	<script language="javascript" type="text/javascript" src="core.js" ></script>
+	<link href="jquery.highlighttextarea.css" rel="stylesheet">
+    <script src="jquery.highlighttextarea.js"></script>
+	<link href="style.css" rel="stylesheet">
+
+</head>
+
+<body align="center" >
+			<div class="header">
+			<h2>Calculate Non-Standard Deviation</h2>
+			<strong>Enter the Goal: </strong><input value ="1" id="goal" name="goal" size="1"/>
+			<a> <br/> (For example, here 1 indicates a target of jogging for 1 km every day) </a>
+			<br/><br/>
+			<strong>Enter Comma separated data:</strong>
+			<textarea value ="pi" id="pi" name="pi" cols="50" rows="5" >1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</textarea>
+			(In this example, the pattern of distance run each day is entered)<br/><br/>
+			</div>
+			
+			<div class="stats" >
+			<h2>Metrics</h2>
+			Mean: <strong><a id="mean" a>0.47</a></strong>
+			<br/><br/>
+			Median: <strong><a id="median" a>0.00</a></strong>
+			<br/><br/>
+			Mode: <strong><a id="mode">0.00</a></strong>
+			<br/><br/>
+			Mean Deviation: <strong><a id="meanDev" >-0.53</a></strong>
+			<br/><br/>
+			Mean Absolute Deviation: <strong><a id="absDev" >0.53</a></strong>
+			<br/><br/>
+			Standard Deviation: <strong><a id="stdDev" >0.50</a></strong>
+			<br/><br/>
+			Non-Standard Deviation: <strong><a id="nstdDev" >0.73</a></strong>
+			<br/><br/>
+			</div>
+			
+			<div id="info" class="info" onclick="showInfo(1);">
+			<h2>What is it?</h2>
+			<div class="infoContent" onclick="showInfo(2)" hidden>
+			<p>This is a calculator to observe the variation in different standard metrics and in particular a new metric that has been invented - called as non-standard deviation here. The idea is to calculate standard deviation by calcuating the deviation measured against a fixed number, rather than the mean of the data. Read more about it <a href="www.google.com">here</a>.</p>
+			</div>
+			</div>		
+			
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="Standard_deviation_diagram.svg" inkscape:version="0.48.1 "
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="207.5px"
+	 viewBox="0 -7.5 400 207.5" enable-background="new 0 -7.5 400 207.5" xml:space="preserve">
+<sodipodi:namedview  inkscape:cy="100" inkscape:cx="200" inkscape:zoom="1.275" showgrid="false" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" pagecolor="#ffffff" bordercolor="#666666" id="namedview144" inkscape:current-layer="svg2" inkscape:window-maximized="0" inkscape:window-y="87" inkscape:window-x="58" inkscape:window-height="842" inkscape:window-width="1035" inkscape:pageshadow="2" inkscape:pageopacity="0">
+	</sodipodi:namedview>
+<g id="Layer_1">
+	
+		<path id="path89" fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M28.591,164.8c8.299-0.034,16.598-0.102,24.893-0.319c7.932-0.209,15.894-0.545,23.776-1.539
+		c8.345-1.053,16.541-2.801,24.396-5.979c7.827-3.169,14.747-7.974,21.14-13.591c6.215-5.46,11.653-12.17,16.437-18.996
+		c4.922-7.023,9.486-14.309,13.72-21.807c4.365-7.728,8.543-15.562,12.687-23.419c4.061-7.702,8.129-15.395,12.353-23.001
+		c4.128-7.436,8.59-14.82,13.813-21.477c2.706-3.449,5.687-6.525,9.025-9.298c3.247-2.698,7.168-4.219,11.271-4.541
+		c4.162-0.326,8.111,1.804,11.469,4.111c3.434,2.36,6.289,5.678,8.943,8.912c5.467,6.658,9.871,14.247,14.174,21.75
+		c4.17,7.272,8.024,14.744,11.938,22.168c4.122,7.82,8.242,15.642,12.585,23.333c4.214,7.463,8.629,14.824,13.531,21.817
+		c5.027,7.173,10.529,13.917,16.852,19.884c6.212,5.863,13.313,10.437,21.005,13.849c7.404,3.284,15.528,5.075,23.49,6.079
+		c8.182,1.033,16.396,1.478,24.631,1.726c8.144,0.245,16.294,0.302,24.44,0.337c0.414,0.001,0.826,0.003,1.24,0.005"/>
+	<g id="colours">
+		<path id="path34" fill="#2B8CBE" d="M165.641,69.148c-4.144,7.859-8.322,15.692-12.687,23.42
+			c-4.234,7.496-8.798,14.781-13.72,21.806c-4.784,6.826-10.222,13.536-16.437,18.996c-0.743,0.653-1.495,1.292-2.253,1.922V154.8
+			h45.976V67.483C166.227,68.038,165.933,68.593,165.641,69.148z"/>
+		<path id="path36" fill="#74A9CF" d="M101.657,156.961c-7.855,3.18-16.052,4.928-24.396,5.979
+			c-0.896,0.113-1.794,0.216-2.693,0.313v1.547h45.977v-19.508C114.781,150.08,108.574,154.16,101.657,156.961z"/>
+		<path id="path38" fill="#BDC9E1" d="M53.484,164.48c-8.295,0.218-16.594,0.283-24.893,0.318h45.976v-1.547
+			C67.567,164.007,60.515,164.295,53.484,164.48z"/>
+		<path id="path40" fill="#045A8D" d="M212.104,0.017C208,0.339,204.08,1.86,200.832,4.558c-3.339,2.773-6.319,5.849-9.025,9.298
+			c-5.224,6.657-9.685,14.041-13.813,21.477c-3.919,7.058-7.704,14.191-11.473,21.336v87.317h45.976V0
+			C212.365,0.005,212.234,0.006,212.104,0.017z"/>
+		<path id="path42" fill="#045A8D" d="M246.688,44.799c-4.303-7.503-8.707-15.093-14.174-21.75
+			c-2.654-3.234-5.511-6.552-8.943-8.912c-3.25-2.234-7.057-4.295-11.074-4.127v143.984h45.977V66.675
+			C254.611,59.347,250.805,51.976,246.688,44.799z"/>
+		<path id="path44" fill="#74A9CF" d="M346.089,162.732c-7.962-1.004-16.086-2.795-23.49-6.08c-6.541-2.9-12.646-6.65-18.149-11.311
+			V164.8h45.976v-1.594C348.979,163.059,347.533,162.916,346.089,162.732z"/>
+		<path id="path46" fill="#2B8CBE" d="M301.594,142.807c-6.322-5.968-11.824-12.712-16.852-19.885
+			c-4.902-6.994-9.317-14.354-13.531-21.816c-4.343-7.69-8.463-15.514-12.585-23.333c-0.052-0.097-0.103-0.195-0.153-0.292v87.32
+			h45.977v-19.457C303.479,144.521,302.523,143.684,301.594,142.807z"/>
+		<path id="path48" fill="#BDC9E1" d="M395.16,164.795c-8.146-0.035-16.298-0.092-24.44-0.337
+			c-6.782-0.204-13.548-0.563-20.296-1.252v1.594H396.4C395.986,164.798,395.574,164.796,395.16,164.795z"/>
+	</g>
+	<g id="white_lines">
+		
+			<line id="line51" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="74.567" y1="157.5" x2="74.567" y2="164.854"/>
+		
+			<line id="line53" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="120.544" y1="135" x2="120.544" y2="164.854"/>
+		
+			<line id="line55" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="166.52" y1="69" x2="166.52" y2="164.854"/>
+		
+			<line id="line57" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="212.496" y1="20.214" x2="212.496" y2="164.854"/>
+		
+			<line id="line59" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="258.473" y1="69" x2="258.473" y2="164.854"/>
+		
+			<line id="line61" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="304.448" y1="135" x2="304.448" y2="164.854"/>
+		
+			<line id="line63" fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="350.424" y1="157.5" x2="350.424" y2="164.854"/>
+	</g>
+	
+		<line id="line65" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="28.486" y1="164.85" x2="28.486" y2="20.42"/>
+	
+		<line id="line67" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="28.486" y1="164.85" x2="21.59" y2="164.85"/>
+	
+		<line id="line69" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="28.486" y1="128.74" x2="21.59" y2="128.74"/>
+	
+		<line id="line71" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="28.486" y1="92.63" x2="21.59" y2="92.63"/>
+	
+		<line id="line73" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="28.486" y1="56.53" x2="21.59" y2="56.53"/>
+	
+		<line id="line75" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="28.486" y1="20.42" x2="21.59" y2="20.42"/>
+	
+		<text id="text77" transform="matrix(-6.123032e-017 -1 1 -6.123032e-017 15.2158 173.1904)" font-family="'ArialMT'" font-size="12">0.0</text>
+	
+		<text id="text79" transform="matrix(-6.123032e-017 -1 1 -6.123032e-017 15.2148 137.0801)" font-family="'ArialMT'" font-size="12">0.1</text>
+	
+		<text id="text81" transform="matrix(-6.123032e-017 -1 1 -6.123032e-017 15.2148 100.9707)" font-family="'ArialMT'" font-size="12">0.2</text>
+	
+		<text id="text83" transform="matrix(-6.123032e-017 -1 1 -6.123032e-017 15.2148 64.8701)" font-family="'ArialMT'" font-size="12">0.3</text>
+	
+		<text id="text85" transform="matrix(-6.123032e-017 -1 1 -6.123032e-017 15.2148 28.7598)" font-family="'ArialMT'" font-size="12">0.4</text>
+	
+		<line id="line87" fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="28.448" y1="164.85" x2="396.325" y2="164.85"/>
+	
+		<line id="line91" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="74.567" y1="170.561" x2="74.567" y2="164.75"/>
+	
+		<line id="line93" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="120.544" y1="170.561" x2="120.544" y2="164.75"/>
+	
+		<line id="line95" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="166.52" y1="170.561" x2="166.52" y2="164.75"/>
+	
+		<line id="line97" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="212.496" y1="170.561" x2="212.496" y2="164.75"/>
+	
+		<line id="line99" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="258.473" y1="170.561" x2="258.473" y2="164.75"/>
+	
+		<line id="line101" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="304.448" y1="170.561" x2="304.448" y2="164.75"/>
+	
+		<line id="line103" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" x1="350.424" y1="170.561" x2="350.424" y2="164.75"/>
+	<text id="text105" transform="matrix(1 0 0 1 107.896 185.46)" font-family="'ArialMT'" font-size="12">−2σ</text>
+	<text id="text107" transform="matrix(1 0 0 1 155.5142 185.46)" font-family="'ArialMT'" font-size="12">−1σ</text>
+	<text id="text109" transform="matrix(1 0 0 1 252.7461 185.46)" font-family="'ArialMT'" font-size="12">1σ</text>
+	<text id="text111" transform="matrix(1 0 0 1 61.3984 185.46)" font-family="'ArialMT'" font-size="12">−3σ</text>
+	<text id="text113" transform="matrix(1 0 0 1 345.2275 185.46)" font-family="'ArialMT'" font-size="12">3σ</text>
+	<text id="text115" transform="matrix(1 0 0 1 210.6367 185.46)" font-family="'ArialMT'" font-size="12">0</text>
+	<text id="text117" transform="matrix(1 0 0 1 299.4688 185.46)" font-family="'ArialMT'" font-size="12">2σ</text>
+	<text id="text119" transform="matrix(1 0 0 1 174.2163 100.9688)" fill="#FFFFFF" font-family="'ArialMT'" font-size="12">34.1%</text>
+	<text id="text121" transform="matrix(1 0 0 1 219.0986 100.9688)" fill="#FFFFFF" font-family="'ArialMT'" font-size="12">34.1%</text>
+	<text id="text123" transform="matrix(1 0 0 1 264.7637 154.5986)" fill="#FFFFFF" font-family="'ArialMT'" font-size="12">13.6%</text>
+	<text id="text125" transform="matrix(1 0 0 1 313.2637 143.5986)" font-family="'ArialMT'" font-size="12">2.1%</text>
+	<text id="text127" transform="matrix(1 0 0 1 127.3506 150.5986)" fill="#FFFFFF" font-family="'ArialMT'" font-size="12">13.6%</text>
+	<line id="line129" fill="none" stroke="#000000" x1="324.419" y1="146.25" x2="324.419" y2="155.375"/>
+	<text id="text131" transform="matrix(1 0 0 1 352.3467 151.0986)" font-family="'ArialMT'" font-size="12">0.1%</text>
+	<line id="line133" fill="none" stroke="#000000" x1="363.211" y1="153.75" x2="363.211" y2="162.875"/>
+	<text id="text135" transform="matrix(1 0 0 1 50.3857 151.0986)" font-family="'ArialMT'" font-size="12">0.1%</text>
+	<line id="line137" fill="none" stroke="#000000" x1="61.494" y1="153.75" x2="61.494" y2="162.875"/>
+	<text id="text139" transform="matrix(1 0 0 1 90.4683 143.5986)" font-family="'ArialMT'" font-size="12">2.1%</text>
+	<line id="line141" fill="none" stroke="#000000" x1="100.428" y1="146.25" x2="100.428" y2="155.375"/>
+</g>
+<g id="Layer_2">
+</g>
+</svg>
