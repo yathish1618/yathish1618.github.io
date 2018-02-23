@@ -1,5 +1,4 @@
 $(document).ready(function(){
-		//capture input digit and check its value and score
 		$("#pi").on('input',null, function(e)
 			{					
 				var text = $(this).val();
@@ -31,12 +30,6 @@ $(document).ready(function(){
 				document.getElementById('nstdDev').innerHTML=r.ndeviation.toFixed(2);
 			}
 		)
-		/*$('#pi').keydown('input', function (e) {
-			// Ensure that it is a number and stop the keypress
-			if (!((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) || (e.keyCode==188))) {
-				e.preventDefault();
-			}
-		})*/
 	}
 );
 function getMode(a) {
@@ -50,10 +43,6 @@ function getMode(a) {
     }
     return mV;
 }
-function calcScore(curKey,feedPi,checkPiArr) {
-	
-	return score;
-}
 
 function showInfo(divId){
 	if(divId==1){
@@ -61,10 +50,4 @@ function showInfo(divId){
 	else{
 	$('.infoContent').show();
 	}
-}
-
-if(localStorage.getItem("best") == null) {
-    var bestScore = localStorage.setItem("best", 0);
-}else {
-    var bestScore = localStorage.getItem("best");
 }
