@@ -59,17 +59,17 @@ a, a:visited {
 }
 
 .tracks {
-	width: 75%;
-	float: right;
-	vertical-align: top;
+    min-height: 100px;
+    margin-left: 110px;
+    /* margin-top: -100px; */
+    /* float: right; */
+    vertical-align: top;
 }
 
 .cover {
-	width: 25%;
-	float: left;
-	/*text-align: center;
-	padding-top: 40px;*/
-	vertical-align: top;
+	    /* width: 25%; */
+    position: absolute;
+    vertical-align: top;
 }
 
 .credit {
@@ -114,4 +114,39 @@ a, a:visited {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  overflow: hidden;
 }
+
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modal {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+table {
+	table-layout:fixed;
+	width:100%;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
