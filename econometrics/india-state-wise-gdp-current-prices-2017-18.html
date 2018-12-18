@@ -1,0 +1,116 @@
+<html>
+<body>
+ <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+ <div id="title" style="font-weight: bold;">India: State-wise Gross State Domestic Product (GSDP) at Current Prices (Rs. in Crore) 2017-18<br><a href="#notes">States are in descending order of GSDP (see notes below for more).</a><br><br></div>
+ 
+<div id="sankey_multiple"></div>
+
+<div id="notes"><br><br>Notes:
+<ol>
+	<li>Data Source: <a href="http://www.mospi.gov.in/sites/default/files/press_releases_statements/StatewiseDomesticProduct_3aug18.xls">MOSPI - State wise Domestic Product - 3 Aug 18</a>. Data is as on 31.07.2018</li>
+	<li>Cleaned data used to generate this Sankey - <a href="data/india-sgdp-2017-18-current-prices.csv">Link</a>.</li>
+	<li>States have been grouped here based on the <a href="https://en.wikipedia.org/wiki/Zonal_Council">Zonal Councils</a> that they belong to.</li>
+	<li>Data of Goa and Sikkim is provisional.</li>
+	<li>Data of Andhra Pradesh, Haryana, Karnataka, Odisha, Rajasthan, Tripura, Uttarakhand and Delhi is as on 28.02.2018</li>
+	<li>Data of Andhra Pradesh, Arunachal Pradesh, Assam, Goa, Gujarat, Haryana, Himachal Pradesh, Jammu & Kashmir, Kerala, Madhya Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Punjab, Tripura, Andaman & Nicobar Islands and Chandigarh is available only till 2016-17 or earlier. Hence a simple average of the growth in previous 5 years for these states has been taken to project estimate for 2017-18.</li>
+	<li>Data of thre Union Territories namely Dadra and Nagar Haveli, Daman and Diu, Lakshadweep is unavailable. </li>
+	<li>Abbreviations: NE - North East, UT - Union Territory</li>
+</ol></div>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["sankey"]});
+  google.charts.setOnLoadCallback(drawChart);
+ 
+ 	// $("#sankey_multiple").css({"transform":"rotate(90deg)","margin-top": titleHeight});
+	//This function is not being used now.
+	function rotateLabels(){
+	//Rotate each of the labels and put them back in the same position
+		$('[text-anchor~="start"]').each(function() {
+					var x = $(this).attr('x');
+					var y = $(this).attr('y');
+					var t = "rotate(-90 "+x+" "+y+")"; //rotate by -90 about their coordinates
+					$(this).attr({transform:t}); //add the attribute to svg element
+		});
+		$('[text-anchor~="end"]').each(function() {
+					var x = $(this).attr('x');
+					var bboxw = $(this)[0].getBBox().width;
+					var bboxh = $(this)[0].getBBox().height;
+					var y = $(this).attr('y');
+					var t = "rotate(180 "+x+" "+y+") translate("+bboxw+" "+bboxh/2+")"; //translate x and y for alignment
+					$(this).attr({transform:t});
+		});
+	}
+	
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+		['India','South',4930396],
+		['India','West',3885351],
+		['India','Centre',2632717],
+		['India','North',2205889],
+		['India','East',2179739],
+		['India','Union Territory',760983],
+		['India','North East',467742],
+		['West','Maharashtra',2496505],
+		['South','Tamil Nadu',1427074],
+		['Centre','Uttar Pradesh',1375607],
+		['West','Gujarat',1320358],
+		['South','Karnataka ',1268881],
+		['East','West Bengal',1020858],
+		['North','Rajasthan ',840263],
+		['South','Andhra Pradesh ',790217],
+		['South','Telangana',752230],
+		['Centre','Madhya Pradesh',747820],
+		['South','Kerala',691994],
+		['Union Territory','Delhi ',686017],
+		['North','Haryana ',618562],
+		['East','Bihar',487628],
+		['North','Punjab',470997],
+		['East','Odisha ',415982],
+		['Centre','Chhattisgarh',291681],
+		['North East','Assam',285370],
+		['East','Jharkhand',255271],
+		['Centre','Uttarakhand ',217609],
+		['North','Jammu & Kashmir',139869],
+		['North','Himachal Pradesh',136198],
+		['West','Goa ',68488],
+		['North East','Tripura ',39815],
+		['Union Territory','Chandigarh',35383],
+		['Union Territory','Puducherry',32215],
+		['North East','Meghalaya',28997],
+		['North East','Nagaland',24089],
+		['North East','Manipur',23248],
+		['North East','Arunachal Pradesh',22912],
+		['North East','Sikkim ',22248],
+		['North East','Mizoram',21063],
+		['Union Territory','Andaman & Nicobar Islands',7368],
+
+	]);
+
+    // Set chart options
+    var options = {
+	  tooltip: {
+            isHtml: true,
+        },
+        width: $(window).width()*0.97,
+		height: $(window).width()*0.95,
+		sankey: {iterations:0, node: {labelPadding: 15,label :{fontSize: 12}}}
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+	//Capture any of the following events and keep the labels rotated - there's no way to fix the rotations otherwise
+	 //google.visualization.events.addListener(chart, 'ready', rotateLabels);
+    chart.draw(data, options);
+   }
+</script>
+<!--Rotate tooltips as well
+<style>div.google-visualization-tooltip { transform: rotate(-90deg); }</style>-->
+</body>
+</html>
