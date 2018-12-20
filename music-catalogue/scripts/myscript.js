@@ -1,5 +1,5 @@
 //Handle tabs 
-function openCity(evt, cityName,href) {
+function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -10,23 +10,27 @@ function openCity(evt, cityName,href) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(cityName).style.display = "block";
+  console.log(evt);
   evt.currentTarget.className += " active";
 }
 $(document).ready(function() {
 	//Load index by default
 	$("#Contents").load("contents.html");
+	document.getElementById("indexButton").click();
 	//Navigate to appropriate tab for hyperlinks
 	$("body").on('click', 'a',function(event) {
 		var href = $(this).attr('href');
 		if(href.indexOf('#artist_') >= 0){
-			openCity(event, 'Artists');
+			//openCity(event, 'Artists');
+			 document.getElementById("artistsButton").click();
 			if($.trim($("#Artists").html())=='') $("#Artists").load("artists.html",function(){
 				$(document).scrollTop($(href).offset().top);
 			});else{
 			$(document).scrollTop($(href).offset().top);}
 		}
 		if(href.indexOf('#album_') >= 0){
-			openCity(event, 'Albums');
+			//openCity(event, 'Albums');
+			document.getElementById("albumsButton").click();
 			if($.trim($("#Albums").html())=='') $("#Albums").load("albums.html",function(){
 					$('.album_wrapper .cover').each(function () {
 					$(this).insertBefore($(this).prev('.tracks'));
@@ -80,7 +84,7 @@ $(document).ready(function() {
 		ajaxStop: function() { $body.removeClass("loading"); }    
 	});
 });
-
+//I have just picked up this code from a stackoverflow answer
 function callTablesorter() {
 		var ts = $.tablesorter,
     sorting = false,
