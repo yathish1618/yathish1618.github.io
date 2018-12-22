@@ -1,5 +1,6 @@
 <html>
 <head>
+	
     <link rel="shortcut icon" href="../assets/favicon-16x16.png" type="image/x-icon">
     <link rel="icon" href="../assets/favicon-16x16.png" type="image/x-icon">
 </head>
@@ -8,16 +9,16 @@
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
- <div id="title" style="font-weight: bold;">India: State-wise Gross State Domestic Product (GSDP) at Current Prices (Rs. in Crore) 2004-05<br>States are in descending order of GSDP (see <a href="#notes">notes</a> below for more).<br><br></div>
+ <div id="title" style="font-weight: bold;">India: State-wise Gross State Domestic Product (GSDP) at Current Prices (Rs. in Crore) 2010-11<br>States are in descending order of GSDP (see <a href="#notes">notes</a> below for more).<br><br></div>
  
 <div id="sankey_multiple"></div>
 
 <div id="notes"><br><br>Notes:
 <ol>
-	<li>Data Source: <a href="http://planningcommission.nic.in/data/datatable/data_2312/DatabookDec2014%2059.pdf">Databook for Planning Commission (22nd December, 2014)</a>. Data is obtained from CSO (31st October 2014)</li>
-	<li>Cleaned data used to generate this Sankey - <a href="data/india-sgdp-2004-05-current-prices.csv">Link</a>.</li>
+	<li>Data Source: <a href="http://mospi.nic.in/sites/default/files/press_releases_statements/State_%20wise%20_SDP-31.07.2015.xls">State Domestic Product and other aggregates, 2004-05 series (As on 31st July, 2015)</a>. Data is obtained from Directorates of Economics & Statistics of respective State Governments.</li>
+	<li>Cleaned data used to generate this Sankey - <a href="data/india-sgdp-2010-11-current-prices.csv">Link</a>.</li>
 	<li>States have been grouped here based on the <a href="https://en.wikipedia.org/wiki/Zonal_Council">Zonal Councils</a> that they belong to.</li>
-	<li>Data of three Union Territories namely Dadra and Nagar Haveli, Daman and Diu, Lakshadweep is unavailable. </li>
+	<li>Data of the bifurcated states of Andhra Pradesh and Telangana has been disaggregated. </li>
 </ol></div>
 
 <script type="text/javascript">
@@ -50,45 +51,46 @@
     data.addColumn('string', 'To');
     data.addColumn('number', 'Weight');
     data.addRows([
-		['India','South',729727],
-		['India','West',631566],
-		['India','Centre',446416],
-		['India','East',423924],
-		['India','North',371762],
-		['India','Union Territory',114583],
-		['India','North East',87742],
-		['West','Maharashtra',415480],
-		['Centre','Uttar Pradesh',260841],
-		['South','Andhra Pradesh ',224713],
-		['South','Tamil Nadu',219003],
-		['East','West Bengal',208656],
-		['West','Gujarat',203373],
-		['South','Karnataka ',166747],
-		['North','Rajasthan ',127746],
-		['South','Kerala',119264],
-		['Centre','Madhya Pradesh',112927],
-		['Union Territory','Delhi ',100325],
-		['North','Punjab',96839],
-		['North','Haryana ',95795],
-		['East','Bihar',77781],
-		['East','Orissa ',77729],
-		['East','Jharkhand',59758],
-		['North East','Assam',53398],
-		['Centre','Chhattisgarh',47862],
-		['North','Jammu & Kashmir',27305],
-		['Centre','Uttarakhand ',24786],
-		['North','Himachal Pradesh',24077],
-		['West','Goa ',12713],
-		['North East','Tripura ',8904],
-		['Union Territory','Chandigarh',8504],
-		['North East','Meghalaya',6559],
-		['North East','Nagaland',5839],
-		['Union Territory','Puducherry',5754],
-		['North East','Manipur',5133],
-		['North East','Arunachal Pradesh',3488],
-		['North East','Mizoram',2682],
-		['Union Territory','Andaman & Nicobar Islands',1813],
-		['North East','Sikkim ',1739],
+		['India','South',1843134],
+		['India','West',1604274],
+		['India','Centre',1067071],
+		['India','East',989325],
+		['India','North',940698],
+		['India','Union Territory',290202],
+		['India','North East',188856],
+		['West','Maharashtra',1049150],
+		['Centre','Uttar Pradesh',600286],
+		['South','Tamil Nadu',584896],
+		['South','Andhra Pradesh ',583762],
+		['West','Gujarat',521519],
+		['East','West Bengal',460959],
+		['South','Karnataka ',410703],
+		['North','Rajasthan ',338348],
+		['South','Kerala',263773],
+		['Centre','Madhya Pradesh',263396],
+		['North','Haryana ',260621],
+		['Union Territory','Delhi ',252753],
+		['North','Punjab',226204],
+		['East','Bihar',203555],
+		['East','Odisha ',197530],
+		['East','Jharkhand',127281],
+		['Centre','Chhattisgarh',119420],
+		['North East','Assam',112688],
+		['Centre','Uttarakhand ',83969],
+		['North','Jammu & Kashmir',58073],
+		['North','Himachal Pradesh',57452],
+		['West','Goa ',33605],
+		['Union Territory','Chandigarh',20014],
+		['North East','Tripura ',17868],
+		['North East','Meghalaya',14583],
+		['Union Territory','Puducherry',13092],
+		['North East','Nagaland',11759],
+		['North East','Manipur',9137],
+		['North East','Arunachal Pradesh',9021],
+		['North East','Sikkim ',7412],
+		['North East','Mizoram',6388],
+		['Union Territory','Andaman & Nicobar Islands',4343],
+
 	]);
 
     // Set chart options
