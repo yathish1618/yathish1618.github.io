@@ -10,7 +10,6 @@ function openCity(evt, cityName) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(cityName).style.display = "block";
-  console.log(evt);
   evt.currentTarget.className += " active";
 }
 $(document).ready(function() {

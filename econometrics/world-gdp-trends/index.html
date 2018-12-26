@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>World GDP Trends (1960-2017)</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    display: block;
+    transition: opacity .1s ease;
+}
+.btn-primary{
+position: absolute;
+    z-index: 1;
+    left: 0;
+    margin: 10px;
+}
+.carousel-caption {
+  top:20px;
+  color: #000;
+}
+.carousel-control-prev-icon {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+  </style>
+</head>
+
+<body>
+    <div class="container">
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Read Me
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">World GDP Trends (1960-2017)</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <ol>
+              <li>
+                  Use keyboard arrows to navigate to right or left.
+              </li>
+              <li>
+                  All data is sourced from World Bank (<a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?view=map">here</a>). Cleaned data used to generate these charts can be found <a href="">here</a>.
+              </li>
+              <li>Read my related blog post <a href="">here</a>.</li>
+          </ol>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+            <li data-target="#demo" data-slide-to="4"></li>
+            <li data-target="#demo" data-slide-to="5"></li>
+            <li data-target="#demo" data-slide-to="6"></li>
+            <li data-target="#demo" data-slide-to="7"></li>
+            <li data-target="#demo" data-slide-to="8"></li>
+            <li data-target="#demo" data-slide-to="9"></li>
+            <li data-target="#demo" data-slide-to="10"></li>
+            <li data-target="#demo" data-slide-to="11"></li>
+            <li data-target="#demo" data-slide-to="12"></li>
+            <li data-target="#demo" data-slide-to="13"></li>
+            <li data-target="#demo" data-slide-to="14"></li>
+            <li data-target="#demo" data-slide-to="15"></li>
+            <li data-target="#demo" data-slide-to="16"></li>
+            <li data-target="#demo" data-slide-to="17"></li>
+            <li data-target="#demo" data-slide-to="18"></li>
+            <li data-target="#demo" data-slide-to="19"></li>
+            <li data-target="#demo" data-slide-to="20"></li>
+            <li data-target="#demo" data-slide-to="21"></li>
+            <li data-target="#demo" data-slide-to="22"></li>
+            <li data-target="#demo" data-slide-to="23"></li>
+            <li data-target="#demo" data-slide-to="24"></li>
+            <li data-target="#demo" data-slide-to="25"></li>
+            <li data-target="#demo" data-slide-to="26"></li>
+            <li data-target="#demo" data-slide-to="27"></li>
+            <li data-target="#demo" data-slide-to="28"></li>
+            <li data-target="#demo" data-slide-to="29"></li>
+            <li data-target="#demo" data-slide-to="30"></li>
+            <li data-target="#demo" data-slide-to="31"></li>
+            <li data-target="#demo" data-slide-to="32"></li>
+            <li data-target="#demo" data-slide-to="33"></li>
+            <li data-target="#demo" data-slide-to="34"></li>
+            <li data-target="#demo" data-slide-to="35"></li>
+            <li data-target="#demo" data-slide-to="36"></li>
+            <li data-target="#demo" data-slide-to="37"></li>
+            <li data-target="#demo" data-slide-to="38"></li>
+            <li data-target="#demo" data-slide-to="39"></li>
+            <li data-target="#demo" data-slide-to="40"></li>
+            <li data-target="#demo" data-slide-to="41"></li>
+            <li data-target="#demo" data-slide-to="42"></li>
+            <li data-target="#demo" data-slide-to="43"></li>
+            <li data-target="#demo" data-slide-to="44"></li>
+            <li data-target="#demo" data-slide-to="45"></li>
+            <li data-target="#demo" data-slide-to="46"></li>
+            <li data-target="#demo" data-slide-to="47"></li>
+            <li data-target="#demo" data-slide-to="48"></li>
+            <li data-target="#demo" data-slide-to="49"></li>
+            <li data-target="#demo" data-slide-to="50"></li>
+            <li data-target="#demo" data-slide-to="51"></li>
+            <li data-target="#demo" data-slide-to="52"></li>
+            <li data-target="#demo" data-slide-to="53"></li>
+            <li data-target="#demo" data-slide-to="54"></li>
+            <li data-target="#demo" data-slide-to="55"></li>
+            <li data-target="#demo" data-slide-to="56"></li>
+            <li data-target="#demo" data-slide-to="57"></li>
+        </ul>
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/1 .svg" alt="1960">
+                <div class="carousel-caption">
+                    <h3>1960</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/2 .svg" alt="1961">
+                <div class="carousel-caption">
+                    <h3>1961</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/3 .svg" alt="1962">
+                <div class="carousel-caption">
+                    <h3>1962</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/4 .svg" alt="1963">
+                <div class="carousel-caption">
+                    <h3>1963</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/5 .svg" alt="1964">
+                <div class="carousel-caption">
+                    <h3>1964</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/6 .svg" alt="1965">
+                <div class="carousel-caption">
+                    <h3>1965</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/7 .svg" alt="1966">
+                <div class="carousel-caption">
+                    <h3>1966</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/8 .svg" alt="1967">
+                <div class="carousel-caption">
+                    <h3>1967</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/9 .svg" alt="1968">
+                <div class="carousel-caption">
+                    <h3>1968</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/10 .svg" alt="1969">
+                <div class="carousel-caption">
+                    <h3>1969</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/11 .svg" alt="1970">
+                <div class="carousel-caption">
+                    <h3>1970</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/12 .svg" alt="1971">
+                <div class="carousel-caption">
+                    <h3>1971</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/13 .svg" alt="1972">
+                <div class="carousel-caption">
+                    <h3>1972</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/14 .svg" alt="1973">
+                <div class="carousel-caption">
+                    <h3>1973</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/15 .svg" alt="1974">
+                <div class="carousel-caption">
+                    <h3>1974</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/16 .svg" alt="1975">
+                <div class="carousel-caption">
+                    <h3>1975</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/17 .svg" alt="1976">
+                <div class="carousel-caption">
+                    <h3>1976</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/18 .svg" alt="1977">
+                <div class="carousel-caption">
+                    <h3>1977</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/19 .svg" alt="1978">
+                <div class="carousel-caption">
+                    <h3>1978</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/20 .svg" alt="1979">
+                <div class="carousel-caption">
+                    <h3>1979</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/21 .svg" alt="1980">
+                <div class="carousel-caption">
+                    <h3>1980</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/22 .svg" alt="1981">
+                <div class="carousel-caption">
+                    <h3>1981</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/23 .svg" alt="1982">
+                <div class="carousel-caption">
+                    <h3>1982</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/24 .svg" alt="1983">
+                <div class="carousel-caption">
+                    <h3>1983</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/25 .svg" alt="1984">
+                <div class="carousel-caption">
+                    <h3>1984</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/26 .svg" alt="1985">
+                <div class="carousel-caption">
+                    <h3>1985</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/27 .svg" alt="1986">
+                <div class="carousel-caption">
+                    <h3>1986</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/28 .svg" alt="1987">
+                <div class="carousel-caption">
+                    <h3>1987</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/29 .svg" alt="1988">
+                <div class="carousel-caption">
+                    <h3>1988</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/30 .svg" alt="1989">
+                <div class="carousel-caption">
+                    <h3>1989</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/31 .svg" alt="1990">
+                <div class="carousel-caption">
+                    <h3>1990</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/32 .svg" alt="1991">
+                <div class="carousel-caption">
+                    <h3>1991</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/33 .svg" alt="1992">
+                <div class="carousel-caption">
+                    <h3>1992</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/34 .svg" alt="1993">
+                <div class="carousel-caption">
+                    <h3>1993</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/35 .svg" alt="1994">
+                <div class="carousel-caption">
+                    <h3>1994</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/36 .svg" alt="1995">
+                <div class="carousel-caption">
+                    <h3>1995</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/37 .svg" alt="1996">
+                <div class="carousel-caption">
+                    <h3>1996</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/38 .svg" alt="1997">
+                <div class="carousel-caption">
+                    <h3>1997</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/39 .svg" alt="1998">
+                <div class="carousel-caption">
+                    <h3>1998</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/40 .svg" alt="1999">
+                <div class="carousel-caption">
+                    <h3>1999</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/41 .svg" alt="2000">
+                <div class="carousel-caption">
+                    <h3>2000</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/42 .svg" alt="2001">
+                <div class="carousel-caption">
+                    <h3>2001</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/43 .svg" alt="2002">
+                <div class="carousel-caption">
+                    <h3>2002</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/44 .svg" alt="2003">
+                <div class="carousel-caption">
+                    <h3>2003</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/45 .svg" alt="2004">
+                <div class="carousel-caption">
+                    <h3>2004</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/46 .svg" alt="2005">
+                <div class="carousel-caption">
+                    <h3>2005</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/47 .svg" alt="2006">
+                <div class="carousel-caption">
+                    <h3>2006</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/48 .svg" alt="2007">
+                <div class="carousel-caption">
+                    <h3>2007</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/49 .svg" alt="2008">
+                <div class="carousel-caption">
+                    <h3>2008</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/50 .svg" alt="2009">
+                <div class="carousel-caption">
+                    <h3>2009</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/51 .svg" alt="2010">
+                <div class="carousel-caption">
+                    <h3>2010</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/52 .svg" alt="2011">
+                <div class="carousel-caption">
+                    <h3>2011</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/53 .svg" alt="2012">
+                <div class="carousel-caption">
+                    <h3>2012</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/54 .svg" alt="2013">
+                <div class="carousel-caption">
+                    <h3>2013</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/55 .svg" alt="2014">
+                <div class="carousel-caption">
+                    <h3>2014</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/56 .svg" alt="2015">
+                <div class="carousel-caption">
+                    <h3>2015</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/57 .svg" alt="2016">
+                <div class="carousel-caption">
+                    <h3>2016</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/58 .svg" alt="2017">
+                <div class="carousel-caption">
+                    <h3>2017</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+    </div>
+</body>
+<script type="text/javascript">
+$(document).bind('keydown', function(e) {
+    if (e.which == 39) {
+        $('.carousel').carousel('next');
+    } else if (e.which == 37) {
+        $('.carousel').carousel('prev');
+    }
+});
+$(document).ready(function() {
+    $(".carousel-inner img").css("max-height", $(window).height());
+    //$(".carousel-inner img").css("max-width", $(window).width()*0.80);
+    /*
+    * Replace all SVG images with inline SVG
+    */
+    $('img').each(function() {
+        var $img = jQuery(this);
+        var imgID = $img.attr('id');
+        var imgClass = $img.attr('class');
+        var imgURL = $img.attr('src');
+        var imgStyle = $img.attr('style');
+        jQuery.get(imgURL, function(data) {
+            // Get the SVG tag, ignore the rest
+            var $svg = jQuery(data).find('svg');
+
+            // Add replaced image's ID to the new SVG
+            if (typeof imgID !== 'undefined') {
+                $svg = $svg.attr('id', imgID);
+            }
+            // Add replaced image's classes to the new SVG
+            if (typeof imgClass !== 'undefined') {
+                $svg = $svg.attr('class', imgClass + ' replaced-svg');
+            }
+            // Add replaced image's inline style to the new SVG
+            if (typeof imgStyle !== 'undefined') {
+                $svg = $svg.attr('style', imgStyle);
+            }
+
+            // Remove any invalid XML tags as per http://validator.w3.org
+            $svg = $svg.removeAttr('xmlns:a');
+
+            // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+            if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+                $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+            }
+            // Replace image with new SVG
+            $img.replaceWith($svg);
+        }, 'xml');
+    });
+
+});
+</script>
+</html>
