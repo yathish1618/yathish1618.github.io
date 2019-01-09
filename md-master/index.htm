@@ -6,19 +6,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Style-Type" content="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
-	<link rel="stylesheet" href="font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="font-awesome.min.css" type="text/css">
     <script src="papaparse.min.js"></script>
     <script src="script.js"></script>
 </head>
 
 <body onload="openForm()">
     <div align="center">
-        <table id="table" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;table-layout:fixed;width: 494pt;">
+        <table id="table" class="main" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;table-layout:fixed;width: 494pt;">
             <tbody id="tbody">
             </tbody>
         </table>
     </div>
     <button class="open-button" onclick="openForm()"><i style="font-size:24px" class="fa">&#xf013;</i></button>
+    <button class="open-search" onclick="openSearch()"><i style="font-size:24px" class="fa">&#xf002;</i></button>
     <div class="form-popup" id="myForm">
         <form action="javascript:;" class="form-container" onsubmit="return processConfig(this);">
             <button type="button" class="cancel" onclick="closeForm()"><i style="font-size:24px" class="fa">&#xf00d;</i></button>
@@ -73,8 +74,25 @@
             <button type="submit" class="btn">Submit</button>
         </form>
     </div>
-
-<div class="modal"><!-- Place at bottom of page --></div>
+    <div class="search-popup" id="searchForm">
+        <form action="javascript:;" class="form-container" onsubmit="return searchNext();">
+            <button type="button" class="cancel" onclick="closeSearch()"><i style="font-size:24px" class="fa">&#xf00d;</i></button>
+            <input type="text" placeholder="Search.." id="search" onchange="resetSearch()">
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <table id="searchResults" class="searchResults" style="table-layout: fixed;width: 100%;padding-right: 57px;">
+                <tbody>
+                    <tr>
+                        <td name="prevSearch" class="prevSearch" onclick="searchPrev()"><i style="font-size:24px" class="fa">&#xf104;</i></td>
+                        <td name="currentSearch" class="currentSearch">Enter query</td>
+                        <td name="nextSearch" class="nextSearch" onclick="searchNext()"><i style="font-size:24px" class="fa">&#xf105;</i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="modal">
+        <!-- Place at bottom of page -->
+    </div>
 </body>
 
 </html>
