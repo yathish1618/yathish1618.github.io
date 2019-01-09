@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mddddd</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="font-awesome.min.css" type="text/css">
+    <script src="papaparse.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="openForm()">
+    <div align="center">
+        <table id="table" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;table-layout:fixed;width: 494pt;">
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    <button class="open-button" onclick="openForm()"><i style="font-size:24px" class="fa">&#xf013;</i></button>
+    <div class="form-popup" id="myForm">
+        <form action="javascript:;" class="form-container" onsubmit="return processConfig(this);">
+            <button type="button" class="cancel" onclick="closeForm()"><i style="font-size:24px" class="fa">&#xf00d;</i></button>
+            <label for="csv-file"><b>Input file:</b></label>
+            <input type="file" id="csv-file" name="files" onchange="changeInputFile()" />
+            <br>
+            <label for="by"><b>Years:</b></label>
+            <input type="text" placeholder="Used only if date is empty." name="by" value="3"><br>
+            <label for="dt"><b>Enter Date:</b></label>
+            <input type="text" placeholder="Format: 23 April 2016" name="dt" value="">
+            <table style="table-layout: fixed;width: 100%;padding-bottom: 10px;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="chkbox" value="1" checked> WhatsApp<br>
+                        <td class="tmmd1"></td>
+                        <td class="tmyd1"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" class="chkbox" value="2" checked> Hangouts Personal<br>
+                        </td>
+                        <td class="tmmd2"></td>
+                        <td class="tmyd2"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" class="chkbox" value="3" checked> Hangouts EI<br>
+                        </td>
+                        <td class="tmmd3"></td>
+                        <td class="tmyd3"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" class="chkbox" value="4" checked> SMS<br>
+                        </td>
+                        <td class="tmmd4"></td>
+                        <td class="tmyd4"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" class="chkbox" value="5" checked> Gmail Personal<br>
+                        </td>
+                        <td class="tmmd5"></td>
+                        <td class="tmyd5"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" class="chkbox" value="6" checked> Gmail EI<br></td>
+                        </td>
+                        <td class="tmmd6"></td>
+                        <td class="tmyd6"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" id="loadAll" class="btn" onclick="loadEverything()">Load Everything</button>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+
+<div class="modal"><!-- Place at bottom of page --></div>
+</body>
+
+</html>
