@@ -420,3 +420,7 @@ body.loading .modal {
 body.loading .modal {
     display: block;
 }
+
+.highlight {
+  background-color: yellow;
+}

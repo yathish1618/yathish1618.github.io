@@ -23,25 +23,28 @@ function parseInputCSV(data) {
         download: true,
         complete: function(results) {
             tableDataOrig = results.data;
-
-            msgArray = tableDataOrig.map(function(value, index) { return value[3]; });
             inputParsed = 1;
             processConfig(data);
         }
     });
 }
 
+function clearTbody() {
+    var node = document.getElementById("tbody");
+    while (node.hasChildNodes()) {
+        node.removeChild(node.lastChild);
+    } //clear any existing rows 
+}
+
 function processConfig(data) {
+    resetSearch();
     if (inputChanged) {
         parseInputCSV(data);
         inputChanged = 0;
     }
     if (inputParsed) {
         closeForm();
-        var node = document.getElementById("tbody");
-        while (node.hasChildNodes()) {
-            node.removeChild(node.lastChild);
-        } //clear any existing rows    
+        clearTbody();
         document.body.classList.add("loading");
         var checkedFlags = getCheckedFlags();
         if (checkedFlags.length == 6) {
@@ -52,9 +55,11 @@ function processConfig(data) {
         dates = tableData.map(function(value, index) { return value[8]; });
         dates = dates.map(x => new Date(x));
         var index = closestDate(dates, data.by.value, data.dt.value);
-        topRow = (index - 500 >= 0) ? index - 500 : 0;
-        bottomRow = (index + 500 <= tableData.length) ? index + 500 : tableData.length;
+        topRow = (index - 200 >= 0) ? index - 200 : 0;
+        bottomRow = (index + 200 <= tableData.length) ? index + 200 : tableData.length;
+        var t0 = performance.now();
         createTable(tableData.slice(topRow, bottomRow), 1);
+        var t1 = performance.now();console.log("createTable took"+(t1-t0)+"seconds");
         //Scroll to appropriate row since we're prepending/appending rows
         var tr = table.getElementsByTagName("tr")[index - topRow];
         tr.scrollIntoView(true);
@@ -78,10 +83,7 @@ function loadEverything() {
     if (inputParsed) {
         document.body.classList.add("loading");
         closeForm();
-        var node = document.getElementById("tbody");
-        while (node.hasChildNodes()) {
-            node.removeChild(node.lastChild);
-        } //clear any existing rows  
+        clearTbody();
         tableData = tableDataOrig;
         topRow = 0;
         bottomRow = tableData.length;
@@ -200,7 +202,7 @@ window.onscroll = function(ev) {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         if (bottomRow != tableData.length) {
             var bottomRowTemp = bottomRow;
-            bottomRow += 500;
+            bottomRow += 200;
             if (bottomRow > tableData.length) bottomRow = tableData.length;
             createTable(tableData.slice(bottomRowTemp, bottomRow), 1);
         }
@@ -209,7 +211,7 @@ window.onscroll = function(ev) {
     if (window.scrollY < 10) {
         if (topRow != 0) {
             var topRowTemp = topRow;
-            topRow -= 500;
+            topRow -= 200;
             if (topRow < 0) topRow = 0;
             createTable(tableData.slice(topRow, topRowTemp), 2);
         }
@@ -228,6 +230,7 @@ function closeForm() {
 
 function openSearch() {
     document.getElementById("searchForm").style.display = "block";
+    document.getElementById("search").focus();
     closeForm();
 }
 
@@ -266,7 +269,10 @@ function searchNext() {
             populateSearchResult(searchMatches[searchCounter]);
         }
     } else {
-        if (string != "") searchMatches = getMatches(msgArray, string);
+        if (string != ""){
+            msgArray = tableData.map(function(value, index) { return value[3]; });
+            searchMatches = getMatches(msgArray, string);
+        } 
         if (searchMatches.length > 0) {
             searchCounter = 0;
             populateSearchResult(searchMatches[searchCounter]);
@@ -286,25 +292,35 @@ function searchPrev() {
 }
 
 function populateSearchResult(ind) {
-    var node = document.getElementById("tbody");
-    while (node.hasChildNodes()) {
-        node.removeChild(node.lastChild);
-    }
+    clearTbody();
     var index = ind;
     topRow = (index - 100 >= 0) ? index - 100 : 0;
     bottomRow = (index + 100 <= tableData.length) ? index + 100 : tableData.length;
     createTable(tableData.slice(topRow, bottomRow), 1);
-    //Scroll to appropriate row since we're prepending/appending rows
-    var tr = table.getElementsByTagName("tr")[index - topRow];
-    tr.scrollIntoView(true);
+    //To highilght search matches
+    var string = document.getElementById('search').value;
+    var toHighlight = table.getElementsByTagName("tr")[index - topRow].cells[3].innerHTML;
+    var highlightedHTML = toHighlight.replace(new RegExp('('+string+')', "gi"), "<span class='highlight'>$1</span>"); //"gi" is to replace all matches (global) and case insensitive (i); Also used capturing group to retain case
+    table.getElementsByTagName("tr")[index - topRow].cells[3].innerHTML = highlightedHTML;
+    //Scroll with a few rows at the top - corner case handled
+    if (index - topRow - 5 >= 0) {
+        var tr = table.getElementsByTagName("tr")[index - topRow - 5];
+        tr.scrollIntoView(true);
+    } else {
+
+        var tr = table.getElementsByTagName("tr")[index - topRow];
+        tr.scrollIntoView(true);
+    }
+    //Update search box display counter
     var cs = document.getElementsByClassName('currentSearch');
     cs[0].innerText = searchMatches.indexOf(index) + 1 + "/" + searchMatches.length;
 }
 
 function getMatches(a, regex) {
     var matches = [];
+    var regr = new RegExp(regex,"i")
     for (var i = 0; i < a.length - 1; i++) {
-        if (a[i].search(regex) > -1) {
+        if (a[i].search(regr) > -1) { //"i" is for case insensitive search
             matches.push(i);
         };
     };
