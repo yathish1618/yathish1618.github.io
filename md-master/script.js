@@ -5,9 +5,8 @@ var inputChanged = 0;
 var inputParsed = 0;
 var searchMatches = [],
     msgArray;
-var searchCounter = -1; //search counter
-//openForm();
-//mapArray has imgur image links
+var searchCounter = -1;
+//mapArray has image links
 Papa.parse("link-substitutions.csv", {
     download: true,
     complete: function(results) {
@@ -19,7 +18,6 @@ Papa.parse("link-substitutions.csv", {
 function parseInputCSV(data) {
     var file = document.getElementById('csv-file').files[0];
     Papa.parse(file, {
-        //Papa.parse("cleaned_chat_with_HTML_23042018.csv", {  
         download: true,
         complete: function(results) {
             tableDataOrig = results.data;
@@ -54,12 +52,14 @@ function processConfig(data) {
         }
         dates = tableData.map(function(value, index) { return value[8]; });
         dates = dates.map(x => new Date(x));
+
         var index = closestDate(dates, data.by.value, data.dt.value);
+
         topRow = (index - 200 >= 0) ? index - 200 : 0;
         bottomRow = (index + 200 <= tableData.length) ? index + 200 : tableData.length;
-        var t0 = performance.now();
+
         createTable(tableData.slice(topRow, bottomRow), 1);
-        var t1 = performance.now();console.log("createTable took"+(t1-t0)+"seconds");
+
         //Scroll to appropriate row since we're prepending/appending rows
         var tr = table.getElementsByTagName("tr")[index - topRow];
         tr.scrollIntoView(true);
@@ -107,24 +107,25 @@ function filterTableData(tableDataOrig, checkedFlags) {
 }
 
 function closestDate(dates, backYear, intrstdDt) {
+    var datesAsNum = dates.map(Number);
     if (intrstdDt == "") {
-        var sdf = new Date();
-        sdf.setHours(0, 0, 0, 0); //searchDateForward
-        var sdb = new Date();
-        sdb.setHours(0, 0, 0, 0); //searchDateBackward
+        var sdf = new Date(); //searchDateForward
+        var sdb = new Date(); //searchDateBackward
         sdf.setFullYear(sdf.getFullYear() - backYear);
         sdb.setFullYear(sdb.getFullYear() - backYear);
     } else {
-        var sdf = new Date(intrstdDt);
+        var sdf = new Date(intrstdDt); 
         var sdb = new Date(intrstdDt);
     }
-    if (dates.map(Number).indexOf(+sdf) > -1) return dates.map(Number).indexOf(+sdf);
+    sdf.setHours(0, 0, 0, 0); //must ignore time of the dat. coz compare only dates
+    sdb.setHours(0, 0, 0, 0);
+    if (datesAsNum.indexOf(+sdf) > -1) return datesAsNum.indexOf(+sdf);
     var i = 1; //This counter is just to avoid infinite loop.
     do {
         sdf.setDate(sdf.getDate() + 1); //Go forward one day
-        a = dates.map(Number).indexOf(+sdf); //This mapping has to be done along with + to serialise. Else indexOf won't work for objects
+        a = datesAsNum.indexOf(+sdf); //This mapping has to be done along with + to serialise. Else indexOf won't work for objects
         sdb.setDate(sdb.getDate() - 1); //Go back one day
-        b = dates.map(Number).indexOf(+sdb);
+        b = datesAsNum.indexOf(+sdb);
         i++;
     }
     while (a == -1 && b == -1 && i < 365); //Search for a max of 1 year forward or backward
