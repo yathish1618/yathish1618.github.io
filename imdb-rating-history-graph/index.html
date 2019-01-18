@@ -1,0 +1,32 @@
+<html>
+  <title>IMDb Rating History</title>
+  <meta charset="utf-8">
+<head>
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="shortcut icon" href="../assets/favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon-16x16.png" type="image/x-icon">
+</head>
+
+<body>
+    <h1>IMDb User Rating History Graph</h1>
+    <!--Make sure the form has the autocomplete function switched off:-->
+    <form autocomplete="off" action="javascript:;" onsubmit="return process();" class="searchform">
+        <div class="autocomplete" style="width:300px;">
+            <input id="myInput" type="text" name="myCountry" placeholder="Search for a movie">
+        </div>
+        <input type="submit" class="disabledSubmit" disabled>
+    </form>
+    <a id="loadingInfo"></a>
+    <br><br>
+    <div id="wrapper">
+        <div id="chart_div">&nbsp;</div>
+        <div id="poster"><img></div>
+    </div>
+    <div id="more"><a href="https://github.com/yathish1618/yathish1618.github.io/imdb-rating-history-graph/ReadMe.md" target="_blank">Read me</a>  |  <a onclick="downloadCSV()" href="" id="csv">Download data (csv)</a></div>
+</body>
+<script type="text/javascript" src="IMDbsearch.js"></script>
+
+</html>
