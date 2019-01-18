@@ -13,4 +13,4 @@ Things to do (Minor):
 Things to do (Major):
 - Multiline chart implementation
 - Search functionality to be expanded to include non-titles
-- Look for alternatives to Whateverorigin to speed things up
+- Look for alternatives to Whateverorigin to speed things up (ex. simple jquery plugin - http://www.ajax-cross-origin.com/)

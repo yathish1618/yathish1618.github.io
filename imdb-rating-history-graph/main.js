@@ -51,7 +51,7 @@ function callWayBackMachine(timestamp) {
 }
 
 function getRatingData(url, date) {
-    $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent(url) + '&callback=?',
+    $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(url) + '&callback=?',
         function(data) {
             if($('#loadingInfo').text()=="Done!" || $('#loadingInfo').text()==""){
                 $('#loadingInfo').text("");
