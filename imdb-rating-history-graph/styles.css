@@ -101,3 +101,15 @@ input[type=submit] {
 h1{
   text-align: center;
 }
+
+.modal {
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    width: 600px;
+    height: 400px;
+    background: rgba( 255, 255, 255, .3 ) 
+ url(http://i.stack.imgur.com/FhHRx.gif) 
+ 50% 50% 
+ no-repeat;
+}

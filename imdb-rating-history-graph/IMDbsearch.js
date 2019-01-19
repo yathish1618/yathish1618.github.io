@@ -1,6 +1,7 @@
 var index;
 var searchArr = []; //contains results of search suggestion list from IMDb search ajax
 var arr = []; //Just a list of title suggestions stringified - to populate in autocomplete suggestion list
+var IMDbAjax;
 
 function autocomplete(inp) {
     /*the autocomplete function takes two arguments,
@@ -8,23 +9,25 @@ function autocomplete(inp) {
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
     inp.addEventListener("input", function(e) {
-      //Disable submit button
-        document.querySelectorAll('input[type=submit]')[0].disabled=true;
+        //Disable submit button
+        document.querySelectorAll('input[type=submit]')[0].disabled = true;
         document.querySelectorAll('input[type=submit]')[0].classList.add("disabledSubmit");
         var a, b, i, val = this.value;
-        var node=this;
+        var node = this;
         val = val.replace(/\s/g, '_'); //replace space with underscore
         val = val.replace(/\(|\)|\,/g, ''); //replace parantheses or commas with nothing - that's what IMDb does
+                    // if (IMDbAjax) IMDbAjax.abort(); //abort any previous pending requests;
+
         // IMDb response needs a function to be defined of the format imdb$foo for searching foo
         // Below code defines a global function of the pattern imdb$foo even as the user types a search keyword
         // To avoid global scope pollution see this answer: https://stackoverflow.com/a/22880416/4401622
         // going ahead with this for now
         name = 'imdb$' + val;
         window[name] = function(data) {
+            if(data['d']===undefined) return false; //no data returned by imdb
             searchArr = data['d'];
             arr = [];
             data['d'].forEach(function(entry) { arr.push(entry['l'] + ' (' + entry['y'] + ')'); });
-
             /*close any already open lists of autocompleted values*/
             closeAllLists();
             if (!val) { return false; } currentFocus = -1;
@@ -50,7 +53,7 @@ function autocomplete(inp) {
                     /*insert the value for the autocomplete text field:*/
                     document.getElementById("myInput").value = this.getElementsByTagName("input")[0].value;
                     index = this.getElementsByTagName("input")[0].getAttribute('index');
-                    document.querySelectorAll('input[type=submit]')[0].disabled=false;
+                    document.querySelectorAll('input[type=submit]')[0].disabled = false;
                     document.querySelectorAll('input[type=submit]')[0].classList.remove("disabledSubmit");
                     /*close the list of autocompleted values,
                     (or any other open lists of autocompleted values:*/
@@ -61,12 +64,10 @@ function autocomplete(inp) {
             }
         }
 
-        $.ajax({
+        IMDbAjax = $.ajax({
             dataType: "jsonp",
             url: 'https://v2.sg.media-imdb.com/suggests/titles/' + val.slice(0, 1).toLowerCase() + '/' + val + '.json',
-            success: function(data) {
-                console.log("ahem");
-            }
+            success: function(data) {}
         });
 
     });

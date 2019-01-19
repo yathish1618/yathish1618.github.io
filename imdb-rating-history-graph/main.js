@@ -4,24 +4,39 @@ var imdbhtml, i;
 var movieYear;
 var movieName;
 var poster;
+var waybackAjax,whateveroriginAjax;
 var fetchedDate = "";
 var dataArr = [
     []
 ];
 
-var dates = [20010101, 20010601, 20020101, 20020601, 20030101, 20030601, 20040101, 20040601, 20050101, 20050601, 20060101, 20060601, 20070101, 20070601, 20080101, 20080601, 20090101, 20090601, 20100101, 20100601, 20110101, 20110601, 20120101, 20120601, 20130101, 20130601, 20140101, 20140601, 20150101, 20150601, 20160101, 20160601, 20170101, 20170601, 20180101, 20180601, 20190101]; //array to be updated every 6 months
+var dates = populateDates();
+function populateDates(){ //6 month intervals
+    var today = new Date();
+    var upperLimit = parseInt(today.getFullYear().toString()+(("0" + today.getMonth()+1)).slice(-2)+"01");
+    var dates = []; var year = 2001; var c=0;
+    do {
+      if(c==0){dates.push(parseInt(year.toString()+"0101"));c=1}else{dates.push(parseInt(year.toString()+"0601"));c=0;year++;}
+    }
+    while (dates[dates.length-1] <= upperLimit);
+    var dummy = dates.pop(); //remove last item in array because of do while extra thingy
+    return dates;
+}
 //IMDb founded in 1990 and Waybackmachine in 2001
 
 function process() {
-    $('#loadingInfo').text("Loading... ");
+    $('#loadingInfo').html("Loading... ");
     imdb_url = 'https://www.imdb.com/title/' + searchArr[index]["id"] + '/';
     movieYear = searchArr[index]["y"];
     movieName = searchArr[index]["l"];
     poster = searchArr[index]["i"][0]; //link to hi-res poster
     poster = poster.replace("._V1_.jpg", "._V1_UX182_CR0,0,182,268_AL__QL50.jpg"); //to get lower resolution poster
     $('#poster img').attr("src",poster);
+    $('#poster a').attr("href",imdb_url);
     i = dates.length - 1;
     $('#chart_div').empty(); //remove existing chart, if any
+    if(waybackAjax) waybackAjax.abort(); //abort any previous pending requests
+    if(whateveroriginAjax) whateveroriginAjax.abort();
     //reset data array
     dataArr = [
         []
@@ -30,11 +45,18 @@ function process() {
 }
 
 function callWayBackMachine(timestamp) {
-    $.ajax({
+    waybackAjax = $.ajax({
         dataType: "jsonp",
         url: 'https://archive.org/wayback/available?url=' + encodeURIComponent(imdb_url) + '&timestamp=' + timestamp,
         success: function(data) {
-            var date = data["archived_snapshots"]["closest"]["timestamp"];
+            try{
+                var date = data["archived_snapshots"]["closest"]["timestamp"];
+            } catch(e){
+                $('#loadingInfo').html("No archives found!");
+                console.log("No archives found for "+movieName+" ("+imdb_url+") for"+timestamp);
+                waybackAjax.abort();
+                return false;
+            }
             var url = data["archived_snapshots"]["closest"]["url"];
             if (fetchedDate != date) { //avoid calls to same archived page
                 getRatingData(url, date);
@@ -44,19 +66,25 @@ function callWayBackMachine(timestamp) {
                 i--;
                 callWayBackMachine(dates[i]);
             } else {
-                $('#loadingInfo').text("Done!");
+                if($('#loadingInfo').html()!="No rating data found!") $('#loadingInfo').html("Done!");
+                $('#loading').hide();
             }
+        },
+        error: function (data) {
+            $('#loadingInfo').html("Connectivity issue. Please submit again!");
+            if(waybackAjax) waybackAjax.abort();
         }
     });
 }
 
 function getRatingData(url, date) {
-    $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(url) + '&callback=?',
+        $('#loading').show();
+        $('#loadingInfo').html("Fetching data from " + Math.floor(date / 10000000000));
+        whateveroriginAjax = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(url) + '&callback=?',
         function(data) {
-            if($('#loadingInfo').text()=="Done!" || $('#loadingInfo').text()==""){
-                $('#loadingInfo').text("");
-            } else{
-                $('#loadingInfo').text("Fetching data from " + Math.floor(date / 10000000000));
+            if($('#loadingInfo').html()=="Done!" || $('#loadingInfo').html()=="&nbsp;"){
+                $('#loadingInfo').html("&nbsp;");
+                $('#loading').hide();
             }
             imdbhtml = $($.parseHTML(data.contents));
             results = fetcher(imdbhtml, date);
@@ -81,7 +109,9 @@ function getRatingData(url, date) {
                     return (a[index] === b[index] ? 0 : (a[index] < b[index] ? -1 : 1));
                 };
             })(0)); //Sort array by first column (index=0) i.e., by date; Else charts goes bollocks
-
+            if(dataArr[0]=="") {
+                $('#loadingInfo').html("No rating data found!"); return false;
+            }
             graphData.addRows(dataArr);
             var materialOptions = {
                 tooltip: { trigger: 'focus', isHtml:true },
@@ -142,8 +172,11 @@ function fetcher(string, date) {
         try{
             result = patterns(c+1,string,date);
         } catch (e) {
-            console.log(date);
+            try{
             result = patterns(c-1,string,date);
+        } catch (e) {
+            console.log("Unable to retrieve data of "+movieName+" ("+imdb_url+") for"+date);
+            }
         }
     }
     return result;
