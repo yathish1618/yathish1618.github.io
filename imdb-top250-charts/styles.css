@@ -1,0 +1,96 @@
+.prevSearch,
+.nextSearch {
+    background: aliceblue;
+    cursor: pointer;
+    text-align: center;
+    width: 10%;
+    opacity: 0.5;
+}
+
+.prevSearch:hover,
+.nextSearch:hover {
+    opacity: 1;
+}
+
+.nextSearch::after {
+    content: attr(data-content);
+    position: absolute;
+    top: 48.5vh;
+    right: 5px;
+}
+
+.prevSearch::before {
+    content: attr(data-content);
+    position: absolute;
+    top: 48.5vh;
+    left: 5px;
+}
+
+.nextSearch {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.prevSearch {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#graphic {
+    display: block;
+    text-align: center;
+}
+
+#currentSearch {
+    text-align: center;
+}
+
+.fa {
+    font-size: 4em;
+    margin-top: 45vh;
+}
+
+#flyout {
+    display: none;
+}
+
+.flyout {
+    display: block !important;
+    position: fixed;
+    overflow: hidden;
+}
+
+.bar {
+    pointer-events: all;
+}
+
+body {
+    font: 14px Arial;
+}
+
+#more {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.active{
+    fill-opacity:1 !important;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}

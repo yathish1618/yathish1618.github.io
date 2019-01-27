@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <title>IMDb Top 250 Trends</title>
+    <meta charset="utf-8">
+    <meta name="description" content="IMDB Top 250 Over the years visualised bar chart">
+  <meta name="keywords" content="d3,imdb,top 250,bar chart,interactive,svg,data">
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="shortcut icon" href="../assets/favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon-16x16.png" type="image/x-icon">
+</head>
+
+<body>
+    <a name="prevSearch" class="prevSearch" onclick="searchPrev()"><i class="fa">&#xf104;</i></a>
+    <h2 id="currentSearch" class="currentSearch">IMDb Top 250 in 1996</h2>
+    <div id="more"><a href="https://github.com/yathish1618/yathish1618.github.io/blob/master/imdb-top250-charts/README.md" target="_blank">Read me</a>  |  <a href="1996-2018utf8.csv" id="csv" download>Download data (csv)</a> | <a href="https://yathish1618.github.io/" target="_blank">Home</a></div>
+    <a name="nextSearch" class="nextSearch" onclick="searchNext()"><i class="fa">&#xf105;</i></a>
+    </tr>
+    </tbody>
+    </table>
+    <div id="graphic"></div>
+    <div id="flyout">&nbsp;</div>
+    <script src="d3script.js"></script>
+</body>
+
+</html>
