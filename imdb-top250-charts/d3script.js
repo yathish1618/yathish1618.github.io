@@ -228,6 +228,7 @@ function scrollToActive(){
 }, 1500);}, 200)
 }
 function handleMouseOver(){
+    hidePoster();
   var r = d3.select(this).attr("rating");
   var w = d3.select(this).attr("width");
   var h = d3.select(this).attr("y");
