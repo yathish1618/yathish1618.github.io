@@ -1,5 +1,5 @@
 google.charts.load('current', { 'packages': ['line', 'corechart'] });
-var imdb_url;
+var imdb_url,code;
 var imdbhtml, i;
 var movieYear;
 var movieName;
@@ -26,7 +26,8 @@ function populateDates(){ //6 month intervals
 
 function process() {
     $('#loadingInfo').html("Loading... ");
-    imdb_url = 'https://www.imdb.com/title/' + searchArr[index]["id"] + '/';
+    code = searchArr[index]["id"];
+    imdb_url = 'https://www.imdb.com/title/' + code + '/';
     movieYear = searchArr[index]["y"];
     movieName = searchArr[index]["l"];
     poster = searchArr[index]["i"][0]; //link to hi-res poster
@@ -35,6 +36,9 @@ function process() {
     $('#poster a').attr("href",imdb_url);
     i = dates.length - 1;
     $('#chart_div').empty(); //remove existing chart, if any
+    g = document.createElement('div');
+    g.setAttribute("id", code);
+    document.getElementById('chart_div').appendChild(g);
     if(waybackAjax) waybackAjax.abort(); //abort any previous pending requests
     if(whateveroriginAjax) whateveroriginAjax.abort();
     //reset data array
@@ -82,6 +86,7 @@ function getRatingData(url, date) {
         $('#loadingInfo').html("Fetching data from " + Math.floor(date / 10000000000));
         whateveroriginAjax = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(url) + '&callback=?',
         function(data) {
+            console.log(url);
             if($('#loadingInfo').html()=="Done!" || $('#loadingInfo').html()=="&nbsp;"){
                 $('#loadingInfo').html("&nbsp;");
                 $('#loading').hide();
@@ -97,7 +102,8 @@ function getRatingData(url, date) {
                     dataArr.push([dt, rt, tt]);
                 }
             }
-            var chartDiv = document.getElementById('chart_div');
+            var chartDiv = document.getElementById(code);
+            if(chartDiv==null) return false;
 
             graphData = new google.visualization.DataTable();
             graphData.addColumn('date', 'Month');
