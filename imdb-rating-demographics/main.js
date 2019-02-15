@@ -41,7 +41,7 @@ function process() {
         var data = google.visualization.arrayToDataTable(plotArray);
         var options = {
             pointSize: 5,
-            legend: { position: 'none' },
+            legend: { position: 'top', alignment : 'center' },
             chartArea: {
                 left: 50,
                 top: 20,
