@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+.searchform {
+    text-align: center;
+}
+
+body {
+    font: 14px Arial;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 14px;
+}
+
+input[type=text] {
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+    cursor: pointer;
+}
+
+.disabledSubmit {
+  background-color: grey !important;
+  cursor: auto !important;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+
+
+#loadingInfo {
+    display: block;
+    text-align: center;
+}
+
+#wrapper {
+    text-align: center;
+}
+
+#chart_div {
+    display: inline-block;
+    width: 600px;
+    height: 400px;
+}
+
+#poster{
+  display: inline-block;
+    vertical-align: top;
+        margin-top: 60px;
+    margin-left: 25px;
+}
+
+#more{
+  text-align: center;
+  padding-top: 20px;
+}
+
+h1{
+  text-align: center;
+}
+
+.modal {
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    width: 600px;
+    height: 400px;
+    background: rgba( 255, 255, 255, .3 ) 
+ url(http://i.stack.imgur.com/FhHRx.gif) 
+ 50% 50% 
+ no-repeat;
+}
