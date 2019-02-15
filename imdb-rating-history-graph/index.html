@@ -16,6 +16,12 @@
     <h1>IMDb User Rating History Graph</h1>
     <!--Make sure the form has the autocomplete function switched off:-->
     <form autocomplete="off" action="javascript:;" onsubmit="return process();" class="searchform">
+        <div>Fetch Data at <select id="interval">
+  <option value="1">1 month</option>
+  <option value="2">3 month</option>
+  <option value="3" selected="selected">6 month</option>
+  <option value="4">1 year</option>
+</select> intervals.<br>&nbsp;</div>
         <div class="autocomplete" style="width:300px;">
             <input id="myInput" type="text" name="myCountry" placeholder="Search for a movie">
         </div>
@@ -28,7 +34,7 @@
         <div id="chart_div">&nbsp;</div>
         <div id="poster"><a target="_blank"><img></a></div>
     </div>
-    <div id="more"><a href="https://github.com/yathish1618/yathish1618.github.io/blob/master/imdb-rating-history-graph/ReadMe.md" target="_blank">Read me</a>  |  <a onclick="downloadCSV()" href="" id="csv">Download data (csv)</a> | <a href="https://yathish1618.github.io/" target="_blank">Home</a></div>
+    <div id="more"><a href="https://github.com/yathish1618/yathish1618.github.io/blob/master/imdb-rating-history-graph/ReadMe.md" target="_blank">Read me</a>  |  <a onclick="downloadCSV()" href="" id="csv">Download data (csv)</a> | <a href="https://yathish1618.github.io/imdb-top250-charts/" target="_blank">IMDb Top 250 Visualisation</a> | <a href="https://yathish1618.github.io/" target="_blank">Home</a></div>
 </body>
 <script type="text/javascript" src="IMDbsearch.js"></script>
 
