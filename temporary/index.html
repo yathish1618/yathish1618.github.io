@@ -2,71 +2,11 @@
 <html>
 <head>
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-<script type="text/javascript">
-$('#after').hide();
-	google.charts.load('current', {'packages':['sankey']});
-	google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        $.get("f-benefit.csv", function(csvString) {
-      // transform the CSV string into a 2-dimensional array
-      var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+<script src="temp.js"></script>
 
-      // this new DataTable object holds all the data
-      var data = new google.visualization.arrayToDataTable(arrayData);
-
-      // this view can select a subset of the data at a time
-      var view = new google.visualization.DataView(data);
-      view.setColumns([0,1,2]);
-
-      var width1 = $( window ).width()*0.98;
-     // set chart options
-     var options = {
-      width: width1, height: 2000,
-     };
-
-     // create the chart object and draw it
-     var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
-     chart.draw(view, options);
-  });
-  }
-</script>
 </head>
 <body>
-  <table width="100%">
-    <tr>
-      <td width="25%">Source</td>
-      <td width="15%">Need</td>
-       <td width="20%" align="center">Feature</td>
-      <td width="15%" align="right">Chunk</td>
-      <td width="25%" align="right">Final Feature</td>
-    </tr>
-    <tr>
-      <td width="25%">&darr;</td>
-      <td width="15%">&darr;</td>
-       <td width="20%" align="center">&darr;</td>
-      <td width="15%" align="right">&darr;</td>
-      <td width="25%" align="right">&darr;</td>
-    </tr>
-  </table>
-<div id="sankey_basic" style="width: 900px; height: 2000px;"></div>
-  <table width="100%">
-    <tr>
-      <td width="25%">&uarr;</td>
-      <td width="15%">&uarr;</td>
-       <td width="20%" align="center">&uarr;</td>
-      <td width="15%" align="right">&uarr;</td>
-      <td width="25%" align="right">&uarr;</td>
-    </tr>
-    <tr>
-      <td width="25%">Source</td>
-      <td width="15%">Need</td>
-       <td width="20%" align="center">Feature</td>
-      <td width="15%" align="right">Chunk</td>
-      <td width="25%" align="right">Final Feature</td>
-    </tr>
-  </table>
+  
 </body>
 </html>
 
