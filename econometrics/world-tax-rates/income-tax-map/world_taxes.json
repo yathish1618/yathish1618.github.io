@@ -1,0 +1,890 @@
+[
+	{
+		"id": "AFG",
+		"name": "Afghanistan",
+		"maxTax": 20
+	},
+	{
+		"id": "AGO",
+		"name": "Angola",
+		"maxTax": 17
+	},
+	{
+		"id": "ALB",
+		"name": "Albania",
+		"maxTax": 23
+	},
+	{
+		"id": "ARE",
+		"name": "United Arab Emirates",
+		"maxTax": 0
+	},
+	{
+		"id": "ARG",
+		"name": "Argentina",
+		"maxTax": 35
+	},
+	{
+		"id": "ARM",
+		"name": "Armenia",
+		"maxTax": 36
+	},
+	{
+		"id": "AUS",
+		"name": "Australia",
+		"maxTax": 45
+	},
+	{
+		"id": "AUT",
+		"name": "Austria",
+		"maxTax": 55
+	},
+	{
+		"id": "AZE",
+		"name": "Azerbaijan",
+		"maxTax": 25
+	},
+	{
+		"id": "BEL",
+		"name": "Belgium",
+		"maxTax": 53.7
+	},
+	{
+		"id": "BGD",
+		"name": "Bangladesh",
+		"maxTax": 30
+	},
+	{
+		"id": "BGR",
+		"name": "Bulgaria",
+		"maxTax": 10
+	},
+	{
+		"id": "BIH",
+		"name": "Bosnia and Herzegovina",
+		"maxTax": 10
+	},
+	{
+		"id": "BLR",
+		"name": "Belarus",
+		"maxTax": 13
+	},
+	{
+		"id": "BOL",
+		"name": "Bolivia",
+		"maxTax": 13
+	},
+	{
+		"id": "BRA",
+		"name": "Brazil",
+		"maxTax": 27.5
+	},
+	{
+		"id": "BRN",
+		"name": "Brunei",
+		"maxTax": 0
+	},
+	{
+		"id": "BWA",
+		"name": "Botswana",
+		"maxTax": 25
+	},
+	{
+		"id": "CAN",
+		"name": "Canada",
+		"maxTax": 33
+	},
+	{
+		"id": "CHE",
+		"name": "Switzerland",
+		"maxTax": 40
+	},
+	{
+		"id": "CHL",
+		"name": "Chile",
+		"maxTax": 35
+	},
+	{
+		"id": "CHN",
+		"name": "China",
+		"maxTax": 45
+	},
+	{
+		"id": "CIV",
+		"name": "Ivory Coast",
+		"maxTax": 60
+	},
+	{
+		"id": "CMR",
+		"name": "Cameroon",
+		"maxTax": 35
+	},
+	{
+		"id": "COG",
+		"name": "Republic of the Congo",
+		"maxTax": 40
+	},
+	{
+		"id": "COG",
+		"name": "Congo",
+		"maxTax": 30
+	},
+	{
+		"id": "COL",
+		"name": "Colombia",
+		"maxTax": 33
+	},
+	{
+		"id": "CRI",
+		"name": "Costa Rica",
+		"maxTax": 15
+	},
+	{
+		"id": "CYP",
+		"name": "Cyprus",
+		"maxTax": 35
+	},
+	{
+		"id": "CZE",
+		"name": "Czech Republic",
+		"maxTax": 22
+	},
+	{
+		"id": "DEU",
+		"name": "Germany",
+		"maxTax": 47.5
+	},
+	{
+		"id": "DNK",
+		"name": "Denmark",
+		"maxTax": 55.8
+	},
+	{
+		"id": "DOM",
+		"name": "Dominican Republic",
+		"maxTax": 25
+	},
+	{
+		"id": "DZA",
+		"name": "Algeria",
+		"maxTax": 35
+	},
+	{
+		"id": "ECU",
+		"name": "Ecuador",
+		"maxTax": 35
+	},
+	{
+		"id": "EGY",
+		"name": "Egypt",
+		"maxTax": 22.5
+	},
+	{
+		"id": "ESP",
+		"name": "Spain",
+		"maxTax": 45
+	},
+	{
+		"id": "EST",
+		"name": "Estonia",
+		"maxTax": 20
+	},
+	{
+		"id": "ETH",
+		"name": "Ethiopia",
+		"maxTax": 35
+	},
+	{
+		"id": "FIN",
+		"name": "Finland",
+		"maxTax": 51.6
+	},
+	{
+		"id": "FJI",
+		"name": "Fiji",
+		"maxTax": 20
+	},
+	{
+		"id": "FRA",
+		"name": "France",
+		"maxTax": 45
+	},
+	{
+		"id": "GAB",
+		"name": "Gabon",
+		"maxTax": 35
+	},
+	{
+		"id": "GBR",
+		"name": "United Kingdom",
+		"maxTax": 45
+	},
+	{
+		"id": "GEO",
+		"name": "Georgia",
+		"maxTax": 20
+	},
+	{
+		"id": "GHA",
+		"name": "Ghana",
+		"maxTax": 25
+	},
+	{
+		"id": "GIN",
+		"name": "Guinea",
+		"maxTax": 40
+	},
+	{
+		"id": "GMB",
+		"name": "Gambia",
+		"maxTax": 30
+	},
+	{
+		"id": "GNQ",
+		"name": "Equatorial Guinea",
+		"maxTax": 35
+	},
+	{
+		"id": "GRC",
+		"name": "Greece",
+		"maxTax": 45
+	},
+	{
+		"id": "GTM",
+		"name": "Guatemala",
+		"maxTax": 7
+	},
+	{
+		"id": "HND",
+		"name": "Honduras",
+		"maxTax": 25
+	},
+	{
+		"id": "HRV",
+		"name": "Croatia",
+		"maxTax": 36
+	},
+	{
+		"id": "HUN",
+		"name": "Hungary",
+		"maxTax": 15
+	},
+	{
+		"id": "IDN",
+		"name": "Indonesia",
+		"maxTax": 30
+	},
+	{
+		"id": "IND",
+		"name": "India",
+		"maxTax": 35.54
+	},
+	{
+		"id": "IRL",
+		"name": "Ireland",
+		"maxTax": 48
+	},
+	{
+		"id": "IRQ",
+		"name": "Iraq",
+		"maxTax": 15
+	},
+	{
+		"id": "ISL",
+		"name": "Iceland",
+		"maxTax": 46.3
+	},
+	{
+		"id": "ISR",
+		"name": "Israel",
+		"maxTax": 50
+	},
+	{
+		"id": "ITA",
+		"name": "Italy",
+		"maxTax": 43
+	},
+	{
+		"id": "JAM",
+		"name": "Jamaica",
+		"maxTax": 30
+	},
+	{
+		"id": "JOR",
+		"name": "Jordan",
+		"maxTax": 20
+	},
+	{
+		"id": "JPN",
+		"name": "Japan",
+		"maxTax": 55.95
+	},
+	{
+		"id": "KAZ",
+		"name": "Kazakhstan",
+		"maxTax": 10
+	},
+	{
+		"id": "KEN",
+		"name": "Kenya",
+		"maxTax": 30
+	},
+	{
+		"id": "KHM",
+		"name": "Cambodia",
+		"maxTax": 20
+	},
+	{
+		"id": "KOR",
+		"name": "South Korea",
+		"maxTax": 40
+	},
+	{
+		"id": "KWT",
+		"name": "Kuwait",
+		"maxTax": 0
+	},
+	{
+		"id": "LAO",
+		"name": "Laos",
+		"maxTax": 24
+	},
+	{
+		"id": "LBN",
+		"name": "Lebanon",
+		"maxTax": 20
+	},
+	{
+		"id": "LBY",
+		"name": "Libya",
+		"maxTax": 10
+	},
+	{
+		"id": "LKA",
+		"name": "Sri Lanka",
+		"maxTax": 16
+	},
+	{
+		"id": "LSO",
+		"name": "Lesotho",
+		"maxTax": 30
+	},
+	{
+		"id": "LTU",
+		"name": "Lithuania",
+		"maxTax": 15
+	},
+	{
+		"id": "LUX",
+		"name": "Luxembourg",
+		"maxTax": 48.78
+	},
+	{
+		"id": "LVA",
+		"name": "Latvia",
+		"maxTax": 23
+	},
+	{
+		"id": "MAR",
+		"name": "Morocco",
+		"maxTax": 38
+	},
+	{
+		"id": "MDA",
+		"name": "Moldova",
+		"maxTax": 18
+	},
+	{
+		"id": "MDG",
+		"name": "Madagascar",
+		"maxTax": 20
+	},
+	{
+		"id": "MEX",
+		"name": "Mexico",
+		"maxTax": 35
+	},
+	{
+		"id": "MKD",
+		"name": "Macedonia",
+		"maxTax": 10
+	},
+	{
+		"id": "MMR",
+		"name": "Myanmar",
+		"maxTax": 25
+	},
+	{
+		"id": "MNE",
+		"name": "Montenegro",
+		"maxTax": 9
+	},
+	{
+		"id": "MNG",
+		"name": "Mongolia",
+		"maxTax": 10
+	},
+	{
+		"id": "MOZ",
+		"name": "Mozambique",
+		"maxTax": 32
+	},
+	{
+		"id": "MRT",
+		"name": "Mauritania",
+		"maxTax": 40
+	},
+	{
+		"id": "MWI",
+		"name": "Malawi",
+		"maxTax": 30
+	},
+	{
+		"id": "MYS",
+		"name": "Malaysia",
+		"maxTax": 28
+	},
+	{
+		"id": "NAM",
+		"name": "Namibia",
+		"maxTax": 37
+	},
+	{
+		"id": "NGA",
+		"name": "Nigeria",
+		"maxTax": 24
+	},
+	{
+		"id": "NIC",
+		"name": "Nicaragua",
+		"maxTax": 30
+	},
+	{
+		"id": "NLD",
+		"name": "Netherlands",
+		"maxTax": 52
+	},
+	{
+		"id": "NOR",
+		"name": "Norway",
+		"maxTax": 38.52
+	},
+	{
+		"id": "NZL",
+		"name": "New Zealand",
+		"maxTax": 33
+	},
+	{
+		"id": "OMN",
+		"name": "Oman",
+		"maxTax": 0
+	},
+	{
+		"id": "OSA",
+		"name": "Kosovo",
+		"maxTax": 10
+	},
+	{
+		"id": "PAK",
+		"name": "Pakistan",
+		"maxTax": 20
+	},
+	{
+		"id": "PAN",
+		"name": "Panama",
+		"maxTax": 25
+	},
+	{
+		"id": "PER",
+		"name": "Peru",
+		"maxTax": 30
+	},
+	{
+		"id": "PHL",
+		"name": "Philippines",
+		"maxTax": 32
+	},
+	{
+		"id": "PNG",
+		"name": "Papua New Guinea",
+		"maxTax": 42
+	},
+	{
+		"id": "POL",
+		"name": "Poland",
+		"maxTax": 32
+	},
+	{
+		"id": "PRI",
+		"name": "Puerto Rico",
+		"maxTax": 33
+	},
+	{
+		"id": "PRT",
+		"name": "Portugal",
+		"maxTax": 48
+	},
+	{
+		"id": "QAT",
+		"name": "Qatar",
+		"maxTax": 0
+	},
+	{
+		"id": "ROU",
+		"name": "Romania",
+		"maxTax": 16
+	},
+	{
+		"id": "RUS",
+		"name": "Russia",
+		"maxTax": 13
+	},
+	{
+		"id": "RWA",
+		"name": "Rwanda",
+		"maxTax": 30
+	},
+	{
+		"id": "SAU",
+		"name": "Saudi Arabia",
+		"maxTax": 0
+	},
+	{
+		"id": "SDN",
+		"name": "Sudan",
+		"maxTax": 15
+	},
+	{
+		"id": "SEN",
+		"name": "Senegal",
+		"maxTax": 40
+	},
+	{
+		"id": "SLE",
+		"name": "Sierra Leone",
+		"maxTax": 35
+	},
+	{
+		"id": "SLV",
+		"name": "El Salvador",
+		"maxTax": 30
+	},
+	{
+		"id": "SRB",
+		"name": "Serbia",
+		"maxTax": 15
+	},
+	{
+		"id": "SUR",
+		"name": "Suriname",
+		"maxTax": 38
+	},
+	{
+		"id": "SVK",
+		"name": "Slovakia",
+		"maxTax": 25
+	},
+	{
+		"id": "SVN",
+		"name": "Slovenia",
+		"maxTax": 50
+	},
+	{
+		"id": "SWE",
+		"name": "Sweden",
+		"maxTax": 61.85
+	},
+	{
+		"id": "SWZ",
+		"name": "Swaziland",
+		"maxTax": 33
+	},
+	{
+		"id": "SYR",
+		"name": "Syria",
+		"maxTax": 22
+	},
+	{
+		"id": "TCD",
+		"name": "Chad",
+		"maxTax": 60
+	},
+	{
+		"id": "THA",
+		"name": "Thailand",
+		"maxTax": 35
+	},
+	{
+		"id": "TJK",
+		"name": "Tajikistan",
+		"maxTax": 13
+	},
+	{
+		"id": "TTO",
+		"name": "Trinidad And Tobago",
+		"maxTax": 25
+	},
+	{
+		"id": "TUN",
+		"name": "Tunisia",
+		"maxTax": 35
+	},
+	{
+		"id": "TUR",
+		"name": "Turkey",
+		"maxTax": 35
+	},
+	{
+		"id": "TWN",
+		"name": "Taiwan",
+		"maxTax": 45
+	},
+	{
+		"id": "TZA",
+		"name": "Tanzania",
+		"maxTax": 30
+	},
+	{
+		"id": "UGA",
+		"name": "Uganda",
+		"maxTax": 40
+	},
+	{
+		"id": "UKR",
+		"name": "Ukraine",
+		"maxTax": 18
+	},
+	{
+		"id": "URY",
+		"name": "Uruguay",
+		"maxTax": 36
+	},
+	{
+		"id": "USA",
+		"name": "United States",
+		"maxTax": 39.6
+	},
+	{
+		"id": "UZB",
+		"name": "Uzbekistan",
+		"maxTax": 23
+	},
+	{
+		"id": "VEN",
+		"name": "Venezuela",
+		"maxTax": 34
+	},
+	{
+		"id": "VNM",
+		"name": "Vietnam",
+		"maxTax": 35
+	},
+	{
+		"id": "YEM",
+		"name": "Yemen",
+		"maxTax": 15
+	},
+	{
+		"id": "ZAF",
+		"name": "South Africa",
+		"maxTax": 45
+	},
+	{
+		"id": "ZMB",
+		"name": "Zambia",
+		"maxTax": 37.5
+	},
+	{
+		"id": "ZWE",
+		"name": "Zimbabwe",
+		"maxTax": 50
+	},
+	{
+		"id": "ATA",
+		"name": "Antarctica",
+		"maxTax": -1
+	},
+	{
+		"id": "BLZ",
+		"name": "Belize",
+		"maxTax": 25
+	},
+	{
+		"id": "BEN",
+		"name": "Benin",
+		"maxTax": 30
+	},
+	{
+		"id": "BTN",
+		"name": "Bhutan",
+		"maxTax": 30
+	},
+	{
+		"id": "BFA",
+		"name": "Burkina Faso",
+		"maxTax": 30
+	},
+	{
+		"id": "BDI",
+		"name": "Burundi",
+		"maxTax": 30
+	},
+	{
+		"id": "CAF",
+		"name": "Central African Republic",
+		"maxTax": 30
+	},
+	{
+		"id": "CUB",
+		"name": "Cuba",
+		"maxTax": 50
+	},
+	{
+		"id": "COD",
+		"name": "Democratic Republic of the Congo",
+		"maxTax": 30
+	},
+	{
+		"id": "DJI",
+		"name": "Djibouti",
+		"maxTax": 25
+	},
+	{
+		"id": "TLS",
+		"name": "East Timor",
+		"maxTax": 10
+	},
+	{
+		"id": "ERI",
+		"name": "Eritrea",
+		"maxTax": 34
+	},
+	{
+		"id": "FLK",
+		"name": "Falkland Islands",
+		"maxTax": 26
+	},
+	{
+		"id": "ATF",
+		"name": "French Southern and Antarctic Lands",
+		"maxTax": -1
+	},
+	{
+		"id": "GRL",
+		"name": "Greenland",
+		"maxTax": 44
+	},
+	{
+		"id": "GNB",
+		"name": "Guinea Bissau",
+		"maxTax": 25
+	},
+	{
+		"id": "GUY",
+		"name": "Guyana",
+		"maxTax": 28
+	},
+	{
+		"id": "HTI",
+		"name": "Haiti",
+		"maxTax": 10
+	},
+	{
+		"id": "IRN",
+		"name": "Iran",
+		"maxTax": 35
+	},
+	{
+		"id": "KGZ",
+		"name": "Kyrgyzstan",
+		"maxTax": 10
+	},
+	{
+		"id": "LBR",
+		"name": "Liberia",
+		"maxTax": 25
+	},
+	{
+		"id": "MLI",
+		"name": "Mali",
+		"maxTax": 30
+	},
+	{
+		"id": "NPL",
+		"name": "Nepal",
+		"maxTax": 36
+	},
+	{
+		"id": "NCL",
+		"name": "New Caledonia",
+		"maxTax": 40
+	},
+	{
+		"id": "NER",
+		"name": "Niger",
+		"maxTax": 24
+	},
+	{
+		"id": "PRK",
+		"name": "North Korea",
+		"maxTax": 20
+	},
+	{
+		"id": "PRY",
+		"name": "Paraguay",
+		"maxTax": 10
+	},
+	{
+		"id": "SLB",
+		"name": "Solomon Islands",
+		"maxTax": 30
+	},
+	{
+		"id": "SOM",
+		"name": "Somalia",
+		"maxTax": 10
+	},
+	{
+		"id": "ABV",
+		"name": "Somaliland",
+		"maxTax": -1
+	},
+	{
+		"id": "SDS",
+		"name": "South Sudan",
+		"maxTax": 15
+	},
+	{
+		"id": "BHS",
+		"name": "The Bahamas",
+		"maxTax": 0
+	},
+	{
+		"id": "TGO",
+		"name": "Togo",
+		"maxTax": -1
+	},
+	{
+		"id": "TKM",
+		"name": "Turkmenistan",
+		"maxTax": 10
+	},
+	{
+		"id": "VUT",
+		"name": "Vanuatu",
+		"maxTax": -1
+	},
+	{
+		"id": "PSE",
+		"name": "West Bank",
+		"maxTax": -1
+	},
+	{
+		"id": "ESH",
+		"name": "Western Sahara",
+		"maxTax": -1
+	},
+	{
+		"id": null
+	}
+]
