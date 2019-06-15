@@ -1,5 +1,5 @@
-//Handle tabs 
-function openCity(evt, cityName) {
+//Handle tabs.
+function activateTab(tab) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -9,9 +9,15 @@ function openCity(evt, cityName) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+    if (tab == "indexButton") tab1 = "Contents";
+    if (tab == "artistsButton") tab1 = "Artists";
+    if (tab == "albumsButton") tab1 = "Albums";
+    if (tab == "playlistsButton") tab1 = "Playlists";
+    if (tab == "tracklistButton") tab1 = "Tracklist";
+    document.getElementById(tab1).style.display = "block";
+    document.getElementById(tab).className += " active";
 }
+
 $(document).ready(function() {
 
     //Loading symbol
@@ -26,33 +32,34 @@ $(document).ready(function() {
     document.getElementById("indexButton").click();
 
     handleURL();
-    //Navigate to appropriate tab for hyperlinks
-    $("body").on('click', 'a', function(event) {
+    
+    //whenever url is changed reload content accordingly
+    $(window).on('hashchange', function(e) {
         handleURL();
     });
-    //Load the html content on opening for first time
+
+    //change url if a button is clicked
     $('button[data-href]').click(function() {
         var s = window.location.href;
         var n = s.search(/(#.*$)/g);
-        	if(n>-1) s = s.slice(0,n); //sanitise url
-		var href = $(this).attr('data-href');
+        if (n > -1) s = s.slice(0, n); //sanitise url
+        var href = $(this).attr('data-href');
 
         //Here we'll simply change the url. handleURL function then actually updates body.
         if (href.indexOf('artists') >= 0) {
-        	window.location.href=s+"#Artists";
+            window.location.href = s + "#Artists";
         }
         if (href.indexOf('playlists') >= 0) {
-        	window.location.href=s+"#Playlists";
+            window.location.href = s + "#Playlists";
         }
         if (href.indexOf('albums') >= 0) {
-            window.location.href=s+"#Albums";
+            window.location.href = s + "#Albums";
         }
         if (href.indexOf('tracklist') >= 0) {
-            window.location.href=s+"#Tracklist";
+            window.location.href = s + "#Tracklist";
         }
         if (href.indexOf('contents') >= 0) {
-        	window.location.href=s;
-        	//document.getElementById('indexButton').click();
+            window.location.href = s;
         }
         handleURL();
     })
@@ -66,7 +73,7 @@ function handleURL() {
             $('<thead></thead>').prependTo('#Tracklist table').append($('#Tracklist tr:first'));
             callTablesorter();
         });
-        	document.getElementById('tracklistButton').click();
+        document.getElementById('tracklistButton').click();
     }
     if (s.indexOf('#Albums') >= 0) {
         if ($.trim($("#Albums").html()) == '') $("#Albums").load("albums.html", function() {
@@ -75,7 +82,7 @@ function handleURL() {
                 $(this).insertBefore($(this).prev('.tracks'));
             });
         });
-        	document.getElementById('albumsButton').click();
+        document.getElementById('albumsButton').click();
     }
     if (s.indexOf('#Artists') >= 0) {
         if ($.trim($("#Artists").html()) == '') $("#Artists").load("artists.html");
@@ -86,23 +93,23 @@ function handleURL() {
 
         if ($.trim($("#Playlists").html()) == '') {
             $("#Playlists").load("playlists.html", function() {
-            $("#Playlists table").addClass("tablesorter");
-            //add thead tags for tablesorter to recognise table headers.
-            $('#Playlists table').each(function() {
-                $(this).prepend('<thead></thead>');
-                $(this).find('thead').append($(this).find("tr:eq(0)"));
+                $("#Playlists table").addClass("tablesorter");
+                //add thead tags for tablesorter to recognise table headers.
+                $('#Playlists table').each(function() {
+                    $(this).prepend('<thead></thead>');
+                    $(this).find('thead').append($(this).find("tr:eq(0)"));
+                });
+                callTablesorter();
             });
-            callTablesorter();
-        });}
-		document.getElementById('playlistsButton').click();
+        }
+        document.getElementById('playlistsButton').click();
     }
-    var s = window.location.href;
-        // var n = s.search(/(#.*$)/g);
-        var href = (/(#.*$)/g).exec(s)[0];
+    var href = (/(#.*$)/g).exec(s);
+    if (href) {
+        href = href[0];
         //var href = $(this).attr('href');
         if (href.indexOf('#artist_') >= 0) {
-            //openCity(event, 'Artists');
-            document.getElementById("artistsButton").click();
+            activateTab('artistsButton');
             if ($.trim($("#Artists").html()) == '') $("#Artists").load("artists.html", function() {
                 $(document).scrollTop($(href).offset().top);
             });
@@ -111,8 +118,8 @@ function handleURL() {
             }
         }
         if (href.indexOf('#album_') >= 0) {
-            //openCity(event, 'Albums');
-            document.getElementById("albumsButton").click();
+
+            activateTab('albumsButton');
             if ($.trim($("#Albums").html()) == '') $("#Albums").load("albums.html", function() {
                 $('.album_wrapper .cover').each(function() {
                     $(this).insertBefore($(this).prev('.tracks'));
@@ -123,26 +130,26 @@ function handleURL() {
                 $(document).scrollTop($(href).offset().top);
             }
         }
-                if (href.indexOf('#play_') >= 0) {
-            //openCity(event, 'Albums');
-            document.getElementById("playlistsButton").click();
+        if (href.indexOf('#play_') >= 0) {
+            activateTab('playlistsButton');
             if ($.trim($("#Playlists").html()) == '') $("#Playlists").load("playlists.html", function() {
                 $("#Playlists table").addClass("tablesorter");
-            //add thead tags for tablesorter to recognise table headers.
-            $('#Playlists table').each(function() {
-                $(this).prepend('<thead></thead>');
-                $(this).find('thead').append($(this).find("tr:eq(0)"));
-            });
-            callTablesorter();
+                //add thead tags for tablesorter to recognise table headers.
+                $('#Playlists table').each(function() {
+                    $(this).prepend('<thead></thead>');
+                    $(this).find('thead').append($(this).find("tr:eq(0)"));
+                });
+                callTablesorter();
                 $(document).scrollTop($(href).offset().top);
             });
             else {
                 $(document).scrollTop($(href).offset().top);
             }
         }
-
+    }
 }
-//I have just picked up this code from a stackoverflow answer
+
+//I have just picked up this code from a stackoverflow answer.
 function callTablesorter() {
     var ts = $.tablesorter,
         sorting = false,
