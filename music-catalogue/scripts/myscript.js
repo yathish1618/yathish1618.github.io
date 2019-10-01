@@ -14,6 +14,8 @@ function activateTab(tab) {
     if (tab == "albumsButton") tab1 = "Albums";
     if (tab == "playlistsButton") tab1 = "Playlists";
     if (tab == "tracklistButton") tab1 = "Tracklist";
+    if (tab == "archivesButton") tab1 = "Archives";
+    if (tab == "aboutButton") tab1 = "About";
     document.getElementById(tab1).style.display = "block";
     document.getElementById(tab).className += " active";
 }
@@ -58,6 +60,12 @@ $(document).ready(function() {
         if (href.indexOf('tracklist') >= 0) {
             window.location.href = s + "#Tracklist";
         }
+        if (href.indexOf('archives') >= 0) {
+            window.location.href = s + "#Archives";
+        }
+        if (href.indexOf('about') >= 0) {
+            window.location.href = s + "#About";
+        }
         if (href.indexOf('contents') >= 0) {
             window.location.href = s;
         }
@@ -66,6 +74,7 @@ $(document).ready(function() {
 });
 
 function handleURL() {
+    //This first part is to directly handle when URL has one of the tabs (first time load)
     var s = window.location.href;
     if (s.indexOf('#Tracklist') >= 0) {
         if ($.trim($("#Tracklist").html()) == '') $("#Tracklist").load("tracklist.html", function() {
@@ -89,6 +98,16 @@ function handleURL() {
         document.getElementById('artistsButton').click();
 
     }
+    if (s.indexOf('#Archives') >= 0) {
+        if ($.trim($("#Archives").html()) == '') $("#Archives").load("archives.html");
+        document.getElementById('archivesButton').click();
+
+    }
+    if (s.indexOf('#About') >= 0) {
+        if ($.trim($("#About").html()) == '') $("#About").load("about.html");
+        document.getElementById('aboutButton').click();
+
+    }
     if (s.indexOf('#Playlists') >= 0) {
 
         if ($.trim($("#Playlists").html()) == '') {
@@ -104,9 +123,11 @@ function handleURL() {
         }
         document.getElementById('playlistsButton').click();
     }
+    //This second part is to handle cases where hyperlinks are between the tabs
     var href = (/(#.*$)/g).exec(s);
     if (href) {
         href = href[0];
+        console.log(href);
         //var href = $(this).attr('href');
         if (href.indexOf('#artist_') >= 0) {
             activateTab('artistsButton');
@@ -154,13 +175,12 @@ function callTablesorter() {
     var ts = $.tablesorter,
         sorting = false,
         searching = false;
-
     $('table')
         .tablesorter({
             theme: 'blue',
             widthFixed: true,
             widgets: ['filter'],
-            dateFormat: "ddmmyyyy"
+            dateFormat: "ddmmyyyy",
         })
         .on('sortBegin filterEnd', function(e, filters) {
             if (!(sorting || searching)) {
