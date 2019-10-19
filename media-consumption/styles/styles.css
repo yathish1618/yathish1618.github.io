@@ -1,31 +1,169 @@
 .item1 {
-  grid-area: myArea;
+    grid-area: myArea;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(182px, 1fr) );
-  grid-gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(182px, 1fr));
+    grid-gap: 10px;
+    background-color: #191919;
+    padding: 10px;
 }
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+.grid-container>div {
+    background-color: #191919;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.gr_grid_container {
+    /* customize grid container div here. eg: width: 500px; */
+}
+
+.gr_grid_book_container {
+    /* customize book cover container div here */
+    float: left;
+    width: 98px;
+    height: 160px;
+    padding: 0px 0px;
+    overflow: hidden;
+}
+
+
+#imagesMain {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.imagebox {
+    position: relative;
+    height: 268px;
+    width: 182px;
+    float: left;
+    margin: 10px;
+}
+
+.imagebox img {
+    vertical-align: middle;
+    height: 268px;
+    width: 182px;
+}
+
+.musbox{
+    height: 150px !important;
+    width: 150px !important;
+}
+
+.musbox img{
+    height: 150px !important;
+    width: 150px !important;
+}
+
+.musbox div{
+    height: 150px !important;
+    width: 150px !important;
+}
+
+
+.musbox table{
+    height: 150px !important;
+    width: 150px !important;
+}
+
+.caption {
+    width: 182px;
+    height: 268px;
+    background: #000;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 20px;
+}
+
+.imagebox:hover .caption {
+    opacity: 0.7;
+    text-align: justify;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Times New Roman", Times, serif;
+    /*padding:30px;*/
+}
+
+.caption table{
+  width: 182px;
+    height: 268px;
+    word-break: break-word;
+    text-align: center;
+}
+
+
+
+
+
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
   text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
 }
 
- .gr_grid_container {
-          /* customize grid container div here. eg: width: 500px; */
-        }
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
 
-        .gr_grid_book_container {
-          /* customize book cover container div here */
-          float: left;
-          width: 98px;
-          height: 160px;
-          padding: 0px 0px;
-          overflow: hidden;
-        }
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}

@@ -1,12 +1,11 @@
-Movie grid population along with the drop down year selection is done.
-Add hover effect to each grid item along with rating data and external imdb hyperlink.
-Have to populate the rating data in the for loop of html generation (that data is already read from csv)
+Movies and books part done. Parse music info from music-catalogue html pages.
 
-Updation:
-1. Add only new rows to the existing csv of imdb-ratings. In the last column add the Year value.
+Notes for updating imdb-ratings.csv
+There's on extra column at the last for "year". Have to manually update that.
+Note that adding only new titles from latest exported csv is not enough. IMDb rating also has to be updated. Do Vlookups or ignore updating imdb rating. Not that big a deal.
 
-Create total three tabs - movies, books and music
+Notes for updating goodreads-ratings.csv
+Main problem is getting the links for book cover images. In index.html page there is commented out code. Uncomment it. It's the good reads widget that fetches and displays latest 200 books I've read. The custom JS script below that will parse all that crap and give a nice csv with book id and required image code. In the csv do vlookup and update the last column with this id. There's one more column at the last for year in this csv too.
 
-Books part - think of whether to just use the goodreads widget (currently added). There's a limit of 200 books in that widget. Can manually maintain a csv.
-
-For music just read the all tracks html page from music-catalogue as a js table and group by album etc. Then sort by date.
+Notes for updating music
+Nothing to do Yay. Can consider exporting album art at 150x150 or 200x200 resolution. Make sure that doesn't affect music-catalogue page. Also implement lazy load on music-catalogue page.
