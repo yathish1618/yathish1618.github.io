@@ -16,7 +16,8 @@ function initiateLazyLoad() {
         lazyloadThrottleTimeout = setTimeout(function() {
             var scrollTop = window.pageYOffset;
             lazyloadImages.forEach(function(img) {
-                if (img.offsetTop < (window.innerHeight + scrollTop)) {
+                //if (img.offsetTop < (window.innerHeight + scrollTop)) { 
+                if (img.offsetParent.offsetTop < (window.innerHeight + scrollTop)) { //had to add offsetParent for current page only. It's not there in the original.
                     img.src = img.dataset.src;
                     img.classList.remove('lazy');
                 }
@@ -29,7 +30,7 @@ function initiateLazyLoad() {
         }, 20);
     }
 
-    document.dispatchEvent(new CustomEvent('scroll')); //to intialise lazy load.
+    //document.dispatchEvent(new CustomEvent('scroll')); //to intialise lazy load. commenting it out here because this is done via getIMDbPosterLink function for this custom page
     document.addEventListener("scroll", lazyload);
     window.addEventListener("resize", lazyload);
     window.addEventListener("orientationChange", lazyload);
