@@ -424,3 +424,7 @@ body.loading .modal {
 .highlight {
   background-color: yellow;
 }
+
+body{
+background-image: url(bg.png);
+}
