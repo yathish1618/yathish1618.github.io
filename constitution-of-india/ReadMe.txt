@@ -1,0 +1,6 @@
+1. Update index.xml manually
+2. The excel sheet for creating index is just for reference and calculations. Several mistakes in formatting were fixed in xml directly.
+3. Don't worry about unused footnotes in footnotes.xml. 
+4. While rendering the page after fetching xml, the footnotes are re-enumerated from 1 in the script. The actual references are hyperlinked properly. This re-enumeration is just for tidy display when only a single article is shown.
+5. Be extra careful with name="#_ftnref" and href="_ftn" formats between footnotes.xml and articles.xml or schedules.xml. It could be confusing!
+6. To do - See how to enable back button navigation (this will help in multiple ways like retaining scroll position). Italicise clause references in Schedules.

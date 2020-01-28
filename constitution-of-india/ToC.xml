@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <preamble></preamble>
+    <parts>
+        <part name="part1">
+            <title>PART I</title>
+            <subtitle>THE UNION AND ITS TERRITORY</subtitle>
+            <article name="art1"> Name and territory of the Union</article>
+            <article name="art2"> Admission or establishment of new States</article>
+            <article name="art2A"> [Omitted</article>
+            <article name="art3"> Formation of new States and alteration of areas, boundaries or names of existing States</article>
+            <article name="art4"> Laws made under articles 2 and 3 to provide for the amendment of the First and the Fourth</article>
+        </part>
+        <part name="part2">
+            <title>PART II</title>
+            <subtitle>CITIZENSHIP</subtitle>
+            <article name="art5"> Citizenship at the commencement of the Constitution</article>
+            <article name="art6"> Rights of citizenship of certain persons who have migrated to India from Pakistan</article>
+            <article name="art7"> Rights of citizenship of certain migrants to Pakistan</article>
+            <article name="art8"> Rights of citizenship of certain persons of Indian origin residing outside India</article>
+            <article name="art9"> Persons voluntarily acquiring citizenship of a foreign State not to be citizens</article>
+            <article name="art10"> Continuance of the rights of citizenship</article>
+            <article name="art11"> Parliament to regulate the right of citizenship by law</article>
+        </part>
+        <part name="part3">
+            <title>PART III</title>
+            <subtitle>FUNDAMENTAL RIGHTS</subtitle>
+            <subchapter>
+                <title>General</title>
+                <article name="art12"> Definition</article>
+                <article name="art13"> Laws inconsistent with or in derogation of the fundamental rights</article>
+            </subchapter>
+            <subchapter>
+                <title>Right to Equality</title>
+                <article name="art14"> Equality before law</article>
+                <article name="art15"> Prohibition of discrimination on grounds of religion, race, caste, sex or place of birth</article>
+                <article name="art16"> Equality of opportunity in matters of public employment</article>
+                <article name="art17"> Abolition of Untouchability</article>
+                <article name="art18"> Abolition of titles</article>
+            </subchapter>
+            <subchapter>
+                <title>Right to Freedom</title>
+                <article name="art19"> Protection of certain rights regarding freedom of speech, etc</article>
+                <article name="art20"> Protection in respect of conviction for offences</article>
+                <article name="art21"> Protection of life and personal liberty</article>
+                <article name="art21A"> Right to education</article>
+                <article name="art22"> Protection against arrest and detention in certain cases</article>
+            </subchapter>
+            <subchapter>
+                <title>Right against Exploitation</title>
+                <article name="art23"> Prohibition of traffic in human beings and forced labour</article>
+                <article name="art24"> Prohibition of employment of children in factories, etc</article>
+            </subchapter>
+            <subchapter>
+                <title>Right to Freedom of Religion</title>
+                <article name="art25"> Freedom of conscience and free profession, practice and propagation of religion</article>
+                <article name="art26"> Freedom to manage religious affairs</article>
+                <article name="art27"> Freedom as to payment of taxes for promotion of any particular religion</article>
+                <article name="art28"> Freedom as to attendance at religious instruction or religious worship in certain educational</article>
+            </subchapter>
+            <subchapter>
+                <title>Cultural and Educational Rights</title>
+                <article name="art29"> Protection of interests of minorities</article>
+                <article name="art30"> Right of minorities to establish and administer educational institutions</article>
+                <article name="art31"> [Omitted</article>
+            </subchapter>
+            <subchapter>
+                <title>Saving of Certain Laws</title>
+                <article name="art31A"> Saving of Laws providing for acquisition of estates, etc</article>
+                <article name="art31B"> Validation of certain Acts and Regulations</article>
+                <article name="art31C"> Saving of laws giving effect to certain directive principles</article>
+                <article name="art31D"> [Omitted</article>
+            </subchapter>
+            <subchapter>
+                <title>Right to Constitutional Remedies</title>
+                <article name="art32"> Remedies for enforcement of rights conferred by this Part</article>
+                <article name="art32A"> [Omitted</article>
+                <article name="art33"> Power of Parliament to modify the rights conferred by this Part in their application to Forces, etc</article>
+                <article name="art34"> Restriction on rights conferred by this Part while martial law is in force in any area</article>
+                <article name="art35"> Legislation to give effect to the provisions of this Part</article>
+            </subchapter>
+        </part>
+        <part name="part4">
+            <title>PART IV</title>
+            <subtitle>DIRECTIVE PRINCIPLES OF STATE POLICY</subtitle>
+            <article name="art36"> Definition</article>
+            <article name="art37"> Application of the principles contained in this Part</article>
+            <article name="art38"> State to secure a social order for the promotion of welfare of the people</article>
+            <article name="art39"> Certain principles of policy to be followed by the State</article>
+            <article name="art39A"> Equal justice and free legal aid</article>
+            <article name="art40"> Organisation of village panchayats</article>
+            <article name="art41"> Right to work, to education and to public assistance in certain cases</article>
+            <article name="art42"> Provision for just and humane conditions of work and maternity relief</article>
+            <article name="art43"> Living wage, etc</article>
+            <article name="art43A"> Participation of workers in management of industries</article>
+            <article name="art43B"> Promotion of co-operative societies</article>
+            <article name="art44"> Uniform civil code for the citizens</article>
+            <article name="art45"> Provision for early childhood care and education to children below the age of six years</article>
+            <article name="art46"> Promotion of educational and economic interests of Scheduled Castes, Scheduled Tribes and other</article>
+            <article name="art47"> Duty of the State to raise the level of nutrition and the standard of living and to improve public</article>
+            <article name="art48"> Organisation of agriculture and animal husbandry</article>
+            <article name="art48A"> Protection and improvement of environment and safeguarding of forests and wild life</article>
+            <article name="art49"> Protection of monuments and places and objects of national importance</article>
+            <article name="art50"> Separation of judiciary from executive</article>
+            <article name="art51"> Promotion of international peace and security</article>
+        </part>
+        <part name="part4A">
+            <title>PART IVA</title>
+            <subtitle>FUNDAMENTAL DUTIES</subtitle>
+            <article name="art51A"> Fundamental duties</article>
+        </part>
+        <part name="part5">
+            <title>PART V</title>
+            <subtitle>THE UNION</subtitle>
+            <chapter><title>CHAPTER I. THE EXECUTIVE</title>
+                <subchapter>
+                    <title>The President and Vice-President</title>
+                    <article name="art52"> The President of India</article>
+                    <article name="art53"> Executive power of the Union</article>
+                    <article name="art54"> Election of President</article>
+                    <article name="art55"> Manner of election of President</article>
+                    <article name="art56"> Term of office of President</article>
+                    <article name="art57"> Eligibility for re-election</article>
+                    <article name="art58"> Qualifications for election as President</article>
+                    <article name="art59"> Conditions of President’s office</article>
+                    <article name="art60"> Oath or affirmation by the President</article>
+                    <article name="art61"> Procedure for impeachment of the President</article>
+                    <article name="art62"> Time of holding election to fill vacancy in the office of President and the term of office of</article>
+                    <article name="art63"> The Vice-President of India</article>
+                    <article name="art64"> The Vice-President to be ex officio Chairman of the Council of States</article>
+                    <article name="art65"> The Vice-President to act as President or to discharge his functions during casual</article>
+                    <article name="art66"> Election of Vice-President</article>
+                    <article name="art67"> Term of office of Vice-President</article>
+                    <article name="art68"> Time of holding election to fill vacancy in the office of Vice-President and the term of office of</article>
+                    <article name="art69"> Oath or affirmation by the Vice-President</article>
+                    <article name="art70"> Discharge of President’s functions in other contingencies</article>
+                    <article name="art71"> Matters relating to, or connected with, the election of a President or Vice-President</article>
+                    <article name="art72"> Power of President to grant pardons, etc</article>
+                    <article name="art73"> Extent of executive power of the Union</article>
+                </subchapter>
+                <subchapter>
+                    <title>Council of Ministers</title>
+                    <article name="art74"> Council of Ministers to aid and advise President</article>
+                    <article name="art75"> Other provisions as to Ministers</article>
+                </subchapter>
+                <subchapter>
+                    <title>The Attorney-General for India</title>
+                    <article name="art76"> Attorney-General for India</article>
+                </subchapter>
+                <subchapter>
+                    <title>Conduct of Government Business</title>
+                    <article name="art77"> Conduct of business of the Government of India</article>
+                    <article name="art78"> Duties of Prime Minister as respects the furnishing of information to the President, etc</article>
+                </subchapter>
+            </chapter>
+            <chapter><title>CHAPTER II. PARLIAMENT</title>
+                <subchapter>
+                    <title>General</title>
+                    <article name="art79"> Constitution of Parliament</article>
+                    <article name="art80"> Composition of the Council of States</article>
+                    <article name="art81"> Composition of the House of the People</article>
+                    <article name="art82"> Readjustment after each census</article>
+                    <article name="art83"> Duration of Houses of Parliament</article>
+                    <article name="art84"> Qualification for membership of Parliament</article>
+                    <article name="art85"> Sessions of Parliament, prorogation and dissolution</article>
+                    <article name="art86"> Right of President to address and send messages to Houses</article>
+                    <article name="art87"> Special address by the President</article>
+                    <article name="art88"> Rights of Ministers and Attorney-General as respects Houses</article>
+                </subchapter>
+                <subchapter>
+                    <title>Officers of Parliament</title>
+                    <article name="art89"> The Chairman and Deputy Chairman of the Council of States</article>
+                    <article name="art90"> Vacation and resignation of, and removal from, the office of Deputy Chairman</article>
+                    <article name="art91"> Power of the Deputy Chairman or other person to perform the duties of the office of, or to act as,</article>
+                    <article name="art92"> The Chairman or the Deputy Chairman not to preside while a resolution for his removal from office</article>
+                    <article name="art93"> The Speaker and Deputy Speaker of the House of the People</article>
+                    <article name="art94"> Vacation and resignation of, and removal from, the offices of Speaker and Deputy Speaker</article>
+                    <article name="art95"> Power of the Deputy Speaker or other person to perform the duties of the office of, or to act as,</article>
+                    <article name="art96"> The Speaker or the Deputy Speaker not to preside while a resolution for his removal from office is</article>
+                    <article name="art97"> Salaries and allowances of the Chairman and Deputy Chairman and the Speaker and Deputy</article>
+                    <article name="art98"> Secretariat of Parliament</article>
+                </subchapter>
+                <subchapter>
+                    <title>Conduct of Business</title>
+                    <article name="art99"> Oath or affirmation by members</article>
+                    <article name="art100"> Voting in Houses, power of Houses to act notwithstanding vacancies and quorum</article>
+                </subchapter>
+                <subchapter>
+                    <title>Disqualifications of Members</title>
+                    <article name="art101"> Vacation of seats</article>
+                    <article name="art102"> Disqualifications for membership</article>
+                    <article name="art103"> Decision on questions as to disqualifications of members</article>
+                    <article name="art104"> Penalty for sitting and voting before making oath or affirmation under article 99 or when not</article>
+                </subchapter>
+                <subchapter>
+                    <title>Powers, Privileges and Immunities of Parliament and its Members</title>
+                    <article name="art105"> Powers, privileges, etc</article>
+                    <article name="art106"> Salaries and allowances of members</article>
+                </subchapter>
+                <subchapter>
+                    <title>Legislative Procedure</title>
+                    <article name="art107"> Provisions as to introduction and passing of Bills</article>
+                    <article name="art108"> Joint sitting of both Houses in certain cases</article>
+                    <article name="art109"> Special procedure in respect of Money Bills</article>
+                    <article name="art110"> Definition of “Money Bills”</article>
+                    <article name="art111"> Assent to Bills</article>
+                </subchapter>
+                <subchapter>
+                    <title>Procedure in Financial Matters</title>
+                    <article name="art112"> Annual financial statement</article>
+                    <article name="art113"> Procedure in Parliament with respect to estimates</article>
+                    <article name="art114"> Appropriation Bills</article>
+                    <article name="art115"> Supplementary, additional or excess grants</article>
+                    <article name="art116"> Votes on account, votes of credit and exceptional grants</article>
+                    <article name="art117"> Special provisions as to financial Bills</article>
+                </subchapter>
+                <subchapter>
+                    <title>Procedure Generally</title>
+                    <article name="art118"> Rules of procedure</article>
+                    <article name="art119"> Regulation by law of procedure in Parliament in relation to financial business</article>
+                    <article name="art120"> Language to be used in Parliament</article>
+                    <article name="art121"> Restriction on discussion in Parliament</article>
+                    <article name="art122"> Courts not to inquire into proceedings of Parliament</article>
+                </subchapter>
+            </chapter>
+            <chapter><title>CHAPTER III. LEGISLATIVE POWERS OF THE PRESIDENT</title>
+                <article name="art123">Power of President to promulgate Ordinances during recess of Parliament</article>
+            </chapter>
+            <chapter><title>CHAPTER IV. THE UNION JUDICIARY</title>
+                <article name="art124"> Establishment and constitution of Supreme Court</article>
+                <article name="art124A"> National Judicial Appointments Commission</article>
+                <article name="art124B"> Functions of Commission</article>
+                <article name="art124C"> Power of Parliament to make law</article>
+                <article name="art125"> Salaries, etc</article>
+                <article name="art126"> Appointment of acting Chief Justice</article>
+                <article name="art127"> Appointment of ad hoc judges</article>
+                <article name="art128"> Attendance of retired Judges at sittings of the Supreme Court</article>
+                <article name="art129"> Supreme Court to be a court of record</article>
+                <article name="art130"> Seat of Supreme Court</article>
+                <article name="art131"> Original jurisdiction of the Supreme Court</article>
+                <article name="art131A"> [Omitted</article>
+                <article name="art132"> Appellate jurisdiction of Supreme Court in appeals from High Courts in certain cases</article>
+                <article name="art133"> Appellate jurisdiction of Supreme Court in appeals from High Courts in regard to civil matters</article>
+                <article name="art134"> Appellate jurisdiction of Supreme Court in regard to criminal matters</article>
+                <article name="art134A"> Certificate for appeal to the Supreme Court</article>
+                <article name="art135"> Jurisdiction and powers of the Federal Court under existing law to be exercisable by the Supreme</article>
+                <article name="art136"> Special leave to appeal by the Supreme Court</article>
+                <article name="art137"> Review of judgments or orders by the Supreme Court</article>
+                <article name="art138"> Enlargement of the jurisdiction of the Supreme Court</article>
+                <article name="art139"> Conferment on the Supreme Court of powers to issue certain writs</article>
+                <article name="art139A"> Transfer of certain cases</article>
+                <article name="art140"> Ancillary powers of Supreme Court</article>
+                <article name="art141"> Law declared by Supreme Court to be binding on all courts</article>
+                <article name="art142"> Enforcement of decrees and orders of Supreme Court and orders as to discovery, etc</article>
+                <article name="art143"> Power of President to consult Supreme Court</article>
+                <article name="art144"> Civil and judicial authorities to act in aid of the Supreme Court</article>
+                <article name="art144A"> [Omitted</article>
+                <article name="art145"> Rules of Court, etc</article>
+                <article name="art146"> Officers and servants and the expenses of the Supreme Court</article>
+                <article name="art147"> Interpretation</article>
+            </chapter>
+            <chapter><title>CHAPTER V. COMPTROLLER AND AUDITOR-GENERAL OF INDIA</title>
+                <article name="art148"> Comptroller and Auditor-General of India</article>
+                <article name="art149"> Duties and powers of the Comptroller and Auditor-General</article>
+                <article name="art150"> Form of accounts of the Union and of the States</article>
+                <article name="art151"> Audit reports</article>
+            </chapter>
+        </part>
+        <part name="part6">
+            <title>PART VI</title>
+            <subtitle>THE STATES</subtitle>
+            <chapter><title>CHAPTER I. GENERAL</title>
+                <article name="art152"> Definition</article>
+            </chapter>
+            <chapter><title>CHAPTER II. THE EXECUTIVE</title>
+                <subchapter>
+                    <title>The Governor</title>
+                    <article name="art153"> Governors of States</article>
+                    <article name="art154"> Executive power of State</article>
+                    <article name="art155"> Appointment of Governor</article>
+                    <article name="art156"> Term of office of Governor</article>
+                    <article name="art157"> Qualifications for appointment as Governor</article>
+                    <article name="art158"> Conditions of Governor’s office</article>
+                    <article name="art159"> Oath or affirmation by the Governor</article>
+                    <article name="art160"> Discharge of the functions of the Governor in certain contingencies</article>
+                    <article name="art161"> Power of Governor to grant pardons, etc</article>
+                    <article name="art162"> Extent of executive power of State</article>
+                </subchapter>
+                <subchapter>
+                    <title>Council of Ministers</title>
+                    <article name="art163"> Council of Ministers to aid and advise Governor</article>
+                    <article name="art164"> Other provisions as to Ministers</article>
+                </subchapter>
+                <subchapter>
+                    <title>The Advocate-General for the State</title>
+                    <article name="art165"> Advocate-General for the State</article>
+                </subchapter>
+                <subchapter>
+                    <title>Conduct of Government Business</title>
+                    <article name="art166"> Conduct of business of the Government of a State</article>
+                    <article name="art167"> Duties of Chief Minister as respects the furnishing of information to Governor, etc</article>
+                </subchapter>
+            </chapter>
+            <chapter><title>CHAPTER III. THE STATE LEGISLATURE</title>
+                <subchapter>
+                    <title>General</title>
+                    <article name="art168"> Constitution of Legislatures in States</article>
+                    <article name="art169"> Abolition or creation of Legislative Councils in States</article>
+                    <article name="art170"> Composition of the Legislative Assemblies</article>
+                    <article name="art171"> Composition of the Legislative Councils</article>
+                    <article name="art172"> Duration of State Legislatures</article>
+                    <article name="art173"> Qualification for membership of the State Legislature</article>
+                    <article name="art174"> Sessions of the State Legislature, prorogation and dissolution</article>
+                    <article name="art175"> Right of Governor to address and send messages to the House or Houses</article>
+                    <article name="art176"> Special address by the Governor</article>
+                    <article name="art177"> Rights of Ministers and Advocate-General as respects the Houses</article>
+                </subchapter>
+                <subchapter>
+                    <title>Officers of the State Legislature</title>
+                    <article name="art178"> The Speaker and Deputy Speaker of the Legislative Assembly</article>
+                    <article name="art179"> Vacation and resignation of, and removal from, the offices of Speaker and Deputy Speaker</article>
+                    <article name="art180"> Power of the Deputy Speaker or other person to perform the duties of the office of, or to act as,</article>
+                    <article name="art181"> The Speaker or the Deputy Speaker not to preside while a resolution for his removal from office</article>
+                    <article name="art182"> The Chairman and Deputy Chairman of the Legislative Council</article>
+                    <article name="art183"> Vacation and resignation of, and removal from, the offices of Chairman and Deputy Chairman</article>
+                    <article name="art184"> Power of the Deputy Chairman or other person to perform the duties of the office of, or to act as,</article>
+                    <article name="art185"> The Chairman or the Deputy Chairman not to preside while a resolution for his removal from</article>
+                    <article name="art186"> Salaries and allowances of the Speaker and Deputy Speaker and the Chairman and Deputy</article>
+                    <article name="art187"> Secretariat of State Legislature</article>
+                </subchapter>
+                <subchapter>
+                    <title>Conduct of Business</title>
+                    <article name="art188"> Oath or affirmation by members</article>
+                    <article name="art189"> Voting in Houses, power of Houses to act notwithstanding vacancies and quorum</article>
+                </subchapter>
+                <subchapter>
+                    <title>Disqualifications of Members</title>
+                    <article name="art190"> Vacation of seats</article>
+                    <article name="art191"> Disqualifications for membership</article>
+                    <article name="art192"> Decision on questions as to disqualifications of members</article>
+                    <article name="art193"> Penalty for sitting and voting before making oath or affirmation under article 188 or when not</article>
+                </subchapter>
+                <subchapter>
+                    <title>Powers, privileges and immunities of State Legislatures and their Members</title>
+                    <article name="art194"> Powers, privileges, etc</article>
+                    <article name="art195"> Salaries and allowances of members</article>
+                </subchapter>
+                <subchapter>
+                    <title>Legislative Procedure</title>
+                    <article name="art196"> Provisions as to introduction and passing of Bills</article>
+                    <article name="art197"> Restriction on powers of Legislative Council as to Bills other than Money Bills</article>
+                    <article name="art198"> Special procedure in respect of Money Bills</article>
+                    <article name="art199"> Definition of “Money Bills”</article>
+                    <article name="art200"> Assent to Bills</article>
+                    <article name="art201"> Bills reserved for consideration</article>
+                </subchapter>
+                <subchapter>
+                    <title>Procedure in Financial Matters</title>
+                    <article name="art202"> Annual financial statement</article>
+                    <article name="art203"> Procedure in Legislature with respect to estimates</article>
+                    <article name="art204"> Appropriation Bills</article>
+                    <article name="art205"> Supplementary, additional or excess grants</article>
+                    <article name="art206"> Votes on account, votes of credit and exceptional grants</article>
+                    <article name="art207"> Special provisions as to financial Bills</article>
+                </subchapter>
+                <subchapter>
+                    <title>Procedure Generally</title>
+                    <article name="art208"> Rules of procedure</article>
+                    <article name="art209"> Regulation by law of procedure in the Legislature of the State in relation to financial business</article>
+                    <article name="art210"> Language to be used in the Legislature</article>
+                    <article name="art211"> Restriction on discussion in the Legislature</article>
+                    <article name="art212"> Courts not to inquire into proceedings of the Legislature</article>
+                </subchapter>
+            </chapter>
+            <chapter><title>CHAPTER IV. LEGISLATIVE POWER OF THE GOVERNOR</title>
+                <article name="art213"> Power of Governor to promulgate Ordinances during recess of Legislature</article>
+            </chapter>
+            <chapter><title>CHAPTER V. -THE HIGH COURTS IN THE STATES</title>
+                <article name="art214"> High Courts for States</article>
+                <article name="art215"> High Courts to be courts of record</article>
+                <article name="art216"> Constitution of High Courts</article>
+                <article name="art217"> Appointment and conditions of the office of a Judge of a High Court</article>
+                <article name="art218"> Application of certain provisions relating to Supreme Court to High Courts</article>
+                <article name="art219"> Oath or affirmation by Judges of High Courts</article>
+                <article name="art220"> Restriction on practice after being a permanent Judge</article>
+                <article name="art221"> Salaries, etc</article>
+                <article name="art222"> Transfer of a Judge from one High Court to another</article>
+                <article name="art223"> Appointment of acting Chief Justice</article>
+                <article name="art224"> Appointment of additional and acting Judges</article>
+                <article name="art224A"> Appointment of retired Judges at sittings of High Courts</article>
+                <article name="art225"> Jurisdiction of existing High Courts</article>
+                <article name="art226"> Power of High Courts to issue certain writs</article>
+                <article name="art226A"> [Omitted]</article>
+                <article name="art227"> Power of superintendence over all courts by the High Court</article>
+                <article name="art228"> Transfer of certain cases to High Court</article>
+                <article name="art228A"> [Omitted </article>
+                <article name="art229"> Officers and servants and the expenses of High Courts</article>
+                <article name="art230"> Extension of jurisdiction of High Courts to Union territories</article>
+                <article name="art231"> Establishment of a common High Court for two or more States</article>
+            </chapter>
+            <chapter><title>CHAPTER VI SUBORDINATE COURTS</title>
+                <article name="art233"> Appointment of district judges</article>
+                <article name="art233A"> Validation of appointments of, and judgments, etc</article>
+                <article name="art234"> Recruitment of persons other than district judges to the judicial service</article>
+                <article name="art235"> Control over subordinate courts</article>
+                <article name="art236"> Interpretation</article>
+                <article name="art237"> Application of the provisions of this Chapter to certain class or classes of magistrates</article>
+            </chapter>
+        </part>
+        <part name="part7">
+            <title>PART VII- [Omitted]</title>
+            <subtitle>THE STATES IN PART B OF THE FIRST SCHEDULE</subtitle>
+            <article name="art238"> [Omitted </article>
+        </part>
+        <part name="part8">
+            <title>PART VIII</title>
+            <subtitle>THE UNION TERRITORIES</subtitle>
+            <article name="art239"> Administration of Union territories</article>
+            <article name="art239A"> Creation of local Legislatures or Council of Ministers or both for certain Union territories</article>
+            <article name="art239AA">Special provisions with respect to Delhi</article>
+            <article name="art239AB">Provision in case of failure of constitutional machinery</article>
+            <article name="art239B">Power of administrator to promulgate Ordinances during recess of Legislature</article>
+            <article name="art240"> Power of President to make regulations for certain Union territories</article>
+            <article name="art241"> High Courts for Union territories</article>
+            <article name="art242"> [Omitted </article>
+        </part>
+        <part name="part9">
+            <title>PART IX</title>
+            <subtitle>THE PANCHAYATS</subtitle>
+            <article name="art243"> Definitions</article>
+            <article name="art243A"> Gram Sabha</article>
+            <article name="art243B"> Constitution of Panchayats</article>
+            <article name="art243C"> Composition of Panchayats</article>
+            <article name="art243D"> Reservation of seats</article>
+            <article name="art243E"> Duration of Panchayats, etc</article>
+            <article name="art243F"> Disqualifications for membership</article>
+            <article name="art243G"> Powers, authority and responsibilities of Panchayats</article>
+            <article name="art243H"> Powers to impose taxes by, and Funds of, the Panchayats</article>
+            <article name="art243-I"> Constitution of Finance Commission to review financial position</article>
+            <article name="art243J"> Audit of accounts of Panchayats</article>
+            <article name="art243K"> Elections to the Panchayats</article>
+            <article name="art243L"> Application to Union territories</article>
+            <article name="art243M"> Part not to apply to certain areas</article>
+            <article name="art243N"> Continuance of existing laws and Panchayats</article>
+            <article name="art243-O"> Bar to interference by courts in electoral matters</article>
+        </part>
+        <part name="part9A">
+            <title>PART IXA</title>
+            <subtitle>THE MUNICIPALITIES</subtitle>
+            <article name="art243P"> Definitions</article>
+            <article name="art243Q"> Constitution of Municipalities</article>
+            <article name="art243R"> Composition of Municipalities</article>
+            <article name="art243S"> Constitution and composition of Wards Committees, etc</article>
+            <article name="art243T"> Reservation of seats</article>
+            <article name="art243U"> Duration of Municipalities, etc</article>
+            <article name="art243V"> Disqualifications for membership</article>
+            <article name="art243W">Powers, authority and responsibilities of Municipalities, etc</article>
+            <article name="art243X"> Power to impose taxes by, and Funds of, the Municipalities</article>
+            <article name="art243Y"> Finance Commission</article>
+            <article name="art243Z"> Audit of accounts of Municipalities</article>
+            <article name="art243ZA"> Elections to the Municipalities</article>
+            <article name="art243ZB"> Application to Union territories</article>
+            <article name="art243ZC"> Part not to apply to certain areas</article>
+            <article name="art243ZD">Committee for district planning</article>
+            <article name="art243ZE"> Committee for Metropolitan planning</article>
+            <article name="art243ZF"> Continuance of existing laws and Municipalities</article>
+            <article name="art243ZG"> Bar to interference by courts in electoral matters</article>
+        </part>
+        <part name="part9B">
+            <title>PART IXB</title>
+            <subtitle>THE CO-OPERATIVE SOCIETIES</subtitle>
+            <article name="art243ZH"> Definitions</article>
+            <article name="art243ZI"> Incorporation of co-operative societies</article>
+            <article name="art243ZJ"> Number and term of members of board and its office bearers</article>
+            <article name="art243ZK"> Election of members of board</article>
+            <article name="art243ZL"> Supersession and suspension of board and interim management</article>
+            <article name="art243ZM"> Audit of accounts of co-operative societies</article>
+            <article name="art243ZN"> Convening of general body meetings</article>
+            <article name="art243ZO"> Right of a member to get information</article>
+            <article name="art243ZP"> Returns</article>
+            <article name="art243ZQ"> Offences and penalties</article>
+            <article name="art243ZR"> Application to multi-State co-operative societies</article>
+            <article name="art243ZS"> Application to Union territories</article>
+            <article name="art243ZT"> Continuance of existing laws</article>
+        </part>
+        <part name="part10">
+            <title>PART X</title>
+            <subtitle>THE SCHEDULED AND TRIBAL AREAS</subtitle>
+            <article name="art244"> Administration of Scheduled Areas and Tribal Areas</article>
+            <article name="art244A"> Formation of an autonomous State comprising certain tribal areas in Assam and creation of</article>
+        </part>
+        <part name="part11">
+            <title>PART XI</title>
+            <subtitle>RELATIONS BETWEEN THE UNION AND THE STATES</subtitle>
+            <chapter><title>CHAPTER I. LEGISLATIVE RELATIONS</title>
+                <subchapter>
+                    <title>Distribution of Legislative Powers</title>
+                    <article name="art245"> Extent of laws made by Parliament and by the Legislatures of States</article>
+                    <article name="art246"> Subject-matter of laws made by Parliament and by the Legislatures of States</article>
+                    <article name="art246A"> Special provision with respect to goods and services tax</article>
+                    <article name="art247"> Power of Parliament to provide for the establishment of certain additional courts</article>
+                    <article name="art248"> Residuary powers of legislation</article>
+                    <article name="art249"> Power of Parliament to legislate with respect to a matter in the State List in the national interest</article>
+                    <article name="art250"> Power of Parliament to legislate with respect to any matter in the State List if a Proclamation of</article>
+                </subchapter>
+                <subchapter>
+                    <title>Emergency is in operation.</title>
+                    <article name="art251"> Inconsistency between laws made by Parliament under articles 249 and 250 and laws made by</article>
+                    <article name="art252"> Power of Parliament to legislate for two or more States by consent and adoption of such</article>
+                    <article name="art253"> Legislation for giving effect to international agreements</article>
+                    <article name="art254"> Inconsistency between laws made by Parliament and laws made by the Legislatures of States</article>
+                    <article name="art255"> Requirements as to recommendations and previous sanctions to be regarded as matters of</article>
+                </subchapter>
+            </chapter>
+            <chapter><title>CHAPTER II. ADMINISTRATIVE RELATIONS</title>
+                <subchapter>
+                    <title>General</title>
+                    <article name="art256"> Obligation of States and the Union</article>
+                    <article name="art257"> Control of the Union over States in certain cases</article>
+                    <article name="art257A"> [Omitted </article>
+                    <article name="art258"> Power of the Union to confer powers, etc</article>
+                    <article name="art258A"> Power of the States to entrust functions to the Union</article>
+                    <article name="art259"> [Omitted </article>
+                    <article name="art260"> Jurisdiction of the Union in relation to territories outside India</article>
+                    <article name="art261"> Public acts, records and judicial proceedings</article>
+                </subchapter>
+                <subchapter>
+                    <title>Disputes relating to Waters</title>
+                    <article name="art262"> Adjudication of disputes relating to waters of inter-State rivers or river valleys</article>
+                </subchapter>
+                <subchapter>
+                    <title>Co-ordination between States</title>
+                    <article name="art263"> Provisions with respect to an inter-State Council</article>
+                </subchapter>
+            </chapter>
+        </part>
+        <part name="part12">
+            <title>PART XII</title>
+            <subtitle>FINANCE, PROPERTY, CONTRACTS AND SUITS</subtitle>
+            <chapter><title>CHAPTER I. FINANCE</title>
+                <subchapter>
+                    <title>General</title>
+                    <article name="art264"> Interpretation</article>
+                    <article name="art265"> Taxes not to be imposed save by authority of law</article>
+                    <article name="art266"> Consolidated Funds and public accounts of India and of the States</article>
+                    <article name="art267"> Contingency Fund</article>
+                </subchapter>
+                <subchapter>
+                    <title>Distribution of Revenues between the Union and the States</title>
+                    <article name="art268"> Duties levied by the Union but collected and appropriated by the State</article>
+                    <article name="art268A"> [Omitted]</article>
+                    <article name="art269"> Taxes levied and collected by the Union but assigned to the States</article>
+                    <article name="art269A"> Levy and collection of goods and services tax in course of inter-State trade or commerce</article>
+                    <article name="art270"> Taxes levied and distributed between the Union and the States</article>
+                    <article name="art271"> Surcharge on certain duties and taxes for purposes of the Union</article>
+                    <article name="art272"> [Omitted</article>
+                    <article name="art273"> Grants in lieu of export duty on jute and jute products</article>
+                    <article name="art274"> Prior recommendation of President required to Bills affecting taxation in which States are</article>
+                    <article name="art275"> Grants from the Union to certain States</article>
+                    <article name="art276"> Taxes on professions, trades, callings and employments</article>
+                    <article name="art277"> Savings</article>
+                    <article name="art278"> [Omitted</article>
+                    <article name="art279"> Calculation of “net proceeds”, etc</article>
+                    <article name="art279A"> Goods and Services Tax Council</article>
+                    <article name="art280"> Finance Commission</article>
+                    <article name="art281"> Recommendations of the Finance Commission</article>
+                </subchapter>
+                <subchapter>
+                    <title>Miscellaneous financial provisions</title>
+                    <article name="art282"> Expenditure defrayable by the Union or a State out of its revenues</article>
+                    <article name="art283"> Custody, etc</article>
+                    <article name="art284"> Custody of suitors’ deposits and other moneys received by public servants and courts</article>
+                    <article name="art285"> Exemption of property of the Union from State taxation</article>
+                    <article name="art286"> Restrictions as to imposition of tax on the sale or purchase of goods</article>
+                    <article name="art287"> Exemption from taxes on electricity</article>
+                    <article name="art288"> Exemption from taxation by States in respect of water or electricity in certain cases</article>
+                    <article name="art289"> Exemption of property and income of a State from Union taxation</article>
+                    <article name="art290"> Adjustment in respect of certain expenses and pensions</article>
+                    <article name="art290A"> Annual payment to certain Devaswom Funds</article>
+                    <article name="art291"> [Omitted </article>
+                </subchapter>
+            </chapter>
+            <chapter><title>CHAPTER II. BORROWING</title>
+                <article name="art292"> Borrowing by the Government of India</article>
+                <article name="art293"> Borrowing by States</article>
+            </chapter>
+            <chapter><title>CHAPTER III. PROPERTY, CONTRACTS, RIGHTS, LIABILITIES, OBLIGATIONS AND SUITS</title>
+                <article name="art294"> Succession to property, assets, rights, liabilities and obligations in certain cases</article>
+                <article name="art295"> Succession to property, assets, rights, liabilities and obligations in other cases</article>
+                <article name="art296"> Property accruing by escheat or laps or as bona vacantia</article>
+                <article name="art297"> Things of value within territorial waters or continental shelf and resources of the exclusive</article>
+                <article name="art298"> Power to carry on trade, etc</article>
+                <article name="art299"> Contracts</article>
+                <article name="art300"> Suits and proceedings</article>
+            </chapter>
+            <chapter><title>CHAPTER IV. RIGHT TO PROPERTY</title>
+                <article name="art300A"> Persons not to be deprived of property save by authority of law</article>
+            </chapter>
+        </part>
+        <part name="part13">
+            <title>PART XIII</title>
+            <subtitle>TRADE, COMMERCE AND INTERCOURSE WITHIN THE TERRITORY OF INDIA</subtitle>
+            <article name="art301"> Freedom of trade, commerce and intercourse</article>
+            <article name="art302"> Power of Parliament to impose restrictions on trade, commerce and intercourse</article>
+            <article name="art303"> Restrictions on the legislative powers of the Union and of the States with regard to trade and</article>
+            <article name="art304"> Restrictions on trade, commerce and intercourse among States</article>
+            <article name="art305"> Saving of existing laws and laws providing for State monopolies</article>
+            <article name="art306"> [Omitted </article>
+            <article name="art307"> Appointment of authority for carrying out the purposes of articles 301 to 304</article>
+        </part>
+        <part name="part14">
+            <title>PART XIV</title>
+            <subtitle>SERVICES UNDER THE UNION AND THE STATES</subtitle>
+            <chapter><title>CHAPTER I. SERVICES</title>
+                <article name="art308"> Interpretation</article>
+                <article name="art309"> Recruitment and conditions of service of persons serving the Union or a State</article>
+                <article name="art310"> Tenure of office of persons serving the Union or a State</article>
+                <article name="art311"> Dismissal, removal or reduction in rank of persons employed in civil capacities under the Union</article>
+                <article name="art312"> All-India services</article>
+                <article name="art312A"> Power of Parliament to vary or revoke conditions of service of officers of certain services</article>
+                <article name="art313"> Transitional provisions</article>
+                <article name="art314"> [Omitted </article>
+            </chapter>
+            <chapter><title>CHAPTER II.—PUBLIC SERVICE COMMISSIONS</title>
+                <article name="art315"> Public Service Commissions for the Union and for the States</article>
+                <article name="art316"> Appointment and term of office of members</article>
+                <article name="art317"> Removal and suspension of a member of a Public Service Commission</article>
+                <article name="art318"> Power to make regulations as to conditions of service of members and staff of the Commission</article>
+                <article name="art319"> Prohibition as to the holding of offices by members of Commission on ceasing to be such</article>
+                <article name="art320"> Functions of Public Service Commissions</article>
+                <article name="art321"> Power to extend functions of Public Service Commissions</article>
+                <article name="art322"> Expenses of Public Service Commissions</article>
+                <article name="art323"> Reports of Public Service Commissions</article>
+            </chapter>
+        </part>
+        <part name="part14A">
+            <title>PART XIVA</title>
+            <subtitle>TRIBUNALS</subtitle>
+            <article name="art323A"> Administrative tribunals</article>
+            <article name="art323B"> Tribunals for other matters</article>
+        </part>
+        <part name="part15">
+            <title>PART XV</title>
+            <subtitle>ELECTIONS</subtitle>
+            <article name="art324"> Superintendence, direction and control of elections to be vested in an Election Commission</article>
+            <article name="art325"> No person to be ineligible for inclusion in, or to claim to be included in a special, electoral roll on</article>
+            <article name="art326"> Elections to the House of the People and to the Legislative Assemblies of States to be on the basis</article>
+            <article name="art327"> Power of Parliament to make provision with respect to elections to Legislatures</article>
+            <article name="art328"> Power of Legislature of a State to make provision with respect to elections to such Legislature</article>
+            <article name="art329"> Bar to interference by courts in electoral matters</article>
+            <article name="art329A"> [Omitted </article>
+        </part>
+        <part name="part16">
+            <title>PART XVI</title>
+            <subtitle>SPECIAL PROVISIONS RELATING TO CERTAIN CLASSES</subtitle>
+            <article name="art330"> Reservation of seats for Scheduled Castes and Scheduled Tribes in the House of the People</article>
+            <article name="art331"> Representation of the Anglo-Indian community in the House of the People</article>
+            <article name="art332"> Reservation of seats for Scheduled Castes and Scheduled Tribes in the Legislative Assemblies of</article>
+            <article name="art333"> Representation of the Anglo-Indian community in the Legislative Assemblies of the States</article>
+            <article name="art334"> Reservation of seats and special representation to cease after seventy years</article>
+            <article name="art335"> Claims of Scheduled Castes and Scheduled Tribes to services and posts</article>
+            <article name="art336"> Special provision for Anglo-Indian community in certain services</article>
+            <article name="art337"> Special provision with respect to educational grants for the benefit of Anglo-Indian Community</article>
+            <article name="art338"> National Commission for Scheduled Castes</article>
+            <article name="art338A"> National Commission for Scheduled Tribes</article>
+            <article name="art338B"> National Commission for Backward Classes</article>
+            <article name="art339"> Control of the Union over the administration of Scheduled Areas and the welfare of Scheduled</article>
+            <article name="art340"> Appointment of a Commission to investigate the conditions of backward classes</article>
+            <article name="art341"> Scheduled Castes</article>
+            <article name="art342"> Scheduled Tribes</article>
+            <article name="art342A"> Socially and educationally backward classes</article>
+        </part>
+        <part name="part17">
+            <title>PART XVII</title>
+            <subtitle>OFFICIAL LANGUAGE</subtitle>
+            <chapter><title>CHAPTER I.—LANGUAGE OF THE UNION</title>
+                <article name="art343"> Official language of the Union</article>
+                <article name="art344"> Commission and Committee of Parliament on official language</article>
+            </chapter>
+            <chapter><title>CHAPTER II. REGIONAL LANGUAGES</title>
+                <article name="art345"> Official language or languages of a State</article>
+                <article name="art346"> Official language for communication between one State and another or between a State and the</article>
+                <article name="art347"> Special provision relating to language spoken by a section of the population of a State</article>
+            </chapter>
+            <chapter><title>CHAPTER III. LANGUAGE OF THE SUPREME COURT, HIGH COURTS, ETC.</title>
+                <article name="art348"> Language to be used in the Supreme Court and in the High Courts and for Acts, Bills, etc</article>
+                <article name="art349"> Special procedure for enactment of certain laws relating to language</article>
+            </chapter>
+            <chapter><title>CHAPTER IV. SPECIAL DIRECTIVES</title>
+                <article name="art350"> Language to be used in representations for redress of grievances</article>
+                <article name="art350A"> Facilities for instruction in mother-tongue at primary stage</article>
+                <article name="art350B"> Special Officer for linguistic minorities</article>
+                <article name="art351"> Directive for development of the Hindi language</article>
+            </chapter>
+        </part>
+        <part name="part18">
+            <title>PART XVIII</title>
+            <subtitle>EMERGENCY PROVISIONS</subtitle>
+            <article name="art352"> Proclamation of Emergency</article>
+            <article name="art353"> Effect of Proclamation of Emergency</article>
+            <article name="art354"> Application of provisions relating to distribution of revenues while a Proclamation of Emergency</article>
+            <article name="art355"> Duty of the Union to protect States against external aggression and internal disturbance</article>
+            <article name="art356"> Provisions in case of failure of constitutional machinery in States</article>
+            <article name="art357"> Exercise of legislative powers under Proclamation issued under article 356</article>
+            <article name="art358"> Suspension of provisions of article 19 during emergencies</article>
+            <article name="art359"> Suspension of the enforcement of the rights conferred by Part III during emergencies</article>
+            <article name="art359A"> [Omitted</article>
+            <article name="art360"> Provisions as to financial emergency</article>
+        </part>
+        <part name="part19">
+            <title>PART XIX</title>
+            <subtitle>MISCELLANEOUS ARTICLES</subtitle>
+            <article name="art361"> Protection of President and Governors and Rajpramukhs</article>
+            <article name="art361A"> Protection of publication of proceedings of Parliament and State Legislatures</article>
+            <article name="art361B"> Disqualification for appointment on remunerative political post</article>
+            <article name="art362"> [Omitted</article>
+            <article name="art363"> Bar to interference by courts in disputes arising out of certain treaties, agreements, etc</article>
+            <article name="art363A"> Recognition granted to Rulers of Indian States to cease and privy purses to be abolished</article>
+            <article name="art364"> Special provisions as to major ports and aerodromes</article>
+            <article name="art365"> Effect of failure to comply with, or to give effect to, directions given by the Union</article>
+            <article name="art366"> Definitions</article>
+            <article name="art367"> Interpretation</article>
+        </part>
+        <part name="part20">
+            <title>PART XX</title>
+            <subtitle>AMENDMENT OF THE CONSTITUTION</subtitle>
+            <article name="art368"> Power of Parliament to amend the Constitution and procedure therefor</article>
+        </part>
+        <part name="part21">
+            <title>PART XXI</title>
+            <subtitle>TEMPORARY, TRANSITIONAL AND SPECIAL PROVISIONS</subtitle>
+            <article name="art369"> Temporary power to Parliament to make laws with respect to certain matters in the State List as if</article>
+            <article name="art370"> Temporary provisions with respect to the State of Jammu and Kashmir</article>
+            <article name="art371"> Special provision with respect to the States of Maharashtra and Gujarat</article>
+            <article name="art371A"> Special provision with respect to the State of Nagaland</article>
+            <article name="art371B"> Special provision with respect to the State of Assam</article>
+            <article name="art371C"> Special provision with respect to the State of Manipur</article>
+            <article name="art371D"> Special provisions with respect to the State of Andhra Pradesh or the State of Telangana</article>
+            <article name="art371E"> Establishment of Central University in Andhra Pradesh</article>
+            <article name="art371F"> Special provisions with respect to the State of Sikkim</article>
+            <article name="art371G"> Special provision with respect to the State of Mizoram</article>
+            <article name="art371H"> Special provision with respect to the State of Arunachal Pradesh</article>
+            <article name="art371-I"> Special provision with respect to the State of Goa</article>
+            <article name="art371J"> Special provisions with respect to the State of Karnataka</article>
+            <article name="art372"> Continuance in force of existing laws and their adaptation</article>
+            <article name="art372A"> Power of the President to adapt laws</article>
+            <article name="art373"> Power of President to make order in respect of persons under preventive detention in certain cases</article>
+            <article name="art374"> Provisions as to Judges of the Federal Court and proceedings pending in the Federal Court or</article>
+            <article name="art375"> Courts, authorities and officers to continue to function subject to the provisions of the Constitution</article>
+            <article name="art376"> Provisions as to Judges of High Courts</article>
+            <article name="art377"> Provisions as to Comptroller and Auditor-General of India</article>
+            <article name="art378"> Provisions as to Public Service Commissions</article>
+            <article name="art378A"> Special provision as to duration of Andhra Pradesh Legislative Assembly</article>
+            <article name="art379-391"> [Omitted</article>
+            <article name="art392"> Power of the President to remove difficulties</article>
+        </part>
+        <part name="part22">
+            <title>PART XXII</title>
+            <subtitle>SHORT TITLE, COMMENCEMENT, AUTHORITATIVE TEXT IN HINDI AND REPEALS</subtitle>
+            <article name="art393"> Short title</article>
+            <article name="art394"> Commencement</article>
+            <article name="art394A"> Authoritative text in the Hindi language</article>
+            <article name="art395"> Repeals</article>
+        </part>
+    </parts>
+    <schedules>
+    	<schedule name="sched1"><title>FIRST SCHEDULE</title></schedule>
+    	<schedule name="sched2"><title>SECOND SCHEDULE</title></schedule>
+    	<schedule name="sched3"><title>THIRD SCHEDULE</title></schedule>
+    	<schedule name="sched4"><title>FOURTH SCHEDULE</title></schedule>
+    	<schedule name="sched5"><title>FIFTH SCHEDULE</title></schedule>
+    	<schedule name="sched6"><title>SIXTH SCHEDULE</title></schedule>
+    	<schedule name="sched7"><title>SEVENTH SCHEDULE</title></schedule>
+    	<schedule name="sched8"><title>EIGTH SCHEDULE</title></schedule>
+    	<schedule name="sched9"><title>NINTH SCHEDULE</title></schedule>
+    	<schedule name="sched10"><title>TENTH SCHEDULE</title></schedule>
+    	<schedule name="sched11"><title>ELEVENTH SCHEDULE</title></schedule>
+    	<schedule name="sched12"><title>TWELFTH SCHEDULE</title></schedule>
+    	<schedule name="sched13"><title>APPENDIX I</title></schedule>
+    	<schedule name="sched14"><title>APPENDIX II</title></schedule>
+    	<schedule name="sched15"><title>APPENDIX III</title></schedule>
+    	<schedule name="sched16"><title>APPENDIX IV</title></schedule>
+    	<schedule name="sched17"><title>APPENDIX V</title></schedule>
+    </schedules>
+</root>
