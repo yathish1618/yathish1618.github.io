@@ -70,24 +70,23 @@ function process() {
 }
 
 function callWayBackMachine(timestamp) {
-    waybackAjax = $.ajax({
-        dataType: "jsonp",
-        url: 'https://archive.org/wayback/available?url=' + encodeURIComponent(imdb_url) + '&timestamp=' + timestamp,
-        success: function(data) {
-            try {
-                var date = data["archived_snapshots"]["closest"]["timestamp"];
-            } catch (e) {
+    var cdxUrl = 'http://web.archive.org/cdx/search/cdx?url=' + imdb_url+ '&from=' + timestamp + '&fl=timestamp&limit=1'; //limit 1 basically picks the most recent available date, fl=timestamp means fetch only the timestap field and nothing else.
+    waybackAjax = $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent(cdxUrl) + '&callback=?', function(data){
+            if(data["contents"]!="") {
+                var date = data["contents"];
+            }
+        else {
                 $('#loadingInfo').html("No archives found!");
                 console.log("No archives found for " + movieName + " (" + imdb_url + ") for " + timestamp);
                 waybackAjax.abort();
                 return false;
             }
-            var url = data["archived_snapshots"]["closest"]["url"];
+            var url = "http://web.archive.org/web/"+date+"/"+imdb_url;
             if (fetchedDate != date) { //avoid calls to same archived page
                 //getRatingData(url, date);
                 $('#loading').show();
                 $('#loadingInfo').html("Fetching data for " + timestamp + ". Progress: (" + (dates.length - i) + "/" + dates.length + ")");
-                whateveroriginAjax = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(url) + '&callback=?',
+                whateveroriginAjax = $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent(url) + '&callback=?',
                     function(data) {
                         console.log(url);
                         if ($('#loadingInfo').html() == "Done!" || $('#loadingInfo').html() == "&nbsp;") {
@@ -153,17 +152,15 @@ function callWayBackMachine(timestamp) {
             } else {
                 handleNextCall();
             }
-
-        },
-        error: function(data) {
+    })
+    .fail(function(data) {
             $('#loadingInfo').html("Connection interrupted. Please submit again!");
             if (waybackAjax) waybackAjax.abort();
-        }
     });
 }
 
 function handleNextCall() {
-    if (i >= 0) {
+    if (i > 0) {
         i--;
         callWayBackMachine(dates[i]);
     } else {
