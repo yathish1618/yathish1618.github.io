@@ -2,7 +2,7 @@ var rawData, uniqueTitles, titlesCurrent, x, y, svg, H = 10000,
     i = 0,
     years;
 var W = $(window).width() * 0.8;
-var data = d3.csv("1996-2018utf8.csv").then(function(data) {
+var data = d3.csv("1996-2019utf8.csv").then(function(data) {
     //Format data as numbers
     rawData = data;
     years = d3.map(rawData, function(d) { return d["Top.250.Year"]; }).keys();

@@ -5749,3 +5749,253 @@ Position,Const,Top.250.Year,Title,Title.Type,IMDb.Rating,Runtime..mins.,Year,Gen
 248,tt1954470,2018,Gangs of Wasseypur,movie,8.2,321,2012,"Action, Comedy, Crime, Drama, Thriller",67111,Anurag Kashyap
 249,tt4430212,2018,Drishyam,movie,8.3,163,2015,"Crime, Drama, Thriller",52323,Nishikant Kamat
 250,tt0374887,2018,Munna Bhai M.B.B.S.,movie,8.2,156,2003,"Comedy, Drama, Musical",62852,Rajkumar Hirani
+1,tt0111161,2019,The Shawshank Redemption,movie,9.3,142,1994,Drama,2210259,Frank Darabont
+2,tt0068646,2019,The Godfather,movie,9.2,175,1972,"Crime, Drama",1522470,Francis Ford Coppola
+3,tt0071562,2019,The Godfather: Part II,movie,9,202,1974,"Crime, Drama",1066486,Francis Ford Coppola
+4,tt0468569,2019,The Dark Knight,movie,9,152,2008,"Action, Crime, Drama, Thriller",2188966,Christopher Nolan
+5,tt0050083,2019,12 Angry Men,movie,8.9,96,1957,Drama,645663,Sidney Lumet
+6,tt0108052,2019,Schindler's List,movie,8.9,195,1993,"Biography, Drama, History",1152520,Steven Spielberg
+7,tt0167260,2019,The Lord of the Rings: The Return of the King,movie,8.9,201,2003,"Adventure, Drama, Fantasy",1569038,Peter Jackson
+8,tt0110912,2019,Pulp Fiction,movie,8.9,154,1994,"Crime, Drama",1735628,Quentin Tarantino
+9,tt0060196,2019,"Il buono, il brutto, il cattivo",movie,8.8,161,1966,Western,654763,Sergio Leone
+10,tt0137523,2019,Fight Club,movie,8.8,139,1999,Drama,1763886,David Fincher
+11,tt0120737,2019,The Lord of the Rings: The Fellowship of the Ring,movie,8.8,178,2001,"Action, Adventure, Drama, Fantasy",1581217,Peter Jackson
+12,tt0109830,2019,Forrest Gump,movie,8.8,142,1994,"Drama, Romance",1705761,Robert Zemeckis
+13,tt1375666,2019,Inception,movie,8.8,148,2010,"Action, Adventure, Sci-Fi, Thriller",1938179,Christopher Nolan
+14,tt0080684,2019,Star Wars: Episode V - The Empire Strikes Back,movie,8.7,124,1980,"Action, Adventure, Fantasy, Sci-Fi",1107422,Irvin Kershner
+15,tt0167261,2019,The Lord of the Rings: The Two Towers,movie,8.7,179,2002,"Adventure, Drama, Fantasy",1416835,Peter Jackson
+16,tt0133093,2019,The Matrix,movie,8.7,136,1999,"Action, Sci-Fi",1590209,"Lilly Wachowski, Lana Wachowski"
+17,tt0099685,2019,Goodfellas,movie,8.7,146,1990,"Biography, Crime, Drama",962290,Martin Scorsese
+18,tt0073486,2019,One Flew Over the Cuckoo's Nest,movie,8.7,133,1975,Drama,870493,Milos Forman
+19,tt0047478,2019,Shichinin no samurai,movie,8.6,207,1954,"Action, Adventure, Drama",299176,Akira Kurosawa
+20,tt0114369,2019,Se7en,movie,8.6,127,1995,"Crime, Drama, Mystery, Thriller",1361633,David Fincher
+21,tt0317248,2019,Cidade de Deus,movie,8.6,130,2002,"Crime, Drama",671476,"Kátia Lund, Fernando Meirelles"
+22,tt0118799,2019,La vita è bella,movie,8.6,116,1997,"Comedy, Drama, Romance, War",586885,Roberto Benigni
+23,tt0102926,2019,The Silence of the Lambs,movie,8.6,118,1991,"Crime, Drama, Thriller",1199257,Jonathan Demme
+24,tt0038650,2019,It's a Wonderful Life,movie,8.6,130,1946,"Drama, Family, Fantasy",378828,Frank Capra
+25,tt0076759,2019,Star Wars,movie,8.6,121,1977,"Action, Adventure, Fantasy, Sci-Fi",1179395,George Lucas
+26,tt7286456,2019,Joker,movie,8.5,122,2019,"Crime, Drama, Thriller",736275,Todd Phillips
+27,tt0120815,2019,Saving Private Ryan,movie,8.6,169,1998,"Drama, War",1171809,Steven Spielberg
+28,tt0245429,2019,Sen to Chihiro no kamikakushi,movie,8.6,125,2001,"Animation, Adventure, Family, Fantasy, Mystery",598750,Hayao Miyazaki
+29,tt0120689,2019,The Green Mile,movie,8.6,189,1999,"Crime, Drama, Fantasy, Mystery",1078714,Frank Darabont
+30,tt6751668,2019,Gisaengchung,movie,8.6,132,2019,"Comedy, Drama, Thriller",343471,Bong Joon Ho
+31,tt0816692,2019,Interstellar,movie,8.6,169,2014,"Adventure, Drama, Sci-Fi, Thriller",1390931,Christopher Nolan
+32,tt0110413,2019,Léon,movie,8.5,110,1994,"Action, Crime, Drama, Thriller",979672,Luc Besson
+33,tt0056058,2019,Seppuku,movie,8.7,133,1962,"Action, Drama, History",31780,Masaki Kobayashi
+34,tt0114814,2019,The Usual Suspects,movie,8.5,106,1995,"Crime, Mystery, Thriller",946205,Bryan Singer
+35,tt0110357,2019,The Lion King,movie,8.5,88,1994,"Animation, Adventure, Drama, Family, Musical",893663,"Rob Minkoff, Roger Allers"
+36,tt0120586,2019,American History X,movie,8.5,119,1998,Drama,992734,Tony Kaye
+37,tt0088763,2019,Back to the Future,movie,8.5,116,1985,"Adventure, Comedy, Sci-Fi",988851,Robert Zemeckis
+38,tt0103064,2019,Terminator 2: Judgment Day,movie,8.5,137,1991,"Action, Sci-Fi",954354,James Cameron
+39,tt0253474,2019,The Pianist,movie,8.5,150,2002,"Biography, Drama, Music, War",684587,Roman Polanski
+40,tt0027977,2019,Modern Times,movie,8.5,87,1936,"Comedy, Drama, Family, Romance",203782,Charles Chaplin
+41,tt0054215,2019,Psycho,movie,8.5,109,1960,"Horror, Mystery, Thriller",568378,Alfred Hitchcock
+42,tt0172495,2019,Gladiator,movie,8.5,155,2000,"Action, Adventure, Drama",1275056,Ridley Scott
+43,tt1675434,2019,Intouchables,movie,8.5,112,2011,"Biography, Comedy, Drama",716317,"Olivier Nakache, Éric Toledano"
+44,tt0021749,2019,City Lights,movie,8.5,87,1931,"Comedy, Drama, Romance",156866,Charles Chaplin
+45,tt0407887,2019,The Departed,movie,8.5,151,2006,"Crime, Drama, Thriller",1129628,Martin Scorsese
+46,tt2582802,2019,Whiplash,movie,8.5,106,2014,"Drama, Music",664810,Damien Chazelle
+47,tt0064116,2019,C'era una volta il West,movie,8.5,165,1968,Western,286305,Sergio Leone
+48,tt0482571,2019,The Prestige,movie,8.5,130,2006,"Drama, Mystery, Sci-Fi, Thriller",1120856,Christopher Nolan
+49,tt0034583,2019,Casablanca,movie,8.5,102,1942,"Drama, Romance, War",497520,Michael Curtiz
+50,tt0095327,2019,Hotaru no haka,movie,8.5,89,1988,"Animation, Drama, War",214344,Isao Takahata
+51,tt0047396,2019,Rear Window,movie,8.4,112,1954,"Mystery, Thriller",419998,Alfred Hitchcock
+52,tt0095765,2019,Nuovo Cinema Paradiso,movie,8.5,155,1988,Drama,214354,Giuseppe Tornatore
+53,tt0078748,2019,Alien,movie,8.4,117,1979,"Horror, Sci-Fi",749202,Ridley Scott
+54,tt0082971,2019,Raiders of the Lost Ark,movie,8.4,115,1981,"Action, Adventure",845986,Steven Spielberg
+55,tt0078788,2019,Apocalypse Now,movie,8.4,147,1979,"Drama, Mystery, War",575626,Francis Ford Coppola
+56,tt0209144,2019,Memento,movie,8.4,113,2000,"Mystery, Thriller",1072659,Christopher Nolan
+57,tt0032553,2019,The Great Dictator,movie,8.4,125,1940,"Comedy, Drama, War",191216,Charles Chaplin
+58,tt0405094,2019,Das Leben der Anderen,movie,8.4,137,2006,"Drama, Mystery, Thriller",339970,Florian Henckel von Donnersmarck
+59,tt4154796,2019,Avengers: Endgame,movie,8.4,181,2019,"Action, Adventure, Drama, Sci-Fi",688275,"Anthony Russo, Joe Russo"
+60,tt1853728,2019,Django Unchained,movie,8.4,165,2012,"Drama, Western",1279724,Quentin Tarantino
+61,tt4154756,2019,Avengers: Infinity War,movie,8.5,149,2018,"Action, Adventure, Sci-Fi",757875,"Anthony Russo, Joe Russo"
+62,tt0081505,2019,The Shining,movie,8.4,146,1980,"Drama, Horror",842155,Stanley Kubrick
+63,tt0050825,2019,Paths of Glory,movie,8.4,88,1957,"Drama, War",166314,Stanley Kubrick
+64,tt4633694,2019,Spider-Man: Into the Spider-Verse,movie,8.4,117,2018,"Animation, Action, Adventure, Family, Sci-Fi",305493,"Peter Ramsey, Rodney Rothman, Bob Persichetti"
+65,tt0910970,2019,WALL·E,movie,8.4,98,2008,"Animation, Adventure, Family, Sci-Fi",951892,Andrew Stanton
+66,tt0043014,2019,Sunset Blvd.,movie,8.4,110,1950,"Drama, Film-Noir",189290,Billy Wilder
+67,tt0119698,2019,Mononoke-hime,movie,8.4,134,1997,"Animation, Adventure, Fantasy",315758,Hayao Miyazaki
+68,tt0057012,2019,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,movie,8.4,95,1964,Comedy,431379,Stanley Kubrick
+69,tt0364569,2019,Oldeuboi,movie,8.4,120,2003,"Action, Drama, Mystery, Thriller",485497,Chan-wook Park
+70,tt0051201,2019,Witness for the Prosecution,movie,8.4,116,1957,"Crime, Drama, Film-Noir, Mystery, Thriller",99709,Billy Wilder
+71,tt1345836,2019,The Dark Knight Rises,movie,8.4,164,2012,"Action, Adventure",1448594,Christopher Nolan
+72,tt0087843,2019,Once Upon a Time in America,movie,8.4,229,1984,"Crime, Drama",293275,Sergio Leone
+73,tt0090605,2019,Aliens,movie,8.3,137,1986,"Action, Adventure, Sci-Fi, Thriller",625587,James Cameron
+74,tt5311514,2019,Kimi no na wa.,movie,8.4,106,2016,"Animation, Drama, Fantasy, Romance",162219,Makoto Shinkai
+75,tt0169547,2019,American Beauty,movie,8.3,122,1999,Drama,1028151,Sam Mendes
+76,tt2380307,2019,Coco,movie,8.4,105,2017,"Animation, Adventure, Family, Fantasy, Music, Mystery",327916,"Adrian Molina, Lee Unkrich"
+77,tt0112573,2019,Braveheart,movie,8.3,178,1995,"Biography, Drama, History, War",924346,Mel Gibson
+78,tt0082096,2019,Das Boot,movie,8.3,149,1981,"Adventure, Drama, Thriller, War",220488,Wolfgang Petersen
+79,tt1187043,2019,3 Idiots,movie,8.4,170,2009,"Comedy, Drama",319482,Rajkumar Hirani
+80,tt0086190,2019,Star Wars: Episode VI - Return of the Jedi,movie,8.3,131,1983,"Action, Adventure, Fantasy, Sci-Fi",907984,Richard Marquand
+81,tt0986264,2019,Taare Zameen Par,movie,8.4,165,2007,"Drama, Family",153732,"Aamir Khan, Amole Gupte"
+82,tt0114709,2019,Toy Story,movie,8.3,81,1995,"Animation, Adventure, Comedy, Family, Fantasy",843050,John Lasseter
+83,tt0086879,2019,Amadeus,movie,8.3,160,1984,"Biography, Drama, History, Music",352565,Milos Forman
+84,tt0105236,2019,Reservoir Dogs,movie,8.3,99,1992,"Crime, Drama, Thriller",874163,Quentin Tarantino
+85,tt0361748,2019,Inglourious Basterds,movie,8.3,153,2009,"Adventure, Drama, War",1193423,Quentin Tarantino
+86,tt0119217,2019,Good Will Hunting,movie,8.3,126,1997,"Drama, Romance",811837,Gus Van Sant
+87,tt0022100,2019,M - Eine Stadt sucht einen Mörder,movie,8.3,117,1931,"Crime, Mystery, Thriller",135005,Fritz Lang
+88,tt0062622,2019,2001: A Space Odyssey,movie,8.3,149,1968,"Adventure, Sci-Fi",571465,Stanley Kubrick
+89,tt0180093,2019,Requiem for a Dream,movie,8.3,102,2000,Drama,731151,Darren Aronofsky
+90,tt0052357,2019,Vertigo,movie,8.3,128,1958,"Mystery, Romance, Thriller",339719,Alfred Hitchcock
+91,tt5074352,2019,Dangal,movie,8.4,161,2016,"Action, Biography, Drama, Sport",138030,Nitesh Tiwari
+92,tt0338013,2019,Eternal Sunshine of the Spotless Mind,movie,8.3,108,2004,"Drama, Romance, Sci-Fi",864755,Michel Gondry
+93,tt0033467,2019,Citizen Kane,movie,8.3,119,1941,"Drama, Mystery",379381,Orson Welles
+94,tt2106476,2019,Jagten,movie,8.3,115,2012,Drama,259237,Thomas Vinterberg
+95,tt0093058,2019,Full Metal Jacket,movie,8.3,116,1987,"Drama, War",641235,Stanley Kubrick
+96,tt0053125,2019,North by Northwest,movie,8.3,136,1959,"Adventure, Mystery, Thriller",284149,Alfred Hitchcock
+97,tt0066921,2019,A Clockwork Orange,movie,8.3,136,1971,"Crime, Drama, Sci-Fi",722644,Stanley Kubrick
+98,tt0208092,2019,Snatch,movie,8.3,104,2000,"Comedy, Crime",749637,Guy Ritchie
+99,tt0012349,2019,The Kid,movie,8.3,68,1921,"Comedy, Drama, Family",104779,Charles Chaplin
+100,tt0040522,2019,Ladri di biciclette,movie,8.3,89,1948,Drama,135950,Vittorio De Sica
+101,tt0211915,2019,Le fabuleux destin d'Amélie Poulain,movie,8.3,122,2001,"Comedy, Romance",676882,Jean-Pierre Jeunet
+102,tt0086250,2019,Scarface,movie,8.3,170,1983,"Crime, Drama",700328,Brian De Palma
+103,tt0045152,2019,Singin' in the Rain,movie,8.3,103,1952,"Comedy, Musical, Romance",207156,"Gene Kelly, Stanley Donen"
+104,tt0075314,2019,Taxi Driver,movie,8.3,114,1976,"Crime, Drama",680983,Martin Scorsese
+105,tt0056172,2019,Lawrence of Arabia,movie,8.3,228,1962,"Adventure, Biography, Drama, History, War",254261,David Lean
+106,tt0435761,2019,Toy Story 3,movie,8.3,103,2010,"Animation, Adventure, Comedy, Family, Fantasy",723207,Lee Unkrich
+107,tt0070735,2019,The Sting,movie,8.3,129,1973,"Comedy, Crime, Drama",230342,George Roy Hill
+108,tt0017136,2019,Metropolis,movie,8.3,153,1927,"Drama, Sci-Fi",151728,Fritz Lang
+109,tt0059578,2019,Per qualche dollaro in più,movie,8.3,132,1965,Western,218822,Sergio Leone
+110,tt8267604,2019,Capharnaüm,movie,8.4,126,2018,Drama,41666,Nadine Labaki
+111,tt1832382,2019,Jodaeiye Nader az Simin,movie,8.3,123,2011,Drama,208063,Asghar Farhadi
+112,tt0036775,2019,Double Indemnity,movie,8.3,107,1944,"Crime, Drama, Film-Noir, Mystery, Thriller",135144,Billy Wilder
+113,tt0044741,2019,Ikiru,movie,8.3,143,1952,Drama,62418,Akira Kurosawa
+114,tt0056592,2019,To Kill a Mockingbird,movie,8.2,129,1962,"Crime, Drama",282969,Robert Mulligan
+115,tt0053604,2019,The Apartment,movie,8.3,125,1960,"Comedy, Drama, Romance",153343,Billy Wilder
+116,tt0097576,2019,Indiana Jones and the Last Crusade,movie,8.2,127,1989,"Action, Adventure",661518,Steven Spielberg
+117,tt1049413,2019,Up,movie,8.2,96,2009,"Animation, Adventure, Comedy, Family",889434,"Pete Docter, Bob Peterson"
+118,tt1255953,2019,Incendies,movie,8.3,131,2010,"Drama, Mystery, War",134526,Denis Villeneuve
+119,tt0119488,2019,L.A. Confidential,movie,8.2,138,1997,"Crime, Drama, Mystery, Thriller",511161,Curtis Hanson
+120,tt0071853,2019,Monty Python and the Holy Grail,movie,8.2,91,1975,"Adventure, Comedy, Fantasy",481298,"Terry Jones, Terry Gilliam"
+121,tt0113277,2019,Heat,movie,8.2,170,1995,"Crime, Drama, Thriller",547664,Michael Mann
+122,tt0042876,2019,Rashômon,movie,8.2,88,1950,"Crime, Drama, Mystery",143078,Akira Kurosawa
+123,tt0095016,2019,Die Hard,movie,8.2,132,1988,"Action, Thriller",752879,John McTiernan
+124,tt0372784,2019,Batman Begins,movie,8.2,140,2005,"Action, Adventure",1249490,Christopher Nolan
+125,tt0055630,2019,Yôjinbô,movie,8.2,110,1961,"Action, Drama, Thriller",103647,Akira Kurosawa
+126,tt0105695,2019,Unforgiven,movie,8.2,130,1992,"Drama, Western",357312,Clint Eastwood
+127,tt6966692,2019,Green Book,movie,8.2,130,2018,"Biography, Comedy, Drama, Music",304749,Peter Farrelly
+128,tt0363163,2019,Der Untergang,movie,8.2,156,2004,"Biography, Drama, History, War",317560,Oliver Hirschbiegel
+129,tt0118849,2019,Bacheha-Ye aseman,movie,8.3,89,1997,"Drama, Family, Sport",58899,Majid Majidi
+130,tt1950186,2019,Ford v Ferrari,movie,8.1,152,2019,"Action, Biography, Drama, Sport",185532,James Mangold
+131,tt0053291,2019,Some Like It Hot,movie,8.2,121,1959,"Comedy, Music, Romance",231662,Billy Wilder
+132,tt0347149,2019,Hauru no ugoku shiro,movie,8.2,119,2004,"Animation, Adventure, Family, Fantasy",300424,Hayao Miyazaki
+133,tt0057115,2019,The Great Escape,movie,8.2,172,1963,"Adventure, Drama, History, Thriller, War",213919,John Sturges
+134,tt0096283,2019,Tonari no Totoro,movie,8.2,86,1988,"Animation, Family, Fantasy",262349,Hayao Miyazaki
+135,tt0089881,2019,Ran,movie,8.2,162,1985,"Action, Drama, War",104710,Akira Kurosawa
+136,tt0268978,2019,A Beautiful Mind,movie,8.2,135,2001,"Biography, Drama",807432,Ron Howard
+137,tt0042192,2019,All About Eve,movie,8.2,138,1950,Drama,114463,Joseph L. Mankiewicz
+138,tt0112641,2019,Casino,movie,8.2,178,1995,"Crime, Drama",438350,Martin Scorsese
+139,tt0457430,2019,El laberinto del fauno,movie,8.2,118,2006,"Drama, Fantasy, War",594177,Guillermo del Toro
+140,tt0091251,2019,Idi i smotri,movie,8.3,142,1985,"Drama, War",48928,Elem Klimov
+141,tt0081398,2019,Raging Bull,movie,8.2,129,1980,"Biography, Drama, Sport",305015,Martin Scorsese
+142,tt1305806,2019,El secreto de sus ojos,movie,8.2,129,2009,"Drama, Mystery, Romance, Thriller",181632,Juan José Campanella
+143,tt0120735,2019,"Lock, Stock and Two Smoking Barrels",movie,8.2,107,1998,"Comedy, Crime",512690,Guy Ritchie
+144,tt0993846,2019,The Wolf of Wall Street,movie,8.2,180,2013,"Biography, Crime, Drama",1100642,Martin Scorsese
+145,tt0040897,2019,The Treasure of the Sierra Madre,movie,8.2,126,1948,"Adventure, Drama, Western",108278,John Huston
+146,tt0055031,2019,Judgment at Nuremberg,movie,8.2,179,1961,"Drama, War",65151,Stanley Kramer
+147,tt5027774,2019,"Three Billboards Outside Ebbing, Missouri",movie,8.2,115,2017,"Comedy, Crime, Drama",389410,Martin McDonagh
+148,tt0476735,2019,Babam ve Oglum,movie,8.3,108,2005,"Drama, Family",73076,Çagan Irmak
+149,tt0071315,2019,Chinatown,movie,8.2,130,1974,"Drama, Mystery, Thriller",278563,Roman Polanski
+150,tt0015864,2019,The Gold Rush,movie,8.2,95,1925,"Adventure, Comedy, Drama, Family, Western",94069,Charles Chaplin
+151,tt0469494,2019,There Will Be Blood,movie,8.2,158,2007,Drama,487402,Paul Thomas Anderson
+152,tt0046912,2019,Dial M for Murder,movie,8.2,105,1954,"Crime, Thriller",147871,Alfred Hitchcock
+153,tt0434409,2019,V for Vendetta,movie,8.2,132,2005,"Action, Drama, Sci-Fi, Thriller",987415,James McTeigue
+154,tt2096673,2019,Inside Out,movie,8.2,95,2015,"Animation, Adventure, Comedy, Drama, Family, Fantasy",573127,"Pete Docter, Ronnie Del Carmen"
+155,tt0050976,2019,Det sjunde inseglet,movie,8.2,96,1957,"Drama, Fantasy",152705,Ingmar Bergman
+156,tt1291584,2019,Warrior,movie,8.2,140,2011,"Drama, Sport",418298,Gavin O'Connor
+157,tt0477348,2019,No Country for Old Men,movie,8.1,122,2007,"Crime, Drama, Thriller",805885,"Joel Coen, Ethan Coen"
+158,tt0117951,2019,Trainspotting,movie,8.1,93,1996,Drama,611670,Danny Boyle
+159,tt0080678,2019,The Elephant Man,movie,8.1,124,1980,"Biography, Drama",208589,David Lynch
+160,tt3170832,2019,Room,movie,8.1,118,2015,"Drama, Thriller",341826,Lenny Abrahamson
+161,tt1130884,2019,Shutter Island,movie,8.1,138,2010,"Mystery, Thriller",1062568,Martin Scorsese
+162,tt0167404,2019,The Sixth Sense,movie,8.1,107,1999,"Drama, Mystery, Thriller",876347,M. Night Shyamalan
+163,tt7653254,2019,Marriage Story,movie,8,137,2019,"Comedy, Drama, Romance",196958,Noah Baumbach
+164,tt0084787,2019,The Thing,movie,8.1,109,1982,"Horror, Mystery, Sci-Fi",350010,John Carpenter
+165,tt0031381,2019,Gone with the Wind,movie,8.1,238,1939,"Drama, History, Romance, War",275356,"Sam Wood, George Cukor, Victor Fleming"
+166,tt0050212,2019,The Bridge on the River Kwai,movie,8.1,161,1957,"Adventure, Drama, War",193823,David Lean
+167,tt0083658,2019,Blade Runner,movie,8.1,117,1982,"Action, Sci-Fi, Thriller",660767,Ridley Scott
+168,tt0041959,2019,The Third Man,movie,8.1,104,1949,"Film-Noir, Mystery, Thriller",151432,Carol Reed
+169,tt0107290,2019,Jurassic Park,movie,8.1,127,1993,"Action, Adventure, Sci-Fi, Thriller",820386,Steven Spielberg
+170,tt0047296,2019,On the Waterfront,movie,8.1,108,1954,"Crime, Drama, Thriller",134530,Elia Kazan
+171,tt0266543,2019,Finding Nemo,movie,8.1,100,2003,"Animation, Adventure, Comedy, Family",908116,"Andrew Stanton, Lee Unkrich"
+172,tt8108198,2019,Andhadhun,movie,8.3,139,2018,"Crime, Thriller",57782,Sriram Raghavan
+173,tt0050986,2019,Smultronstället,movie,8.2,91,1957,"Drama, Romance",89142,Ingmar Bergman
+174,tt0116282,2019,Fargo,movie,8.1,98,1996,"Crime, Drama, Thriller",586493,"Joel Coen, Ethan Coen"
+175,tt1205489,2019,Gran Torino,movie,8.1,116,2008,Drama,693739,Clint Eastwood
+176,tt0266697,2019,Kill Bill: Vol. 1,movie,8.1,111,2003,"Action, Crime, Thriller",953559,Quentin Tarantino
+177,tt4729430,2019,Klaus,movie,8.2,96,2019,"Animation, Adventure, Comedy, Family",63167,"Carlos Martínez López, Sergio Pablos"
+178,tt0116231,2019,Eskiya,movie,8.3,128,1996,"Crime, Drama, Thriller",59280,Yavuz Turgul
+179,tt0077416,2019,The Deer Hunter,movie,8.1,183,1978,"Drama, War",296749,Michael Cimino
+180,tt0046438,2019,Tôkyô monogatari,movie,8.2,136,1953,Drama,47527,Yasujirô Ozu
+181,tt0120382,2019,The Truman Show,movie,8.1,103,1998,"Comedy, Drama, Sci-Fi",881759,Peter Weir
+182,tt0079944,2019,Stalker,movie,8.2,162,1979,"Drama, Sci-Fi",106140,Andrei Tarkovsky
+183,tt0118715,2019,The Big Lebowski,movie,8.1,117,1998,"Comedy, Crime, Sport",693801,"Joel Coen, Ethan Coen"
+184,tt3011894,2019,Relatos salvajes,movie,8.1,122,2014,"Comedy, Drama, Thriller",162527,Damián Szifron
+185,tt0978762,2019,Mary and Max,movie,8.1,92,2009,"Animation, Comedy, Drama, Family",157199,Adam Elliot
+186,tt0107207,2019,In the Name of the Father,movie,8.1,133,1993,"Biography, Drama",148118,Jim Sheridan
+187,tt2267998,2019,Gone Girl,movie,8.1,149,2014,"Drama, Mystery, Thriller",806131,David Fincher
+188,tt2119532,2019,Hacksaw Ridge,movie,8.1,139,2016,"Biography, Drama, History, War",399942,Mel Gibson
+189,tt0353969,2019,Salinui chueok,movie,8.1,131,2003,"Action, Crime, Drama, Mystery, Thriller",118036,Bong Joon Ho
+190,tt0031679,2019,Mr. Smith Goes to Washington,movie,8.1,129,1939,"Comedy, Drama",102024,Frank Capra
+191,tt0892769,2019,How to Train Your Dragon,movie,8.1,98,2010,"Animation, Action, Adventure, Family, Fantasy",637534,"Chris Sanders, Dean DeBlois"
+192,tt0017925,2019,The General,movie,8.1,67,1926,"Action, Adventure, Comedy, Drama, War",75798,"Buster Keaton, Clyde Bruckman"
+193,tt2278388,2019,The Grand Budapest Hotel,movie,8.1,99,2014,"Adventure, Comedy, Crime",667585,Wes Anderson
+194,tt0015324,2019,Sherlock Jr.,movie,8.2,45,1924,"Action, Comedy, Romance",36929,Buster Keaton
+195,tt0060827,2019,Persona,movie,8.1,85,1966,"Drama, Thriller",93720,Ingmar Bergman
+196,tt0112471,2019,Before Sunrise,movie,8.1,101,1995,"Drama, Romance",252187,Richard Linklater
+197,tt0264464,2019,Catch Me If You Can,movie,8.1,141,2002,"Biography, Crime, Drama",770413,Steven Spielberg
+198,tt1392214,2019,Prisoners,movie,8.1,153,2013,"Crime, Drama, Mystery, Thriller",560213,Denis Villeneuve
+199,tt0061512,2019,Cool Hand Luke,movie,8.1,127,1967,"Crime, Drama",154776,Stuart Rosenberg
+200,tt2024544,2019,12 Years a Slave,movie,8.1,134,2013,"Biography, Drama, History",607082,Steve McQueen
+201,tt0758758,2019,Into the Wild,movie,8.1,148,2007,"Adventure, Biography, Drama",545410,Sean Penn
+202,tt0046268,2019,Le salaire de la peur,movie,8.1,131,1953,"Adventure, Drama, Thriller",50990,Henri-Georges Clouzot
+203,tt0074958,2019,Network,movie,8.1,121,1976,Drama,137850,Sidney Lumet
+204,tt0092005,2019,Stand by Me,movie,8.1,89,1986,"Adventure, Drama",347235,Rob Reiner
+205,tt0079470,2019,Life of Brian,movie,8.1,94,1979,Comedy,350544,Terry Jones
+206,tt1392190,2019,Mad Max: Fury Road,movie,8.1,120,2015,"Action, Adventure, Sci-Fi, Thriller",827587,George Miller
+207,tt0091763,2019,Platoon,movie,8.1,120,1986,"Drama, War",365670,Oliver Stone
+208,tt1302006,2019,The Irishman,movie,7.9,209,2019,"Biography, Crime, Drama",267681,Martin Scorsese
+209,tt0072684,2019,Barry Lyndon,movie,8.1,185,1975,"Adventure, Drama, History, War",140084,Stanley Kubrick
+210,tt0019254,2019,La passion de Jeanne d'Arc,movie,8.1,110,1928,"Biography, Drama, History",43599,Carl Theodor Dreyer
+211,tt0405159,2019,Million Dollar Baby,movie,8.1,132,2004,"Drama, Sport",609115,Clint Eastwood
+212,tt1028532,2019,Hachi: A Dog's Tale,movie,8.1,93,2009,"Drama, Family",237444,Lasse Hallström
+213,tt1979320,2019,Rush,movie,8.1,123,2013,"Biography, Drama, Sport",411865,Ron Howard
+214,tt3315342,2019,Logan,movie,8.1,137,2017,"Action, Drama, Sci-Fi, Thriller",606266,James Mangold
+215,tt0405508,2019,Rang De Basanti,movie,8.2,167,2006,"Comedy, Drama",105217,Rakeysh Omprakash Mehra
+216,tt0060107,2019,Andrey Rublev,movie,8.2,205,1966,"Biography, Drama, History",42454,Andrei Tarkovsky
+217,tt0052618,2019,Ben-Hur,movie,8.1,212,1959,"Adventure, Drama, History",209578,William Wyler
+218,tt0087544,2019,Kaze no tani no Naushika,movie,8.1,117,1984,"Animation, Adventure, Fantasy, Sci-Fi",137345,Hayao Miyazaki
+219,tt0053198,2019,Les quatre cents coups,movie,8.1,99,1959,"Crime, Drama",97745,François Truffaut
+220,tt1201607,2019,Harry Potter and the Deathly Hallows: Part 2,movie,8.1,130,2011,"Adventure, Drama, Fantasy, Mystery",723957,David Yates
+221,tt0395169,2019,Hotel Rwanda,movie,8.1,121,2004,"Biography, Drama, History, War",323358,Terry George
+222,tt0245712,2019,Amores perros,movie,8.1,154,2000,"Drama, Thriller",214128,Alejandro G. Iñárritu
+223,tt0097165,2019,Dead Poets Society,movie,8.1,128,1989,"Comedy, Drama",395965,Peter Weir
+224,tt1895587,2019,Spotlight,movie,8.1,129,2015,"Biography, Crime, Drama",391411,Tom McCarthy
+225,tt0040725,2019,The Red Shoes,movie,8.1,135,1948,"Drama, Music, Romance",28198,"Michael Powell, Emeric Pressburger"
+226,tt0032976,2019,Rebecca,movie,8.1,130,1940,"Drama, Mystery, Romance, Thriller",115825,Alfred Hitchcock
+227,tt0075148,2019,Rocky,movie,8.1,120,1976,"Drama, Sport",494419,John G. Avildsen
+228,tt0043338,2019,Ace in the Hole,movie,8.1,111,1951,"Drama, Film-Noir",28376,Billy Wilder
+229,tt0042041,2019,White Heat,movie,8.1,114,1949,"Action, Crime, Drama, Film-Noir",27846,Raoul Walsh
+230,tt4016934,2019,Ah-ga-ssi,movie,8.1,145,2016,"Drama, Romance, Thriller",94978,Chan-wook Park
+231,tt3417422,2019,Drishyam,movie,8.4,160,2013,"Crime, Drama, Thriller",28571,Jeethu Joseph
+232,tt0198781,2019,"Monsters, Inc.",movie,8,92,2001,"Animation, Adventure, Comedy, Family, Fantasy",777237,"Pete Docter, David Silverman, Lee Unkrich"
+233,tt0025316,2019,It Happened One Night,movie,8.1,105,1934,"Comedy, Romance",88664,Frank Capra
+234,tt0113247,2019,La haine,movie,8.1,98,1995,"Crime, Drama",138540,Mathieu Kassovitz
+235,tt0169102,2019,Lagaan: Once Upon a Time in India,movie,8.1,224,2001,"Adventure, Drama, Musical, Sport",98514,Ashutosh Gowariker
+236,tt1954470,2019,Gangs of Wasseypur,movie,8.2,321,2012,"Action, Comedy, Crime, Drama, Thriller",73936,Anurag Kashyap
+237,tt0093779,2019,The Princess Bride,movie,8.1,98,1987,"Adventure, Family, Fantasy, Romance",375152,Rob Reiner
+238,tt0381681,2019,Before Sunset,movie,8,80,2004,"Drama, Romance",220265,Richard Linklater
+239,tt1454029,2019,The Help,movie,8.1,146,2011,Drama,407647,Tate Taylor
+240,tt0118694,2019,Faa yeung nin wa,movie,8.1,98,2000,"Drama, Romance",113845,Kar-Wai Wong
+241,tt2338151,2019,PK,movie,8.1,153,2014,"Comedy, Drama, Fantasy",149344,Rajkumar Hirani
+242,tt0064115,2019,Butch Cassidy and the Sundance Kid,movie,8,110,1969,"Biography, Crime, Drama, Western",195159,George Roy Hill
+243,tt0088247,2019,The Terminator,movie,8,107,1984,"Action, Sci-Fi",767482,James Cameron
+244,tt0094625,2019,Akira,movie,8,124,1988,"Animation, Drama, Sci-Fi, Thriller",153016,Katsuhiro Ôtomo
+245,tt0087884,2019,"Paris, Texas",movie,8.1,145,1984,Drama,81256,Wim Wenders
+246,tt0103639,2019,Aladdin,movie,8,90,1992,"Animation, Adventure, Comedy, Family, Fantasy, Musical, Romance",351070,"Ron Clements, John Musker"
+247,tt0058946,2019,La battaglia di Algeri,movie,8.1,121,1966,"Drama, War",49481,Gillo Pontecorvo
+248,tt2015381,2019,Guardians of the Galaxy,movie,8,121,2014,"Action, Adventure, Comedy, Sci-Fi",1003127,James Gunn
+249,tt0092067,2019,Tenkû no shiro Rapyuta,movie,8,125,1986,"Animation, Adventure, Drama, Family, Fantasy, Sci-Fi",138815,Hayao Miyazaki
+250,tt0374887,2019,Munna Bhai M.B.B.S.,movie,8.1,156,2003,"Comedy, Drama, Musical",69064,Rajkumar Hirani
