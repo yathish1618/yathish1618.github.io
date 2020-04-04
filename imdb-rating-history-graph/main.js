@@ -70,30 +70,34 @@ function process() {
 }
 
 function callWayBackMachine(timestamp) {
-    var cdxUrl = 'http://web.archive.org/cdx/search/cdx?url=' + imdb_url+ '&from=' + timestamp + '&fl=timestamp&limit=1'; //limit 1 basically picks the most recent available date, fl=timestamp means fetch only the timestap field and nothing else.
-    waybackAjax = $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent(cdxUrl) + '&callback=?', function(data){
-            if(data["contents"]!="") {
-                var date = data["contents"];
-            }
-        else {
+    var cdxUrl = 'http://web.archive.org/cdx/search/cdx?url=' + imdb_url + '&from=' + timestamp + '&fl=timestamp&limit=1'; //limit 1 basically picks the most recent available date, fl=timestamp means fetch only the timestap field and nothing else.
+    waybackAjax = $.ajax({
+        url: "https://cors-anywhere.herokuapp.com/" + cdxUrl,
+        type: "GET",
+        success: function(data) {
+            if (data != "") {
+                var date = data;
+            } else {
                 $('#loadingInfo').html("No archives found!");
                 console.log("No archives found for " + movieName + " (" + imdb_url + ") for " + timestamp);
+                $('#loading').hide();
                 waybackAjax.abort();
                 return false;
             }
-            var url = "http://web.archive.org/web/"+date+"/"+imdb_url;
+            var url = "http://web.archive.org/web/" + date + "/" + imdb_url;
             if (fetchedDate != date) { //avoid calls to same archived page
                 //getRatingData(url, date);
                 $('#loading').show();
                 $('#loadingInfo').html("Fetching data for " + timestamp + ". Progress: (" + (dates.length - i) + "/" + dates.length + ")");
-                whateveroriginAjax = $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent(url) + '&callback=?',
-                    function(data) {
-                        console.log(url);
+                whateveroriginAjax = $.ajax({
+                    url: "https://cors-anywhere.herokuapp.com/" + url,
+                    type: "GET",
+                    success: function(data) {
                         if ($('#loadingInfo').html() == "Done!" || $('#loadingInfo').html() == "&nbsp;") {
                             $('#loadingInfo').html("&nbsp;");
                             $('#loading').hide();
                         }
-                        imdbhtml = $($.parseHTML(data.contents));
+                        imdbhtml = $($.parseHTML(data));
                         results = fetcher(imdbhtml, date);
                         if (results[0] > 0 && results[1] > 0) { //update data array only if both rating and number of votes are valid 
                             var dt = new Date(Math.floor(date / 10000000000), Number(date.toString().substring(4, 6)) - 1);
@@ -144,18 +148,21 @@ function callWayBackMachine(timestamp) {
                         materialChart.draw(graphData, materialOptions);
                         handleNextCall();
                         fetchedDate = date;
-                    }).fail(function() {
-                    $('#loadingInfo').html("Failed to fetch for " + timestamp + ". Proceeding..");
-                    handleNextCall();
-                    fetchedDate = date;
+                    },
+                    error: function() {
+                        $('#loadingInfo').html("Failed to fetch for " + timestamp + ". Proceeding..");
+                        handleNextCall();
+                        fetchedDate = date;
+                    }
                 });
             } else {
                 handleNextCall();
             }
-    })
-    .fail(function(data) {
+        },
+        error: function(data) {
             $('#loadingInfo').html("Connection interrupted. Please submit again!");
             if (waybackAjax) waybackAjax.abort();
+        }
     });
 }
 
