@@ -25,7 +25,7 @@ function populateDates() { //6 month intervals
     var year = 2001;
     if (movieYear > 0) {
         year = movieYear;
-        var s = new Date(movieYear + "January 01");
+        var s = new Date(movieYear + " January 01");
         lowerLim = s.getTime();
     }
 
