@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+        /*font-family: 'Source Sans Pro', sans-serif;*/
+    }
+    td{
+    	vertical-align: top;
+    }
+    li {
+        list-style-type: none;
+    }
+    #myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 10px; /* Some padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+    </style>
+</head>
+
+<body>
+    <div>
+        <table align="center" style="width: 100%;">
+            <tr>
+                <td colspan="3" style="text-align: center;background-color: #FF9933;color: white;">
+                    <h1>The Constitution of India</h1>
+                    <a>Updated on 12 January 2019 (up to 103<sup>rd</sup> amendment)</a>
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:33%;text-align: left;"><a style="display: none;" id="prev">Previous</a></td>
+                <td style="width:33%;text-align:center;"><a href="javascript:reset();">Home</a></td>
+                <td style="width: 33%;text-align: right;"><a style="display: none;" id="next">Next</a></td>
+            </tr>
+        </table>
+    </div>
+    <table id="toc" align="center"></table>
+    <div id="article">
+        <h4 id="nav"></h4>
+        <h3 id="articleTitle" style="text-align: center;"></h3>
+        <div id="articleText"></div>
+    </div>
+    <br><br><br><br><br> <!-- Fex extra line breaks so that Go to top button doesn't hide text -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+    var xmlhttp, xmlDoc;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "articles.xml", false);
+    xmlhttp.send();
+    xmlArt = xmlhttp.responseXML;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "ToC.xml", false);
+    xmlhttp.send();
+    xmlToc = xmlhttp.responseXML;
+    xmlhttp.open("GET", "footnotes.xml", false);
+    xmlhttp.send();
+    xmlFoot = xmlhttp.responseXML;
+    xmlhttp.open("GET", "schedules.xml", false);
+    xmlhttp.send();
+    xmlSched = xmlhttp.responseXML;
+    generateToc();
+
+    function generateToc() {
+        // get all orphan descendants of each part i.e., gets title/ubttle/article and ignores chapter/subchapter
+        var nodes = xmlToc.evaluate("//part//*[not(*)]", xmlToc, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        var table = document.getElementById("toc");
+        while (result) {
+            var row = table.insertRow();
+            var cell = row.insertCell();
+            switch (result.tagName) {
+                case "title":
+                case "subtitle":
+                    cell.colSpan = 2;
+                    var text = document.createTextNode(result.innerHTML);
+                    cell.style.textAlign = "center";
+                    cell.appendChild(text);
+                    break;
+                case "article":
+                    var artID = result.getAttribute("name");
+                    var text = document.createTextNode(artID.slice(3, artID.length) + ".");
+                    cell.style.textAlign = "right";
+                    var aTag = document.createElement('a');
+                    aTag.setAttribute('href', 'javascript:getArticle("' + artID + '");');
+                    aTag.appendChild(text);
+                    cell.appendChild(aTag);
+                    var cell = row.insertCell();
+                    var text = document.createTextNode(result.innerHTML);
+                    cell.appendChild(text);
+                    break;
+            }
+            result = nodes.iterateNext();
+        }
+        //now append schedules and appendices as well
+        var nodes = xmlToc.evaluate("//schedule", xmlToc, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        while (result) {
+            var row = table.insertRow();
+            var cell = row.insertCell();
+            cell.colSpan = 2;
+            var text = document.createTextNode(result.children[0].innerHTML);
+            cell.style.textAlign = "center";
+            var aTag = document.createElement('a');
+            aTag.setAttribute('href', 'javascript:getSchedule("' + result.getAttribute("name") + '");');
+            aTag.appendChild(text);
+            cell.appendChild(aTag);
+            result = nodes.iterateNext();
+        }
+    }
+
+    function getArticle(art) {
+        document.getElementById("toc").style.display = "none";
+        var nodes = xmlArt.evaluate("//article[@name='" + art + "']", xmlArt, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        footnotes = getFoonotes(result);
+        result = cleanFoonotes(result); // enumerate the footnotes from 1 just for display
+        // Now just wrap the sections and subsections of the article in nested lists
+        var html = result.children[0].outerHTML;
+        html += "<hr>" + footnotes;
+        document.getElementById("articleText").innerHTML = html;
+        var nodes = xmlToc.evaluate("//article[@name='" + art + "']", xmlToc, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        document.getElementById("articleTitle").innerHTML = "Article " + art.slice(3, art.length) + "." + result.innerHTML;
+        getNextPrevArticles(art);
+        document.getElementById("article").style.display = "block";
+        topFunction(); //scroll to top
+        updateNavigation(art);
+        return true;
+    }
+
+    function getSchedule(name) {
+        document.getElementById("toc").style.display = "none";
+        var nodes = xmlSched.evaluate("//schedule[@name='" + name + "']", xmlSched, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        footnotes = getFoonotes(result);
+        result = cleanFoonotes(result); // enumerate the footnotes from 1 just for display
+        // Now just wrap the sections and subsections of the article in nested lists
+        var html = result.innerHTML;
+        html += "<hr>" + footnotes;
+        document.getElementById("articleText").innerHTML = html;
+        var nodes = xmlToc.evaluate("//schedule[@name='" + name + "']", xmlToc, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        document.getElementById("articleTitle").innerHTML = result.textContent;
+        document.getElementById("article").style.display = "block";
+        topFunction(); //scroll to top
+        return true;
+    }
+
+    function updateNavigation(art) {
+        var nodes = xmlToc.evaluate("//article[@name='" + art + "']//ancestor::*", xmlToc, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        var text = "";
+        while (result) {
+            if (result.tagName == "subchapter") {
+                text = result.getElementsByTagName("title")[0].innerHTML + text;
+            }
+            if (result.tagName == "chapter") {
+                text = result.getElementsByTagName("title")[0].innerHTML + " >> " + text;
+            }
+            if (result.tagName == "part") {
+                text = result.getElementsByTagName("title")[0].innerHTML + " (" + result.getElementsByTagName("subtitle")[0].innerHTML + ") " + " >> " + text;
+            }
+            result = nodes.iterateNext();
+        }
+        document.getElementById("nav").innerHTML = text;
+    }
+
+    function getNextPrevArticles(art) {
+        var nodes = xmlToc.evaluate("//article[@name='" + art + "']/following::article", xmlToc, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        if (result != null) {
+            document.getElementById("next").setAttribute('href', 'javascript:getArticle("' + result.getAttribute("name") + '");');
+            document.getElementById("next").style.display = "block";
+        } else {
+            document.getElementById("next").style.display = "none";
+        }
+        var nodes = xmlToc.evaluate("//article[@name='" + art + "']/preceding::article", xmlToc, null, XPathResult.ANY_TYPE, null);
+        var result = nodes.iterateNext();
+        if (result != null) {
+            document.getElementById("prev").setAttribute('href', 'javascript:getArticle("' + result.getAttribute("name") + '");');
+            document.getElementById("prev").style.display = "block";
+        } else {
+            document.getElementById("prev").style.display = "none";
+        }
+    }
+
+    function cleanFoonotes(result) {
+        counter = 0;
+        var fArray = [];
+        for (i = 0; i < result.getElementsByTagName("sup").length; i++) {
+            var footnote = result.getElementsByTagName("sup")[i].innerHTML;
+            if(fArray.includes(footnote)){
+            result.getElementsByTagName("sup")[i].innerHTML = fArray.indexOf(footnote)+1;
+            }else{
+            	counter++;
+            	fArray.push(footnote);
+            // just reformat [123] as [1]
+            result.getElementsByTagName("sup")[i].innerHTML = counter;
+            }
+        }
+        return result;
+    }
+
+    function getFoonotes(result) {
+        var footnotes = "<ol>";
+        var refs = result.getElementsByTagName("a"); // to get the foot note numbers
+        counter = 0;
+        var fArray = [];
+        for (i = 0; i < refs.length; i++) {
+            var name = refs[i].getAttribute("href").slice(1, refs[i].getAttribute("href").length); //remove "#" from the href link
+            if (fArray.includes(name)) {
+
+            } else {
+                counter++;
+                fArray.push(name);
+                var nodes = xmlFoot.evaluate("//a[@name='" + name + "']/..", xmlFoot, null, XPathResult.ANY_TYPE, null);
+                var result = nodes.iterateNext();
+                result.getElementsByTagName("a")[0].innerHTML = "[" + counter + "]";
+                footnotes += "<li>" + result.innerHTML + "</li>";
+            }
+        }
+        return footnotes + "</ol>";
+    }
+
+    function reset() {
+        document.getElementById("article").style.display = "none";
+        document.getElementById("toc").style.display = "";
+        document.getElementById("prev").style.display = "none";
+        document.getElementById("next").style.display = "none";
+        document.getElementById("nav").innerHTML = "";
+    }
+
+
+
+    //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+</body>
+
+</html>
