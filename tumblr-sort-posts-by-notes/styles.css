@@ -1,0 +1,47 @@
+#loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98vw;
+    height: 100vh;
+    z-index: -10;
+    background-image: url("https://i.stack.imgur.com/FhHRx.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+    display: table;
+    margin: auto;
+    vertical-align: middle;
+}
+
+h1 {
+    display: table;
+    margin: auto;
+    vertical-align: middle;
+    font-size: x-large;
+    padding: 4px;
+}
+
+#posts {
+    display: table;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#more {
+    display: none;
+    padding: 4px;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
