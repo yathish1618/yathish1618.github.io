@@ -1,0 +1,89 @@
+<html>
+<title>Most Popular Posts</title>
+<meta charset="utf-8">
+
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+<style type="text/css">
+  #loading {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98vw;
+  height: 100vh;
+  z-index: -10;
+  background-image: url("https://i.stack.imgur.com/FhHRx.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+</style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    var posts = [],
+        limit = 10;
+    var i = 0,
+        post_count, j=0; //i is for getting all post details. j is for rendering 10 posts at a time
+    //first call. fetches 50 posts and total post count
+    $.getJSON("https://api.tumblr.com/v2/blog/yathish1618.tumblr.com/posts?limit=50&notes_info=true&api_key=usVunzXXi7KNgr7ar7IIggUj3X7ACPrSwr7gjgrnfkpt05kLD7", function(data) {
+        post_count = data["response"]["total_posts"];
+        $.each(data["response"]["posts"], function(key, val) {
+            posts.push(val);
+        });
+        posts.sort((x, y) => y.note_count - x.note_count);
+        i = 50;
+        //call the same api iteratively until all posts are fetched
+        getRemainingPosts();
+    });
+
+    function getRemainingPosts() {
+        if (i < post_count) {
+            $.getJSON("https://api.tumblr.com/v2/blog/yathish1618.tumblr.com/posts?limit=50&offset=" + i + "&notes_info=true&api_key=usVunzXXi7KNgr7ar7IIggUj3X7ACPrSwr7gjgrnfkpt05kLD7", function(data) {
+                $.each(data["response"]["posts"], function(key, val) {
+                    posts.push(val);
+                });
+                posts.sort((x, y) => y.note_count - x.note_count);
+                i += 50;
+                getRemainingPosts();
+            });
+        } else {
+            renderPosts();
+        }
+    }
+
+    function renderPosts() {
+        $.getJSON("https://cors-anywhere.herokuapp.com/https://www.tumblr.com/oembed/1.0?url=https://yathish1618.tumblr.com/post/" + posts[j]["id_string"], function(data) {
+            $("#posts").append(data["html"]);
+            if (j < limit) {
+                j++;
+                renderPosts();
+            }
+            else{
+                document.getElementById("more").style.display = "table";
+            }
+        });
+    }
+
+    function loadMore() {
+      document.getElementById("more").style.display = "none";
+      document.getElementById("loading").style.top = scrollY+screen.height/2;
+        limit += 10;
+        j++;
+        renderPosts();
+    }
+    </script>
+    <link rel="shortcut icon" href="../assets/favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon-16x16.png" type="image/x-icon">
+</head>
+
+<body style="font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;">
+    <a style="display: table; margin: auto; vertical-align: middle;" href="https://yathish1618.tumblr.com" target="_blank">yathish1618.tumblr.com</a>
+    <h1 style="display: table; margin: auto; vertical-align: middle; font-size: x-large; padding: 4px;">Most Popular Posts</h1>
+    <a style="display: table; margin: auto; vertical-align: middle;">Be patient while the page loads. Someday this pain will be useful to you.</a>
+    <div id="posts" style="display: table; height: 100%; margin: auto; text-align: center; vertical-align: middle;"></div>
+    <div id="loading"></div>
+    <button id="more" onclick="loadMore()" style="display: none; padding:4px; margin: auto; text-align: center; vertical-align: middle;margin-bottom: 20px;">I want more..</button>
+</body>
+
+</html>
