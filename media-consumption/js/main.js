@@ -1,6 +1,6 @@
 var year = new Date().getFullYear();
 var media = 1,
-    imdbData, movies, grData, books;
+    imdbData, movies, grData, books, sort=1;
 var musicData = [];
 var music;
 
@@ -16,11 +16,15 @@ function initiateLazyLoad() {
         lazyloadThrottleTimeout = setTimeout(function() {
             var scrollTop = window.pageYOffset;
             lazyloadImages.forEach(function(img) {
+                try{
                 //if (img.offsetTop < (window.innerHeight + scrollTop)) { 
                 if (img.offsetParent.offsetTop < (window.innerHeight + scrollTop)) { //had to add offsetParent for current page only. It's not there in the original.
                     img.src = img.dataset.src;
                     img.classList.remove('lazy');
                 }
+            } catch(err){
+                // don't know what went wrong but pretty sure it doesn't matter.
+            }
             });
             if (lazyloadImages.length == 0) {
                 document.removeEventListener("scroll", lazyload);
@@ -58,15 +62,15 @@ function getIMDbPosterLink(titleId) {
 Papa.parse("data/imdb-ratings.csv", {
     download: true,
     complete: function(results) {
-        imdbData = results.data; //gets current year
-        updateMovieGrid(year);
+        imdbData = results.data.slice(1); //remove header
+        updateMovieGrid(year,sort);
     }
 });
 
 Papa.parse("data/goodreads_library_export.csv", {
     download: true,
     complete: function(results) {
-        grData = results.data; //gets current year
+        grData = results.data.slice(1); //remove header
         //updateBooksGrid(year); //no need to load bookgrid by default
     }
 });
@@ -78,31 +82,52 @@ var s = $.get("../music-catalogue/albums.html", function(html_string) {
 function updateMedia(x) {
     if (x.value == media) return false;
     media = x.value;
-    if (media == 1) updateMovieGrid(year);
-    if (media == 2) updateBooksGrid(year);
+    if (media == 1) updateMovieGrid(year,sort);
+    if (media == 2) updateBooksGrid(year,sort);
     if (media == 3) updateMusicGrid(year);
 }
 
 function updateYear(x) {
     if (x.value == year) return false;
     year = x.value;
-    if (media == 1) updateMovieGrid(year);
-    if (media == 2) updateBooksGrid(year);
+    if (media == 1) updateMovieGrid(year,sort);
+    if (media == 2) updateBooksGrid(year,sort);
     if (media == 3) updateMusicGrid(year);
 }
 
-function updateMovieGrid(yr) {
+function updateSort(x) {
+    if (x.value == sort) return false;
+    sort = x.value;
+    console.log(sort);
+    if (media == 1) updateMovieGrid(year,sort);
+    if (media == 2) updateBooksGrid(year,sort);
+    // No need to update music grid i.e., if media=3
+}
+
+function updateMovieGrid(yr,srt) {
     if (document.getElementById("container").innerHTML != "" && yr.value == year) return false; //This is to avoid reloading same grid if year hasn't changed. Exception for first time load.
     if (isNaN(yr)) yr = yr.value; //if coming from drop down selection (it'll be a string hence NaN)
     year = yr;
     movies = filter(imdbData, 13, yr.toString());
-    movies.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
-        var d2 = a[2].split('-');
-        d2 = new Date(d2[2], d2[1] - 1, d2[0]); //this crap is to modify 2nd column as date
-        var d1 = b[2].split('-');
-        d1 = new Date(d1[2], d1[1] - 1, d1[0]);
-        return d1 - d2;
-    });
+    if(srt==1){
+        movies.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
+            var d2 = a[2].split('-');
+            d2 = new Date(d2[2], d2[1] - 1, d2[0]); //this crap is to modify 2nd column as date
+            var d1 = b[2].split('-');
+            d1 = new Date(d1[2], d1[1] - 1, d1[0]);
+            return d1 - d2;
+        });
+    }
+    if(srt==2){
+        movies.sort(function(a, b) { //to sort in descending order of rating in 1st columnm
+            return b[1] - a[1];
+        });
+    }
+    if(srt==3){
+        movies.sort(function(a, b) { //to sort in descending order of rating in 1st columnm
+            return b[6] - a[6];
+        });
+    }
     var movieGrid = "";
     for (var i = 1; i < movies.length; i++) {
         movieGrid += "<div class='imagebox'><img class='lazy' data-src='' id='" + movies[i][0] + "' width='182' height='268'><a href='" + movies[i][4] + "' target='_blank'><div class='caption'><table><tr><td>" + movies[i][3] + "<br>My Rating:" + movies[i][1] + "<br>IMDb Rating:" + movies[i][6] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
@@ -112,19 +137,31 @@ function updateMovieGrid(yr) {
     initiateLazyLoad();
 }
 
-function updateBooksGrid(yr) {
+function updateBooksGrid(yr,srt) {
     if (document.getElementById("container").innerHTML != "" && yr.value == year) return false; //This is to avoid reloading same grid if year hasn't changed. Exception for first time load.
     if (isNaN(yr)) yr = yr.value; //if coming from drop down selection (it'll be a string hence NaN)
     year = yr;
     books = filter(grData, 18, "read");
     books = filter(books, 32, yr.toString());
-    books.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
-        var d2 = a[14].split('-');
-        d2 = new Date(d2[2], d2[1] - 1, d2[0]); //this crap is to modify 2nd column as date
-        var d1 = b[14].split('-');
-        d1 = new Date(d1[2], d1[1] - 1, d1[0]);
-        return d1 - d2;
-    });
+    if(srt==1){
+        books.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
+            var d2 = a[14].split('-');
+            d2 = new Date(d2[2], d2[1] - 1, d2[0]); //this crap is to modify 2nd column as date
+            var d1 = b[14].split('-');
+            d1 = new Date(d1[2], d1[1] - 1, d1[0]);
+            return d1 - d2;
+        });
+    }
+    if(srt==2){
+        books.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
+            return b[7] - a[7];
+        });
+    }
+    if(srt==3){
+        books.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
+            return b[8] - a[8];
+        });
+    }
     var bookGrid = "";
     for (var i = 0; i < books.length; i++) {
         bookGrid += "<div class='imagebox'><img class='lazy' data-src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/" + books[i][31] + "/" + books[i][0] + "._SX182_.jpg' id='" + books[i][0] + "' width='182' height='268'><a href='https://www.goodreads.com/book/show/" + books[i][0] + "' target='_blank'><div class='caption'><table><tr><td>" + books[i][1] + "<br>My Rating:" + books[i][7] + "<br>Goodreads:" + books[i][8] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
@@ -176,6 +213,10 @@ function parseMusicHTML(s){
 }
 
 function filter(array, key, value) {
+    if(value=="0") { //special case of All Time where no filtering to be done
+        array.pop(); //removes last row which is blank
+        return array; //removes first row which is just header
+    }
     var i, j, hash = [],
         item;
 

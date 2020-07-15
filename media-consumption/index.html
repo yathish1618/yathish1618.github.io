@@ -11,7 +11,7 @@
 <div class="custom-select">
 <select onchange="updateMedia(this);">
   <option value="-1">Choose Media:</option>
-  <option value="1">Films</option>
+  <option value="1" selected>Films</option>
   <option value="2">Books</option>
   <option value="3">Music</option>
 </select>
@@ -20,7 +20,7 @@
 <div class="custom-select">
 <select onchange="updateYear(this);">
   <option value="-1">Select year:</option>
-  <option value="2020">2020</option>
+  <option value="2020" selected>2020</option>
   <option value="2019">2019</option>
   <option value="2018">2018</option>
   <option value="2017">2017</option>
@@ -34,6 +34,16 @@
   <option value="2009">2009</option>
   <option value="2008">2008</option>
   <option value="2007">2007</option>
+  <option value="0">All Time</option>
+</select>
+</div>
+
+<div class="custom-select">
+<select onchange="updateSort(this);">
+  <option value="-1">Sort By:</option>
+  <option value="1" selected>Sort by Date Added</option>
+  <option value="2">Sort by My Rating</option>
+  <option value="3">Sort by Global Rating</option>
 </select>
 </div>
 
