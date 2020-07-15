@@ -129,7 +129,7 @@ function updateMovieGrid(yr,srt) {
         });
     }
     var movieGrid = "";
-    for (var i = 1; i < movies.length; i++) {
+    for (var i = 0; i < movies.length; i++) {
         movieGrid += "<div class='imagebox'><img class='lazy' data-src='' id='" + movies[i][0] + "' width='182' height='268'><a href='" + movies[i][4] + "' target='_blank'><div class='caption'><table><tr><td>" + movies[i][3] + "<br>My Rating:" + movies[i][1] + "<br>IMDb Rating:" + movies[i][6] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
         getIMDbPosterLink(movies[i][0]);
     }
