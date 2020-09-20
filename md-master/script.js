@@ -53,7 +53,7 @@ function processConfig(data) {
         dates = tableData.map(function(value, index) { return value[8]; });
         dates = dates.map(x => new Date(x));
 
-        var index = closestDate(dates, data.by.value, data.dt.value);
+        var index = closestDate(dates, data.dt.value);
 
         topRow = (index - 200 >= 0) ? index - 200 : 0;
         bottomRow = (index + 200 <= tableData.length) ? index + 200 : tableData.length;
@@ -106,17 +106,10 @@ function filterTableData(tableDataOrig, checkedFlags) {
     return result;
 }
 
-function closestDate(dates, backYear, intrstdDt) {
+function closestDate(dates, intrstdDt) {
     var datesAsNum = dates.map(Number);
-    if (intrstdDt == "") {
-        var sdf = new Date(); //searchDateForward
-        var sdb = new Date(); //searchDateBackward
-        sdf.setFullYear(sdf.getFullYear() - backYear);
-        sdb.setFullYear(sdb.getFullYear() - backYear);
-    } else {
-        var sdf = new Date(intrstdDt); 
-        var sdb = new Date(intrstdDt);
-    }
+    var sdf = new Date(intrstdDt); 
+    var sdb = new Date(intrstdDt);
     sdf.setHours(0, 0, 0, 0); //must ignore time of the dat. coz compare only dates
     sdb.setHours(0, 0, 0, 0);
     if (datesAsNum.indexOf(+sdf) > -1) return datesAsNum.indexOf(+sdf);
@@ -196,6 +189,7 @@ function createTable(tableData, append) {
     if (append == 2) {
         tableBody.insertBefore(c, tableBody.childNodes[0]);
     }
+    console.log("Position: "+bottomRow+" / "+tableDataOrig.length+" = "+(bottomRow*100/tableDataOrig.length).toFixed(2)+"%");
 }
 
 window.onscroll = function(ev) {
