@@ -124,7 +124,7 @@ function updateMovieGrid(yr,srt) {
         });
     }
     if(srt==3){
-        movies.sort(function(a, b) { //to sort in descending order of rating in 1st columnm
+        movies.sort(function(a, b) { //to sort in descending order of global rating in 6th columnm
             return b[6] - a[6];
         });
     }
