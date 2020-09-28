@@ -1,4 +1,4 @@
-Movies and books part done. Parse music info from music-catalogue html pages.
+Movies and books part done.
 
 Notes for updating imdb-ratings.csv
 There's on extra column at the last for "year". Have to manually update that.
