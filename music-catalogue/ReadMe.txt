@@ -17,3 +17,5 @@
 	alt="Image" 
 	border="0"
 	 style="width:100px;border:0px;"
+	• Find and replace '<img ' as '<img loading="lazy" ' in artists.html and albums.html
+

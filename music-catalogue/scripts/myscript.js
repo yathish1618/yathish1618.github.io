@@ -30,11 +30,13 @@ $(document).ready(function() {
     });
     //Load index by default
     $("#Contents").load("contents.html");
+    //load all html file assets
+    loadhtml();
 
     document.getElementById("indexButton").click();
 
     handleURL();
-    
+
     //whenever url is changed reload content accordingly
     $(window).on('hashchange', function(e) {
         handleURL();
@@ -47,7 +49,7 @@ $(document).ready(function() {
         if (n > -1) s = s.slice(0, n); //sanitise url
         var href = $(this).attr('data-href');
 
-        //Here we'll simply change the url. handleURL function then actually updates body.
+        //Here we'll simply change the url. handleURL function then actually updates body. It is triggered through above $(window).on('hashchange'...
         if (href.indexOf('artists') >= 0) {
             window.location.href = s + "#Artists";
         }
@@ -69,7 +71,6 @@ $(document).ready(function() {
         if (href.indexOf('contents') >= 0) {
             window.location.href = s;
         }
-        handleURL();
     })
 });
 
@@ -77,51 +78,22 @@ function handleURL() {
     //This first part is to directly handle when URL has one of the tabs (first time load)
     var s = window.location.href;
     if (s.indexOf('#Tracklist') >= 0) {
-        if ($.trim($("#Tracklist").html()) == '') $("#Tracklist").load("tracklist.html", function() {
-            $("#Tracklist table").addClass("tablesorter");
-            $('<thead></thead>').prependTo('#Tracklist table').append($('#Tracklist tr:first'));
-            callTablesorter();
-        });
-        document.getElementById('tracklistButton').click();
+        if ($.trim($("#Tracklist").html()) == '') document.getElementById('tracklistButton').click();
     }
     if (s.indexOf('#Albums') >= 0) {
-        if ($.trim($("#Albums").html()) == '') $("#Albums").load("albums.html", function() {
-            $('.album_wrapper .cover').each(function() {
-                //This is to reord cover div before tracks div inside each album wrapper
-                $(this).insertBefore($(this).prev('.tracks'));
-            });
-        });
-        document.getElementById('albumsButton').click();
+        if ($.trim($("#Albums").html()) == '') document.getElementById('albumsButton').click();
     }
     if (s.indexOf('#Artists') >= 0) {
-        if ($.trim($("#Artists").html()) == '') $("#Artists").load("artists.html");
-        document.getElementById('artistsButton').click();
-
+        if ($.trim($("#Artists").html()) == '') document.getElementById('artistsButton').click();
     }
     if (s.indexOf('#Archives') >= 0) {
-        if ($.trim($("#Archives").html()) == '') $("#Archives").load("archives.html");
-        document.getElementById('archivesButton').click();
-
+        if ($.trim($("#Archives").html()) == '') document.getElementById('archivesButton').click();
     }
     if (s.indexOf('#About') >= 0) {
-        if ($.trim($("#About").html()) == '') $("#About").load("about.html");
-        document.getElementById('aboutButton').click();
-
+        if ($.trim($("#About").html()) == '') document.getElementById('aboutButton').click();
     }
     if (s.indexOf('#Playlists') >= 0) {
-
-        if ($.trim($("#Playlists").html()) == '') {
-            $("#Playlists").load("playlists.html", function() {
-                $("#Playlists table").addClass("tablesorter");
-                //add thead tags for tablesorter to recognise table headers.
-                $('#Playlists table').each(function() {
-                    $(this).prepend('<thead></thead>');
-                    $(this).find('thead').append($(this).find("tr:eq(0)"));
-                });
-                callTablesorter();
-            });
-        }
-        document.getElementById('playlistsButton').click();
+        if ($.trim($("#Playlists").html()) == '') document.getElementById('playlistsButton').click();
     }
     //This second part is to handle cases where hyperlinks are between the tabs
     var href = (/(#.*$)/g).exec(s);
@@ -208,4 +180,30 @@ function callTablesorter() {
                 }
             }
         });
+}
+
+function loadhtml() {
+    $("#Tracklist").load("tracklist.html", function() {
+        $("#Tracklist table").addClass("tablesorter");
+        $('<thead></thead>').prependTo('#Tracklist table').append($('#Tracklist tr:first'));
+        callTablesorter();
+    });
+    $("#Albums").load("albums.html", function() {
+        $('.album_wrapper .cover').each(function() {
+            //This is to reord cover div before tracks div inside each album wrapper
+            $(this).insertBefore($(this).prev('.tracks'));
+        });
+    });
+    $("#Artists").load("artists.html");
+    $("#Archives").load("archives.html");
+    $("#About").load("about.html");
+    $("#Playlists").load("playlists.html", function() {
+        $("#Playlists table").addClass("tablesorter");
+        //add thead tags for tablesorter to recognise table headers.
+        $('#Playlists table').each(function() {
+            $(this).prepend('<thead></thead>');
+            $(this).find('thead').append($(this).find("tr:eq(0)"));
+        });
+        callTablesorter();
+    });
 }
