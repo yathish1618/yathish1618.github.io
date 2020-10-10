@@ -142,15 +142,27 @@ function handleURL() {
     }
 }
 
-//I have just picked up this code from a stackoverflow answer.
+//I have just picked up this code from a stackoverflow answer. Added textExtraction to count stars
 function callTablesorter() {
     var ts = $.tablesorter,
         sorting = false,
         searching = false;
+
     $('table')
         .tablesorter({
             theme: 'blue',
             widthFixed: true,
+            textExtraction: {
+                //count number of stars and return numeric rating
+                2: function(node, table, cellIndex) {
+                    var a = $(node)[0].getElementsByTagName('img');
+                    var j = 0;
+                    for (i = 0; i < 5; i++) {
+                        if (a[i].src.search("images/star.png") > 0) j++;
+                    }
+                    return j;
+                }
+            },
             widgets: ['filter'],
             dateFormat: "ddmmyyyy",
         })
