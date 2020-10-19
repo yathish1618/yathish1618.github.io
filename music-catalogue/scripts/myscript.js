@@ -18,6 +18,7 @@ function activateTab(tab) {
     if (tab == "aboutButton") tab1 = "About";
     document.getElementById(tab1).style.display = "block";
     document.getElementById(tab).className += " active";
+    //$('table').trigger('filterReset').trigger('sortReset'); //reset tablesorter search filters and sort
 }
 
 $(document).ready(function() {
@@ -69,12 +70,13 @@ $(document).ready(function() {
             window.location.href = s + "#About";
         }
         if (href.indexOf('contents') >= 0) {
-            window.location.href = s;
+            window.location.href = s + "#Index";
         }
     })
 });
 
 function handleURL() {
+
     //This first part is to directly handle when URL has one of the tabs (first time load)
     var s = window.location.href;
     if (s.indexOf('#Tracklist') >= 0) {
@@ -111,9 +113,13 @@ function handleURL() {
             }
         }
         if (href.indexOf('#album_') >= 0) {
-
             activateTab('albumsButton');
             if ($.trim($("#Albums").html()) == '') $("#Albums").load("albums.html", function() {
+                //Lyrics column - wrap lyrics inside a span that is hidden by css.
+                $('#Albums td:last-child').each(function() {
+                    var lyrics = this.innerHTML;
+                    $(this).html('<a onclick="showLyrics(this);">View</a><span>' + lyrics + '</span>');
+                });
                 $('.album_wrapper .cover').each(function() {
                     $(this).insertBefore($(this).prev('.tracks'));
                 });
@@ -125,7 +131,12 @@ function handleURL() {
         }
         if (href.indexOf('#play_') >= 0) {
             activateTab('playlistsButton');
-            if ($.trim($("#Playlists").html()) == '') $("#Playlists").load("playlists.html", function() {
+            if ($.trim($("#Playlists").html()) == '') $("#Playlists").load("playlists.html", function() { //Lyrics column - wrap lyrics inside a span that is hidden by css.
+                $('#Playlists td:last-child').each(function() {
+                    var lyrics = this.innerHTML;
+                    $(this).html('<a onclick="showLyrics(this);">View</a><span>' + lyrics + '</span>');
+                });
+
                 $("#Playlists table").addClass("tablesorter");
                 //add thead tags for tablesorter to recognise table headers.
                 $('#Playlists table').each(function() {
@@ -142,12 +153,7 @@ function handleURL() {
     }
 }
 
-//I have just picked up this code from a stackoverflow answer. Added textExtraction to count stars
 function callTablesorter() {
-    var ts = $.tablesorter,
-        sorting = false,
-        searching = false;
-
     $('table')
         .tablesorter({
             theme: 'blue',
@@ -165,44 +171,32 @@ function callTablesorter() {
             },
             widgets: ['filter'],
             dateFormat: "ddmmyyyy",
-        })
-        .on('sortBegin filterEnd', function(e, filters) {
-            if (!(sorting || searching)) {
-                var table = this,
-                    c = table.config,
-                    filters = ts.getFilters(table),
-                    $sibs = $('.tablesorter').not(c.$table);
-                if (!sorting) {
-                    sorting = true;
-                    $sibs.trigger('sorton', [c.sortList, function() {
-                        setTimeout(function() {
-                            sorting = false;
-                        }, 500);
-                    }]);
-                }
-                if (!searching) {
-                    $sibs.each(function() {
-                        if (this.hasInitialized) {
-                            ts.setFilters(this, filters, true);
-                        }
-                    });
-                    setTimeout(function() {
-                        searching = false;
-                    }, 500);
-                }
+            widgetOptions: {
+                filter_liveSearch: true,
+                //filter_searchDelay : 1000 //milliseconds
             }
-        });
+        })
 }
 
 function loadhtml() {
     $("#Tracklist").load("tracklist.html", function() {
+        //Lyrics column - wrap lyrics inside a span that is hidden by css.
+        $('#Tracklist td:last-child').each(function() {
+            var lyrics = this.innerHTML;
+            $(this).html('<a onclick="showLyrics(this);">View</a><span>' + lyrics + '</span>');
+        });
         $("#Tracklist table").addClass("tablesorter");
         $('<thead></thead>').prependTo('#Tracklist table').append($('#Tracklist tr:first'));
         callTablesorter();
     });
     $("#Albums").load("albums.html", function() {
+        //Lyrics column - wrap lyrics inside a span that is hidden by css.
+        $('#Albums td:last-child').each(function() {
+            var lyrics = this.innerHTML;
+            $(this).html('<a onclick="showLyrics(this);">View</a><span>' + lyrics + '</span>');
+        });
         $('.album_wrapper .cover').each(function() {
-            //This is to reord cover div before tracks div inside each album wrapper
+            //This is to reorder cover div before tracks div inside each album wrapper
             $(this).insertBefore($(this).prev('.tracks'));
         });
     });
@@ -210,6 +204,11 @@ function loadhtml() {
     $("#Archives").load("archives.html");
     $("#About").load("about.html");
     $("#Playlists").load("playlists.html", function() {
+        //Lyrics column - wrap lyrics inside a span that is hidden by css.
+        $('#Playlists td:last-child').each(function() {
+            var lyrics = this.innerHTML;
+            $(this).html('<a onclick="showLyrics(this);">View</a><span>' + lyrics + '</span>');
+        });
         $("#Playlists table").addClass("tablesorter");
         //add thead tags for tablesorter to recognise table headers.
         $('#Playlists table').each(function() {
@@ -218,4 +217,21 @@ function loadhtml() {
         });
         callTablesorter();
     });
+}
+
+function showLyrics(elmnt) {
+    document.getElementById("lyrics-modal").style.display = "block";
+    document.querySelector(".lyrics-content p").innerHTML = elmnt.nextSibling.innerHTML;
+    var lyricsmodal = document.getElementById("lyrics-modal");
+
+    var lyricsspan = document.getElementsByClassName("lyrics-close")[0];
+    lyricsspan.onclick = function() {
+        lyricsmodal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == lyricsmodal) {
+            lyricsmodal.style.display = "none";
+        }
+    }
 }

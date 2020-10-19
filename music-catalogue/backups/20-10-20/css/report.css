@@ -1,0 +1,152 @@
+body {
+	font: normal normal 70%/120% Verdana, sans-serif;
+	background: #FFF; 
+	color: #000;
+}
+
+h1 {
+	font-size: 1.4em; 
+	color: #AAA; 
+}
+
+h2 { 
+	font-size: 1.1em; 
+	color: #AAA; 
+}
+
+td, p {
+	font-size: 1em; 
+}
+
+a, a:visited {
+	color: #000;
+}
+
+.head_wrapper ul {
+	list-style: none;
+	margin: 5px;
+	padding: 0px;
+}
+
+.head_wrapper li {
+	float: left; 
+	margin: 5px;
+}
+
+.head_wrapper, .nav_wrapper, .artist_wrapper, .album_wrapper, .stat_wrapper {
+	display: contents;
+	width: 100%;
+	float: left;
+	text-align: left;
+}
+
+.album_wrapper{
+	display: block;
+}
+
+.album { 
+	padding: 10px;
+	text-align: left;
+}
+
+.album p {
+	text-align: left;
+	width: 98%;
+}
+
+.album img {
+	border: none;
+}
+
+.tracks {
+    min-height: 100px;
+    margin-left: 110px;
+    /* margin-top: -100px; */
+    /* float: right; */
+    vertical-align: top;
+}
+
+.cover {
+	    /* width: 25%; */
+    position: absolute;
+    vertical-align: top;
+}
+
+.credit {
+	width: 100%;
+	float: left;
+	padding: 20px 0px 50px 0px;
+	text-align: right;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  overflow: hidden;
+}
+
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('https://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modal {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+table {
+	table-layout:fixed;
+	width:100%;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
