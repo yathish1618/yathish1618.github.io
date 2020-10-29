@@ -121,7 +121,7 @@ function closestDate(dates, intrstdDt) {
         b = datesAsNum.indexOf(+sdb);
         i++;
     }
-    while (a == -1 && b == -1 && i < 365); //Search for a max of 1 year forward or backward
+    while (a == -1 && b == -1 && i < 1e10); //Search for a max of 1 year forward or backward. No limit now
     if (a > -1) return a;
     if (b > -1) return b;
 }
