@@ -1,4 +1,5 @@
-var year = new Date().getFullYear();
+var year = 2020;
+// var year = new Date().getFullYear();
 var media = 1,
     imdbData, movies, grData, books, sort=1;
 var musicData = [];
@@ -112,9 +113,9 @@ function updateMovieGrid(yr,srt) {
     if(srt==1){
         movies.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
             var d2 = a[2].split('-');
-            d2 = new Date(d2[2], d2[1] - 1, d2[0]); //this crap is to modify 2nd column as date
+            d2 = new Date(d2[0], d2[1] - 1, d2[2]); //this crap is to modify 2nd column as date
             var d1 = b[2].split('-');
-            d1 = new Date(d1[2], d1[1] - 1, d1[0]);
+            d1 = new Date(d1[0], d1[1] - 1, d1[2]);
             return d1 - d2;
         });
     }
