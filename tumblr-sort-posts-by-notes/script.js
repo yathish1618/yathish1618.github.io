@@ -35,7 +35,7 @@ function getRemainingPosts() {
 }
 
 function renderPosts() {
-    $.getJSON("https://cors-anywhere.herokuapp.com/https://www.tumblr.com/oembed/1.0?url=https://yathish1618.tumblr.com/post/" + posts[j]["id_string"], function(data) {
+    $.getJSON("https://cors.artemisandros.workers.dev/?https://www.tumblr.com/oembed/1.0?url=https://yathish1618.tumblr.com/post/" + posts[j]["id_string"], function(data) {
         $("#posts").append(data["html"]);
         if (j < limit) {
             j++;
