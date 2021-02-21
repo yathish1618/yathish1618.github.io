@@ -72,7 +72,7 @@ function process() {
 function callWayBackMachine(timestamp) {
     var cdxUrl = 'http://web.archive.org/cdx/search/cdx?url=' + imdb_url + '&from=' + timestamp + '&fl=timestamp&limit=1'; //limit 1 basically picks the most recent available date, fl=timestamp means fetch only the timestap field and nothing else.
     waybackAjax = $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/" + cdxUrl,
+        url: "https://cors.artemisandros.workers.dev/?" + cdxUrl,
         type: "GET",
         success: function(data) {
             if (data != "") {
@@ -90,7 +90,7 @@ function callWayBackMachine(timestamp) {
                 $('#loading').show();
                 $('#loadingInfo').html("Fetching data for " + timestamp + ". Progress: (" + (dates.length - i) + "/" + dates.length + ")");
                 whateveroriginAjax = $.ajax({
-                    url: "https://cors-anywhere.herokuapp.com/" + url,
+                    url: "https://cors.artemisandros.workers.dev/?" + url,
                     type: "GET",
                     success: function(data) {
                         if ($('#loadingInfo').html() == "Done!" || $('#loadingInfo').html() == "&nbsp;") {
