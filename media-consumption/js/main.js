@@ -1,45 +1,9 @@
-var year = 2020;
-// var year = new Date().getFullYear();
+// global variable to maintain latest values and store full source data
+var year = 2021;
 var media = 1,
-    imdbData, movies, grData, books, sort=1;
+    imdbData, movies, grData, books, gamesData, games, sort=1;
 var musicData = [];
 var music;
-
-function initiateLazyLoad() {
-    var lazyloadImages = document.querySelectorAll("img.lazy");
-    var lazyloadThrottleTimeout;
-
-    function lazyload() {
-        if (lazyloadThrottleTimeout) {
-            clearTimeout(lazyloadThrottleTimeout);
-        }
-
-        lazyloadThrottleTimeout = setTimeout(function() {
-            var scrollTop = window.pageYOffset;
-            lazyloadImages.forEach(function(img) {
-                try{
-                //if (img.offsetTop < (window.innerHeight + scrollTop)) { 
-                if (img.offsetParent.offsetTop < (window.innerHeight + scrollTop)) { //had to add offsetParent for current page only. It's not there in the original.
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                }
-            } catch(err){
-                // don't know what went wrong but pretty sure it doesn't matter.
-            }
-            });
-            if (lazyloadImages.length == 0) {
-                document.removeEventListener("scroll", lazyload);
-                window.removeEventListener("resize", lazyload);
-                window.removeEventListener("orientationChange", lazyload);
-            }
-        }, 20);
-    }
-
-    //document.dispatchEvent(new CustomEvent('scroll')); //to intialise lazy load. commenting it out here because this is done via getIMDbPosterLink function for this custom page
-    document.addEventListener("scroll", lazyload);
-    window.addEventListener("resize", lazyload);
-    window.addEventListener("orientationChange", lazyload);
-};
 
 function getIMDbPosterLink(titleId) {
     name = 'imdb$' + titleId; //have to define a custom function in the format imdbtt1687247
@@ -47,7 +11,12 @@ function getIMDbPosterLink(titleId) {
         if (data['d'] === undefined) return false; //no data returned by imdb
         poster = data['d'][0]["i"][0].replace("._V1_.jpg", "._V1_UX182_CR0,0,182,268_AL__QL50.jpg"); //.replace part is to get low-res link.
         try {
-            document.getElementById(data['d'][0]["id"]).setAttribute("data-src", poster);
+            // document.getElementById(data['d'][0]["id"]).setAttribute("data-src", poster);
+            img_doms = document.getElementsByName(data['d'][0]["id"])
+            for(let i = 0;i < img_doms.length; i++)
+            {
+                img_doms[i].setAttribute("data-src", poster);
+            }
         } catch (err) {
             //Ajax returned too late. Drop down option changed meanwhile. So the above div can't be found. No worries.
         }
@@ -83,58 +52,91 @@ var s = $.get("../music-catalogue/albums.html", function(html_string) {
 function updateMedia(x) {
     if (x.value == media) return false;
     media = x.value;
-    if (media == 1) updateMovieGrid(year,sort);
-    if (media == 2) updateBooksGrid(year,sort);
-    if (media == 3) updateMusicGrid(year);
+    updateGrid(media);
 }
 
 function updateYear(x) {
     if (x.value == year) return false;
     year = x.value;
-    if (media == 1) updateMovieGrid(year,sort);
-    if (media == 2) updateBooksGrid(year,sort);
-    if (media == 3) updateMusicGrid(year);
+    updateGrid(media);
 }
 
 function updateSort(x) {
     if (x.value == sort) return false;
     sort = x.value;
-    console.log(sort);
+    updateGrid(media);
+}
+
+function updateGrid(media){
     if (media == 1) updateMovieGrid(year,sort);
     if (media == 2) updateBooksGrid(year,sort);
-    // No need to update music grid i.e., if media=3
+    // sorting is not applicable for music grid
+    if (media == 3) updateMusicGrid(year);
+    if (media == 4) updateDocusGrid(year,sort);
+    if (media == 5) updateGamesGrid(year,sort);
+    if (media == 6) updateTVGrid(year,sort);
 }
+
 
 function updateMovieGrid(yr,srt) {
     if (document.getElementById("container").innerHTML != "" && yr.value == year) return false; //This is to avoid reloading same grid if year hasn't changed. Exception for first time load.
     if (isNaN(yr)) yr = yr.value; //if coming from drop down selection (it'll be a string hence NaN)
     year = yr;
-    movies = filter(imdbData, 13, yr.toString());
+    movies = filter(imdbData, 19, yr.toString());
+    movies = filter(movies, 17, "Movies");
+    updateIMDBGrid(yr,srt,movies)
+}
+function updateGamesGrid(yr,srt) {
+    if (document.getElementById("container").innerHTML != "" && yr.value == year) return false; //This is to avoid reloading same grid if year hasn't changed. Exception for first time load.
+    if (isNaN(yr)) yr = yr.value; //if coming from drop down selection (it'll be a string hence NaN)
+    year = yr;
+    games = filter(imdbData, 19, yr.toString());
+    games = filter(games, 17, "Games");
+    updateIMDBGrid(yr,srt,games)
+}
+function updateDocusGrid(yr,srt) {
+    if (document.getElementById("container").innerHTML != "" && yr.value == year) return false; //This is to avoid reloading same grid if year hasn't changed. Exception for first time load.
+    if (isNaN(yr)) yr = yr.value; //if coming from drop down selection (it'll be a string hence NaN)
+    year = yr;
+    docus = filter(imdbData, 19, yr.toString());
+    docus = filter(docus, 17, "Documentaries");
+    updateIMDBGrid(yr,srt,docus)
+}
+function updateTVGrid(yr,srt) {
+    if (document.getElementById("container").innerHTML != "" && yr.value == year) return false; //This is to avoid reloading same grid if year hasn't changed. Exception for first time load.
+    if (isNaN(yr)) yr = yr.value; //if coming from drop down selection (it'll be a string hence NaN)
+    year = yr;
+    tv = filter(imdbData, 19, yr.toString());
+    tv = filter(tv, 17, "TV Series");
+    updateIMDBGrid(yr,srt,tv)
+}
+
+function updateIMDBGrid(yr,srt,records) {
     if(srt==1){
-        movies.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
-            var d2 = a[2].split('-');
-            d2 = new Date(d2[2], d2[1] - 1, d2[0]); //this crap is to modify 2nd column as date
-            var d1 = b[2].split('-');
-            d1 = new Date(d1[2], d1[1] - 1, d1[0]);
+        records.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
+            var d2 = a[18].split('-');
+            d2 = new Date(d2[0], d2[1] - 1, d2[2]); //this crap is to modify 2nd column as date
+            var d1 = b[18].split('-');
+            d1 = new Date(d1[0], d1[1] - 1, d1[2]);
             return d1 - d2;
         });
     }
     if(srt==2){
-        movies.sort(function(a, b) { //to sort in descending order of rating in 1st columnm
-            return b[1] - a[1];
+        records.sort(function(a, b) { //to sort in descending order of rating in 1st columnm
+            return b[15] - a[15];
         });
     }
     if(srt==3){
-        movies.sort(function(a, b) { //to sort in descending order of global rating in 6th columnm
-            return b[6] - a[6];
+        records.sort(function(a, b) { //to sort in descending order of global rating in 6th columnm
+            return b[8] - a[8];
         });
     }
-    var movieGrid = "";
-    for (var i = 0; i < movies.length; i++) {
-        movieGrid += "<div class='imagebox'><img class='lazy' data-src='' id='" + movies[i][0] + "' width='182' height='268'><a href='" + movies[i][4] + "' target='_blank'><div class='caption'><table><tr><td>" + movies[i][3] + "<br>My Rating:" + movies[i][1] + "<br>IMDb Rating:" + movies[i][6] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
-        getIMDbPosterLink(movies[i][0]);
+    var recordsGrid = "";
+    for (var i = 0; i < records.length; i++) {
+        recordsGrid += "<div class='imagebox'><img class='lazy' data-src='' id='" + records[i][0] + "'  name='" + records[i][0] + "' width='182' height='268'><a href='" + records[i][6] + "' target='_blank'><div class='caption'><table><tr><td>" + records[i][5] + "<br>My Rating:" + records[i][15] + "<br>IMDb Rating:" + records[i][8] + "<br>Rewatch #"+records[i][1]+"</td></tr></table></div></a></div>"; //table is to get nice center alignment
+        getIMDbPosterLink(records[i][0]);
     }
-    document.getElementById("container").innerHTML = movieGrid;
+    document.getElementById("container").innerHTML = recordsGrid;
     initiateLazyLoad();
 }
 
@@ -213,19 +215,67 @@ function parseMusicHTML(s){
             return true;
 }
 
-function filter(array, key, value) {
+// filter 2d arrays - to check against a column (either include or exclude matches)
+// negative = true means matches should be excluded
+function filter(array, key, value, negative = false) {
     if(value=="0") { //special case of All Time where no filtering to be done
         array.pop(); //removes last row which is blank
         return array; //removes first row which is just header
     }
     var i, j, hash = [],
         item;
-
-    for (i = 0, j = array.length; i < j; i++) {
-        item = array[i];
-        if (typeof item[key] !== "undefined" && item[key] === value) {
-            hash.push(item);
+    if(negative === true){
+        for (i = 0, j = array.length; i < j; i++) {
+            item = array[i];
+            if (typeof item[key] !== "undefined" && item[key] !== value) {
+                hash.push(item);
+            }
+        }
+    }
+    else{
+        for (i = 0, j = array.length; i < j; i++) {
+            item = array[i];
+            if (typeof item[key] !== "undefined" && item[key] === value) {
+                hash.push(item);
+            }
         }
     }
     return hash;
 }
+
+// lazy loading images
+function initiateLazyLoad() {
+    var lazyloadImages = document.querySelectorAll("img.lazy");
+    var lazyloadThrottleTimeout;
+
+    function lazyload() {
+        if (lazyloadThrottleTimeout) {
+            clearTimeout(lazyloadThrottleTimeout);
+        }
+
+        lazyloadThrottleTimeout = setTimeout(function() {
+            var scrollTop = window.pageYOffset;
+            lazyloadImages.forEach(function(img) {
+                try{
+                //if (img.offsetTop < (window.innerHeight + scrollTop)) { 
+                if (img.offsetParent.offsetTop < (window.innerHeight + scrollTop)) { //had to add offsetParent for current page only. It's not there in the original.
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                }
+            } catch(err){
+                // don't know what went wrong but pretty sure it doesn't matter.
+            }
+            });
+            if (lazyloadImages.length == 0) {
+                document.removeEventListener("scroll", lazyload);
+                window.removeEventListener("resize", lazyload);
+                window.removeEventListener("orientationChange", lazyload);
+            }
+        }, 20);
+    }
+
+    //document.dispatchEvent(new CustomEvent('scroll')); //to intialise lazy load. commenting it out here because this is done via getIMDbPosterLink function for this custom page
+    document.addEventListener("scroll", lazyload);
+    window.addEventListener("resize", lazyload);
+    window.addEventListener("orientationChange", lazyload);
+};

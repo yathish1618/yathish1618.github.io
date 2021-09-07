@@ -1,7 +1,5 @@
 Notes for updating imdb-ratings.csv
-Just copy paste 3 imdb csv exports in the R script folder and run the script. Below is FYI -
-There's on extra column at the last for "year". Have to manually update that. Because many movies were added in bulk whose date rated (year) has been fixed manually.
-Note that adding only new titles from latest exported csv is not enough. IMDb rating also has to be updated. Do Vlookups or ignore updating imdb rating. Not that big a deal.
+Export all lists and run R script
 
 Notes for updating goodreads-ratings.csv
 Main problem is getting the links for book cover images. In index.html page there is commented out code. Uncomment it. It's the goodreads widget that fetches and displays latest 200 books I've read. The custom JS script below that will parse all that crap and give a nice csv with book id and required image code. Run this code in console. In the csv do vlookup and update the last column with this id. There's one more column at the last for year in this csv too.

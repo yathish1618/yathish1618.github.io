@@ -13,16 +13,20 @@
 <div class="custom-select">
 <select onchange="updateMedia(this);">
   <option value="-1">Choose Media:</option>
-  <option value="1" selected>Films</option>
+  <option value="1" selected>Movies</option>
   <option value="2">Books</option>
   <option value="3">Music</option>
+  <option value="4">Documenatries</option>
+  <option value="5">Games</option>
+  <option value="6">TV Series</option>
 </select>
 </div>
 
 <div class="custom-select">
 <select onchange="updateYear(this);">
   <option value="-1">Select year:</option>
-  <option value="2020" selected>2020</option>
+  <option value="2021" selected>2021</option>
+  <option value="2020">2020</option>
   <option value="2019">2019</option>
   <option value="2018">2018</option>
   <option value="2017">2017</option>
@@ -51,7 +55,7 @@
 
 <div id="container" class="grid-container">
 </div>
-
+<h4>Last Updated: 2021-09-07</h4>
 <!-- Below code is to fetch and update book cover links from goodreads. Refer to read me. -->
 <!-- <div id="gr_grid_widget_1571492199" style="display: none;"></div>
 <script src="https://www.goodreads.com/review/grid_widget/14214171.Yathish's%20bookshelf:%20read?cover_size=medium&hide_link=&hide_title=&num_books=200&order=d&shelf=read&sort=date_read&widget_id=1571492199" type="text/javascript" charset="utf-8"></script>

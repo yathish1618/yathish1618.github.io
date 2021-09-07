@@ -1,22 +1,48 @@
-# We have to append new entries to existing csv
-# Update imdb rating and num votes of existing csv
-# Have to manually update that. Because many movies were added in bulk whose date rated (year) has been fixed manually.
-existing <- read.csv("..\\imdb-ratings.csv")
+# Corrections csv has correct date watched and date rewatched
+# Created (when it was added to list) is used for sorting - proxy for watch/rewatch date
 
-new <- read.csv("Movies I've Seen.csv")
-new <- rbind(new,read.csv("Documentaries_Shorts.csv"))
-new <- rbind(new,read.csv("TV Series.csv"))
+movies <- read.csv("Movies I've Seen.csv", stringsAsFactors = F)
+movies$mediaType <- "Movies"
+docus <- read.csv("Documentaries_Shorts.csv", stringsAsFactors = F)
+docus$mediaType <- "Documentaries"
+tv <- read.csv("TV Series.csv", stringsAsFactors = F)
+tv$mediaType <- "TV Series"
+games <- read.csv("Games.csv", stringsAsFactors = F)
+games$mediaType <- "Games"
 
-new <- subset(new, select = names(existing)[c(1:13)])
+all_firsts <- do.call("rbind",list(movies,docus,tv,games))
+all_firsts$Rewatch.No. <- 0
 
-latest_ratings <- subset(new,select = c(Const,IMDb.Rating,Num.Votes))
-to_update <- subset(existing,select = -c(IMDb.Rating,Num.Votes))
-to_update <- merge(to_update,latest_ratings,by = c("Const"))
-to_insert <- subset(new,Const %in% setdiff(new$Const,to_update$Const))
-to_insert$Date.Rated..Fixed. <- substr(to_insert$Date.Rated,1,4)
-to_insert$Rewatch.No. <- 0
-to_update <- rbind(to_update,to_insert)
-# Reorder 2 columns - imdb rating and num votes
-to_update <- to_update[,c(1,2,3,4,5,6,14,7,8,9,15,10,11,12,13)]
-write.csv(to_update,"imdb-ratings.csv", row.names = F)
+re1 <- read.csv("Rewatches #1.csv", stringsAsFactors = F)
+re1$Rewatch.No. <- 1
+re2 <- read.csv("Rewatches #2.csv", stringsAsFactors = F)
+re2$Rewatch.No. <- 2
+re3 <- read.csv("Rewatches #3.csv", stringsAsFactors = F)
+re3$Rewatch.No. <- 3
+
+all_res <- do.call("rbind",list(re1,re2,re3))
+mediatypelookup <- subset(all_firsts, select = c("Const","mediaType"))
+all_res <- merge(all_res,mediatypelookup,by="Const",all.x = T)
+
+fin <- do.call("rbind",list(all_firsts,all_res))
+fin$Date.Watched <- substr(fin$Created,1,4)
+
+corrections <- read.csv("corrections.csv", stringsAsFactors = F)
+names(corrections)[names(corrections) == 'ï..Const'] <- 'Const'
+# make sure date format is %y-%m-%d
+if (nchar(unlist(strsplit(corrections$Created[1],"-"))[1])==2) {
+  corrections$Created <- format(as.Date(corrections$Created,format="%d-%m-%Y"),"%Y-%m-%d")
+}
+
+fin <- merge(fin,corrections,by = c("Const","Rewatch.No."),all.x = TRUE)
+
+#  explanation for next line in text below.
+fin$Created.y[ is.na(fin$Created.y) ] <- fin$Created.x[ is.na(fin$Created.y) ]
+names(fin)[names(fin) == 'Created.y'] <- 'Created'
+fin$Date.Watched.y[ is.na(fin$Date.Watched.y) ] <- fin$Date.Watched.x[ is.na(fin$Date.Watched.y) ]
+names(fin)[names(fin) == 'Date.Watched.y'] <- 'Date.Watched'
+
+fin <- subset(fin, select = -c(Created.x, Date.Watched.x))
+
+write.csv(fin,"imdb-ratings.csv", row.names = F)
 
