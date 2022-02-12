@@ -1,5 +1,5 @@
 // global variable to maintain latest values and store full source data
-var year = 2021;
+var year = 2022;
 var media = 1,
     imdbData, movies, grData, books, gamesData, games, sort=1;
 var musicData = [];
