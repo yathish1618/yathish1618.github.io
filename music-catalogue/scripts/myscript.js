@@ -163,8 +163,10 @@ function callTablesorter() {
                 2: function(node, table, cellIndex) {
                     var a = $(node)[0].getElementsByTagName('img');
                     var j = 0;
-                    for (i = 0; i < 5; i++) {
-                        if (a[i].src.search("images/star.png") > 0) j++;
+                    if(a.length>0){
+                        for (i = 0; i < 5; i++) {
+                            if (a[i].src.search("images/star.png") > 0) j++;
+                        }
                     }
                     return j;
                 }
