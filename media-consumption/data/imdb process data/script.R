@@ -27,8 +27,8 @@ all_res <- merge(all_res,mediatypelookup,by="Const",all.x = T)
 fin <- do.call("rbind",list(all_firsts,all_res))
 fin$Date.Watched <- substr(fin$Created,1,4)
 
-corrections <- read.csv("corrections.csv", stringsAsFactors = F)
-names(corrections)[names(corrections) == 'ï..Const'] <- 'Const'
+corrections <- read.csv("corrections.csv", stringsAsFactors = F, check.names = FALSE)
+names(corrections)[1] <- 'Const'
 # make sure date format is %y-%m-%d
 if (nchar(unlist(strsplit(corrections$Created[1],"-"))[1])==2) {
   corrections$Created <- format(as.Date(corrections$Created,format="%d-%m-%Y"),"%Y-%m-%d")

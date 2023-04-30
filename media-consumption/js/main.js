@@ -1,5 +1,5 @@
 // global variable to maintain latest values and store full source data
-var year = 2022;
+var year = 2023;
 var media = 1,
     imdbData, movies, grData, books, gamesData, games, sort=1;
 var musicData = [];
@@ -145,7 +145,7 @@ function updateBooksGrid(yr,srt) {
     if (isNaN(yr)) yr = yr.value; //if coming from drop down selection (it'll be a string hence NaN)
     year = yr;
     books = filter(grData, 18, "read");
-    books = filter(books, 32, yr.toString());
+    books = filter(books, 25, yr.toString());
     if(srt==1){
         books.sort(function(a, b) { //to sort in descending order of date in 2nd columnm
             var d2 = a[14].split('-');
@@ -167,7 +167,7 @@ function updateBooksGrid(yr,srt) {
     }
     var bookGrid = "";
     for (var i = 0; i < books.length; i++) {
-        bookGrid += "<div class='imagebox'><img class='lazy' data-src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/" + books[i][31] + "/" + books[i][0] + "._SX182_.jpg' id='" + books[i][0] + "' width='182' height='268'><a href='https://www.goodreads.com/book/show/" + books[i][0] + "' target='_blank'><div class='caption'><table><tr><td>" + books[i][1] + "<br>My Rating:" + books[i][7] + "<br>Goodreads:" + books[i][8] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
+        bookGrid += "<div class='imagebox'><img class='lazy' data-src='https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/" + books[i][24] + "/" + books[i][0] + "._SX182_.jpg' id='" + books[i][0] + "' width='182' height='268'><a href='https://www.goodreads.com/book/show/" + books[i][0] + "' target='_blank'><div class='caption'><table><tr><td>" + books[i][1] + "<br>My Rating:" + books[i][7] + "<br>Goodreads:" + books[i][8] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
     }
     document.getElementById("container").innerHTML = bookGrid;
     initiateLazyLoad();
