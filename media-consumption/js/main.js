@@ -183,7 +183,7 @@ function updateMusicGrid(yr) {
         return b[3] - a[3];
     });
     var musicGrid = "";
-    for (var i = 1; i < music.length; i++) {
+    for (var i = 0; i < music.length; i++) {
         musicGrid += "<div class='imagebox musbox'><img class='lazy' data-src='../music-catalogue/images/" + music[i][2] + ".jpg' id='" + music[i][2] + "' width='100' height='100'><a href='../music-catalogue/#album_" + music[i][2] + "' target='_blank'><div class='caption'><table><tr><td>" + music[i][0] + "<br>" + music[i][1] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
     }
     document.getElementById("container").innerHTML = musicGrid;
