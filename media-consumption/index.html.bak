@@ -25,8 +25,7 @@
 <div class="custom-select">
 <select onchange="updateYear(this);">
   <option value="-1">Select year:</option>
-  <option value="2024" selected>2024</option>
-  <option value="2023">2023</option>
+  <option value="2023" selected>2023</option>
   <option value="2022">2022</option>
   <option value="2021">2021</option>
   <option value="2020">2020</option>
@@ -58,9 +57,9 @@
 
 <div id="container" class="grid-container">
 </div>
-<h4>Last Updated: 2024-02-18</h4>
+<h4>Last Updated: 2023-04-30</h4>
 <!-- Below code is to fetch and update book cover links from goodreads. Refer to read me. -->
-<!-- <div id="gr_grid_widget_1571492199" style="display: none;"></div>
+<div id="gr_grid_widget_1571492199" style="display: none;"></div>
 <script src="https://www.goodreads.com/review/grid_widget/14214171.Yathish's%20bookshelf:%20read?cover_size=medium&hide_link=&hide_title=&num_books=200&order=d&shelf=read&sort=date_read&widget_id=1571492199" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
@@ -78,7 +77,7 @@ b.forEach(function (infoArray, index) {
 });
 var csvContent = lineArray.join("\n");
 copy(csvContent)
-</script> -->
+</script>
 
 
 <script type="text/javascript">

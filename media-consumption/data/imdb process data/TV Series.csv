@@ -1,65 +1,68 @@
 Position,Const,Created,Modified,Description,Title,URL,Title Type,IMDb Rating,Runtime (mins),Year,Genres,Num Votes,Release Date,Directors,Your Rating,Date Rated
-1,tt2384811,2018-10-03,2018-10-03,,Utopia,https://www.imdb.com/title/tt2384811/,tvSeries,8.4,50,2013,"Drama, Mystery, Sci-Fi, Thriller",48321,2013-01-14,,9,2015-10-02
-2,tt2861424,2018-10-03,2018-10-03,,Rick and Morty,https://www.imdb.com/title/tt2861424/,tvSeries,9.1,23,2013,"Animation, Adventure, Comedy, Sci-Fi",547702,2013-12-02,,10,2018-10-03
-3,tt4742876,2018-10-03,2018-10-03,,TVF Pitchers,https://www.imdb.com/title/tt4742876/,tvSeries,9.1,40,2015,"Comedy, Drama",70000,2015-06-03,,9,2015-09-06
-4,tt2395695,2018-10-03,2018-10-03,,Cosmos: A Spacetime Odyssey,https://www.imdb.com/title/tt2395695/,tvMiniSeries,9.3,557,2014,Documentary,124020,2014-03-09,,8,2018-10-03
-5,tt0383126,2018-10-03,2018-10-03,,MythBusters,https://www.imdb.com/title/tt0383126/,tvSeries,8.3,48,2003,"Documentary, Mystery, Reality-TV",53489,2003-01-23,,7,2018-10-03
-6,tt0081846,2018-10-03,2018-10-03,,Cosmos,https://www.imdb.com/title/tt0081846/,tvMiniSeries,9.3,780,1980,Documentary,42015,1980-09-28,,10,2018-10-03
-7,tt6077448,2018-10-03,2018-10-03,,Sacred Games,https://www.imdb.com/title/tt6077448/,tvSeries,8.5,50,2018,"Action, Crime, Drama, Mystery, Thriller",89482,2018-06-28,,7,2018-10-03
-8,tt0439100,2018-10-03,2018-10-03,,Weeds,https://www.imdb.com/title/tt0439100/,tvSeries,7.9,28,2005,"Comedy, Crime, Drama",113206,2005-08-07,,8,2018-10-03
-9,tt1475582,2018-10-03,2018-10-03,,Sherlock,https://www.imdb.com/title/tt1475582/,tvSeries,9.1,88,2010,"Crime, Drama, Mystery, Thriller",946744,2010-07-22,,9,2018-10-03
-10,tt0182576,2018-10-03,2018-10-03,,Family Guy,https://www.imdb.com/title/tt0182576/,tvSeries,8.2,22,1999,"Animation, Comedy",349139,1999-01-31,,9,2018-10-03
-11,tt1442437,2018-10-03,2018-10-03,,Modern Family,https://www.imdb.com/title/tt1442437/,tvSeries,8.5,22,2009,"Comedy, Drama, Romance",447088,2009-09-23,,7,2018-10-03
-12,tt0108778,2018-10-03,2018-10-03,,Friends,https://www.imdb.com/title/tt0108778/,tvSeries,8.9,22,1994,"Comedy, Romance",1021622,1994-09-22,,9,2018-10-03
-13,tt2707408,2018-10-03,2018-10-03,,Narcos,https://www.imdb.com/title/tt2707408/,tvSeries,8.8,49,2015,"Biography, Crime, Drama, Thriller",438976,2015-08-28,,9,2018-10-03
-14,tt2356777,2018-10-03,2018-10-03,,True Detective,https://www.imdb.com/title/tt2356777/,tvSeries,8.9,55,2014,"Crime, Drama, Mystery, Thriller",590523,2014-01-12,,10,2018-10-03
-15,tt4574334,2018-10-03,2018-10-03,,Stranger Things,https://www.imdb.com/title/tt4574334/,tvSeries,8.7,51,2016,"Drama, Fantasy, Horror, Mystery, Sci-Fi, Thriller",1235234,2016-07-11,,7,2018-10-03
-16,tt0944947,2018-10-03,2018-10-03,,Game of Thrones,https://www.imdb.com/title/tt0944947/,tvSeries,9.2,57,2011,"Action, Adventure, Drama, Fantasy",2153105,2011-04-16,,9,2018-10-03
-17,tt2085059,2018-10-03,2018-10-03,,Black Mirror,https://www.imdb.com/title/tt2085059/,tvSeries,8.8,60,2011,"Drama, Mystery, Sci-Fi, Thriller",567685,2011-12-04,,9,2018-10-03
-18,tt0386676,2018-10-03,2018-10-03,,The Office,https://www.imdb.com/title/tt0386676/,tvSeries,9.0,22,2005,Comedy,634142,2005-03-24,,8,2018-10-03
-19,tt0412142,2018-10-03,2018-10-03,,House M.D.,https://www.imdb.com/title/tt0412142/,tvSeries,8.7,44,2004,"Drama, Mystery",476619,2004-11-15,,8,2018-10-03
-20,tt0098936,2018-10-03,2018-10-03,,Twin Peaks,https://www.imdb.com/title/tt0098936/,tvSeries,8.8,47,1990,"Crime, Drama, Mystery, Thriller",203156,1989-09-28,,8,2018-10-03
-21,tt1486217,2018-10-03,2018-10-03,,Archer,https://www.imdb.com/title/tt1486217/,tvSeries,8.6,22,2009,"Animation, Action, Comedy",158604,2009-09-17,,8,2018-10-03
-22,tt0290978,2018-10-03,2018-10-03,,The Office,https://www.imdb.com/title/tt0290978/,tvSeries,8.5,30,2001,"Comedy, Drama",116665,2001-07-09,,9,2018-10-03
-23,tt0237123,2018-10-03,2018-10-03,,Coupling,https://www.imdb.com/title/tt0237123/,tvSeries,8.6,30,2000,"Comedy, Romance",46404,2000-05-12,,9,2018-10-03
-24,tt0075537,2018-10-03,2018-10-03,,Mind Your Language,https://www.imdb.com/title/tt0075537/,tvSeries,8.7,30,1977,Comedy,9058,1977-12-30,,9,2018-10-03
-25,tt0096548,2018-10-03,2018-10-03,,Blackadder Goes Forth,https://www.imdb.com/title/tt0096548/,tvSeries,8.8,175,1989,"Comedy, War",54349,1989-09-28,,9,2018-10-03
-26,tt0084988,2018-10-03,2018-10-03,,The Black Adder,https://www.imdb.com/title/tt0084988/,tvSeries,8.0,195,1982,Comedy,39409,1983-06-15,,9,2018-10-03
-27,tt0088484,2018-10-03,2018-10-03,,Blackadder II,https://www.imdb.com/title/tt0088484/,tvSeries,8.6,176,1986,Comedy,47790,1986-01-09,,9,2018-10-03
-28,tt0092324,2018-10-03,2018-10-03,,Blackadder the Third,https://www.imdb.com/title/tt0092324/,tvSeries,8.6,180,1987,Comedy,45260,1987-09-17,,9,2018-10-03
-29,tt0081912,2018-10-03,2018-10-03,,Only Fools and Horses....,https://www.imdb.com/title/tt0081912/,tvSeries,9.0,95,1981,Comedy,53605,1981-09-08,,9,2018-10-03
-30,tt0096657,2018-10-03,2018-10-03,,Mr. Bean,https://www.imdb.com/title/tt0096657/,tvSeries,8.6,25,1990,"Comedy, Family",124329,1990-01-01,,8,2018-10-03
-31,tt0898266,2018-10-03,2018-10-03,,The Big Bang Theory,https://www.imdb.com/title/tt0898266/,tvSeries,8.2,22,2007,"Comedy, Romance",825971,2006-05-01,,7,2018-10-03
-32,tt1518542,2018-10-03,2018-10-03,,Sarabhai V/S Sarabhai,https://www.imdb.com/title/tt1518542/,tvSeries,9.0,30,2004,Comedy,17226,2004-11-08,,8,2018-10-03
-33,tt1632701,2018-10-03,2018-10-03,,Suits,https://www.imdb.com/title/tt1632701/,tvSeries,8.5,44,2011,"Comedy, Drama",422664,2011-06-23,,7,2018-10-03
-34,tt2431438,2018-10-03,2018-10-03,,Sense8,https://www.imdb.com/title/tt2431438/,tvSeries,8.2,60,2015,"Drama, Mystery, Sci-Fi, Thriller",157500,2015-06-05,,7,2018-10-03
-35,tt0883772,2018-10-03,2018-10-03,,Man vs. Wild,https://www.imdb.com/title/tt0883772/,tvSeries,8.2,60,2006,"Adventure, Reality-TV",22897,2006-10-27,,8,2018-10-03
-36,tt0892700,2018-12-31,2018-12-31,,The Penguins of Madagascar,https://www.imdb.com/title/tt0892700/,tvSeries,7.5,11,2008,"Animation, Short, Action, Adventure, Comedy, Family, Sci-Fi",20129,2008-11-29,,9,2018-12-31
-37,tt1545214,2018-12-31,2018-12-31,,Kung Fu Panda: Legends of Awesomeness,https://www.imdb.com/title/tt1545214/,tvSeries,7.0,22,2011,"Animation, Action, Adventure, Comedy, Drama, Family, Fantasy",6953,2011-09-19,,8,2018-12-31
-38,tt1582350,2018-12-31,2018-12-31,,Episodes,https://www.imdb.com/title/tt1582350/,tvSeries,7.8,30,2011,Comedy,35671,2011-01-09,,7,2018-12-31
-39,tt7366338,2019-06-06,2019-06-06,,Chernobyl,https://www.imdb.com/title/tt7366338/,tvMiniSeries,9.4,330,2019,"Drama, History, Thriller",791334,2019-05-06,,10,2019-06-06
-40,tt5673782,2019-07-08,2019-07-08,,Genius,https://www.imdb.com/title/tt5673782/,tvSeries,8.2,43,2017,"Biography, Drama, History",19062,2017-04-23,,8,2019-07-08
-41,tt0185906,2019-08-10,2019-08-10,,Band of Brothers,https://www.imdb.com/title/tt0185906/,tvMiniSeries,9.4,594,2001,"Drama, History, War",481491,2001-09-09,,9,2019-08-10
-42,tt0264235,2020-02-25,2020-02-25,,Curb Your Enthusiasm,https://www.imdb.com/title/tt0264235/,tvSeries,8.8,28,2000,Comedy,133501,2000-10-14,,9,2020-02-25
-43,tt0072500,2020-04-06,2020-04-06,,Fawlty Towers,https://www.imdb.com/title/tt0072500/,tvSeries,8.8,30,1975,Comedy,95913,1975-09-19,,9,2018-10-03
-44,tt11823076,2020-04-13,2020-04-13,,"Tiger King: Murder, Mayhem and Madness",https://www.imdb.com/title/tt11823076/,tvSeries,7.5,45,2020,"Documentary, Biography, Crime",82615,2020-03-20,,7,2020-04-13
-45,tt11912196,2020-05-18,2020-05-18,,Asur: Welcome to Your Dark Side,https://www.imdb.com/title/tt11912196/,tvSeries,8.4,43,2020,"Crime, Drama, Mystery, Thriller",43124,2020-03-02,,7,2020-05-18
-46,tt5180504,2020-06-05,2020-06-05,,The Witcher,https://www.imdb.com/title/tt5180504/,tvSeries,8.1,60,2019,"Action, Adventure, Drama, Fantasy, Mystery",515186,2019-12-20,,6,2020-06-05
-47,tt9612516,2020-06-08,2020-06-08,,Space Force,https://www.imdb.com/title/tt9612516/,tvSeries,6.7,30,2020,Comedy,67361,2020-05-29,,6,2020-06-08
-48,tt7137906,2020-07-10,2020-07-10,,When They See Us,https://www.imdb.com/title/tt7137906/,tvMiniSeries,8.9,296,2019,"Biography, Crime, Drama, History",126801,2019-05-31,,9,2020-07-10
-49,tt1321865,2020-07-16,2020-07-16,,Carlos,https://www.imdb.com/title/tt1321865/,tvMiniSeries,7.6,334,2010,"Biography, Crime, Drama, Thriller",14038,2010-05-19,,7,2020-07-16
-50,tt3910804,2020-08-13,2020-08-13,,War & Peace,https://www.imdb.com/title/tt3910804/,tvMiniSeries,8.1,380,2016,"Drama, History, Romance, War",24575,2016-01-03,,8,2020-08-31
-51,tt5618256,2020-08-20,2020-08-20,,Manhunt,https://www.imdb.com/title/tt5618256/,tvSeries,8.1,60,2017,"Biography, Crime, Drama, Thriller",61385,2017-08-01,,8,2020-08-31
-52,tt9815454,2020-08-28,2020-08-28,,Unorthodox,https://www.imdb.com/title/tt9815454/,tvMiniSeries,8.0,53,2020,Drama,85256,2020-03-26,,7,2020-08-28
-53,tt6866266,2020-11-01,2020-11-01,,Escape at Dannemora,https://www.imdb.com/title/tt6866266/,tvMiniSeries,7.9,440,2018,"Biography, Crime, Drama, Thriller",25790,2018-10-15,,8,2020-11-01
-54,tt5952634,2020-11-06,2020-11-06,,The Spy,https://www.imdb.com/title/tt5952634/,tvMiniSeries,7.9,53,2019,"Drama, History",44932,2019-09-06,,6,2020-11-06
-55,tt12392504,2021-02-26,2021-02-26,,Scam 1992: The Harshad Mehta Story,https://www.imdb.com/title/tt12392504/,tvSeries,9.3,54,2020,"Biography, Crime, Drama, Thriller",147521,2020-10-09,,7,2021-02-26
-56,tt14392248,2021-05-10,2021-05-10,,Aspirants,https://www.imdb.com/title/tt14392248/,tvSeries,9.2,45,2021,Drama,299434,2021-04-07,,6,2021-05-10
-57,tt0080306,2021-05-23,2021-05-23,,Yes Minister,https://www.imdb.com/title/tt0080306/,tvSeries,8.7,30,1980,Comedy,15469,1980-02-25,,8,2021-05-23
-58,tt0086831,2021-06-01,2021-06-01,,"Yes, Prime Minister",https://www.imdb.com/title/tt0086831/,tvSeries,8.6,30,1986,Comedy,12047,1986-01-09,,7,2021-06-01
-59,tt0903747,2021-08-27,2021-08-27,,Breaking Bad,https://www.imdb.com/title/tt0903747/,tvSeries,9.5,49,2008,"Crime, Drama, Thriller",1963027,2008-01-20,,8,2021-08-27
-60,tt10155688,2021-09-12,2021-09-12,,Mare of Easttown,https://www.imdb.com/title/tt10155688/,tvMiniSeries,8.4,60,2021,"Crime, Drama, Mystery",166425,2021-04-18,,8,2021-09-12
-61,tt0459159,2021-09-27,2021-09-27,,The Thick of It,https://www.imdb.com/title/tt0459159/,tvSeries,8.7,29,2005,Comedy,24480,2005-05-19,,8,2021-09-27
-62,tt9398466,2022-05-15,2022-05-15,,Delhi Crime,https://www.imdb.com/title/tt9398466/,tvSeries,8.5,50,2019,"Crime, Drama",24238,2019-01-29,,8,2022-05-15
-63,tt12004706,2022-06-01,2022-06-01,,Panchayat,https://www.imdb.com/title/tt12004706/,tvSeries,8.9,35,2020,"Comedy, Drama",74189,2020-03-05,,7,2022-06-01
-64,tt7660850,2023-03-12,2023-03-12,,Succession,https://www.imdb.com/title/tt7660850/,tvSeries,8.8,60,2018,"Comedy, Drama",177699,2018-04-27,,8,2023-03-12
+1,tt2384811,2018-10-03,2018-10-03,,Utopia,https://www.imdb.com/title/tt2384811/,tvSeries,8.4,50,2013,"Drama, Mystery, Sci-Fi, Thriller",50613,2013-01-14,,9,2015-10-02
+2,tt2861424,2018-10-03,2018-10-03,,Rick and Morty,https://www.imdb.com/title/tt2861424/,tvSeries,9.1,23,2013,"Animation, Adventure, Comedy, Sci-Fi",592960,2013-12-02,,10,2018-10-03
+3,tt4742876,2018-10-03,2018-10-03,,TVF Pitchers,https://www.imdb.com/title/tt4742876/,tvSeries,9.1,40,2015,"Comedy, Drama",72067,2015-06-03,,9,2015-09-06
+4,tt2395695,2018-10-03,2018-10-03,,Cosmos: A Spacetime Odyssey,https://www.imdb.com/title/tt2395695/,tvMiniSeries,9.3,557,2014,Documentary,127409,2014-03-09,,8,2018-10-03
+5,tt0383126,2018-10-03,2018-10-03,,MythBusters,https://www.imdb.com/title/tt0383126/,tvSeries,8.3,48,2003,"Documentary, Mystery, Reality-TV",54572,2003-01-23,,7,2018-10-03
+6,tt0081846,2018-10-03,2018-10-03,,Cosmos,https://www.imdb.com/title/tt0081846/,tvMiniSeries,9.3,780,1980,Documentary,43512,1980-09-28,,10,2018-10-03
+7,tt6077448,2018-10-03,2018-10-03,,Sacred Games,https://www.imdb.com/title/tt6077448/,tvSeries,8.5,50,2018,"Action, Crime, Drama, Mystery, Thriller",92465,2018-06-28,,7,2018-10-03
+8,tt0439100,2018-10-03,2018-10-03,,Weeds,https://www.imdb.com/title/tt0439100/,tvSeries,7.9,28,2005,"Comedy, Crime, Drama",116717,2005-08-07,,8,2018-10-03
+9,tt1475582,2018-10-03,2018-10-03,,Sherlock,https://www.imdb.com/title/tt1475582/,tvSeries,9.1,88,2010,"Crime, Drama, Mystery, Thriller",987553,2010-07-22,,9,2018-10-03
+10,tt0182576,2018-10-03,2018-10-03,,Family Guy,https://www.imdb.com/title/tt0182576/,tvSeries,8.2,22,1999,"Animation, Comedy",361440,1999-01-31,,9,2018-10-03
+11,tt1442437,2018-10-03,2018-10-03,,Modern Family,https://www.imdb.com/title/tt1442437/,tvSeries,8.5,5378,2009,"Comedy, Drama, Romance",475817,2009-09-23,,7,2018-10-03
+12,tt0108778,2018-10-03,2018-10-03,,Friends,https://www.imdb.com/title/tt0108778/,tvSeries,8.9,5280,1994,"Comedy, Romance",1076441,1994-09-22,,9,2018-10-03
+13,tt2707408,2018-10-03,2018-10-03,,Narcos,https://www.imdb.com/title/tt2707408/,tvSeries,8.8,49,2015,"Biography, Crime, Drama, Thriller",464578,2015-08-28,,9,2018-10-03
+14,tt2356777,2018-10-03,2018-10-03,,True Detective,https://www.imdb.com/title/tt2356777/,tvSeries,8.9,55,2014,"Crime, Drama, Mystery, Thriller",636836,2014-01-12,,10,2018-10-03
+15,tt4574334,2018-10-03,2018-10-03,,Stranger Things,https://www.imdb.com/title/tt4574334/,tvSeries,8.7,51,2016,"Drama, Fantasy, Horror, Mystery, Sci-Fi, Thriller",1316629,2016-07-11,,7,2018-10-03
+16,tt0944947,2018-10-03,2018-10-03,,Game of Thrones,https://www.imdb.com/title/tt0944947/,tvSeries,9.2,4189,2011,"Action, Adventure, Drama, Fantasy",2257165,2011-04-16,,9,2018-10-03
+17,tt2085059,2018-10-03,2018-10-03,,Black Mirror,https://www.imdb.com/title/tt2085059/,tvSeries,8.7,60,2011,"Drama, Mystery, Sci-Fi, Thriller",631493,2011-12-04,,9,2018-10-03
+18,tt0386676,2018-10-03,2018-10-03,,The Office,https://www.imdb.com/title/tt0386676/,tvSeries,9.0,22,2005,Comedy,697243,2005-03-24,,8,2018-10-03
+19,tt0412142,2018-10-03,2018-10-03,,House M.D.,https://www.imdb.com/title/tt0412142/,tvSeries,8.7,7788,2004,"Drama, Mystery",503345,2004-11-15,,8,2018-10-03
+20,tt0098936,2018-10-03,2018-10-03,,Twin Peaks,https://www.imdb.com/title/tt0098936/,tvSeries,8.8,1505,1990,"Crime, Drama, Mystery, Thriller",212931,1989-09-28,,8,2018-10-03
+21,tt1486217,2018-10-03,2018-10-03,,Archer,https://www.imdb.com/title/tt1486217/,tvSeries,8.6,22,2009,"Animation, Action, Comedy",164691,2009-09-17,,8,2018-10-03
+22,tt0290978,2018-10-03,2018-10-03,,The Office,https://www.imdb.com/title/tt0290978/,tvSeries,8.5,455,2001,"Comedy, Drama",122027,2001-07-09,,9,2018-10-03
+23,tt0237123,2018-10-03,2018-10-03,,Coupling,https://www.imdb.com/title/tt0237123/,tvSeries,8.6,30,2000,"Comedy, Romance",47439,2000-05-12,,9,2018-10-03
+24,tt0075537,2018-10-03,2018-10-03,,Mind Your Language,https://www.imdb.com/title/tt0075537/,tvSeries,8.7,30,1977,Comedy,9615,1977-12-30,,9,2018-10-03
+25,tt0096548,2018-10-03,2018-10-03,,Blackadder Goes Forth,https://www.imdb.com/title/tt0096548/,tvSeries,8.8,175,1989,"Comedy, War",56408,1989-09-28,,9,2018-10-03
+26,tt0084988,2018-10-03,2018-10-03,,The Black Adder,https://www.imdb.com/title/tt0084988/,tvSeries,8.0,195,1982,Comedy,40786,1982-12-31,,9,2018-10-03
+27,tt0088484,2018-10-03,2018-10-03,,Blackadder II,https://www.imdb.com/title/tt0088484/,tvSeries,8.6,176,1986,Comedy,49476,1986-01-09,,9,2018-10-03
+28,tt0092324,2018-10-03,2018-10-03,,Blackadder the Third,https://www.imdb.com/title/tt0092324/,tvSeries,8.6,180,1987,Comedy,46734,1987-09-17,,9,2018-10-03
+29,tt0081912,2018-10-03,2018-10-03,,Only Fools and Horses....,https://www.imdb.com/title/tt0081912/,tvSeries,9.0,95,1981,Comedy,56163,1981-09-08,,9,2018-10-03
+30,tt0096657,2018-10-03,2018-10-03,,Mr. Bean,https://www.imdb.com/title/tt0096657/,tvSeries,8.6,25,1990,"Comedy, Family",131699,1990-01-01,,8,2018-10-03
+31,tt0898266,2018-10-03,2018-10-03,,The Big Bang Theory,https://www.imdb.com/title/tt0898266/,tvSeries,8.2,5702,2007,"Comedy, Romance",859340,2007-09-24,,7,2018-10-03
+32,tt1518542,2018-10-03,2018-10-03,,Sarabhai V/S Sarabhai,https://www.imdb.com/title/tt1518542/,tvSeries,8.9,30,2004,Comedy,18052,2004-11-08,,8,2018-10-03
+33,tt1632701,2018-10-03,2018-10-03,,Suits,https://www.imdb.com/title/tt1632701/,tvSeries,8.4,44,2011,"Comedy, Drama",470534,2011-06-23,,7,2018-10-03
+34,tt2431438,2018-10-03,2018-10-03,,Sense8,https://www.imdb.com/title/tt2431438/,tvSeries,8.2,60,2015,"Drama, Mystery, Sci-Fi, Thriller",161990,2015-06-05,,7,2018-10-03
+35,tt0883772,2018-10-03,2018-10-03,,Man vs. Wild,https://www.imdb.com/title/tt0883772/,tvSeries,8.1,60,2006,"Adventure, Reality-TV",23197,2006-10-27,,8,2018-10-03
+36,tt0892700,2018-12-31,2018-12-31,,The Penguins of Madagascar,https://www.imdb.com/title/tt0892700/,tvSeries,7.5,11,2008,"Animation, Short, Action, Adventure, Comedy, Family, Sci-Fi",21781,2008-11-29,,9,2018-12-31
+37,tt1545214,2018-12-31,2018-12-31,,Kung Fu Panda: Legends of Awesomeness,https://www.imdb.com/title/tt1545214/,tvSeries,7.0,22,2011,"Animation, Action, Adventure, Comedy, Drama, Family, Fantasy",7465,2011-09-19,,8,2018-12-31
+38,tt1582350,2018-12-31,2018-12-31,,Episodes,https://www.imdb.com/title/tt1582350/,tvSeries,7.8,30,2011,Comedy,36388,2011-01-09,,7,2018-12-31
+39,tt7366338,2019-06-06,2019-06-06,,Chernobyl,https://www.imdb.com/title/tt7366338/,tvMiniSeries,9.3,330,2019,"Drama, History, Thriller",850165,2019-05-06,,10,2019-06-06
+40,tt5673782,2019-07-08,2019-07-08,,Genius,https://www.imdb.com/title/tt5673782/,tvSeries,8.2,43,2017,"Biography, Drama, History",19864,2017-04-23,,8,2019-07-08
+41,tt0185906,2019-08-10,2019-08-10,,Band of Brothers,https://www.imdb.com/title/tt0185906/,tvMiniSeries,9.4,594,2001,"Drama, History, War",517489,2001-09-09,,9,2019-08-10
+42,tt0264235,2020-02-25,2020-02-25,,Curb Your Enthusiasm,https://www.imdb.com/title/tt0264235/,tvSeries,8.8,28,2000,Comedy,141825,2000-10-14,,9,2020-02-25
+43,tt0072500,2020-04-06,2020-04-06,,Fawlty Towers,https://www.imdb.com/title/tt0072500/,tvSeries,8.8,30,1975,Comedy,99412,1975-09-19,,9,2018-10-03
+44,tt11823076,2020-04-13,2020-04-13,,Tiger King,https://www.imdb.com/title/tt11823076/,tvSeries,7.5,45,2020,"Documentary, Biography, Crime",86215,2020-03-20,,7,2020-04-13
+45,tt11912196,2020-05-18,2020-05-18,,Asur: Welcome to Your Dark Side,https://www.imdb.com/title/tt11912196/,tvSeries,8.5,43,2020,"Crime, Drama, Mystery, Thriller",64891,2020-03-02,,7,2020-05-18
+46,tt5180504,2020-06-05,2020-06-05,,The Witcher,https://www.imdb.com/title/tt5180504/,tvSeries,8.0,60,2019,"Action, Adventure, Drama, Fantasy, Mystery",564009,2019-12-20,,6,2020-06-05
+47,tt9612516,2020-06-08,2020-06-08,,Space Force,https://www.imdb.com/title/tt9612516/,tvSeries,6.7,30,2020,Comedy,70250,2020-05-29,,6,2020-06-08
+48,tt7137906,2020-07-10,2020-07-10,,When They See Us,https://www.imdb.com/title/tt7137906/,tvMiniSeries,8.9,296,2019,"Biography, Crime, Drama, History",136219,2019-05-31,,9,2020-07-10
+49,tt1321865,2020-07-16,2020-07-16,,Carlos,https://www.imdb.com/title/tt1321865/,tvMiniSeries,7.6,334,2010,"Biography, Crime, Drama, Thriller",14333,2010-05-19,,7,2020-07-16
+50,tt3910804,2020-08-13,2020-08-13,,War & Peace,https://www.imdb.com/title/tt3910804/,tvMiniSeries,8.1,380,2016,"Drama, History, Romance, War",26239,2016-01-03,,8,2020-08-31
+51,tt5618256,2020-08-20,2020-08-20,,Manhunt,https://www.imdb.com/title/tt5618256/,tvSeries,8.1,817,2017,"Biography, Crime, Drama, Thriller",63423,2017-08-01,,8,2020-08-31
+52,tt9815454,2020-08-28,2020-08-28,,Unorthodox,https://www.imdb.com/title/tt9815454/,tvMiniSeries,8.0,53,2020,Drama,91559,2020-03-26,,7,2020-08-28
+53,tt6866266,2020-11-01,2020-11-01,,Escape at Dannemora,https://www.imdb.com/title/tt6866266/,tvMiniSeries,7.9,440,2018,"Biography, Crime, Drama, Thriller",27688,2018-10-15,,8,2020-11-01
+54,tt5952634,2020-11-06,2020-11-06,,The Spy,https://www.imdb.com/title/tt5952634/,tvMiniSeries,7.9,53,2019,"Biography, Drama, History",48602,2019-09-06,,6,2020-11-06
+55,tt12392504,2021-02-26,2021-02-26,,Scam 1992: The Harshad Mehta Story,https://www.imdb.com/title/tt12392504/,tvMiniSeries,9.3,54,2020,"Biography, Crime, Drama, Thriller",155356,2020-10-09,,7,2021-02-26
+56,tt14392248,2021-05-10,2021-05-10,,Aspirants,https://www.imdb.com/title/tt14392248/,tvSeries,9.2,443,2021,Drama,309919,2021-04-07,,6,2021-05-10
+57,tt0080306,2021-05-23,2021-05-23,,Yes Minister,https://www.imdb.com/title/tt0080306/,tvSeries,8.7,30,1980,Comedy,16337,1980-02-25,,8,2021-05-23
+58,tt0086831,2021-06-01,2021-06-01,,"Yes, Prime Minister",https://www.imdb.com/title/tt0086831/,tvSeries,8.6,30,1986,Comedy,12731,1986-01-09,,7,2021-06-01
+59,tt0903747,2021-08-27,2021-08-27,,Breaking Bad,https://www.imdb.com/title/tt0903747/,tvSeries,9.5,45,2008,"Crime, Drama, Thriller",2104100,2008-01-20,,8,2021-08-27
+60,tt10155688,2021-09-12,2021-09-12,,Mare of Easttown,https://www.imdb.com/title/tt10155688/,tvMiniSeries,8.4,418,2021,"Crime, Drama, Mystery",183559,2021-04-18,,8,2021-09-12
+61,tt0459159,2021-09-27,2021-09-27,,The Thick of It,https://www.imdb.com/title/tt0459159/,tvSeries,8.7,29,2005,Comedy,25831,2005-05-19,,8,2021-09-27
+62,tt9398466,2022-05-15,2022-05-15,,Delhi Crime,https://www.imdb.com/title/tt9398466/,tvSeries,8.5,50,2019,"Crime, Drama",25920,2019-01-29,,8,2022-05-15
+63,tt12004706,2022-06-01,2022-06-01,,Panchayat,https://www.imdb.com/title/tt12004706/,tvSeries,8.9,536,2020,"Comedy, Drama",83606,2020-03-05,,7,2022-06-01
+64,tt7660850,2023-03-12,2023-03-12,,Succession,https://www.imdb.com/title/tt7660850/,tvSeries,8.8,2409,2018,"Comedy, Drama",262493,2018-04-27,,8,2023-03-12
+65,tt6473300,2023-07-17,2023-07-17,,Mirzapur,https://www.imdb.com/title/tt6473300/,tvSeries,8.5,60,2018,"Action, Crime, Drama, Thriller",81028,2018-11-15,,8,2023-07-20
+66,tt10048342,2023-07-30,2023-07-30,,The Queen's Gambit,https://www.imdb.com/title/tt10048342/,tvMiniSeries,8.5,397,2020,Drama,539774,2020-10-23,,9,2023-07-30
+67,tt10228230,2023-11-12,2023-11-12,,Quiz,https://www.imdb.com/title/tt10228230/,tvMiniSeries,7.3,147,2020,"Crime, Drama, History",7921,2020-04-13,,7,2023-11-12
