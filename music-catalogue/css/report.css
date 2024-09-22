@@ -72,6 +72,14 @@ a, a:visited {
     vertical-align: top;
 }
 
+.cover img{
+	width: 100px;
+}
+
+a img{
+	width: 100px;
+}
+
 .credit {
 	width: 100%;
 	float: left;
