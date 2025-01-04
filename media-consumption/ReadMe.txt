@@ -1,5 +1,6 @@
 Notes for updating imdb-ratings.csv
 Export all lists and run R script
+Remove Original.Title column which is extra
 
 Notes for updating goodreads-ratings.csv
 Main problem is getting the links for book cover images. In index.html page there is commented out code. Uncomment it. It's the goodreads widget that fetches and displays latest 200 books I've read. The custom JS script below that will parse all that crap and give a nice csv with book id and required image code. Run this code in console. In the csv do vlookup and update the last column with this id. There's one more column at the last for year in this csv too.
