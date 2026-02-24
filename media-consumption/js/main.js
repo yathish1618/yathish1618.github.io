@@ -1,5 +1,5 @@
 // global variable to maintain latest values and store full source data
-var year = 2025;
+var year = 2026;
 var media = 1,
     imdbData, movies, grData, books, gamesData, games, sort=1;
 var musicData = [];
@@ -45,9 +45,26 @@ Papa.parse("data/goodreads_library_export.csv", {
     }
 });
 
-var s = $.get("../music-catalogue/albums.html", function(html_string) {
-        	parseMusicHTML(s);
-        }, 'html'); //Generate music data
+// Load sql.js dynamically, then read MM5.DB to build musicData
+(function loadMusicFromDB() {
+    var script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js';
+    script.onload = function() {
+        initSqlJs({ locateFile: function(f) { return 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/' + f; } })
+        .then(function(SQL) {
+            return fetch('../music-catalogue2/MM5.DB').then(function(r) { return r.arrayBuffer(); }).then(function(buf) {
+                return new SQL.Database(new Uint8Array(buf));
+            });
+        })
+        .then(function(db) {
+            parseMusicDB(db);
+        })
+        .catch(function(err) {
+            console.error('Music DB load failed:', err);
+        });
+    };
+    document.head.appendChild(script);
+})();
 
 function updateMedia(x) {
     if (x.value == media) return false;
@@ -184,7 +201,7 @@ function updateMusicGrid(yr) {
     });
     var musicGrid = "";
     for (var i = 0; i < music.length; i++) {
-        musicGrid += "<div class='imagebox musbox'><img class='lazy' data-src='../music-catalogue/images/" + music[i][2] + ".jpg' id='" + music[i][2] + "' width='100' height='100'><a href='../music-catalogue/#album_" + music[i][2] + "' target='_blank'><div class='caption'><table><tr><td>" + music[i][0] + "<br>" + music[i][1] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
+        musicGrid += "<div class='imagebox musbox'><img class='lazy' data-src='" + (music[i][5] || '') + "' id='" + music[i][2] + "' width='100' height='100'><a href='../music-catalogue2/#' target='_blank'><div class='caption'><table><tr><td>" + music[i][0] + "<br>" + music[i][1] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
     }
     document.getElementById("container").innerHTML = musicGrid;
     initiateLazyLoad();
@@ -196,23 +213,36 @@ function parseDate(input) {
   return new Date(parts[2], parts[1]-1, parts[0]); // Note: months are 0-based
 }
 
-function parseMusicHTML(s){
-	d = new DOMParser().parseFromString(s.responseText, "text/html");
-            d = d.getElementsByClassName('album_wrapper');
-            var c = [];
-            $.each(d, function(index, value) {
-                var t = value.getElementsByTagName('a'); //will help in album name, artists name, album id
-                var s = t[0].id.slice(6,t[0].id.length); //extract album id
-                var e = $(value.getElementsByTagName('tr')).find("td:eq(10)"); //last column is date added
-                var f = []; //small for loop below to find max date added amongst all songs of the album
-                $.each(e, function(i, v) {
-                    f.push(parseDate(v.innerText.slice(0, 10)));
-                });
-                f = new Date(Math.max(...f));
-                c.push([t[1].innerText, t[2].innerText, s, f, f.getFullYear().toString()]);
-                musicData = c;
-            });
-            return true;
+function parseMusicDB(db) {
+    var query = `
+        SELECT
+            s.IDAlbum,
+            MAX(s.Album COLLATE NOCASE) AS Album,
+            s.Artist COLLATE NOCASE AS Artist,
+            DATE('1900-01-01', '+' || (MAX(s.DateAdded) - 2) || ' days') AS DateAdded,
+            MAX(c.PictureDataHash) AS PictureDataHash
+        FROM Songs s
+        LEFT JOIN Covers c ON c.IDSong = s.ID AND c.CoverOrder = 0
+        WHERE s.Album IS NOT NULL
+        GROUP BY s.IDAlbum COLLATE NOCASE
+    `;
+    var stmt = db.prepare(query);
+    var c = [];
+    while (stmt.step()) {
+        var row = stmt.getAsObject();
+        var dateAdded = row.DateAdded ? new Date(row.DateAdded) : new Date(0);
+        var yr = dateAdded.getFullYear().toString();
+        var thumbPath = null;
+        if (row.PictureDataHash) {
+            var code = row.PictureDataHash.charCodeAt(0) + row.PictureDataHash.charCodeAt(1);
+            var folder = code.toString(16).toUpperCase().padStart(2, '0');
+            thumbPath = '../music-catalogue2/Thumbs/' + folder + '/' + row.PictureDataHash + '-200px.jpg';
+        }
+        // [albumName, artist, IDAlbum, dateObj, yearString, thumbPath]
+        c.push([row.Album, row.Artist, row.IDAlbum, dateAdded, yr, thumbPath]);
+    }
+    stmt.free();
+    musicData = c;
 }
 
 // filter 2d arrays - to check against a column (either include or exclude matches)

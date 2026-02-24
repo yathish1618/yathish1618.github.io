@@ -192,6 +192,169 @@
 		  cursor: pointer;
 		}
 
+		/* Albums Tab */
+		.albums-search-bar {
+			padding: 16px 20px 8px;
+			max-width: 400px;
+		}
+		.albums-search-bar input {
+			width: 100%;
+			padding: 9px 14px;
+			font-size: 15px;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			box-sizing: border-box;
+			outline: none;
+			transition: border-color 0.2s;
+		}
+		.albums-search-bar input:focus {
+			border-color: #667eea;
+		}
+		#albums-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+			gap: 20px;
+			padding: 16px 20px 30px;
+		}
+		.album-card {
+			background: #fff;
+			border: 1px solid #e0e0e0;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+			transition: transform 0.15s, box-shadow 0.15s;
+			cursor: default;
+		}
+		.album-card:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 6px 18px rgba(102,126,234,0.18);
+		}
+		.album-art-wrap {
+			width: 100%;
+			aspect-ratio: 1;
+			background: #ede9f7;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+		.album-art-wrap img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+		.album-art-placeholder {
+			font-size: 48px;
+			color: #bbb;
+			user-select: none;
+		}
+		.album-card-info {
+			padding: 10px 12px 12px;
+		}
+		.album-card-title {
+			font-size: 13px;
+			font-weight: bold;
+			color: #222;
+			margin: 0 0 4px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.album-card-artist {
+			font-size: 12px;
+			color: #667eea;
+			margin: 0 0 3px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.album-card-meta {
+			font-size: 11px;
+			color: #888;
+			margin: 0;
+		}
+		.album-card-active {
+			border-color: #667eea;
+			box-shadow: 0 0 0 2px #667eea44;
+		}
+		.album-tracklist-row {
+			grid-column: 1 / -1;
+			background: #f8f8ff;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			overflow-x: auto;
+			padding: 12px;
+			margin-top: -8px;
+		}
+		.album-tracklist-table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 13px;
+		}
+		.album-tracklist-table th {
+			background: #667eea;
+			color: white;
+			padding: 8px 10px;
+			text-align: left;
+			white-space: nowrap;
+		}
+		.album-tracklist-table td {
+			padding: 7px 10px;
+			border-bottom: 1px solid #eee;
+		}
+		.album-tracklist-table tr:last-child td {
+			border-bottom: none;
+		}
+		.album-tracklist-table tr:nth-child(even) {
+			background: #f0f0fa;
+		}
+		.album-tracklist-table tr:hover td {
+			background: #e8e8f8;
+		}
+		.album-tracklist-table td.lyrics-cell {
+			cursor: pointer;
+			color: #667eea;
+		}
+
+		/* Audio player */
+		.play-btn {
+			background: none; border: none; cursor: pointer; padding: 0;
+			width: 28px; height: 28px; border-radius: 50%;
+			display: inline-flex; align-items: center; justify-content: center;
+			transition: background 0.15s;
+		}
+		.play-btn:hover { background: #e8e8f8; }
+		.play-btn.playing svg circle { fill: #667eea; }
+		.play-btn.playing svg polygon { fill: white; }
+		#audio-bar {
+			position: fixed; bottom: 0; left: 0; right: 0;
+			background: #2d2d2d; color: white;
+			padding: 10px 20px; z-index: 999;
+			display: none; align-items: center; gap: 10px; font-size: 13px;
+		}
+		#audio-bar.visible { display: flex; }
+		#audio-player { flex: 1; height: 32px; min-width: 0; }
+		#audio-bar-title { min-width: 160px; max-width: 260px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+		#audio-bar-error { color: #ff9999; font-size: 12px; font-style: italic; min-width: 120px; }
+		.bar-nav-btn {
+			background: none; border: 1px solid #666; color: white;
+			border-radius: 4px; cursor: pointer; padding: 3px 9px;
+			font-size: 15px; line-height: 1; transition: background 0.15s; white-space: nowrap;
+		}
+		.bar-nav-btn:hover { background: #555; }
+		.bar-stop-btn {
+			background: none; border: 1px solid #e07070; color: #ff9999;
+			border-radius: 4px; cursor: pointer; padding: 3px 9px;
+			font-size: 15px; line-height: 1; transition: background 0.15s; white-space: nowrap;
+		}
+		.bar-stop-btn:hover { background: #5a2020; }
+		.autoplay-toggle {
+			display: flex; align-items: center; gap: 5px;
+			font-size: 12px; color: #aaa; white-space: nowrap; cursor: pointer; user-select: none;
+		}
+		.autoplay-toggle input[type=checkbox] { accent-color: #667eea; width: 14px; height: 14px; cursor: pointer; }
+
     </style>
 </head>
 <body>
@@ -211,6 +374,7 @@
             <div class="tabs">
                 <button class="tab-button active" onclick="switchTab('tracks')">Tracks</button>
                 <button class="tab-button" onclick="switchTab('playlists')">Playlists</button>
+                <button class="tab-button" onclick="switchTab('albums')">Albums</button>
                 <button class="tab-button" onclick="switchTab('about')">About</button>
             </div>
 
@@ -219,6 +383,7 @@
 					<table id="tracks-table" class="tablesorter">
 					<thead>
 					<tr>
+					<th>Listen</th>
 					<th>Track</th>
 					<th>Title</th>
 					<th>Artist</th>
@@ -247,6 +412,7 @@
 					<table id="playlists-table" class="tablesorter">
 					<thead>
 					<tr>
+					<th>Listen</th>
 					<th>Order</th>
 					<th>Track</th>
 					<th>Title</th>
@@ -266,14 +432,33 @@
 				</div>
 			</div>
 			
+			<div id="albums-tab" class="tab-content">
+				<div class="albums-search-bar">
+					<input type="text" id="albums-search" placeholder="Search albums or artists..." oninput="filterAlbums()">
+				</div>
+				<div id="albums-grid"></div>
+			</div>
+
 			<div id="about-tab" class="tab-content">
-				<h4>Last updated: 2025-09-03</h4>
+				<h4>Last updated: 2026-02-24</h4>
 			</div>
         </div>
 
         <div id="error-container"></div>
     </div>
 	
+	<div id="audio-bar">
+		<button class="bar-nav-btn" onclick="skipTrack(-1)" title="Previous">&#9664;&#9664;</button>
+		<span id="audio-bar-title">—</span>
+		<audio id="audio-player" controls></audio>
+		<span id="audio-bar-error"></span>
+		<button class="bar-nav-btn" onclick="skipTrack(1)" title="Next">&#9654;&#9654;</button>
+		<button class="bar-stop-btn" onclick="stopPlayback()" title="Stop">&#9632; Stop</button>
+		<label class="autoplay-toggle" title="Auto-play next track">
+			<input type="checkbox" id="autoplay-toggle"> Autoplay
+		</label>
+	</div>
+
 	<div id="lyrics-modal" class="lyrics-modal">
 	  <div class="lyrics-modal-content">
 		<span class="lyrics-close">&times;</span>
@@ -285,6 +470,276 @@
     <script>
         let db = null;
         let playlistsMap = {};
+        let albumsData = []; // store all albums for filtering
+
+        // Formula: subfolder = hex(ASCII(char0) + ASCII(char1)) of PictureDataHash
+        function getThumbPath(pictureDataHash) {
+            if (!pictureDataHash) return null;
+            const code = pictureDataHash.charCodeAt(0) + pictureDataHash.charCodeAt(1);
+            const folder = code.toString(16).toUpperCase().padStart(2, '0');
+            return `Thumbs/${folder}/${pictureDataHash}-200px.jpg`;
+        }
+
+        function loadAlbums() {
+            return new Promise((resolve) => {
+                try {
+                    const query = `
+                        SELECT 
+                            s.IDAlbum,
+                            MAX(s.Album COLLATE NOCASE) as Album,
+                            s.Artist COLLATE NOCASE as Artist,
+                            DATE('1900-01-01', '+' || (MAX(s.DateAdded) - 2) || ' days') AS "Date Added",
+                            MAX(c.PictureDataHash) AS PictureDataHash
+                        FROM Songs s
+                        LEFT JOIN Covers c ON c.IDSong = s.ID AND c.CoverOrder = 0
+                        WHERE s.Album IS NOT NULL 
+                        GROUP BY s.IDAlbum COLLATE NOCASE
+                        ORDER BY DATE('1900-01-01', '+' || (MAX(s.DateAdded) - 2) || ' days') desc;
+                    `;
+                    const stmt = db.prepare(query);
+                    albumsData = [];
+                    while (stmt.step()) albumsData.push(stmt.getAsObject());
+                    stmt.free();
+                    renderAlbums(albumsData);
+                    resolve();
+                } catch (error) {
+                    document.getElementById('albums-grid').innerHTML = `<p style="padding:20px;color:red;">Error loading albums: ${error.message}</p>`;
+                    resolve();
+                }
+            });
+        }
+
+        function getAlbumTracks(idAlbum) {
+            const query = `
+                SELECT
+                    s.ID,
+                    s.TrackNumber as Track,
+                    s.SongTitle as Title,
+                    s.Artist,
+                    s.Rating,
+                    s.SongLength as Length,
+                    s.Genre,
+                    s."Year"/10000 as Year,
+                    s.PlayCounter as "Play Count",
+                    date('1900-01-01', '+' || (DateAdded - 2) || ' days') as "Date Added",
+                    s.Lyrics
+                FROM Songs s
+                WHERE s.IDAlbum = ?
+                ORDER BY s.TrackNumber + 0 ASC
+            `;
+            const stmt = db.prepare(query);
+            stmt.bind([idAlbum]);
+            const tracks = [];
+            while (stmt.step()) tracks.push(stmt.getAsObject());
+            stmt.free();
+            return tracks;
+        }
+
+        function buildTracklistHTML(tracks) {
+            const rows = tracks.map(track => `
+                <tr>
+                    <td><button class="play-btn" data-id="${track.ID}" data-label="${(track.Title||'').replace(/"/g,'&quot;')} — ${(track.Artist||'').replace(/"/g,'&quot;')}" onclick="playTrack(this)">${playBtnSVG()}</button></td>
+                    <td>${track.Track || ''}</td>
+                    <td>${track.Title || ''}</td>
+                    <td>${track.Artist || ''}</td>
+                    <td>${formatRating(track.Rating)}</td>
+                    <td>${formatSongLength(track.Length)}</td>
+                    <td>${track.Genre || ''}</td>
+                    <td>${track.Year || ''}</td>
+                    <td>${track["Play Count"] || 0}</td>
+                    <td>${track["Date Added"] || ''}</td>
+                    <td class="lyrics-cell" data-text="${(track.Lyrics || '').replace(/"/g, '&quot;')}">${truncateLyrics(track.Lyrics)}</td>
+                </tr>
+            `).join('');
+
+            return `
+                <table class="album-tracklist-table">
+                    <thead>
+                        <tr>
+                            <th>Listen</th>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Artist</th>
+                            <th>Rating</th>
+                            <th>Length</th>
+                            <th>Genre</th>
+                            <th>Year</th>
+                            <th>Play Count</th>
+                            <th>Date Added</th>
+                            <th>Lyrics</th>
+                        </tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            `;
+        }
+
+        let expandedAlbumCard = null;
+        let expandedTracklistRow = null;
+
+        function toggleAlbumTracklist(card, albumName) {
+            // Collapse previously expanded album
+            if (expandedAlbumCard && expandedAlbumCard !== card) {
+                expandedAlbumCard.classList.remove('album-card-active');
+                if (expandedTracklistRow) expandedTracklistRow.remove();
+                expandedTracklistRow = null;
+                expandedAlbumCard = null;
+            }
+
+            // If clicking the already-expanded album, collapse it
+            if (expandedAlbumCard === card) {
+                card.classList.remove('album-card-active');
+                if (expandedTracklistRow) expandedTracklistRow.remove();
+                expandedTracklistRow = null;
+                expandedAlbumCard = null;
+                return;
+            }
+
+            // Expand the clicked album
+            card.classList.add('album-card-active');
+            expandedAlbumCard = card;
+
+            const tracks = getAlbumTracks(albumName);
+            const tracklistDiv = document.createElement('div');
+            tracklistDiv.className = 'album-tracklist-row';
+            tracklistDiv.innerHTML = buildTracklistHTML(tracks);
+
+            // Insert tracklist after the grid row containing this card
+            card.parentNode.insertBefore(tracklistDiv, card.nextSibling);
+            expandedTracklistRow = tracklistDiv;
+
+            tracklistDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function renderAlbums(albums) {
+            const grid = document.getElementById('albums-grid');
+            grid.innerHTML = '';
+            expandedAlbumCard = null;
+            expandedTracklistRow = null;
+
+            if (albums.length === 0) {
+                grid.innerHTML = '<p style="padding:20px;color:#888;">No albums found.</p>';
+                return;
+            }
+
+            albums.forEach(album => {
+                const thumbPath = getThumbPath(album.PictureDataHash);
+                const dateAdded = album["Date Added"] || '';
+                const safeAlbum = (album.Album || '').replace(/"/g, '&quot;');
+
+                const card = document.createElement('div');
+                card.className = 'album-card';
+                card.innerHTML = `
+                    <div class="album-art-wrap">
+                        ${thumbPath
+                            ? `<img src="${thumbPath}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+                            : ''}
+                        <div class="album-art-placeholder" style="display:${thumbPath ? 'none' : 'flex'}">♪</div>
+                    </div>
+                    <div class="album-card-info">
+                        <p class="album-card-title" title="${safeAlbum}">${album.Album || ''}</p>
+                        <p class="album-card-artist" title="${(album.Artist||'').replace(/"/g,'&quot;')}">${album.Artist || ''}</p>
+                        <p class="album-card-meta">${dateAdded}</p>
+                    </div>
+                `;
+                card.addEventListener('click', () => toggleAlbumTracklist(card, album.IDAlbum));
+                grid.appendChild(card);
+            });
+        }
+
+        function filterAlbums() {
+            const q = document.getElementById('albums-search').value.toLowerCase();
+            if (!q) {
+                renderAlbums(albumsData);
+                return;
+            }
+            const filtered = albumsData.filter(a =>
+                (a.Album || '').toLowerCase().includes(q) ||
+                (a.Artist || '').toLowerCase().includes(q)
+            );
+            renderAlbums(filtered);
+        }
+
+        const IA_BASE = 'https://archive.org/download/mk9x2wr5qt/';
+        let userPaused = false;
+        let stopped = false;      // hard stop — blocks ALL auto-skipping until user manually plays again
+        let currentBtn = null;
+
+        function playBtnSVG() {
+            return `<svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="#ddd" stroke="#aaa" stroke-width="1"/><polygon points="9,7 16,11 9,15" fill="#444"/></svg>`;
+        }
+
+        function isAutoplay() {
+            const toggle = document.getElementById('autoplay-toggle');
+            return toggle ? toggle.checked : false;
+        }
+
+        function getAllPlayBtns() {
+            const activeTab = document.querySelector('.tab-content.active');
+            return Array.from((activeTab || document).querySelectorAll('.play-btn'));
+        }
+
+        function playTrack(btn) {
+            stopped = false;  // manual play always clears the stopped flag
+            const player = document.getElementById('audio-player');
+            const bar = document.getElementById('audio-bar');
+
+            document.querySelectorAll('.play-btn').forEach(b => b.classList.remove('playing'));
+            btn.classList.add('playing');
+            currentBtn = btn;
+
+            document.getElementById('audio-bar-title').textContent = btn.dataset.label;
+            document.getElementById('audio-bar-error').textContent = '';
+            player.src = IA_BASE + btn.dataset.id + '.mp3';
+            bar.classList.add('visible');
+            userPaused = false;
+
+            player.play().catch(() => {
+                if (stopped) return;  // stop button was clicked mid-skip chain — halt immediately
+                document.getElementById('audio-bar-error').textContent = 'Not found, skipping...';
+                btn.classList.remove('playing');
+                skipTrack(1, true);
+            });
+        }
+
+        function skipTrack(direction, silent = false) {
+            if (stopped) return;                         // hard stop wins over everything
+            if (!silent && userPaused) return;           // user paused, respect it for manual nav
+            const allBtns = getAllPlayBtns();
+            const idx = currentBtn ? allBtns.indexOf(currentBtn) : -1;
+            const nextIdx = idx + direction;
+
+            if (nextIdx < 0 || nextIdx >= allBtns.length) {
+                document.getElementById('audio-bar-error').textContent = direction > 0 ? 'End of list.' : 'Start of list.';
+                return;
+            }
+            playTrack(allBtns[nextIdx]);
+        }
+
+        function stopPlayback() {
+            stopped = true;   // set BEFORE pause so the ended/error handlers see it immediately
+            const player = document.getElementById('audio-player');
+            player.pause();
+            player.src = '';
+            userPaused = true;
+            currentBtn = null;
+            document.querySelectorAll('.play-btn').forEach(b => b.classList.remove('playing'));
+            document.getElementById('audio-bar').classList.remove('visible');
+            document.getElementById('audio-bar-error').textContent = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const player = document.getElementById('audio-player');
+            player.addEventListener('ended', function() {
+                if (!stopped && isAutoplay()) skipTrack(1);
+            });
+            player.addEventListener('pause', function() {
+                if (!player.ended) userPaused = true;
+            });
+            player.addEventListener('play', function() {
+                userPaused = false;
+            });
+        });
 
         const config = {
             locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
@@ -327,6 +782,7 @@
             return new Promise((resolve, reject) => {
                 try {
                     const query = `select 
+                                    s.ID,
                                     s.TrackNumber as Track, 
                                     s.SongTitle as Title, 
                                     s.Rating, 
@@ -352,6 +808,7 @@
                     tracks.forEach(track => {
                         const row = document.createElement('tr');
                         row.innerHTML = `
+                            <td><button class="play-btn" data-id="${track.ID}" data-label="${(track.Title||'').replace(/"/g,'&quot;')} — ${(track.Artist||'').replace(/"/g,'&quot;')}" onclick="playTrack(this)">${playBtnSVG()}</button></td>
                             <td>${track.Track || ''}</td>
                             <td>${track.Title || ''}</td>
                             <td>${track.Artist || ''}</td>
@@ -379,7 +836,7 @@
             return new Promise((resolve, reject) => {
                 try {
                     // Fetch flat playlist table (works without IUNICODE collation)
-                    const query = `SELECT p.PlaylistName, ps.SongOrder + 1 as "Order", s.TrackNumber as Track, 
+                    const query = `SELECT p.PlaylistName, ps.SongOrder + 1 as "Order", s.ID, s.TrackNumber as Track, 
                                     s.SongTitle as Title, 
                                     s.Rating, 
                                     s.SongLength as Length,
@@ -435,6 +892,7 @@
             playlistsMap[name].forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
+                    <td><button class="play-btn" data-id="${item.ID}" data-label="${(item.Title||'').replace(/"/g,'&quot;')} — ${(item.Artist||'').replace(/"/g,'&quot;')}" onclick="playTrack(this)">${playBtnSVG()}</button></td>
                     <td>${item.Order || ''}</td>
                     <td>${item.Track || ''}</td>
                     <td>${item.Title || ''}</td>
@@ -510,7 +968,7 @@
 
                 document.getElementById('loading').classList.add('hidden');
 
-                await Promise.all([loadTracks(), loadPlaylists()]);
+                await Promise.all([loadTracks(), loadPlaylists(), loadAlbums()]);
                 await initializeTablesorters();
 
                 document.getElementById('main-content').style.display = 'block';
