@@ -40,7 +40,8 @@
       display: grid;
       grid-template-columns: var(--sw) 1fr var(--rw);
       grid-template-rows: 1fr var(--ph);
-      height: 100vh
+      height: 100vh;
+      height: 100dvh;
     }
 
     /* ── LOADING ── */
@@ -1275,6 +1276,7 @@
       display: flex;
       align-items: center;
       padding: 0 18px;
+      padding-bottom: env(safe-area-inset-bottom);
       position: relative;
       cursor: pointer;
       /* raise above rp overlay on mobile */

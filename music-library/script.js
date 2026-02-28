@@ -11,7 +11,7 @@ const au = document.getElementById('au');
 // ── INIT ──────────────────────────────────────────────────────────────────────
 (async () => {
   try {
-    const SQL = await initSqlJs({ locateFile: () => WASM });
+    const SQL = await initSqlJs({ locateFile: file => file });
     const buf = await fetch('./MM5.DB').then(r => r.arrayBuffer());
     db = new SQL.Database(new Uint8Array(buf));
     document.getElementById('loading').style.display = 'none';
