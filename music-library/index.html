@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Chaos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="loading">
+    <h2>CHAOS</h2>
+    <p>Reading library...</p>
+    <div class="lbar"></div>
+  </div>
+
+  <div id="app">
+
+    <!-- LEFT SIDEBAR -->
+    <nav id="sb">
+      <div class="brand">
+        <div class="brand-name">Chaos</div>
+        <div class="brand-sub" id="libct">—</div>
+      </div>
+      <div class="nl">Library</div>
+      <div class="ni on" data-v="tracks" onclick="gv('tracks')"><span class="ni-ic">≡</span> Tracks</div>
+      <div class="ni" data-v="albums" onclick="gv('albums')"><span class="ni-ic">◈</span> Albums</div>
+      <div class="ni" data-v="artists" onclick="gv('artists')"><span class="ni-ic">♪</span> Artists</div>
+      <div class="ni" data-v="genres" onclick="gv('genres')"><span class="ni-ic">◉</span> Genres</div>
+      <div class="nl" style="margin-top:4px">Playlists</div>
+      <div class="pll" id="pll"></div>
+    </nav>
+    <div id="mob-overlay" onclick="csb()"></div>
+
+    <!-- MAIN -->
+    <div id="main">
+      <div id="topbar">
+        <button id="menu-btn" onclick="osb()">☰</button>
+        <div id="vtitle">Tracks</div>
+        <!-- Mobile search button (hidden on desktop, shown ≤640px) -->
+        <button id="mob-srch-btn" onclick="openMobSrch()" title="Search">⌕</button>
+        <div id="srch-wrap">
+          <div id="srch">
+            <span id="srch-icon">⌕</span>
+            <input id="srch-in" type="text" placeholder="Search…" autocomplete="off" oninput="onSrch(this.value)"
+              onfocus="openDrop()" onkeydown="if(event.key==='Escape')closeDrop()">
+          </div>
+          <div id="srch-drop">
+            <span id="srch-drop-label">Search in</span>
+            <span class="sf on" id="sf-t" onclick="toggleSF('t')">Title</span>
+            <span class="sf on" id="sf-ar" onclick="toggleSF('ar')">Artist</span>
+            <span class="sf on" id="sf-al" onclick="toggleSF('al')">Album</span>
+            <span class="sf" id="sf-ly" onclick="toggleSF('ly')">Lyrics</span>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile full-width search bar -->
+      <div id="mob-srch-bar">
+        <input id="mob-srch-in" type="text" placeholder="Search tracks, artists, albums…" autocomplete="off"
+          oninput="onMobSrch(this.value)" onkeydown="if(event.key==='Escape')closeMobSrch()">
+        <button id="mob-srch-close" onclick="closeMobSrch()">✕</button>
+      </div>
+      <div id="mob-srch-chips">
+        <span class="sf on" id="msf-t" onclick="toggleMSF('t')">Title</span>
+        <span class="sf on" id="msf-ar" onclick="toggleMSF('ar')">Artist</span>
+        <span class="sf on" id="msf-al" onclick="toggleMSF('al')">Album</span>
+        <span class="sf" id="msf-ly" onclick="toggleMSF('ly')">Lyrics</span>
+      </div>
+      <div id="content"></div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div id="rp">
+      <div class="rp-tabs">
+        <div class="rp-tab on" id="tab-q" onclick="showTab('q')">Queue</div>
+        <div class="rp-tab" id="tab-np" onclick="showTab('np')">Now Playing</div>
+      </div>
+      <div id="rp-queue" class="show"></div>
+      <div id="rp-now"></div>
+    </div>
+    <div id="rp-mob-overlay" onclick="crp()"></div>
+
+    <!-- PLAYER BAR -->
+    <div id="player" onclick="onPlayerClick(event)">
+      <div id="prog" onclick="seek(event);event.stopPropagation()">
+        <div id="pf"></div>
+      </div>
+      <div id="now">
+        <div id="nart">
+          <div id="nph">♪</div>
+        </div>
+        <div id="ninfo">
+          <div id="ntitle">Nothing playing</div>
+          <div id="nartist">—</div>
+        </div>
+      </div>
+      <div id="ctrls">
+        <button class="cb" title="Previous" onclick="sk(-1);event.stopPropagation()">⏮</button>
+        <button class="cb" id="cbpp" title="Play" onclick="tpp();event.stopPropagation()">
+          <span id="cbpp-icon">▶</span>
+          <span id="cbpp-loader" style="display:none;" class="spin">↻</span>
+        </button>
+        <button class="cb" title="Next" onclick="sk(1);event.stopPropagation()">⏭</button>
+        <button class="cb" id="cbstop" title="Stop" onclick="stopPlayback();event.stopPropagation()">⏹</button>
+        <button class="cb" id="cb-shuffle" title="Shuffle" onclick="toggleShuffle();event.stopPropagation()">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 3 21 3 21 8"></polyline>
+            <line x1="4" y1="20" x2="21" y2="3"></line>
+            <polyline points="21 16 21 21 16 21"></polyline>
+            <line x1="15" y1="15" x2="21" y2="21"></line>
+            <line x1="4" y1="4" x2="9" y2="9"></line>
+          </svg>
+        </button>
+        <button class="cb" id="rp-btn" title="Queue/Now Playing" onclick="orp();event.stopPropagation()">☰</button>
+      </div>
+      <div id="pr">
+        <span id="tel">—</span>
+        <span id="errel"></span>
+        <div class="vw"><span>🔊</span>
+          <input type="range" min="0" max="1" step="0.05" value="1" oninput="au.volume=this.value"
+            onclick="event.stopPropagation()">
+        </div>
+      </div>
+    </div>
+    <!-- Allow clicking empty bottom bar area to toggle Right Panel similar to burger menu -->
+    <script>
+      document.getElementById('player').addEventListener('click', function (e) {
+        if (e.target === this || e.target.id === 'ctrls' || e.target.id === 'pr' || e.target.id === 'now') {
+          // If the click is on the transparent/empty background of the player bar segments, toggle the RP.
+          orp();
+        }
+      });
+    </script>
+  </div><!-- #app -->
+
+  <!-- SNACKBAR -->
+  <div id="snackbar"></div>
+
+  <!-- DOT MENU -->
+  <div id="dot-menu">
+    <button id="dot-next-btn" onclick="dotMenuAction('next')">▶ Play next</button>
+    <button id="dot-end-btn" onclick="dotMenuAction('end')">＋ Add to queue</button>
+    <button id="dot-remove-btn" onclick="dotMenuAction('remove')">✕ Remove from queue</button>
+  </div>
+
+  <audio id="au"></audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

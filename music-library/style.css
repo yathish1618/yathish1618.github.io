@@ -1,0 +1,2205 @@
+﻿    :root {
+      --bg: #0d0b09;
+      --surf: #131109;
+      --card: #191510;
+      --bdr: #272018;
+      --amb: #c8863c;
+      --a2: #4a2e0e;
+      --txt: #ddd5c5;
+      --mid: #8a7d6a;
+      --dim: #4a4030;
+      --sw: 215px;
+      --rw: 300px;
+      --ph: 84px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html,
+    body {
+      height: 100%;
+      overflow: hidden
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--txt);
+      font-size: 15px;
+      line-height: 1.5
+    }
+
+    /* ── LAYOUT ── */
+    #app {
+      display: grid;
+      grid-template-columns: var(--sw) 1fr var(--rw);
+      grid-template-rows: 1fr var(--ph);
+      height: 100vh
+    }
+
+    /* ── LOADING ── */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px
+    }
+
+    #loading h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .25em;
+      color: var(--amb)
+    }
+
+    #loading p {
+      font-size: 13px;
+      color: var(--mid);
+      letter-spacing: .1em
+    }
+
+    .lbar {
+      width: 160px;
+      height: 1px;
+      background: var(--bdr);
+      overflow: hidden
+    }
+
+    .lbar::after {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 30%;
+      background: var(--amb);
+      animation: ls 1s ease-in-out infinite
+    }
+
+    @keyframes ls {
+      0% {
+        transform: translateX(-200%)
+      }
+
+      100% {
+        transform: translateX(500%)
+      }
+    }
+
+    /* ── LEFT SIDEBAR ── */
+    #sb {
+      grid-row: 1/2;
+      background: var(--surf);
+      border-right: 1px solid var(--bdr);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden
+    }
+
+    .brand {
+      padding: 18px 16px 14px;
+      border-bottom: 1px solid var(--bdr)
+    }
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      color: var(--amb);
+      text-transform: uppercase
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--dim);
+      letter-spacing: .05em;
+      margin-top: 3px
+    }
+
+    .nl {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--dim);
+      padding: 14px 16px 6px
+    }
+
+    .ni {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      font-size: 15px;
+      color: var(--mid);
+      cursor: pointer;
+      transition: all .1s;
+      border-left: 2px solid transparent;
+      user-select: none
+    }
+
+    .ni:hover {
+      color: var(--txt);
+      background: var(--card)
+    }
+
+    .ni.on {
+      color: var(--amb);
+      border-left-color: var(--amb);
+      background: rgba(200, 134, 60, .05)
+    }
+
+    .ni-ic {
+      font-size: 14px;
+      width: 17px;
+      text-align: center;
+      flex-shrink: 0
+    }
+
+    .pll {
+      flex: 1;
+      overflow-y: auto;
+      scrollbar-width: none;
+      padding-bottom: 8px
+    }
+
+    .pll::-webkit-scrollbar {
+      display: none
+    }
+
+    .pli {
+      padding: 8px 16px 8px 42px;
+      font-size: 14px;
+      color: var(--dim);
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color .1s
+    }
+
+    .pli:hover {
+      color: var(--txt)
+    }
+
+    .pli.on {
+      color: var(--amb)
+    }
+
+    /* ── MAIN ── */
+    #main {
+      grid-row: 1/2;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-width: 0
+    }
+
+    #topbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--bdr);
+      background: var(--surf);
+      flex-shrink: 0
+    }
+
+    #menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--mid);
+      font-size: 22px;
+      cursor: pointer;
+      padding: 2px 4px;
+      flex-shrink: 0;
+      line-height: 1
+    }
+
+    #vtitle {
+      font-size: 17px;
+      font-weight: 600;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    /* ── SEARCH ── */
+    #srch-wrap {
+      position: relative;
+      flex-shrink: 0
+    }
+
+    #srch {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--card);
+      border: 1px solid var(--bdr);
+      border-radius: 4px;
+      padding: 7px 11px;
+      width: 200px
+    }
+
+    #srch input {
+      background: none;
+      border: none;
+      outline: none;
+      color: var(--txt);
+      font-size: 14px;
+      width: 100%;
+      font-family: inherit
+    }
+
+    #srch input::placeholder {
+      color: var(--dim)
+    }
+
+    #srch-icon {
+      color: var(--dim);
+      font-size: 15px;
+      flex-shrink: 0;
+      cursor: default
+    }
+
+    #srch-drop {
+      display: none;
+      position: absolute;
+      top: calc(100% + 5px);
+      right: 0;
+      z-index: 50;
+      background: var(--surf);
+      border: 1px solid var(--bdr);
+      border-radius: 5px;
+      padding: 9px 11px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .55);
+      white-space: nowrap
+    }
+
+    #srch-drop.open {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap
+    }
+
+    #srch-drop-label {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      width: 100%;
+      margin-bottom: 4px
+    }
+
+    .sf {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      border: 1px solid var(--bdr);
+      border-radius: 14px;
+      font-size: 13px;
+      color: var(--mid);
+      cursor: pointer;
+      transition: all .1s;
+      user-select: none
+    }
+
+    .sf.on {
+      border-color: var(--amb);
+      color: var(--amb);
+      background: rgba(200, 134, 60, .08)
+    }
+
+    #content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--bdr) transparent;
+      contain: layout style
+    }
+
+    #content::-webkit-scrollbar {
+      width: 4px
+    }
+
+    #content::-webkit-scrollbar-thumb {
+      background: var(--bdr)
+    }
+
+    /* ── ERRORS ── */
+    .qerr {
+      background: #2a1010;
+      border: 1px solid #5a2020;
+      border-radius: 3px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: #d08080;
+      font-family: monospace;
+      white-space: pre-wrap
+    }
+
+    .qerr strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #e09090;
+      font-size: 13px
+    }
+
+    /* ── SECTION HEADER ── */
+    .sh {
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 14px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--bdr)
+    }
+
+    /* ── ALL TRACKS TABLE (desktop) ── */
+    /* cols: ▶ | art+album | # | Title | Artist | Year | Len | Genre | ★ | Plays | Added */
+    .tk-wrap {
+      overflow-x: auto
+    }
+
+    .tk-head,
+    .tk-row {
+      display: grid;
+      grid-template-columns: 34px 1fr 40px 1fr 150px 60px 64px 100px 80px 52px 126px;
+      min-width: 960px;
+      align-items: center;
+    }
+
+    .tk-head {
+      font-size: 11px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--dim);
+      border-bottom: 1px solid var(--bdr);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 3
+    }
+
+    .tk-head span {
+      padding: 7px 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      transition: color .1s;
+      display: block
+    }
+
+    .tk-head span:hover {
+      color: var(--txt)
+    }
+
+    .tk-head span.son {
+      color: var(--amb)
+    }
+
+    .tk-head span.son::after {
+      content: ' ↓';
+      font-size: 9px
+    }
+
+    .tk-head span.son.sasc::after {
+      content: ' ↑'
+    }
+
+    .tk-row {
+      padding: 3px 0;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background .07s
+    }
+
+    .tk-row:hover {
+      background: var(--card)
+    }
+
+    .tk-row.pl {
+      background: rgba(200, 134, 60, .08)
+    }
+
+    .tk-row.pl .tk-title {
+      color: var(--amb)
+    }
+
+    .tk-cell {
+      padding: 4px 8px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .tk-sm {
+      padding: 4px 8px;
+      font-size: 13px;
+      color: var(--mid);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .tk-pb {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--dim);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: all .1s;
+      margin: 0 auto
+    }
+
+    .tk-pb:hover {
+      background: var(--amb);
+      color: var(--bg)
+    }
+
+    .tk-row.pl .tk-pb {
+      color: var(--amb)
+    }
+
+    .tk-title {
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 500
+    }
+
+    .tk-link {
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--mid)
+    }
+
+    .tk-link:hover {
+      color: var(--amb);
+      text-decoration: underline
+    }
+
+    .tk-rat {
+      font-size: 12px;
+      color: var(--amb)
+    }
+
+    /* Summary cell — art + album + artist */
+    .tk-sum {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 8px;
+      min-width: 0
+    }
+
+    .tk-sum-art {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--card)
+    }
+
+    .tk-sum-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .tk-sum-ph {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 2px;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--bdr)
+    }
+
+    .tk-sum-info {
+      min-width: 0
+    }
+
+    .tk-sum-album {
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .tk-sum-artist {
+      font-size: 12px;
+      color: var(--mid);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 1px
+    }
+
+    /* ── ALBUM GRID ── */
+    .ag {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px
+    }
+
+    .ac {
+      cursor: pointer;
+      transition: transform .15s
+    }
+
+    .ac:hover {
+      transform: translateY(-2px)
+    }
+
+    .ac:hover .aa {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .65)
+    }
+
+    .aa {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--card);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .45);
+      transition: box-shadow .15s
+    }
+
+    .aa img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .aa-ph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: var(--bdr)
+    }
+
+    .ao {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .15s;
+      font-size: 24px
+    }
+
+    .ac:hover .ao {
+      opacity: 1
+    }
+
+    .an {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--txt);
+      margin-top: 7px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .as2 {
+      font-size: 13px;
+      color: var(--mid);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .ad {
+      font-size: 11px;
+      color: var(--a2);
+      margin-top: 1px
+    }
+
+    /* ── ARTIST GRID ── */
+    .artg {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px
+    }
+
+    .artc {
+      cursor: pointer;
+      transition: transform .15s
+    }
+
+    .artc:hover {
+      transform: translateY(-2px)
+    }
+
+    .artc:hover .art-aa {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .65)
+    }
+
+    .art-aa {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--card);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .45);
+      transition: box-shadow .15s
+    }
+
+    .art-aa img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .art-aa-ph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--bdr)
+    }
+
+    .art-ao {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .45);
+      display: flex;
+      align-items: flex-end;
+      padding: 9px;
+      opacity: 0;
+      transition: opacity .15s
+    }
+
+    .artc:hover .art-ao {
+      opacity: 1
+    }
+
+    .art-ao span {
+      font-size: 12px;
+      color: var(--txt);
+      background: rgba(0, 0, 0, .5);
+      padding: 2px 7px;
+      border-radius: 2px
+    }
+
+    .art-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--txt);
+      margin-top: 7px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .art-count {
+      font-size: 12px;
+      color: var(--mid);
+      margin-top: 2px
+    }
+
+    /* ── GENRE GRID ── */
+    .geng {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px
+    }
+
+    .genc {
+      cursor: pointer;
+      transition: transform .15s
+    }
+
+    .genc:hover {
+      transform: translateY(-2px)
+    }
+
+    .genc:hover .gen-aa {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .65)
+    }
+
+    .gen-aa {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--card);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .45);
+      transition: box-shadow .15s
+    }
+
+    /* mosaic (only used when 4 covers) */
+    .gen-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      width: 100%;
+      height: 100%
+    }
+
+    .gen-mosaic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    /* single cover (< 4) */
+    .gen-single {
+      width: 100%;
+      height: 100%
+    }
+
+    .gen-single img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .gen-ov {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, transparent 55%);
+      display: flex;
+      align-items: flex-end;
+      padding: 11px
+    }
+
+    .gen-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--txt)
+    }
+
+    .gen-ct {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .6);
+      margin-top: 2px
+    }
+
+    /* ── TRACKLIST (album/genre/playlist detail) ── */
+    .tl-head {
+      display: grid;
+      grid-template-columns: 32px 32px 1fr 1fr 72px 58px;
+      gap: 6px;
+      padding: 5px 8px;
+      font-size: 11px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--dim);
+      border-bottom: 1px solid var(--bdr);
+      margin-bottom: 2px
+    }
+
+    .tl-row {
+      display: grid;
+      grid-template-columns: 32px 32px 1fr 1fr 72px 58px;
+      gap: 6px;
+      padding: 10px 8px;
+      border-radius: 3px;
+      align-items: center;
+      cursor: pointer;
+      transition: background .07s
+    }
+
+    .tl-row:hover {
+      background: var(--card)
+    }
+
+    .tl-row.pl {
+      background: rgba(200, 134, 60, .08)
+    }
+
+    .tl-row.pl .tl-title {
+      color: var(--amb)
+    }
+
+    .tpb {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--dim);
+      font-size: 12px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .1s
+    }
+
+    .tpb:hover {
+      background: var(--amb);
+      color: var(--bg)
+    }
+
+    .tl-row.pl .tpb {
+      color: var(--amb)
+    }
+
+    .tl-num {
+      font-size: 13px;
+      color: var(--dim)
+    }
+
+    .tl-title {
+      font-size: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 500
+    }
+
+    .tl-sub {
+      font-size: 14px;
+      color: var(--mid);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .tl-rat {
+      font-size: 14px;
+      color: var(--amb)
+    }
+
+    .tl-dur {
+      font-size: 13px;
+      color: var(--dim);
+      text-align: right
+    }
+
+    /* ── DETAIL HEADER ── */
+    .dh {
+      display: flex;
+      gap: 22px;
+      margin-bottom: 24px;
+      align-items: flex-end
+    }
+
+    .da {
+      width: 155px;
+      height: 155px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, .7)
+    }
+
+    .da img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .da .aa-ph {
+      font-size: 40px
+    }
+
+    .di .dl {
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 5px
+    }
+
+    .di h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: 5px;
+      line-height: 1.2
+    }
+
+    .di .dar {
+      font-size: 15px;
+      color: var(--amb);
+      margin-bottom: 6px
+    }
+
+    .di .dm {
+      font-size: 13px;
+      color: var(--mid)
+    }
+
+    .pa {
+      margin-top: 14px;
+      background: var(--amb);
+      color: var(--bg);
+      border: none;
+      font-size: 13px;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 9px 22px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity .12s
+    }
+
+    .pa:hover {
+      opacity: .82
+    }
+
+    .back {
+      background: none;
+      border: 1px solid var(--bdr);
+      color: var(--mid);
+      font-size: 11px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      padding: 6px 13px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-bottom: 18px;
+      display: inline-block;
+      transition: all .12s;
+      font-family: inherit
+    }
+
+    .back:hover {
+      border-color: var(--a2);
+      color: var(--txt)
+    }
+
+    .empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--dim);
+      font-size: 14px;
+      letter-spacing: .08em
+    }
+
+    /* ── RIGHT PANEL ── */
+    #rp {
+      grid-row: 1/2;
+      background: var(--surf);
+      border-left: 1px solid var(--bdr);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden
+    }
+
+    .rp-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--bdr);
+      flex-shrink: 0
+    }
+
+    .rp-tab {
+      flex: 1;
+      padding: 13px 6px;
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--mid);
+      cursor: pointer;
+      text-align: center;
+      border-bottom: 2px solid transparent;
+      transition: all .12s
+    }
+
+    .rp-tab:hover {
+      color: var(--txt)
+    }
+
+    .rp-tab.on {
+      color: var(--amb);
+      border-bottom-color: var(--amb)
+    }
+
+    #rp-queue {
+      flex: 1;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--bdr) transparent;
+      display: none
+    }
+
+    #rp-queue.show {
+      display: block
+    }
+
+    #rp-queue::-webkit-scrollbar {
+      width: 2px
+    }
+
+    #rp-queue::-webkit-scrollbar-thumb {
+      background: var(--bdr)
+    }
+
+    .q-header {
+      padding: 11px 14px 6px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--dim)
+    }
+
+    .q-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      cursor: pointer;
+      transition: background .07s;
+      border-radius: 2px
+    }
+
+    .q-item:hover {
+      background: var(--card)
+    }
+
+    .q-item.on {
+      background: rgba(200, 134, 60, .09)
+    }
+
+    .q-item.on .q-title {
+      color: var(--amb)
+    }
+
+    .q-num {
+      font-size: 12px;
+      color: var(--dim);
+      width: 22px;
+      flex-shrink: 0;
+      text-align: right
+    }
+
+    .q-art {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--card)
+    }
+
+    .q-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .q-art-ph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: var(--bdr)
+    }
+
+    .q-info {
+      min-width: 0;
+      flex: 1
+    }
+
+    .q-title {
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .q-sub {
+      font-size: 12px;
+      color: var(--mid);
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .q-dur {
+      font-size: 12px;
+      color: var(--dim);
+      flex-shrink: 0
+    }
+
+    #rp-now {
+      flex: 1;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--bdr) transparent;
+      display: none;
+      flex-direction: column
+    }
+
+    #rp-now.show {
+      display: flex
+    }
+
+    .np-art {
+      width: 100%;
+      aspect-ratio: 1;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: var(--card)
+    }
+
+    .np-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .np-art-ph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      color: var(--bdr)
+    }
+
+    .np-info {
+      padding: 18px 16px 12px;
+      flex-shrink: 0
+    }
+
+    .np-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--txt);
+      line-height: 1.3
+    }
+
+    .np-artist {
+      font-size: 15px;
+      color: var(--amb);
+      margin-top: 5px
+    }
+
+    .np-album {
+      font-size: 14px;
+      color: var(--mid);
+      margin-top: 3px
+    }
+
+    .np-rating {
+      font-size: 17px;
+      color: var(--amb);
+      margin-top: 7px
+    }
+
+    .np-lyrics {
+      padding: 0 16px 24px;
+      flex: 1
+    }
+
+    .np-lyr-label {
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 10px
+    }
+
+    .np-lyr-text {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 2;
+      white-space: pre-wrap;
+      word-break: break-word
+    }
+
+    .np-lyr-empty {
+      font-size: 14px;
+      color: var(--dim);
+      font-style: italic
+    }
+
+    /* ── PLAYER BAR ──
+   Fix #4: controls absolutely centred; left info + right volume balanced with flex:1 each */
+    #player {
+      grid-column: 1/4;
+      grid-row: 2/3;
+      background: var(--surf);
+      border-top: 1px solid var(--bdr);
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      position: relative;
+      cursor: pointer;
+      /* raise above rp overlay on mobile */
+      z-index: 160;
+    }
+
+    #player:hover #prog {
+      height: 4px
+    }
+
+    #prog {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--bdr);
+      cursor: pointer;
+      transition: height .1s;
+      z-index: 1
+    }
+
+    #pf {
+      height: 100%;
+      background: var(--amb);
+      width: 0;
+      transition: width .35s linear;
+      pointer-events: none
+    }
+
+    /* left: now-playing info */
+    #now {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+      flex: 1;
+      pointer-events: none
+    }
+
+    #nart {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 3px;
+      overflow: hidden;
+      background: var(--card);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .45)
+    }
+
+    #nart img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    #nph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--bdr)
+    }
+
+    #ninfo {
+      min-width: 0
+    }
+
+    #ntitle {
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px
+    }
+
+    #nartist {
+      font-size: 12px;
+      color: var(--mid);
+      margin-top: 1px
+    }
+
+    /* centre: controls — absolute so they are pixel-perfect centred */
+    #ctrls {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      pointer-events: all;
+    }
+
+    .cb {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--mid);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: all .1s;
+      flex-shrink: 0
+    }
+
+    .cb:hover {
+      color: var(--txt);
+      background: rgba(255, 255, 255, .06)
+    }
+
+    #cbpp {
+      width: 46px;
+      height: 46px;
+      background: var(--amb);
+      color: var(--bg);
+      font-size: 17px
+    }
+
+    #cbpp:hover {
+      opacity: .85;
+      background: var(--amb)
+    }
+
+    #cb-shuffle {
+      transition: color 0.2s, background 0.2s;
+    }
+
+    #cb-shuffle svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Loading Spinner */
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spin {
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    /* right: time + volume */
+    #pr {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex: 1;
+      pointer-events: all
+    }
+
+    #tel {
+      font-size: 13px;
+      color: var(--dim);
+      white-space: nowrap
+    }
+
+    #errel {
+      font-size: 12px;
+      color: #a05050;
+      font-style: italic;
+      max-width: 120px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis
+    }
+
+    .vw {
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .vw span {
+      font-size: 15px;
+      color: var(--dim)
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 68px;
+      height: 2px;
+      background: var(--bdr);
+      border-radius: 1px;
+      outline: none
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--amb);
+      cursor: pointer
+    }
+
+    audio {
+      display: none
+    }
+
+    /* ── MOBILE SEARCH BTN (hidden desktop) ── */
+    #mob-srch-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--bdr);
+      border-radius: 4px;
+      color: var(--mid);
+      font-size: 18px;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: color .1s
+    }
+
+    #mob-srch-btn:hover {
+      color: var(--txt)
+    }
+
+    /* ── MOBILE SEARCH BAR ── */
+    #mob-srch-bar {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: var(--surf);
+      border-bottom: 1px solid var(--bdr);
+      flex-shrink: 0
+    }
+
+    #mob-srch-bar.open {
+      display: flex
+    }
+
+    #mob-srch-in {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--bdr);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 15px;
+      color: var(--txt);
+      font-family: inherit;
+      outline: none;
+      min-width: 0
+    }
+
+    #mob-srch-in::placeholder {
+      color: var(--dim)
+    }
+
+    #mob-srch-close {
+      background: none;
+      border: none;
+      color: var(--mid);
+      font-size: 22px;
+      cursor: pointer;
+      padding: 2px 4px;
+      line-height: 1;
+      flex-shrink: 0
+    }
+
+    /* ── MOBILE SEARCH CHIPS ── */
+    #mob-srch-chips {
+      display: none;
+      gap: 6px;
+      padding: 4px 12px 8px;
+      border-bottom: 1px solid var(--bdr);
+      flex-shrink: 0
+    }
+
+    #mob-srch-chips.open {
+      display: flex
+    }
+
+    /* ── EQUALIZER BARS (playing indicator) ── */
+    @keyframes eqb {
+
+      0%,
+      100% {
+        height: 5px
+      }
+
+      50% {
+        height: 15px
+      }
+    }
+
+    .eq {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 16px;
+      vertical-align: middle
+    }
+
+    .eq b {
+      display: block;
+      width: 3px;
+      border-radius: 1px;
+      background: var(--amb);
+      animation: eqb .65s ease-in-out infinite
+    }
+
+    .eq b:nth-child(1) {
+      animation-delay: 0s;
+      height: 8px
+    }
+
+    .eq b:nth-child(2) {
+      animation-delay: .18s;
+      height: 14px
+    }
+
+    .eq b:nth-child(3) {
+      animation-delay: .35s;
+      height: 6px
+    }
+
+    /* ── UNAVAILABLE TRACK ── */
+    .tk-row.unavail,
+    .tl-row.unavail {
+      opacity: .35;
+      pointer-events: none
+    }
+
+    .tk-row.unavail .tk-title,
+    .tl-row.unavail .tl-mob-title {
+      text-decoration: line-through
+    }
+
+    /* ── SNACKBAR ── */
+    #snackbar {
+      position: fixed;
+      bottom: calc(var(--ph) + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: #2a2218;
+      border: 1px solid var(--a2);
+      color: var(--txt);
+      font-size: 13px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s, transform .22s;
+      white-space: nowrap;
+      max-width: calc(100vw - 32px);
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    #snackbar.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0)
+    }
+
+    /* ── DOT MENU ── */
+    #dot-menu {
+      display: none;
+      position: fixed;
+      z-index: 5000;
+      background: var(--surf);
+      border: 1px solid var(--bdr);
+      border-radius: 6px;
+      padding: 4px 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .65);
+      min-width: 170px
+    }
+
+    #dot-menu.open {
+      display: block
+    }
+
+    #dot-menu button {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--txt);
+      font-size: 14px;
+      padding: 11px 16px;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .1s
+    }
+
+    #dot-menu button:hover {
+      background: var(--card)
+    }
+
+    #dot-remove-btn {
+      color: var(--mid) !important
+    }
+
+    /* ── TRACKLIST MOBILE ROW (tl-mob) ── */
+    .tl-mob {
+      display: none
+    }
+
+    .tl-mob-art {
+      width: 44px;
+      height: 44px;
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--card)
+    }
+
+    .tl-mob-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .tl-mob-art-ph {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--bdr)
+    }
+
+    .tl-mob-info {
+      min-width: 0;
+      flex: 1;
+      padding: 0 6px
+    }
+
+    .tl-mob-title {
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--txt)
+    }
+
+    .tl-mob-sub {
+      font-size: 12px;
+      color: var(--mid);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .tl-row.pl .tl-mob-title {
+      color: var(--amb)
+    }
+
+    /* ── ARTIST MOSAIC ── */
+    .art-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      width: 100%;
+      height: 100%
+    }
+
+    .art-mosaic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    /* ── QUEUE DOT BUTTON ── */
+    .q-dot {
+      background: none;
+      border: none;
+      color: var(--dim);
+      font-size: 18px;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: color .1s;
+      line-height: 1
+    }
+
+    .q-dot:hover {
+      color: var(--txt)
+    }
+
+    /* ── TRACK ROW DOT BUTTON ── */
+    .tk-dot,
+    .tl-dot {
+      background: none;
+      border: none;
+      color: var(--dim);
+      font-size: 17px;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: color .1s;
+      line-height: 1
+    }
+
+    .tk-dot:hover,
+    .tl-dot:hover {
+      color: var(--txt)
+    }
+
+    @media(max-width:640px) {
+
+      .tk-dot,
+      .tl-dot {
+        display: flex
+      }
+    }
+
+    /* ── MOBILE OVERLAYS ── */
+    #mob-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 199;
+      background: rgba(0, 0, 0, .55)
+    }
+
+    #mob-overlay.show {
+      display: block
+    }
+
+    /* rp overlay must NOT cover the player bar — z-index 149, player is 160 */
+    #rp-mob-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: var(--ph, 72px);
+      z-index: 149;
+      background: rgba(0, 0, 0, .6)
+    }
+
+    #rp-mob-overlay.show {
+      display: block
+    }
+
+    /* rp-btn hidden on desktop */
+    #rp-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--mid);
+      font-size: 20px;
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      transition: all .1s
+    }
+
+    #rp-btn:hover {
+      color: var(--txt);
+      background: rgba(255, 255, 255, .06)
+    }
+
+    /* ── RESPONSIVE: ≤960px — right panel becomes slide-over ── */
+    @media(max-width:960px) {
+      :root {
+        --rw: 0px
+      }
+
+      #app {
+        grid-template-columns: var(--sw) 1fr
+      }
+
+      #player {
+        grid-column: 1/3
+      }
+
+      #rp {
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        bottom: var(--ph, 72px);
+        width: 100vw;
+        z-index: 250;
+        box-shadow: none;
+        transition: right .22s ease;
+      }
+
+      #rp.open {
+        right: 0
+      }
+
+      #rp-btn {
+        display: flex
+      }
+    }
+
+    /* ── RESPONSIVE: ≤640px — full mobile ── */
+    @media(max-width:640px) {
+      :root {
+        --sw: 0px;
+        --ph: 64px
+      }
+
+      #app {
+        grid-template-columns: 1fr
+      }
+
+      /* sidebar: clip bottom so it never covers the player bar */
+      #sb {
+        position: fixed;
+        top: 0;
+        bottom: var(--ph);
+        left: -280px;
+        width: 280px;
+        z-index: 200;
+        transition: left .22s ease
+      }
+
+      #sb.open {
+        left: 0
+      }
+
+      /* overlay also doesn't cover player bar */
+      #mob-overlay {
+        bottom: var(--ph)
+      }
+
+      #menu-btn {
+        display: flex
+      }
+
+      #player {
+        grid-column: 1/2
+      }
+
+      /* ── SEARCH: hide desktop inline bar; show mobile btn ── */
+      #srch-wrap {
+        display: none
+      }
+
+      #mob-srch-btn {
+        display: flex
+      }
+
+      /* ── ALL TRACKS — mobile Spotify-style ──
+     Show: ▶ | art+title+artist | ⋮ | duration only */
+      .tk-wrap {
+        overflow-x: hidden
+      }
+
+      .tk-head {
+        display: none
+      }
+
+      .tk-row {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        padding: 5px 4px;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .04);
+      }
+
+      /* hide everything except ▶ btn, .tk-sum, .tk-dot, and .tk-dur */
+      .tk-row>* {
+        display: none
+      }
+
+      .tk-pb,
+      .tk-sum,
+      .tk-dot,
+      .tk-dur {
+        display: flex
+      }
+
+      .tk-pb {
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center
+      }
+
+      /* summary expands to fill */
+      .tk-sum {
+        flex: 1;
+        min-width: 0;
+        gap: 10px;
+        padding: 2px 6px
+      }
+
+      .tk-sum-art {
+        width: 44px;
+        height: 44px
+      }
+
+      /* on mobile: show title+artist in summary (not album+artist) */
+      .tk-sum-info {
+        display: flex;
+        flex-direction: column;
+        min-width: 0
+      }
+
+      .tk-sum-album {
+        display: none
+      }
+
+      .tk-sum-title {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: var(--txt)
+      }
+
+      .tk-sum-artist {
+        font-size: 12px
+      }
+
+      /* duration on far right */
+      .tk-dur {
+        font-size: 12px;
+        color: var(--mid);
+        padding: 0 4px 0 0;
+        flex-shrink: 0;
+        white-space: nowrap;
+        align-items: center
+      }
+
+      /* playing highlight */
+      .tk-row.pl .tk-sum-title {
+        color: var(--amb)
+      }
+
+      /* ── TRACKLIST rows (album/genre/playlist) — mobile with art ── */
+      .tl-head {
+        display: none
+      }
+
+      .tl-row {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 4px;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .04);
+      }
+
+      /* hide grid cells; show tpb + tl-mob + tl-dot + tl-dur */
+      .tl-row>:not(.tpb):not(.tl-mob):not(.tl-dot):not(.tl-dur) {
+        display: none
+      }
+
+      .tpb {
+        order: 1;
+      }
+
+      .tl-mob {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        align-items: center;
+        order: 2;
+      }
+
+      .tl-dur {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: var(--mid);
+        padding: 0 4px 0 0;
+        flex-shrink: 0;
+        white-space: nowrap;
+        order: 3;
+      }
+
+      .tl-dot {
+        display: flex;
+        order: 4;
+      }
+
+      /* ── ALBUMS GRID ── */
+
+      .an {
+        font-size: 12px;
+        margin-top: 5px
+      }
+
+      .as2,
+      .ad {
+        font-size: 11px
+      }
+
+      /* ── ARTISTS GRID ── */
+
+      .art-name {
+        font-size: 12px;
+        margin-top: 5px
+      }
+
+      .art-count {
+        font-size: 11px
+      }
+
+      /* ── DETAIL HEADER — centred on mobile ── */
+      .dh {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+        margin-bottom: 20px
+      }
+
+      .da {
+        width: 200px;
+        height: 200px
+      }
+
+      .di {
+        width: 100%;
+        text-align: center
+      }
+
+      .di h2 {
+        font-size: 22px
+      }
+
+      .pa {
+        display: block;
+        margin: 14px auto 0;
+        width: fit-content
+      }
+
+      /* ── PLAYER BAR — position relative layout ── */
+      #player {
+        position: relative;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #now {
+        position: absolute;
+        left: 12px;
+        display: flex;
+        pointer-events: none;
+      }
+
+      #ntitle {
+        display: none;
+      }
+
+      #nartist {
+        display: none;
+      }
+
+      #nart {
+        width: 44px;
+        height: 44px
+      }
+
+      /* center controls on mobile */
+      #ctrls {
+        position: static;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* move shuffle and burger to absolute right */
+      #rp-btn {
+        position: absolute;
+        right: 12px;
+      }
+
+      #cb-shuffle {
+        position: absolute;
+        right: 56px;
+      }
+
+      .cb {
+        width: 32px;
+        height: 32px;
+        font-size: 16px
+      }
+
+      #cbpp {
+        width: 42px;
+        height: 42px;
+        font-size: 15px
+      }
+
+      /* hide right panel items */
+      #pr {
+        display: none
+      }
+    }
