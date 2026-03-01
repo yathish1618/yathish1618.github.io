@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Chaos</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23b38030%22/><path d=%22M38 30l34 20-34 20z%22 fill=%22%23111110%22/></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -39,6 +41,36 @@
       <div id="topbar">
         <button id="menu-btn" onclick="osb()">☰</button>
         <div id="vtitle">Tracks</div>
+        <!-- Sort/filter button+menu (always visible) -->
+        <div id="sort-wrap">
+          <button id="sort-btn" onclick="toggleSortMenu();event.stopPropagation()" title="Sort">
+            <svg viewBox="0 0 16 12" width="15" height="12" stroke="currentColor" stroke-width="1.6" fill="none"
+              stroke-linecap="round">
+              <line x1="1" y1="1.5" x2="15" y2="1.5" />
+              <line x1="3" y1="5.5" x2="13" y2="5.5" />
+              <line x1="5" y1="9.5" x2="11" y2="9.5" />
+            </svg>
+          </button>
+          <div id="sort-menu">
+            <div class="sort-label">Sort by</div>
+            <button class="sort-opt" data-col="date" data-dir="desc" onclick="applySort('date','desc')">Date Added
+              ↓</button>
+            <button class="sort-opt" data-col="date" data-dir="asc" onclick="applySort('date','asc')">Date Added
+              ↑</button>
+            <button class="sort-opt" data-col="plays" data-dir="desc" onclick="applySort('plays','desc')">Play Count
+              ↓</button>
+            <button class="sort-opt" data-col="plays" data-dir="asc" onclick="applySort('plays','asc')">Play Count
+              ↑</button>
+            <button class="sort-opt" data-col="rating" data-dir="desc" onclick="applySort('rating','desc')">Rating
+              ↓</button>
+            <button class="sort-opt" data-col="rating" data-dir="asc" onclick="applySort('rating','asc')">Rating
+              ↑</button>
+            <button class="sort-opt" data-col="length" data-dir="desc" onclick="applySort('length','desc')">Length
+              ↓</button>
+            <button class="sort-opt" data-col="length" data-dir="asc" onclick="applySort('length','asc')">Length
+              ↑</button>
+          </div>
+        </div>
         <!-- Mobile search button (hidden on desktop, shown ≤640px) -->
         <button id="mob-srch-btn" onclick="openMobSrch()" title="Search">⌕</button>
         <div id="srch-wrap">
@@ -125,15 +157,7 @@
         </div>
       </div>
     </div>
-    <!-- Allow clicking empty bottom bar area to toggle Right Panel similar to burger menu -->
-    <script>
-      document.getElementById('player').addEventListener('click', function (e) {
-        if (e.target === this || e.target.id === 'ctrls' || e.target.id === 'pr' || e.target.id === 'now') {
-          // If the click is on the transparent/empty background of the player bar segments, toggle the RP.
-          orp();
-        }
-      });
-    </script>
+
   </div><!-- #app -->
 
   <!-- SNACKBAR -->

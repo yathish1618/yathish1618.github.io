@@ -549,6 +549,10 @@
       min-width: 0
     }
 
+    .tk-sum-title {
+      display: none;
+    }
+
     .tk-sum-album {
       font-size: 13px;
       font-weight: 500;
@@ -558,12 +562,7 @@
     }
 
     .tk-sum-artist {
-      font-size: 12px;
-      color: var(--mid);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-top: 1px
+      display: none;
     }
 
     /* ── ALBUM GRID ── */
@@ -1304,7 +1303,26 @@
       background: var(--amb);
       width: 0;
       transition: width .35s linear;
-      pointer-events: none
+      pointer-events: none;
+      position: relative
+    }
+
+    /* scrubber thumb — only visible on desktop hover */
+    #pf::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%) scale(0);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--amb);
+      transition: transform .1s
+    }
+
+    #player:hover #pf::after {
+      transform: translateY(-50%) scale(1)
     }
 
     /* left: now-playing info */
@@ -1362,7 +1380,158 @@
       margin-top: 1px
     }
 
-    /* centre: controls — absolute so they are pixel-perfect centred */
+    #ntime {
+      display: none;
+      font-size: 11px;
+      color: var(--dim);
+      margin-top: 2px;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: .02em
+    }
+
+    /* ── SORT BUTTON ── */
+    #sort-wrap {
+      position: relative;
+      flex-shrink: 0
+    }
+
+    #sort-btn {
+      background: none;
+      border: 1px solid var(--bdr);
+      border-radius: 5px;
+      color: var(--mid);
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: color .1s, border-color .1s
+    }
+
+    #sort-btn:hover,
+    #sort-btn.on {
+      color: var(--amb);
+      border-color: var(--amb)
+    }
+
+    /* ── SORT MENU ── */
+    #sort-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      right: 0;
+      background: var(--surf);
+      border: 1px solid var(--bdr);
+      border-radius: 7px;
+      padding: 4px 0;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .6);
+      min-width: 160px;
+      z-index: 600
+    }
+
+    #sort-menu.open {
+      display: block
+    }
+
+    .sort-label {
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      padding: 8px 14px 4px
+    }
+
+    .sort-opt {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--mid);
+      font-size: 13px;
+      padding: 9px 14px;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .1s, color .1s
+    }
+
+    .sort-opt:hover {
+      background: var(--card);
+      color: var(--txt)
+    }
+
+    .sort-opt.on {
+      color: var(--amb)
+    }
+
+    /* ── NOW PLAYING SEEK BAR ── */
+    .np-seek {
+      padding: 4px 16px 8px;
+      flex-shrink: 0
+    }
+
+    #np-prog {
+      position: relative;
+      height: 36px;
+      /* large touch target */
+      display: flex;
+      align-items: center;
+      cursor: pointer
+    }
+
+    /* visible track */
+    #np-prog::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 3px;
+      background: var(--bdr);
+      border-radius: 2px;
+      transform: translateY(-50%)
+    }
+
+    #np-pf {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 3px;
+      background: var(--amb);
+      border-radius: 2px;
+      transform: translateY(-50%);
+      width: 0;
+      transition: width .35s linear;
+      pointer-events: none
+    }
+
+    /* thumb */
+    #np-pf::after {
+      content: '';
+      position: absolute;
+      right: -7px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--amb);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .4)
+    }
+
+    .np-times {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+      color: var(--dim);
+      padding: 0 2px;
+      margin-top: -2px
+    }
+
+    /* ── CENTRE: controls ── */
     #ctrls {
       position: absolute;
       left: 50%;
@@ -1743,6 +1912,15 @@
       text-overflow: ellipsis
     }
 
+    /* rating in mobile card — hidden by default (desktop), shown in media query */
+    .tk-mob-rat,
+    .tl-mob-rat {
+      display: none;
+      font-size: 11px;
+      color: var(--amb);
+      margin-top: 2px
+    }
+
     .tl-row.pl .tl-mob-title {
       color: var(--amb)
     }
@@ -2024,6 +2202,10 @@
         font-size: 12px
       }
 
+      .tk-mob-rat {
+        display: block
+      }
+
       /* duration on far right */
       .tk-dur {
         font-size: 12px;
@@ -2084,6 +2266,10 @@
       .tl-dot {
         display: flex;
         order: 4;
+      }
+
+      .tl-mob-rat {
+        display: block
       }
 
       /* ── ALBUMS GRID ── */
@@ -2151,6 +2337,8 @@
         position: absolute;
         left: 12px;
         display: flex;
+        align-items: center;
+        gap: 8px;
         pointer-events: none;
       }
 

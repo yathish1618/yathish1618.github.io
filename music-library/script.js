@@ -4,6 +4,7 @@ const WASM = 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.wasm'
 let db, cv = 'tracks', sq = '', stopped = false, Q = [], qi = -1;
 let trkSort = 'date', trkDir = 'desc';
 let allRows = [];
+let plRows = [], plName = '';
 let sfT = true, sfAr = true, sfAl = true, sfLy = false;
 let shuffle = false;
 const au = document.getElementById('au');
@@ -114,7 +115,7 @@ function showTab(t) {
   document.getElementById('rp-queue').classList.toggle('show', t === 'q');
   document.getElementById('rp-now').classList.toggle('show', t === 'np');
 }
-function onPlayerClick(e) { showTab('np'); orp() }
+function onPlayerClick(e) { showTab('np'); if (window.innerWidth <= 960) orp(); }
 
 // ── PLAYLISTS ─────────────────────────────────────────────────────────────────
 function loadPL() {
@@ -186,26 +187,28 @@ function renderTrkTable() {
     <div class="sh">${rows.length.toLocaleString()} tracks</div>
     <div class="tk-wrap"><div class="tk-head">
       <span></span>
-      ${col('album', 'Summary')}
-      ${col('num', '#')}
-      ${col('title', 'Title')}
-      ${col('artist', 'Artist')}
-      ${col('year', 'Year')}
-      ${col('length', 'Length')}
-      ${col('genre', 'Genre')}
-      ${col('rating', 'Rating')}
-      ${col('plays', 'Plays')}
-      ${col('date', 'Added')}
+      <span>Album</span>
+      <span>#</span>
+      <span>Title</span>
+      <span>Artist</span>
+      <span>Year</span>
+      <span>Length</span>
+      <span>Genre</span>
+      <span>Rating</span>
+      <span>Plays</span>
+      <span>Added</span>
     </div>`;
 
   const body = rows.map((t, i) => {
     // tk-sum-title hidden on desktop, shown on mobile (via CSS)
+    const ratStr = fr(t.Rating);
     const sum = `<div class="tk-sum">
       <div class="tk-sum-art">${imgEl(t.IDAlbum, 'tk-sum-art')}</div>
       <div class="tk-sum-info">
         <div class="tk-sum-title">${t.Title || ''}</div>
         <div class="tk-sum-album tk-link" onclick="valb(${t.IDAlbum},'${es(t.Album)}','${es(t.Artist || '')}');event.stopPropagation()">${t.Album || '—'}</div>
         <div class="tk-sum-artist tk-link" onclick="vart(0,'${es(t.Artist || '')}');event.stopPropagation()">${t.Artist || '—'}</div>
+        ${ratStr ? `<div class="tk-mob-rat">${ratStr}</div>` : ''}
       </div>
     </div>`;
     const isP = (qi === i && Q === window._QRows);
@@ -295,7 +298,7 @@ function valb(idAlbum, album, artist) {
         <span class="tl-sub">${t.Artist || ''}</span>
         <span class="tl-rat">${fr(t.Rating)}</span>
         <span class="tl-dur">${fl(t.Len)}</span>
-        <div class="tl-mob"><div class="tl-mob-art">${imgEl(t.IDAlbum, 'tl-mob-art')}</div><div class="tl-mob-info"><div class="tl-mob-title">${t.Title || ''}</div><div class="tl-mob-sub">${t.Artist || ''}</div></div></div>
+        <div class="tl-mob"><div class="tl-mob-art">${imgEl(t.IDAlbum, 'tl-mob-art')}</div><div class="tl-mob-info"><div class="tl-mob-title">${t.Title || ''}</div><div class="tl-mob-sub">${t.Artist || ''}</div>${fr(t.Rating) ? `<div class="tl-mob-rat">${fr(t.Rating)}</div>` : ''}</div></div>
         <button class="tl-dot" onclick="showTrkDot(event,${i})" title="More">⋮</button>
       </div>`}).join('')}`;
 }
@@ -458,7 +461,7 @@ function vgen(id, genre) {
         <span class="tl-sub">${t.Artist || ''} — ${t.Album || ''}</span>
         <span class="tl-rat">${fr(t.Rating)}</span>
         <span class="tl-dur">${fl(t.Len)}</span>
-        <div class="tl-mob"><div class="tl-mob-art">${imgEl(t.IDAlbum, 'tl-mob-art')}</div><div class="tl-mob-info"><div class="tl-mob-title">${t.Title || ''}</div><div class="tl-mob-sub">${t.Artist || ''}</div></div></div>
+        <div class="tl-mob"><div class="tl-mob-art">${imgEl(t.IDAlbum, 'tl-mob-art')}</div><div class="tl-mob-info"><div class="tl-mob-title">${t.Title || ''}</div><div class="tl-mob-sub">${t.Artist || ''}</div>${fr(t.Rating) ? `<div class="tl-mob-rat">${fr(t.Rating)}</div>` : ''}</div></div>
         <button class="tl-dot" onclick="showTrkDot(event,${i})" title="More">⋮</button>
       </div>`).join('')}`;
 }
@@ -467,34 +470,66 @@ function vgen(id, genre) {
 function vpl(name) {
   document.querySelectorAll('.ni').forEach(e => e.classList.remove('on'));
   document.querySelectorAll('.pli').forEach(e => e.classList.toggle('on', e.textContent === name));
-  document.getElementById('vtitle').textContent = name; csb();
+  document.getElementById('vtitle').textContent = name;
+  cv = 'playlist'; plName = name; csb();
   const res = safeQ(`PL${name}`, `
     SELECT s.ID,s.IDAlbum,ps.SongOrder+1 AS Num,(s.SongTitle||'') AS Title,
       (s.Artist||'') AS Artist,(s.Album||'') AS Album,s.Rating,s.SongLength AS Len,
+      s.PlayCounter AS Plays,
+      DATE('1900-01-01','+'||(s.DateAdded-2)||' days') AS DateAdded,
       (s.Lyrics||'') AS Lyrics
     FROM PlaylistSongs ps
     LEFT JOIN Playlists p ON p.IDPlaylist=ps.IDPlaylist
     LEFT JOIN Songs s ON s.ID=ps.IDSong
     WHERE (p.PlaylistName||'')=? ORDER BY ps.SongOrder ASC
   `, [name]);
-  const trks = res.__error ? [] : res;
-  setQ(trks);
+  plRows = res.__error ? [] : res;
+  const sorted = getSortedPl();
+  setQ(sorted);
   document.getElementById('content').scrollTop = 0;
   document.getElementById('content').innerHTML = `
     ${errHTML(res)}
-    <div class="sh">${name} — ${trks.length} tracks</div>
+    <div class="sh">${name} — ${plRows.length} tracks</div>
     <div class="tl-head"><span></span><span>#</span><span>Title</span><span>Artist / Album</span><span>★</span><span>Time</span></div>
-    ${trks.map((t, i) => `
-      <div class="tl-row" id="tr-${t.ID}" onclick="pi(${i})">
-        <button class="tpb">▶</button>
+    <div id="pl-rows">${_plRowsHTML(sorted)}</div>`;
+}
+
+function getSortedPl() {
+  const d = trkDir === 'asc' ? 1 : -1;
+  return [...plRows].sort((a, b) => {
+    let av, bv;
+    switch (trkSort) {
+      case 'rating': av = +(a.Rating) || 0; bv = +(b.Rating) || 0; break;
+      case 'plays': av = +(a.Plays) || 0; bv = +(b.Plays) || 0; break;
+      case 'length': av = +(a.Len) || 0; bv = +(b.Len) || 0; break;
+      default: av = a.DateAdded || ''; bv = b.DateAdded || ''; break;
+    }
+    return av < bv ? -d : av > bv ? d : 0;
+  });
+}
+
+function _plRowsHTML(rows) {
+  return rows.map((t, i) => {
+    const isP = (qi >= 0 && Q[qi] && t.ID === Q[qi].ID);
+    return `
+      <div class="tl-row${isP ? ' pl' : ''}" id="tr-${t.ID}" onclick="pi(${i})">
+        <button class="tpb">${isP ? '<span class="eq"><b></b><b></b><b></b></span>' : '▶'}</button>
         <span class="tl-num">${t.Num || ''}</span>
         <span class="tl-title">${t.Title || ''}</span>
         <span class="tl-sub">${t.Artist || ''} — ${t.Album || ''}</span>
         <span class="tl-rat">${fr(t.Rating)}</span>
         <span class="tl-dur">${fl(t.Len)}</span>
-        <div class="tl-mob"><div class="tl-mob-art">${imgEl(t.IDAlbum, 'tl-mob-art')}</div><div class="tl-mob-info"><div class="tl-mob-title">${t.Title || ''}</div><div class="tl-mob-sub">${t.Artist || ''}</div></div></div>
+        <div class="tl-mob"><div class="tl-mob-art">${imgEl(t.IDAlbum, 'tl-mob-art')}</div><div class="tl-mob-info"><div class="tl-mob-title">${t.Title || ''}</div><div class="tl-mob-sub">${t.Artist || ''}</div>${fr(t.Rating) ? `<div class="tl-mob-rat">${fr(t.Rating)}</div>` : ''}</div></div>
         <button class="tl-dot" onclick="showTrkDot(event,${i})" title="More">⋮</button>
-      </div>`).join('')}`;
+      </div>`;
+  }).join('');
+}
+
+function _renderPlRows() {
+  const sorted = getSortedPl();
+  setQ(sorted);
+  const el = document.getElementById('pl-rows');
+  if (el) el.innerHTML = _plRowsHTML(sorted);
 }
 
 // ── PLAYBACK ──────────────────────────────────────────────────────────────────
@@ -553,6 +588,12 @@ function pi(i) {
   });
 }
 
+function seekNP(e) {
+  if (!au.duration) return;
+  const r = e.currentTarget.getBoundingClientRect();
+  au.currentTime = ((e.clientX - r.left) / r.width) * au.duration;
+}
+
 function updateNowPanel(t, lyrics) {
   const p = th(t.IDAlbum);
   const artEl = p
@@ -568,6 +609,15 @@ function updateNowPanel(t, lyrics) {
       <div class="np-artist">${t.Artist || '—'}</div>
       <div class="np-album">${t.Album || ''}</div>
       <div class="np-rating">${fr(t.Rating)}</div>
+    </div>
+    <div class="np-seek">
+      <div id="np-prog" onclick="seekNP(event)">
+        <div id="np-pf"></div>
+      </div>
+      <div class="np-times">
+        <span id="np-tel">0:00</span>
+        <span id="np-dur">${fl(t.Len) || '—'}</span>
+      </div>
     </div>
     <div class="np-lyrics">${lyrHTML}</div>`;
 }
@@ -642,7 +692,11 @@ function stopPlayback() {
   document.getElementById('errel').textContent = '';
   document.getElementById('ntitle').textContent = 'Nothing playing';
   document.getElementById('nartist').textContent = '—';
+  document.getElementById('ntime').textContent = '—';
   document.getElementById('nart').innerHTML = '<div id="nph">♪</div>';
+  const npPf = document.getElementById('np-pf'); if (npPf) npPf.style.width = '0%';
+  const npTel = document.getElementById('np-tel'); if (npTel) npTel.textContent = '—';
+  const npDur = document.getElementById('np-dur'); if (npDur) npDur.textContent = '—';
   renderQueue();
 }
 
@@ -670,8 +724,14 @@ au.addEventListener('play', () => {
 });
 au.addEventListener('timeupdate', () => {
   if (!au.duration) return;
-  document.getElementById('pf').style.width = (au.currentTime / au.duration * 100) + '%';
-  document.getElementById('tel').textContent = fl(au.currentTime * 1000) + ' / ' + fl(au.duration * 1000);
+  const pct = (au.currentTime / au.duration * 100) + '%';
+  document.getElementById('pf').style.width = pct;
+  const cur = fl(au.currentTime * 1000);
+  const tot = fl(au.duration * 1000);
+  document.getElementById('tel').textContent = cur + ' / ' + tot;
+  const npPf = document.getElementById('np-pf'); if (npPf) npPf.style.width = pct;
+  const npTel = document.getElementById('np-tel'); if (npTel) npTel.textContent = cur;
+  const npDur = document.getElementById('np-dur'); if (npDur) npDur.textContent = tot;
 });
 
 // ── SNACKBAR ─────────────────────────────────────────────────────────────────────────
@@ -797,3 +857,43 @@ function toggleMSF(f) {
   const v = document.getElementById('mob-srch-in').value;
   if (v) onMobSrch(v);
 }
+
+// ── SORTING MENU ────────────────────────────────────────────────────────────────
+let _sortMenuOpen = false;
+
+function toggleSortMenu() {
+  _sortMenuOpen = !_sortMenuOpen;
+  document.getElementById('sort-menu').classList.toggle('open', _sortMenuOpen);
+  document.getElementById('sort-btn').classList.toggle('on', _sortMenuOpen);
+  _updateSortOptUI();
+}
+
+function closeSortMenu() {
+  _sortMenuOpen = false;
+  document.getElementById('sort-menu').classList.remove('open');
+  document.getElementById('sort-btn').classList.remove('on');
+}
+
+function _updateSortOptUI() {
+  document.querySelectorAll('.sort-opt').forEach(btn => {
+    btn.classList.toggle('on', btn.dataset.col === trkSort && btn.dataset.dir === trkDir);
+  });
+}
+
+function applySort(col, dir) {
+  trkSort = col;
+  trkDir = dir;
+  closeSortMenu();
+  if (cv === 'tracks') {
+    clientSort();
+    document.getElementById('content').innerHTML = renderTrkTable();
+  } else if (cv === 'playlist') {
+    _renderPlRows();
+  }
+}
+
+document.addEventListener('pointerdown', e => {
+  if (_sortMenuOpen && !document.getElementById('sort-menu').contains(e.target) && !document.getElementById('sort-btn').contains(e.target)) {
+    closeSortMenu();
+  }
+});
