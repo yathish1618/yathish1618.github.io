@@ -52,7 +52,7 @@ Papa.parse("data/goodreads_library_export.csv", {
     script.onload = function() {
         initSqlJs({ locateFile: function(f) { return 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/' + f; } })
         .then(function(SQL) {
-            return fetch('../music-catalogue2/MM5.DB').then(function(r) { return r.arrayBuffer(); }).then(function(buf) {
+            return fetch('../music-library/MM5.DB').then(function(r) { return r.arrayBuffer(); }).then(function(buf) {
                 return new SQL.Database(new Uint8Array(buf));
             });
         })
@@ -192,8 +192,9 @@ function updateBooksGrid(yr,srt) {
 }
 
 function updateMusicGrid(yr) {
-	if (document.getElementById("container").innerHTML != "" && yr.value == year) return false; //This is to avoid reloading same grid if year hasn't changed. Exception for first time load.
-    if (isNaN(yr)) yr = yr.value; //if coming from drop down selection (it'll be a string hence NaN)
+    // This is to avoid reloading same grid if year hasn't changed. Exception for first time load.
+    if (document.getElementById("container").innerHTML != "" && yr.value == year) return false; 
+    if (isNaN(yr)) yr = yr.value; // if coming from drop down selection (it'll be a string hence NaN)
     year = yr;
     music = filter(musicData, 4, yr.toString());
     music.sort(function(a, b) { 
@@ -201,12 +202,11 @@ function updateMusicGrid(yr) {
     });
     var musicGrid = "";
     for (var i = 0; i < music.length; i++) {
-        musicGrid += "<div class='imagebox musbox'><img class='lazy' data-src='" + (music[i][5] || '') + "' id='" + music[i][2] + "' width='100' height='100'><a href='../music-catalogue2/#' target='_blank'><div class='caption'><table><tr><td>" + music[i][0] + "<br>" + music[i][1] + "</td></tr></table></div></a></div>"; //table is to get nice center alignment
+        musicGrid += "<div class='imagebox musbox'><img class='lazy' data-src='" + (music[i][5] || '') + "' id='" + music[i][2] + "' width='100' height='100'><a href='../music-library/#' target='_blank'><div class='caption'><table><tr><td>" + music[i][0] + "<br>" + music[i][1] + "</td></tr></table></div></a></div>"; // table is to get nice center alignment
     }
     document.getElementById("container").innerHTML = musicGrid;
     initiateLazyLoad();
-    document.dispatchEvent(new CustomEvent('scroll')); //trigger scroll event - to load images on load for first time
-
+    document.dispatchEvent(new CustomEvent('scroll')); // trigger scroll event - to load images on load for first time
 }
 function parseDate(input) {
   var parts = input.split('-');
@@ -218,11 +218,9 @@ function parseMusicDB(db) {
         SELECT
             s.IDAlbum,
             MAX(s.Album COLLATE NOCASE) AS Album,
-            s.Artist COLLATE NOCASE AS Artist,
-            DATE('1900-01-01', '+' || (MAX(s.DateAdded) - 2) || ' days') AS DateAdded,
-            MAX(c.PictureDataHash) AS PictureDataHash
+            MAX(s.Artist COLLATE NOCASE) AS Artist,
+            DATE('1900-01-01', '+' || (MAX(s.DateAdded) - 2) || ' days') AS DateAdded
         FROM Songs s
-        LEFT JOIN Covers c ON c.IDSong = s.ID AND c.CoverOrder = 0
         WHERE s.Album IS NOT NULL
         GROUP BY s.IDAlbum COLLATE NOCASE
     `;
@@ -233,11 +231,12 @@ function parseMusicDB(db) {
         var dateAdded = row.DateAdded ? new Date(row.DateAdded) : new Date(0);
         var yr = dateAdded.getFullYear().toString();
         var thumbPath = null;
-        if (row.PictureDataHash) {
-            var code = row.PictureDataHash.charCodeAt(0) + row.PictureDataHash.charCodeAt(1);
-            var folder = code.toString(16).toUpperCase().padStart(2, '0');
-            thumbPath = '../music-catalogue2/Thumbs/' + folder + '/' + row.PictureDataHash + '-200px.jpg';
+        
+        // Directly construct the album cover path using IDAlbum
+        if (row.IDAlbum > 0) {
+            thumbPath = '../music-library/Thumbs/' + row.IDAlbum + '.jpg';
         }
+        
         // [albumName, artist, IDAlbum, dateObj, yearString, thumbPath]
         c.push([row.Album, row.Artist, row.IDAlbum, dateAdded, yr, thumbPath]);
     }
