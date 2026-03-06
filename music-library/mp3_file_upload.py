@@ -1,53 +1,68 @@
-# latisuhebal@dollicons.com
-# pip install internetarchive mutagen
-# ia configure
-
-
 import sqlite3, shutil, os
 from mutagen.id3 import ID3, ID3NoHeaderError
 import internetarchive as ia
+import time
 
 DB_PATH = r"C:\xampp\htdocs\yathish1618.github.io\music-library\MM5.DB"
 TEMP_DIR = r"C:\temp\upload_staging"
-IA_IDENTIFIER = "mk9x2wr5qt"  # what you chose on archive.org
-
+IA_IDENTIFIER = "mk9x2wr5qt"
 MAX_RETRIES = 5
-RETRY_DELAY = 10  # seconds between retries
+RETRY_DELAY = 10 
 
 os.makedirs(TEMP_DIR, exist_ok=True)
 
+# 1. Fetch already uploaded files
 print("Checking archive.org for already uploaded files...")
 try:
     item = ia.get_item(IA_IDENTIFIER)
     uploaded = set(f['name'] for f in item.files)
-    print(f"Already uploaded: {len(uploaded)} files")
 except Exception as e:
     uploaded = set()
     print(f"Could not fetch item (probably first run): {e}")
 
+# 2. Get all songs from DB
 conn = sqlite3.connect(DB_PATH)
 cursor = conn.execute("SELECT ID, SongPath FROM Songs ORDER BY DateAdded DESC")
-rows = cursor.fetchall()
+all_rows = cursor.fetchall()
 conn.close()
 
-print(f"Total songs in DB: {len(rows)}")
+# 3. Filter pending files BEFORE the loop
+# We create a list of only the files that aren't in the 'uploaded' set yet
+pending_uploads = [
+    (song_id, song_path) for song_id, song_path in all_rows 
+    if f"{song_id}.mp3" not in uploaded
+]
 
-for song_id, song_path in rows:
+# 4. Summary Display
+total_db = len(all_rows)
+already_done = len(uploaded)
+to_process = len(pending_uploads)
+
+print("-" * 30)
+print(f"Total songs in DB:    {total_db}")
+print(f"Already on Archive:   {already_done}")
+print(f"Pending uploads:      {to_process}")
+print("-" * 30)
+
+if to_process == 0:
+    print("Everything is up to date. Exiting.")
+    exit()
+
+# 5. Only loop through pending items
+for song_id, song_path in pending_uploads:
     filename = f"{song_id}.mp3"
-
-    if filename in uploaded:
-        print(f"Skipping {filename} - already on archive.org")
-        continue
-
+    
+    # Path correction logic
     song_path = "D" + song_path if not song_path.startswith("D:") else song_path
 
     if not os.path.exists(song_path):
-        print(f"Missing file, skipping: {song_path}")
+        print(f"⚠️ Missing local file: {song_path}")
         continue
 
     dest = os.path.join(TEMP_DIR, filename)
     shutil.copy2(song_path, dest)
 
+    # Strip ID3 Tags
     try:
         audio = ID3(dest)
         audio.delete()
@@ -55,27 +70,27 @@ for song_id, song_path in rows:
     except ID3NoHeaderError:
         pass
 
-    # Upload with retry
+    # Upload with retry logic
     success = False
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            print(f"Uploading {filename} (attempt {attempt})...")
+            print(f"🚀 [{to_process} left] Uploading {filename} (attempt {attempt})...")
             ia.upload(
                 IA_IDENTIFIER,
                 files=[dest],
                 metadata=dict(title=IA_IDENTIFIER, mediatype='data')
             )
             success = True
-            print(f"Done: {filename}")
+            to_process -= 1 # Decrement our local counter
             break
         except Exception as e:
-            print(f"  Error on attempt {attempt}: {e}")
+            print(f"  ❌ Error on attempt {attempt}: {e}")
             if attempt < MAX_RETRIES:
-                print(f"  Retrying in {RETRY_DELAY}s...")
                 time.sleep(RETRY_DELAY)
             else:
-                print(f"  Failed after {MAX_RETRIES} attempts, skipping {filename}")
+                print(f"  🛑 Failed after {MAX_RETRIES} attempts, skipping {filename}")
 
-    os.remove(dest)
+    if os.path.exists(dest):
+        os.remove(dest)
 
 print("Finished.")
