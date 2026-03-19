@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#060810">
+  <title>Cosmic Timeline — 13.8 Billion Years of History</title>
+  <meta name="description" content="Navigate 13.8 billion years of the universe's history — from the Big Bang to today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="ls-orb">
+      <div class="ls-ring r1"></div>
+      <div class="ls-ring r2"></div>
+      <div class="ls-ring r3"></div>
+      <div class="ls-core"></div>
+    </div>
+    <div class="ls-title">COSMIC TIMELINE</div>
+    <div class="ls-sub">Expanding the universe…</div>
+    <div class="ls-progress"><div id="ls-bar"></div></div>
+  </div>
+
+  <!-- Timeline Canvas -->
+  <canvas id="timeline-canvas"></canvas>
+
+  <!-- Context Labels Layer -->
+  <div id="context-labels"></div>
+
+  <!-- Next/Prev Buttons + Zoom Controls — Bottom Center -->
+  <nav id="event-nav" aria-label="Navigate Events">
+    <button id="btn-prev" class="nav-btn" aria-label="Previous Event">← Prev</button>
+    <div id="zoom-controls">
+      <button id="zoom-out" class="zoom-btn" aria-label="Zoom out">−</button>
+      <button id="zoom-in"  class="zoom-btn" aria-label="Zoom in">+</button>
+    </div>
+    <button id="btn-next" class="nav-btn" aria-label="Next Event">Next →</button>
+  </nav>
+
+  <!-- Event Detail Panel -->
+  <div id="event-panel" class="panel-hidden" role="dialog" aria-modal="true">
+    <div id="panel-drag-handle" aria-label="Swipe to dismiss"></div>
+    <div id="panel-scroll">
+      <div id="panel-cat-badge"></div>
+      <div id="panel-year-label"></div>
+      <h2 id="panel-title"></h2>
+      <div id="panel-media"></div>
+      <p  id="panel-extract"></p>
+      <div id="panel-actions">
+        <button id="panel-prev" class="panel-nav-btn" aria-label="Previous Event">←</button>
+        <button id="panel-next" class="panel-nav-btn" aria-label="Next Event">→</button>
+        <a id="panel-wiki" href="#" target="_blank" rel="noopener" class="btn-wiki">
+          Read on Wikipedia →
+        </a>
+        <button id="panel-close" class="btn-close" aria-label="Close">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tap hint (shown briefly on first load) -->
+  <div id="tap-hint">Tap an event • Drag to navigate • +/− to zoom</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.4.2/dist/pixi.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
